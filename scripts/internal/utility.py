@@ -269,10 +269,10 @@ class Settings(object):
             self.json_data["relative-precision"] = True
             set_an_option = True
         if not "storm-binary-dir" in self.json_data:
-            self.json_data["storm-binary-dir"] = "$MDPMC_DIR/tools/storm/build/bin/"
+            self.json_data["storm-binary-dir"] = "$MDPMC_DIR/bin/"
             set_an_option = True
         if not "mcsta-binary-dir" in self.json_data:
-            self.json_data["mcsta-binary-dir"] = "$MDPMC_DIR/tools/Modest/"
+            self.json_data["mcsta-binary-dir"] = "$MDPMC_DIR/bin/"
             set_an_option = True
         return set_an_option
 
