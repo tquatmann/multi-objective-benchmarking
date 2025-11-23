@@ -13,9 +13,11 @@ def get_configurations():
     
     cfgs = []
 
-    cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with epsilon=10^-3, absolute precision, and gamma=0.5", command="--mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
-    cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with epsilon=10^-3, absolute precision, and gamma=0.5", command="--mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
-    # cfgs.append(Configuration(id="gurobi-vi-rel-e3-g5", note="(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver Gurobi"))
+    cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
+    cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
+    cfgs.append(Configuration(id="vi-abs-e3-g5", note="(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
+    cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi"))
+
 
     return cfgs
     
@@ -85,7 +87,7 @@ def get_result(log, benchmark : Benchmark):
     The returned value should be either 'true', 'false', a decimal number, or a fraction.
     """
 
-    pos = log.find("+ Property {}".format(benchmark.get_property_name()))
+    pos = log.find("+ {}".format(benchmark.get_property_name()))
     if pos < 0:
         return None
     result = log[pos:]
@@ -102,11 +104,11 @@ def get_result(log, benchmark : Benchmark):
     # result = log[pos:end_pos]
     return result
     
-def get_MC_Time(log):
+def get_MC_Time(log, benchmark : Benchmark):
     """
     Tries to parse the model checking time (i.e. whatever happens after model building)
     """
-    pos = log.find("+ Property")
+    pos = log.find("+ {}".format(benchmark.get_property_name()))
     if pos < 0:
         return None
     pos = log.find("Time:", pos)
@@ -225,4 +227,4 @@ def is_memout(logfile):
         if m in logfile:
             return True
     # if there is no error message and no result is produced, we assume out of memory.
-    return ": error:" not in logfile and "Error:" not in logfile
+    return False
