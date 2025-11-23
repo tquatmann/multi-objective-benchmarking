@@ -16,7 +16,7 @@ def get_configurations():
     cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
     cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
     cfgs.append(Configuration(id="vi-abs-e3-g5", note="(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
-    cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi"))
+    cfgs.append(Configuration(id="gurobi-ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi"))
 
 
     return cfgs
