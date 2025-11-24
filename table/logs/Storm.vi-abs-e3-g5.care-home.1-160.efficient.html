@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - care-home efficient 1-160</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#care-home">care-home</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 160</td></tr>
+		<tr><td>Property:</td><td><span class="tt">efficient</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient --constants Unf=1,B=160 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">111.082s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">95.335s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:37:44 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient --constants 'Unf=1,B=160' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 15.668s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3408977
+Transitions: 	7252749
+Choices: 	6576217
+Reward Models:  interaction
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * timeExceeded -> 47296 item(s)
+   * ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0))) -> 330996 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "efficient": multi(Pmax=? [F ((!"timeExceeded") & ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0))))], R{"interaction"}max=? [F "timeExceeded"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,   0.327803) * x <= 2.27225
+   (         1,   0.723351) * x <= 3.833
+   (  0.558921,          1) * x <= 4.52069
+   (         1,   0.163376) * x <= 1.63107
+   (         1,   0.502167) * x <= 2.95785
+   (         1,   0.422137) * x <= 2.6422
+   (         0,          1) * x <= 4
+   (         1,   0.996931) * x <= 4.91985
+   (         1,          0) * x <= 0.996133
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0) * x <= 0.996133
+   (         0,          1) * x <= 4
+   (  0.800619,   0.199381) * x <= 1.57329
+   (  0.091845,   0.908155) * x <= 3.71818
+   (  0.617048,   0.382952) * x <= 2.11433
+   (  0.524216,   0.475784) * x <= 2.39305
+   (  0.712834,   0.287166) * x <= 1.82954
+   (   0.99945, 0.000550253) * x <= 0.997724
+   (   0.49595,    0.50405) * x <= 2.47848
+   (  0.689271,   0.310729) * x <= 1.89914
+
+8 Pareto optimal points found:
+   (0.9327935492, 3.999331979 )
+   (0.9315983519,           4 )
+   (0.9593193665,  3.97272449 )
+   (0.9961332801, 3.886333751 )
+   (0.9709611915, 3.956630204 )
+   (0.9772348129, 3.944137104 )
+   (0.9866815861, 3.921758665 )
+   (0.9939864018, 3.899474502 )
+
+
+Time for model checking: 95.335s.
+
+Performance statistics:
+  * peak memory usage: 2180MB
+  * CPU time: 109.830s
+  * wallclock time: 111.020s	</pre>
+</div>
+</body>
+</html>

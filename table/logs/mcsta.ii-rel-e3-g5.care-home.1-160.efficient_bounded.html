@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-rel-e3-g5 - care-home efficient_bounded 1-160</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-rel-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#care-home">care-home</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 160</td></tr>
+		<tr><td>Property:</td><td><span class="tt">efficient_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-rel-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient_bounded -E Unf=1,B=160 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">35.280s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">27.000s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient_bounded -E Unf=1,B=160 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS
+
+
+
+
+care-home.jani:model: info: care-home is an MDP model.
+care-home.jani: info: Need 24 bytes per state.
+care-home.jani: info: Explored 3408977 states for Unf=1, B=160.
+
+Peak memory usage: 2532 MB
+Analysis results for care-home.jani
+Experiment Unf=1, B=160
+
++ State space exploration
+  State size:         24 bytes
+  States:             3408977
+  Transitions:        6576217
+  Branches:           7252749
+  Rate:               438736 states/s
+  Peak memory:        845.54 MB
+  Final size:         26.01 MB
+  Time (exploration): 7.8 s
+  Time (merging):     0.2 s
+
++ efficient_bounded
+  WSO instances:       2
+  Time:                27.0 s
+  Under Approximation: ∩{1x + 0y <= 1, 1x + 1.55838E-05y <= 1.0000468753, 0x + 1y <= 4}
+  Over Approximation:  ∩{1x + 0y <= 1, 0x + 1y <= 4}
+
+  + Pareto Curve Approximation
+    Time: 26.2 s	</pre>
+</div>
+</body>
+</html>

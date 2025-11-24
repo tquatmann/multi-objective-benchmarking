@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.gurobi-ii-abs-e3-g5 - consensus multi_pos 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.gurobi-ii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#consensus">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (gurobi-ii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --props multi_pos -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.294s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
+		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.4.jani --props multi_pos -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi
+
+
+
+
+consensus.4.jani:model: info: consensus.4 is an MDP model.
+consensus.4.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.4.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.4.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
+consensus.4.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
+consensus.4.jani:properties[5].expression.values.properties[1].exp: error: Type error.	</pre>
+</div>
+</body>
+</html>

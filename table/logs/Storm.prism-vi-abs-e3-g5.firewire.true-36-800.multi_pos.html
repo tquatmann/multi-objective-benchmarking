@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.prism-vi-abs-e3-g5 - firewire multi_pos true-36-800</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.prism-vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = True, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 800</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (prism-vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.prism --prop $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.props multi_pos --constants delay=36,deadline=800 --multiobjective:precision 1e-3 abs --timemem</pre>
+	prefer prism models, (unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">777.740s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:41:44 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.true.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.true.props multi_pos --constants 'delay=36,deadline=800' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.005s.	</pre>
+</div>
+</body>
+</html>

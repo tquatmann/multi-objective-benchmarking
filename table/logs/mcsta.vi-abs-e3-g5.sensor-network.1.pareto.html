@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.vi-abs-e3-g5 - sensor-network pareto 1</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#sensor-network">sensor-network</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 1</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.1.jani --props pareto --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.352s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
+		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/sensor-network/sensor-network.1.jani --props pareto --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+sensor-network.1.jani:model: info: sensor-network.1 is an MDP model.
+sensor-network.1.jani:automata[0].variables[0]: info: Expanding variable "y1" into 7 locations in automaton "sensor1".
+sensor-network.1.jani:automata[1].variables[0]: info: Expanding variable "c" into 4 locations in automaton "channel".
+sensor-network.1.jani:automata[2].variables[0]: info: Expanding variable "x" into 3 locations in automaton "proc".
+sensor-network.1.jani: info: Need 16 bytes per state.
+sensor-network.1.jani: info: Explored 409 states.
+sensor-network.1.jani: error: Modelling Error: Potentially infinite reward for 'pareto' in subproperties: 0, 1, 2
+
+Peak memory usage: 47 MB
+Analysis results for sensor-network.1.jani
+State space exploration
+State size:         16 bytes
+States:             409
+Transitions:        990
+Branches:           1088
+Rate:               16360 states/s
+Peak memory:        28.65 MB
+Final size:         0.00 MB
+Time (exploration): 0.0 s
+Time (merging):     0.0 s	</pre>
+</div>
+</body>
+</html>

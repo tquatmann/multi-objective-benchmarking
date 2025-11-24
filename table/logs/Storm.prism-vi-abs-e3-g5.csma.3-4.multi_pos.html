@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.prism-vi-abs-e3-g5 - csma multi_pos 3-4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.prism-vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#csma">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (prism-vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.prism --prop $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.props multi_pos --multiobjective:precision 1e-3 abs --timemem</pre>
+	prefer prism models, (unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">37.507s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">32.036s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:36:44 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.3-4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.props multi_pos '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 5.414s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1460287
+Transitions: 	2396727
+Choices: 	1471059
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 1427 item(s)
+   * all_delivered -> 13 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [(!"collision_max_backoff") U "all_delivered"], R{"time"}min=? [F "all_delivered"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         0,         -1) * x <= -107.311
+   (         1,          0) * x <= 0.932447
+   (         1, -9.50593e-05) * x <= 0.921852
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.932447
+   (         0,         -1) * x <= -107.311
+
+2 Pareto optimal points found:
+   (0.9324469288,  111.460311 )
+   (0.9320525436, 107.3114781 )
+
+
+Time for model checking: 32.036s.
+
+Performance statistics:
+  * peak memory usage: 1342MB
+  * CPU time: 37.053s
+  * wallclock time: 37.461s	</pre>
+</div>
+</body>
+</html>

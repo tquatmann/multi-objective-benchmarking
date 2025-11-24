@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.prism-vi-abs-e3-g5 - firewire multi_neg false-36-800</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.prism-vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 800</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (prism-vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.prism --prop $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.props multi_neg --constants delay=36,deadline=800 --multiobjective:precision 1e-3 abs --timemem</pre>
+	prefer prism models, (unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1207.621s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1206.012s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:34:45 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.false.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.false.props multi_neg --constants 'delay=36,deadline=800' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 1.548s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=800 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 20 Halfspaces:
+   (0.00231247,         -1, 0.00289059) * x <= 0.447142
+   ( 0.0803713,          0,          1) * x <= 224.221
+   (7.7151e-07,         -1, 1.37961e-05) * x <= -0.936762
+   ( 0.0110727,         -1,  0.0083045) * x <= 4.63379
+   (         1,          0,   0.258678) * x <= 410.188
+   (         0,         -1, 1.43909e-05) * x <= -0.936924
+   (0.000115642,         -1, 0.00147089) * x <= -0.614718
+   (         0,         -1, 0.00121047) * x <= -0.706403
+   (3.53017e-05,         -1, 2.56462e-05) * x <= -0.922088
+   (         0,         -1,   0.643137) * x <= 125.084
+   (         0,         -1,          0) * x <= -0.939453
+   (         1,          0,          0) * x <= 365
+   ( 0.0198207,         -1,  0.0137644) * x <= 8.82702
+   (         0,          0,          1) * x <= 195.973
+   ( 0.0117983,         -1, 0.00857134) * x <= 4.9456
+   (         1,          0,   0.694444) * x <= 492.95
+   ( 0.0786202,  -0.968103,          1) * x <= 222.682
+   (         1,          0,   0.643921) * x <= 483.18
+   (       0.8,          0,          1) * x <= 481.128
+   (         1,          0,       0.75) * x <= 503.709
+
+Overapproximation of achievable values: Polytope with 22 Halfspaces:
+   (         1,          0,          0) * x <= 365
+   (         0,         -1,          0) * x <= -0.939453
+   (         0,          0,          1) * x <= 195.973
+   (  0.611309,          0,   0.388691) * x <= 294.417
+   (  0.746767,          0,   0.253233) * x <= 317.6
+   (  0.265438,          0,   0.734562) * x <= 238.389
+   (  0.788549,          0,   0.211451) * x <= 324.758
+   ( 0.0743923,          0,   0.925608) * x <= 207.541
+   (  0.564417,          0,   0.435583) * x <= 286.699
+   (  0.573951,          0,   0.426049) * x <= 288.249
+   (   0.61516,          0,    0.38484) * x <= 295.053
+   (  0.444444,          0,   0.555556) * x <= 267.294
+   (         0,   -0.97799,  0.0220105) * x <= 3.39028
+   (         0,  -0.608592,   0.391408) * x <= 76.1251
+   (  0.571429,          0,   0.428571) * x <= 287.834
+   ( 0.0384127,  -0.473001,   0.488586) * x <= 108.799
+   (  0.590164,          0,   0.409836) * x <= 290.921
+   (0.000229812,  -0.999483, 0.000287266) * x <= -0.801388
+   (0.00349694,   -0.99529, 0.00121355) * x <= 0.557673
+   (0.000115459,  -0.998416, 0.00146856) * x <= -0.613744
+   (         0,  -0.998791, 0.00120901) * x <= -0.705549
+   ( 0.0115628,  -0.980037, 0.00840023) * x <= 4.84687
+
+10 Pareto optimal points found:
+   (361.1758423, 0.9396972656, 189.4713135 )
+   (  358.46875, 0.9436035156, 193.6533203 )
+   (        365, 0.939453125, 174.6878662 )
+   (358.6640625, 0.9436035156, 193.3720703 )
+   (351.4661458, 0.9536132812, 195.9730835 )
+   (345.7297363, 0.939453125, 175.7655029 )
+   (  357.15625, 0.9436035156, 195.4033203 )
+   (358.8081055, 0.9396972656, 192.7304688 )
+   (351.5408529, 0.9436035156, 195.9575195 )
+   (        357, 0.9436035156, 195.5283203 )
+
+
+Time for model checking: 1206.012s.
+
+Performance statistics:
+  * peak memory usage: 386MB
+  * CPU time: 1201.252s
+  * wallclock time: 1207.572s	</pre>
+</div>
+</body>
+</html>

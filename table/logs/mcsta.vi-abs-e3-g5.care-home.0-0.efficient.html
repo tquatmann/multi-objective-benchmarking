@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.vi-abs-e3-g5 - care-home efficient 0-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#care-home">care-home</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 0, <span class="tt">B</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">efficient</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient -E Unf=0,B=0 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.759s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
+		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient -E Unf=0,B=0 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+care-home.jani:model: info: care-home is an MDP model.
+care-home.jani: info: Need 24 bytes per state.
+care-home.jani: info: Explored 47296 states for Unf=0, B=0.
+care-home.jani: error: Modelling Error: Potentially infinite reward for 'efficient' in subproperty: 1
+
+Peak memory usage: 108 MB
+Analysis results for care-home.jani
+Experiment Unf=0, B=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             47296
+  Transitions:        90448
+  Branches:           99424
+  Rate:               141182 states/s
+  Peak memory:        64.40 MB
+  Final size:         0.37 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s	</pre>
+</div>
+</body>
+</html>

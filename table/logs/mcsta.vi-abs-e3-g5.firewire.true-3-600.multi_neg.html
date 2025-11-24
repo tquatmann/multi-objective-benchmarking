@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.vi-abs-e3-g5 - firewire multi_neg true-3-600</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = True, <span class="tt">delay</span> = 3, <span class="tt">deadline</span> = 600</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --props multi_neg -E delay=3,deadline=600 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.029s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
+		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.true.jani --props multi_neg -E delay=3,deadline=600 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+firewire.true.jani:model: info: firewire.true is an MDP model.
+firewire.true.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire.true.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire.true.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire.true.jani: info: Need 24 bytes per state.
+firewire.true.jani: info: Explored 1078697 states for delay=3, deadline=600.
+firewire.true.jani: error: Modelling Error: Potentially infinite reward for 'multi_neg' in subproperties: 0, 2
+
+Peak memory usage: 569 MB
+Analysis results for firewire.true.jani
+Experiment delay=3, deadline=600
+
++ State space exploration
+  State size:         24 bytes
+  States:             1078697
+  Transitions:        1455598
+  Branches:           1476204
+  Rate:               804397 states/s
+  Peak memory:        219.56 MB
+  Final size:         8.49 MB
+  Time (exploration): 1.3 s
+  Time (merging):     0.1 s	</pre>
+</div>
+</body>
+</html>

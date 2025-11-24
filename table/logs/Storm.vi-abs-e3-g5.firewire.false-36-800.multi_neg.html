@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - firewire multi_neg false-36-800</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 800</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants delay=36,deadline=800 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1304.005s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1302.642s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:34:46 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants 'delay=36,deadline=800' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 1.312s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=800 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   (0.00191855,         -1, 0.00239819) * x <= 0.210233
+   (         1,          0,   0.710171) * x <= 495.996
+   (         1,          0,       0.75) * x <= 503.709
+   ( 0.0636032,          0,          1) * x <= 218.235
+   (         1,          0,   0.258678) * x <= 410.188
+   (         1,          0,          0) * x <= 365
+   (0.00764324,         -1,   0.132048) * x <= 27.6042
+   (         0,          0,          1) * x <= 196.371
+   (         0,         -1,          0) * x <= -0.939453
+   (         0,         -1,  0.0745285) * x <= 13.6816
+   (6.40324e-06,         -1, 0.00107462) * x <= -0.730516
+   (         0,         -1, 1.36475e-05) * x <= -0.937069
+   (         1,          0,   0.580769) * x <= 471.215
+   (5.12727e-05,         -1, 2.97776e-05) * x <= -0.915537
+   (1.51899e-05,         -1, 1.90398e-05) * x <= -0.930583
+   (0.00190554,         -1,  0.0023885) * x <= 0.203693
+   (         0,         -1, 0.00106734) * x <= -0.734152
+   ( 0.0456003,         -1,  0.0342002) * x <= 22.0257
+   (8.17577e-08,         -1, 1.37209e-05) * x <= -0.937026
+   (7.76969e-05,         -1, 0.00134233) * x <= -0.653402
+   (       0.8,          0,          1) * x <= 481.128
+
+Overapproximation of achievable values: Polytope with 23 Halfspaces:
+   (         1,          0,          0) * x <= 365
+   (         0,         -1,          0) * x <= -0.939453
+   (         0,          0,          1) * x <= 196.371
+   (  0.856598,          0,   0.143402) * x <= 337.709
+   (  0.505045,          0,   0.494955) * x <= 277.096
+   (  0.725351,          0,   0.274649) * x <= 313.931
+   (  0.067326,          0,   0.932674) * x <= 206.4
+   (  0.788549,          0,   0.211451) * x <= 324.758
+   (  0.599918,          0,   0.400082) * x <= 292.534
+   (   0.61516,          0,    0.38484) * x <= 295.053
+   ( 0.0597998,          0,     0.9402) * x <= 205.184
+   (  0.573951,          0,   0.426049) * x <= 288.249
+   (  0.444444,          0,   0.555556) * x <= 267.294
+   (         0,  -0.988262,  0.0117382) * x <= 1.37094
+   (  0.571429,          0,   0.428571) * x <= 287.834
+   (         0,  -0.930641,  0.0693593) * x <= 12.7327
+   (0.00670641,   -0.87743,   0.115863) * x <= 24.2208
+   (0.000624472,  -0.998942, 0.000433661) * x <= -0.630848
+   (5.86294e-05,  -0.998928, 0.00101291) * x <= -0.722655
+   (0.00881979,  -0.988541, 0.00263901) * x <= 2.75658
+   (         0,  -0.998951, 0.00104947) * x <= -0.736607
+   ( 0.0422303,  -0.926097,  0.0316727) * x <= 20.3979
+   (  0.584737,          0,   0.415263) * x <= 290.027
+
+10 Pareto optimal points found:
+   (358.7226563, 0.9396972656, 192.5185547 )
+   (344.7607422, 0.9436035156, 196.2367554 )
+   (361.1758423, 0.9396972656, 189.4713135 )
+   (        365, 0.939453125, 174.6878662 )
+   (  358.46875, 0.9436035156, 193.6533203 )
+   (     343.75, 0.9536132812, 196.3710632 )
+   (        357, 0.9436035156, 195.5283203 )
+   (  357.15625, 0.9436035156, 195.4033203 )
+   (348.9199219, 0.9396972656, 192.5769653 )
+   (359.9961548, 0.9396972656, 191.5025635 )
+
+
+Time for model checking: 1302.642s.
+
+Performance statistics:
+  * peak memory usage: 387MB
+  * CPU time: 1297.898s
+  * wallclock time: 1303.961s	</pre>
+</div>
+</body>
+</html>

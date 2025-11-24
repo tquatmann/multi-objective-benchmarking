@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - consensus multi_neg 6-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#consensus">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 6, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --janiproperty multi_neg --constants K=2 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">187.891s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">181.983s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:41:42 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.6.jani --janiproperty multi_neg --constants K=2 '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 5.865s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1258240
+Transitions: 	6236736
+Choices: 	5008128
+Reward Models:  steps
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 384 item(s)
+   * agree -> 114258 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmax=? [F ("finished" & (!"agree"))], R{"steps"}max=? [F "finished"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         0,          1) * x <= 867
+   (         1, 0.00284093) * x <= 2.46308
+   (         1,  0.0026877) * x <= 2.34495
+   (         1, 5.42116e-07) * x <= 0.363986
+   (         1,          0) * x <= 0.363634
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 0.363634
+   (         0,          1) * x <= 867
+   (  0.998336,  0.0016638) * x <= 1.58953
+   (  0.997207, 0.00279321) * x <= 2.42552
+   (  0.997167, 0.00283284) * x <= 2.45607
+   (  0.997319, 0.00268091) * x <= 2.33898
+
+4 Pareto optimal points found:
+   (0.3636341367, 648.8073929 )
+   ( 0.36358622, 737.1956341 )
+   (0.2727505159, 770.9924755 )
+   (          0, 867.0000067 )
+
+
+Time for model checking: 181.983s.
+
+Performance statistics:
+  * peak memory usage: 1408MB
+  * CPU time: 186.793s
+  * wallclock time: 187.854s	</pre>
+</div>
+</body>
+</html>

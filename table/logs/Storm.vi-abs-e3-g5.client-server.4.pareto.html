@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - client-server pareto 4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#client-server">client-server</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">112.115s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">112.040s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:34:45 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA], R{"grants4"}max=? [LRA]) ...
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.23815e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.43458e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 2.46716e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.23815e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.27429e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.23225e-17.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 1.77091e-18.
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 2.77928e-17.
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 62 Halfspaces:
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          0) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          0,          1) * x <= 0.333
+   (         0,          1,          0,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          0,          1,          1) * x <= 0.33
+   (         1,          0, 2.05597e-14, 2.26157e-14) * x <= 0.3
+   (         1,          1,          0,          0) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          0) * x <= 0.333
+   (         0,          0,          0,          1) * x <= 0.3
+   (         1,          0,          0,          0) * x <= 0.3
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          0,          1,          0) * x <= 0.3
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1, 2.56996e-15,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          0,          0) * x <= 0.3
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         1,          0,          0,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         1,          1,          1,          0) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1, 1.79897e-14,          1,          0) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          0) * x <= 0.33
+   (         0,          1,          1,          0) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1, 2.05597e-14, 2.26157e-14,          0) * x <= 0.3
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0, 1.79897e-14,          1) * x <= 0.33
+
+Overapproximation of achievable values: Polytope with 38 Halfspaces:
+   (         1,          0,          0,          0) * x <= 0.3
+   (         0,          1,          0,          0) * x <= 0.3
+   (         0,          0,          1,          0) * x <= 0.3
+   (         0,          0,          0,          1) * x <= 0.3
+   (  0.238105,   0.238105,    0.25975,   0.264041) * x <= 0.0877904
+   (         0,   0.343653,   0.343653,   0.312693) * x <= 0.114344
+   (   0.34472,          0,    0.34472,   0.310559) * x <= 0.114689
+   (  0.323615,   0.323615,          0,    0.35277) * x <= 0.11651
+   (  0.323529,   0.323529,   0.352941,          0) * x <= 0.116559
+   (         0,          0,   0.526066,   0.473934) * x <= 0.172038
+   (         0,    0.47619,    0.52381,          0) * x <= 0.171429
+   (   0.52381,          0,          0,    0.47619) * x <= 0.171429
+   (         0,        0.5,          0,        0.5) * x <= 0.165
+   (       0.5,        0.5,          0,          0) * x <= 0.165
+   (       0.5,          0,        0.5,          0) * x <= 0.165
+   (         0,   0.456432,  0.0414938,   0.502075) * x <= 0.16444
+   (         0,          0,        0.5,        0.5) * x <= 0.165
+   (   0.34375,          0,     0.3125,    0.34375) * x <= 0.114375
+   (       0.5,          0, 8.99486e-15,        0.5) * x <= 0.165
+   (  0.278302,   0.292281,   0.138522,   0.290895) * x <= 0.0972875
+   (  0.333333,   0.333333,   0.333333,          0) * x <= 0.111
+   (       0.5,          0,          0,        0.5) * x <= 0.165
+   (         0,        0.5,        0.5,          0) * x <= 0.165
+   (         0,     0.3125,    0.34375,    0.34375) * x <= 0.114375
+   (   0.34375,    0.34375,          0,     0.3125) * x <= 0.114375
+   (      0.25,       0.25,       0.25,       0.25) * x <= 0.083325
+   (  0.332226,          0,   0.335548,   0.332226) * x <= 0.111628
+   (         0,   0.345794,   0.311526,   0.342679) * x <= 0.114953
+   (  0.311526,   0.342679,          0,   0.345794) * x <= 0.114953
+   (  0.333333,   0.333333,          0,   0.333333) * x <= 0.111
+   (         0,   0.333333,   0.333333,   0.333333) * x <= 0.111
+   (  0.333333,          0,   0.333333,   0.333333) * x <= 0.111
+   (  0.311526,   0.345794,   0.342679,          0) * x <= 0.114953
+   (         0,   0.342679,   0.345794,   0.311526) * x <= 0.114953
+   (         0,   0.311526,   0.342679,   0.345794) * x <= 0.114953
+   (  0.342679,   0.345794,          0,   0.311526) * x <= 0.114953
+   (  0.311526,          0,   0.345794,   0.342679) * x <= 0.114953
+   (  0.342679,          0,   0.311526,   0.345794) * x <= 0.114953
+
+24 Pareto optimal points found:
+   (        0.3,      0.0003,       0.003,        0.03 )
+   (     0.0003,        0.03,         0.3,       0.003 )
+   (     0.0003,         0.3,       0.003,        0.03 )
+   (        0.3,       0.003,      0.0003,        0.03 )
+   (     0.0003,       0.003,        0.03,         0.3 )
+   (       0.03,      0.0003,       0.003,         0.3 )
+   (     0.0003,        0.03,       0.003,         0.3 )
+   (      0.003,        0.03,      0.0003,         0.3 )
+   (      0.003,      0.0003,        0.03,         0.3 )
+   (       0.03,       0.003,      0.0003,         0.3 )
+   (     0.0003,       0.003,         0.3,        0.03 )
+   (      0.003,      0.0003,         0.3,        0.03 )
+   (       0.03,       0.003,         0.3,      0.0003 )
+   (        0.3,       0.003,        0.03,      0.0003 )
+   (        0.3,      0.0003,        0.03,       0.003 )
+   (     0.0003,         0.3,        0.03,       0.003 )
+   (       0.03,      0.0003,         0.3,       0.003 )
+   (      0.003,         0.3,      0.0003,        0.03 )
+   (      0.003,        0.03,         0.3,      0.0003 )
+   (        0.3,        0.03,       0.003,      0.0003 )
+   (      0.003,         0.3,        0.03,      0.0003 )
+   (       0.03,         0.3,      0.0003,       0.003 )
+   (        0.3,        0.03,      0.0003,       0.003 )
+   (       0.03,         0.3,       0.003,      0.0003 )
+
+
+Time for model checking: 112.040s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 111.643s
+  * wallclock time: 112.065s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.gurobi-ii-abs-e3-g5 - wlan multi_neg 0-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.gurobi-ii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#wlan">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 0, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (gurobi-ii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.695s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi
+
+
+
+
+wlan.0.jani:model: info: wlan.0 is an MDP model.
+wlan.0.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.0.jani: info: Need 24 bytes per state.
+wlan.0.jani: info: Explored 2954 states for COL=0.
+wlan.0.jani: warning: The specified primal feasibility tolerance is too low for Gurobi, using 1e-8 instead (minimum 1e-9, specified 1E-10).
+wlan.0.jani: warning: The specified dual feasibility tolerance is too low for Gurobi, using 1e-9 instead (minimum 1e-9, specified 1E-10).
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+wlan.0.jani: error: The linear program is infeasible or unbounded.
+
+Peak memory usage: 83 MB
+Analysis results for wlan.0.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             2954
+  Transitions:        3972
+  Branches:           5202
+  Rate:               92313 states/s
+  Peak memory:        37.70 MB
+  Final size:         0.02 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                0.2 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 <= 1, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 <= 28000.956937711, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.224880531, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.2248804661, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 <= 3791.9047618452, 0*x_1 + 1*x_2 + 0*x_3 + 1.0288646037*x_4 <= 31874.2137325315, 0*x_1 + 1*x_2 + 0*x_3 + 4.2463395427*x_4 <= 44074.5722743658, 0*x_1 + 0*x_2 + 1*x_3 + 0.0002135627*x_4 <= 2.0288568383, 0*x_1 + 0*x_2 + 1*x_3 + 0.3897455152*x_4 <= 1479.0969224076, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.2248804028, 1*x_1 + 1*x_2 + 6549.1762445385*x_3 + 1*x_4 <= 39787.507135395}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 <= 1.0002391758, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 <= 28000.9571681215, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.225105484, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 <= 3791.9049850151, 0*x_1 + 1*x_2 + 0*x_3 + 1.0288646195*x_4 <= 31874.2139540083, 0*x_1 + 0*x_2 + 1*x_3 + 0.0002135627*x_4 <= 2.0289690358}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s	</pre>
+</div>
+</body>
+</html>

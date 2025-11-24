@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - csma multi_neg 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#csma">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_neg --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">19.256s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">15.920s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:36:34 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_neg '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 3.288s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	761962
+Transitions: 	1327068
+Choices: 	825504
+Reward Models:  time
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 3444 item(s)
+   * all_delivered -> 9 item(s)
+   * ((min((min(((s4 = 4) ? cd4 : 3), ((s2 = 4) ? cd2 : 3))), (min(((s3 = 4) ? cd3 : 3), ((s1 = 4) ? cd1 : 3))))) < 2) -> 161696 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmin=? [(!"collision_max_backoff") U "all_delivered"], Pmin=? [F ((min((min(((s4 = 4) ? cd4 : 3), ((s2 = 4) ? cd2 : 3))), (min(((s3 = 4) ? cd3 : 3), ((s1 = 4) ? cd1 : 3))))) < 2)], R{"time"}max=? [F "all_delivered"]) ...
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 1.56864e-14.
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         0,          0,          1) * x <= 142.212
+   (-0.000155982,          0,          1) * x <= 142.212
+   (        -1,          0,  0.0368193) * x <= 5.12965
+   (        -1,          0,          0) * x <= -0.0924505
+   (        -1,          0, 0.000185927) * x <= -0.0669785
+   (         0,         -1,          0) * x <= -0.355469
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (        -1,          0,          0) * x <= -0.0924505
+   (         0,         -1,          0) * x <= -0.355469
+   (         0,          0,          1) * x <= 142.212
+   ( -0.985778,          0,  0.0142218) * x <= 1.92541
+   ( -0.827736,          0,   0.172264) * x <= 24.4098
+   ( -0.964488,          0,  0.0355117) * x <= 4.94748
+
+4 Pareto optimal points found:
+   (0.09335319342,  0.35546875, 141.8550873 )
+   (0.09245051391,  0.35546875, 137.0000578 )
+   (0.1064962278,  0.35546875, 142.2120481 )
+   (0.1676438215,  0.35546875, 142.2120577 )
+
+
+Time for model checking: 15.920s.
+
+Performance statistics:
+  * peak memory usage: 721MB
+  * CPU time: 18.988s
+  * wallclock time: 19.214s	</pre>
+</div>
+</body>
+</html>

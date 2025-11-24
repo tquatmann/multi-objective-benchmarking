@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - ftwc Multi 8-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#ftwc">ftwc</a> <span class="tt">v.5</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 8, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants N=8,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">78.030s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">77.944s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:46:17 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants 'N=8,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.046s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	11745
+Transitions: 	31745
+Choices: 	14909
+Markovian St.: 	4996
+Max. Rate: 	2.0307
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 2487 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	11745
+Transitions: 	31745
+Choices: 	14909
+Markovian St.: 	4996
+Max. Rate: 	2.0307
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 2487 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmax=? [F (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))], R{"((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)"}max=? [LRA[time]], Pmax=? [true U<=5 (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0,          0) * x <= 1.99568e+06
+   (5.84759e-09,          0,          1) * x <= 0.0116699
+   (2.24108e-09,          1,          0) * x <= 0.00501431
+   (         0,          0,          1) * x <= 1.07353e-06
+   (         0,          1,          0) * x <= 0.000542597
+   (         0,          1,   0.702814) * x <= 0.000542597
+   (2.24108e-09,          1,   0.380825) * x <= 0.00501431
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0,          0) * x <= 1.99568e+06
+   (         0,          1,          0) * x <= 0.000542597
+   (         0,          0,          1) * x <= 0.000520685
+
+3 Pareto optimal points found:
+   (1995338.686, 0.0005425966828,           0 )
+   (1995492.926, 0.000541842191, 1.07353046e-06 )
+   (1995676.511, 0.0005418395896,           0 )
+
+
+Time for model checking: 77.944s.
+
+Performance statistics:
+  * peak memory usage: 63MB
+  * CPU time: 77.812s
+  * wallclock time: 77.994s	</pre>
+</div>
+</body>
+</html>

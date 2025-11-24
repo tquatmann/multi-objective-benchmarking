@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.prism-vi-abs-e3-g5 - mars-rover lazy 1-30</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.prism-vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#mars-rover">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 30</td></tr>
+		<tr><td>Property:</td><td><span class="tt">lazy</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (prism-vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.prism --prop $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.props lazy --constants Unf=1,B=30 --multiobjective:precision 1e-3 abs --timemem</pre>
+	prefer prism models, (unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.129s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.040s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:35:29 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/mars-rover/mars-rover.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/mars-rover/mars-rover.props lazy --constants 'Unf=1,B=30' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.025s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1126
+Transitions: 	2101
+Choices: 	1351
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "lazy": multi(R{"time"}min=? [C], R{"energy"}min=? [C]) ...
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 5.23727e-05.
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         0,         -1) * x <= -120
+   (        -1,          0) * x <= -125
+   (  -0.17143,         -1) * x <= -171.429
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -125
+   (         0,         -1) * x <= -120
+   ( -0.146343,  -0.853657) * x <= -146.341
+
+2 Pareto optimal points found:
+   (124.9998186,         150 )
+   (        300, 119.9996384 )
+
+
+Time for model checking: 0.040s.
+
+Performance statistics:
+  * peak memory usage: 62MB
+  * CPU time: 0.095s
+  * wallclock time: 0.073s	</pre>
+</div>
+</body>
+</html>

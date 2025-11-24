@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - consensus multi_pos 2-4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#consensus">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2, <span class="tt">K</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.2.jani --janiproperty multi_pos --constants K=4 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.071s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.021s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:37:40 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.2.jani --janiproperty multi_pos --constants K=4 '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.014s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	528
+Transitions: 	972
+Choices: 	784
+Reward Models:  steps
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 8 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [F "finished"], R{"steps"}min=? [F "finished"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,         -1) * x <= -192
+   (         1, -0.000625837) * x <= 0.879839
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,         -1) * x <= -192
+
+2 Pareto optimal points found:
+   (0.9999999907,         192 )
+   (          1, 192.0000149 )
+
+
+Time for model checking: 0.021s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 0.043s
+  * wallclock time: 0.038s	</pre>
+</div>
+</body>
+</html>

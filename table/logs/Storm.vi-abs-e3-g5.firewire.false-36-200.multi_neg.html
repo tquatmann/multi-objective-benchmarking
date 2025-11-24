@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - firewire multi_neg false-36-200</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 200</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants delay=36,deadline=200 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">77.028s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">75.894s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Sun Nov 23 23:43:42 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants 'delay=36,deadline=200' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 1.087s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=200 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0,          0) * x <= 365
+   (         0,          0,          1) * x <= 186.533
+   (         1,          0,  0.0510516) * x <= 370.507
+   (         0,         -1,          0) * x <= 0
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0,          0) * x <= 365
+   (         0,         -1,          0) * x <= 0
+   (         0,          0,          1) * x <= 114.625
+   (  0.777487,          0,   0.222513) * x <= 322.167
+   (   0.97326,          0,  0.0267398) * x <= 358.125
+   (  0.951428,          0,  0.0485719) * x <= 352.511
+
+2 Pareto optimal points found:
+   ( 360.984375,           0, 186.5332031 )
+   (        365,           0,     107.875 )
+
+
+Time for model checking: 75.894s.
+
+Performance statistics:
+  * peak memory usage: 356MB
+  * CPU time: 76.749s
+  * wallclock time: 76.987s	</pre>
+</div>
+</body>
+</html>
