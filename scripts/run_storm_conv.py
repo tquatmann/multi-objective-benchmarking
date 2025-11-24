@@ -1,19 +1,19 @@
 from internal.benchmark import *
 
 settings = Settings()
-all = [ b for b in get_all_benchmarks(settings, set_mdpmc_dir(os.path.join(settings.benchmark_dir(), "index.json"))) if b.is_multi_tradeoff() and b.is_prism() ]
-print("Found {} multi-tradeoff PRISM benchmarks.".format(len(all)))
+all = [ b for b in get_all_benchmarks(settings, set_mdpmc_dir(os.path.join(settings.benchmark_dir(), "index.json"))) if b.is_multi_tradeoff() and (b.is_prism() or b.is_prism_ma()) ]
+print("# Found {} multi-tradeoff PRISM benchmarks.".format(len(all)))
 models = OrderedDict()
 for benchmark in all:
-    print("\t" + benchmark.get_identifier())
+    print("# \t" + benchmark.get_identifier())
     models.setdefault(benchmark.get_directory(), []).append(benchmark)
     if not os.path.exists(os.path.join(benchmark.get_directory(), benchmark.get_prism_program_filename())):
         print("Error: PRISM file not found for benchmark '{}' at '{}'.".format(benchmark.get_identifier(), os.path.join(benchmark.get_directory(), benchmark.get_prism_program_filename())))
         exit(1)
 
-
+print("set -e")
 for modelpath in sorted(models):
-    # print("Converting model: {}".format(modelpath))
+    print("echo 'Converting model: {}'".format(modelpath))
     jsonpath = os.path.join(modelpath, "index.json")
     index = load_json(jsonpath)
     for i in range(len(index["files"])):
