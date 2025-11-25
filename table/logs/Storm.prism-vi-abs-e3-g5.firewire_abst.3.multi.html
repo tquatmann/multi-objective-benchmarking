@@ -23,23 +23,23 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.051s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.079s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.023s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
 	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
 
-Date: Sun Nov 23 23:35:41 2025
+Date: Mon Nov 24 20:25:42 2025
 Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.props multi --constants delay=3 '--multiobjective:precision' 1e-3 abs --timemem
 Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
 
-Time for model input parsing: 0.001s.
+Time for model input parsing: 0.002s.
 
-Time for model construction: 0.013s.
+Time for model construction: 0.016s.
 
 -------------------------------------------------------------- 
 Model type: 	MDP (sparse)
@@ -54,16 +54,26 @@ State Labels: 	3 labels
 Choice Labels: 	none
 -------------------------------------------------------------- 
 
-Model checking property "multi": multi(P>=1 [F "done"], R{"rounds"}min=? [F "done"], R{"time"}min=? [F "done"]) ...
-ERROR (SparseMultiObjectivePreprocessor.cpp:774): Invalid Multi-objective query: The numer of qualitative objectives should be either 0 (Pareto query), 1 (quantitative query), or #objectives (achievability query).
-WARN  (model-handling.h:1118): Cannot handle property: InvalidPropertyException: Invalid Multi-objective query: The numer of qualitative objectives should be either 0 (Pareto query), 1 (quantitative query), or #objectives (achievability query).
-ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+Model checking property "multi": multi(R{"rounds"}min=? [F "done"], R{"time"}min=? [F "done"]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         0,         -1) * x <= -135.25
+   (        -1,          0) * x <= -1
 
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -1
+   (         0,         -1) * x <= -135.25
+
+1 Pareto optimal points found:
+   (          1,      135.25 )
+
+
+Time for model checking: 0.023s.
 
 Performance statistics:
-  * peak memory usage: 60MB
-  * CPU time: 0.030s
-  * wallclock time: 0.018s	</pre>
+  * peak memory usage: 61MB
+  * CPU time: 0.056s
+  * wallclock time: 0.044s	</pre>
 </div>
 </body>
 </html>

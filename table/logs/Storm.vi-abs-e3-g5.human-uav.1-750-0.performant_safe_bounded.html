@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.vi-abs-e3-g5 - human-uav performant_safe_bounded 1-750-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants Unf=1,B=750,COUNTER=0 --multiobjective:precision 1e-3 abs --timemem</pre>
+	(unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">19.202s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">18.357s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Nov 24 20:24:38 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants 'Unf=1,B=750,COUNTER=0' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 0.800s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	160520
+Transitions: 	759202
+Choices: 	257796
+Reward Models:  time, ROZ
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 8854 item(s)
+   * mission -> 82444 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe_bounded": multi(Pmax=? [true Urew{"time"}<=750 "mission"], R{"ROZ"}min=? [Crew{"time"}<=750]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 10 Halfspaces:
+   (  0.814828,         -1) * x <= 0.236408
+   (         1,  -0.479253) * x <= 0.705345
+   (  0.704434,         -1) * x <= 0.131665
+   (         1, -0.0671256) * x <= 0.938775
+   (         1,  -0.720734) * x <= 0.569119
+   (         1,  -0.047277) * x <= 0.955862
+   (  0.980174,         -1) * x <= 0.394583
+   (         0,         -1) * x <= 0
+   (  0.663082,         -1) * x <= 0.123487
+   (         1,          0) * x <= 0.999487
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0) * x <= 0.999487
+   (         0,         -1) * x <= 0
+   (    0.7803,    -0.2197) * x <= 0.637754
+   (  0.367032,  -0.632968) * x <= 0.0683533
+   (  0.417404,  -0.582596) * x <= 0.083353
+   (  0.992452, -0.00754843) * x <= 0.984977
+   (  0.940136, -0.0598643) * x <= 0.885368
+   (   0.41308,   -0.58692) * x <= 0.0772045
+   (  0.514814,  -0.485186) * x <= 0.229513
+   (    0.5998,    -0.4002) * x <= 0.359464
+   (  0.478888,  -0.521112) * x <= 0.175113
+
+9 Pareto optimal points found:
+   (0.1862323791,           0 )
+   (0.9699368161, 0.5561240907 )
+   (0.9994871483, 0.922761322 )
+   (0.9965592402, 0.8608304371 )
+   (0.1977671291, 0.007648480072 )
+   (0.9757039236, 0.5641258002 )
+   (0.9767956635, 0.5664038019 )
+   (0.9566290111, 0.5430801214 )
+   (0.948808936, 0.5367081019 )
+
+
+Time for model checking: 18.357s.
+
+Performance statistics:
+  * peak memory usage: 203MB
+  * CPU time: 19.081s
+  * wallclock time: 19.167s	</pre>
+</div>
+</body>
+</html>

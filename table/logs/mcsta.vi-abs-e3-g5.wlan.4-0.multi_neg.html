@@ -23,9 +23,10 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="color: red;">&gt 2700s (Timeout)</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+		<tr><td>Walltime:</td><td style="tt">106.714s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">105.200s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
@@ -43,9 +44,29 @@ wlan.4.jani: info: Need 24 bytes per state.
 wlan.4.jani: info: Explored 345000 states for COL=0.
 wlan.4.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
+Peak memory usage: 428 MB
+Analysis results for wlan.4.jani
+Experiment COL=0
 
-----------
-Computation aborted after 2700.0366706848145 seconds since the total time limit of 2700 seconds was exceeded.	</pre>
++ State space exploration
+  State size:         24 bytes
+  States:             345000
+  Transitions:        440206
+  Branches:           762252
+  Rate:               379956 states/s
+  Peak memory:        134.64 MB
+  Final size:         2.76 MB
+  Time (exploration): 0.9 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       12
+  Time:                105.2 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.0264499354, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2014394684, 0*x_1 + 1*x_2 + 4E-10*x_3 <= 1.201440004, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2014391091, 0*x_1 + 1*x_2 + 4.26054E-05*x_3 <= 1.3658391276, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4978463598, 0*x_1 + 1*x_2 + 7117226734.745022*x_3 <= 27639734696420.05, 0*x_1 + 1*x_2 + 0.0002108652*x_3 <= 2.0158592803, 1*x_1 + 0*x_2 + 32451.231300764*x_3 <= 126247137.35601974, 0*x_1 + 1*x_2 + 1.624E-06*x_3 <= 1.2077046321, 0*x_1 + 1*x_2 + 1.00669E-05*x_3 <= 1.2402802115, 1*x_1 + 0*x_2 + 209.7602109258*x_3 <= 1037453.7815580186, 0*x_1 + 1*x_2 + 0.000210866*x_3 <= 2.0158621728, 0*x_1 + 1*x_2 + 0.0002108652*x_3 <= 2.0158592195, 0*x_1 + 1*x_2 + 0.0002108652*x_3 <= 2.015859339, 0*x_1 + 1*x_2 + 0.0002108652*x_3 <= 2.015859278, 1*x_1 + 0*x_2 + 41.5809607787*x_3 <= 387745.0891264295, 1*x_1 + 0*x_2 + 1.469466672*x_3 <= 232966.7296080236, 1*x_1 + 0*x_2 + 9.061391332*x_3 <= 262259.1127033651, 0*x_1 + 1*x_2 + 4.26052E-05*x_3 <= 1.3658377364, 0*x_1 + 1*x_2 + 0.0002108593*x_3 <= 2.0158345333, 0*x_1 + 1*x_2 + 0.0002108606*x_3 <= 2.0158409153, 0*x_1 + 1*x_2 + 0.0002108635*x_3 <= 2.0158509585, 0*x_1 + 1*x_2 + 0.0002108635*x_3 <= 2.0158509594, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2012459201, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2012464524, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2012459202}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.0264497668, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2014391091, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4978473422, 1*x_1 + 0*x_2 + 685.3306466959*x_3 <= 2884330.5451552523, 1*x_1 + 0*x_2 + 176.7522887351*x_3 <= 909937.8487201, 1*x_1 + 0*x_2 + 38.5822355929*x_3 <= 376173.6580039714, 1*x_1 + 0*x_2 + 209.7602109355*x_3 <= 1037453.7815990462, 1*x_1 + 0*x_2 + 8.7209300839*x_3 <= 260945.4904329744, 1*x_1 + 0*x_2 + 41.5809612959*x_3 <= 387745.0911264215, 1*x_1 + 0*x_2 + 9.0613957524*x_3 <= 262259.1297605673, 1*x_1 + 0*x_2 + 1.4694756462*x_3 <= 232966.7642338297, 0*x_1 + 1*x_2 + 0.000210865*x_3 <= 2.015858977}
+
+  + Pareto Curve Approximation
+    Time: 104.1 s	</pre>
 </div>
 </body>
 </html>

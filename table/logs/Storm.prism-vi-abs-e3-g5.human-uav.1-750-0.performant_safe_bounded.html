@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.prism-vi-abs-e3-g5 - human-uav performant_safe_bounded 1-750-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.prism-vi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (prism-vi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.prism --prop $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.props performant_safe_bounded --constants Unf=1,B=750,COUNTER=0 --multiobjective:precision 1e-3 abs --timemem</pre>
+	prefer prism models, (unsound) VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">18.606s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">17.815s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Nov 24 20:24:37 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.props performant_safe_bounded --constants 'Unf=1,B=750,COUNTER=0' '--multiobjective:precision' 1e-3 abs --timemem
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
+
+Time for model input parsing: 0.008s.
+
+Time for model construction: 0.741s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	160520
+Transitions: 	759202
+Choices: 	257796
+Reward Models:  time, ROZ
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 8854 item(s)
+   * mission -> 82444 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe_bounded": multi(Pmax=? [true Urew{"time"}<=750 "mission"], R{"ROZ"}min=? [Crew{"time"}<=750]) ...
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 11 Halfspaces:
+   (  0.707025,         -1) * x <= 0.134123
+   (  0.836063,         -1) * x <= 0.256556
+   (  0.703985,         -1) * x <= 0.131577
+   (         1,  -0.993849) * x <= 0.417059
+   (         1,  -0.693857) * x <= 0.58428
+   (         1, -0.0662952) * x <= 0.93949
+   (         1,  -0.047277) * x <= 0.955862
+   (         1,  -0.338756) * x <= 0.784606
+   (         0,         -1) * x <= 0
+   (  0.663082,         -1) * x <= 0.123487
+   (         1,          0) * x <= 0.999487
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0) * x <= 0.999487
+   (         0,         -1) * x <= 0
+   (  0.480043,  -0.519957) * x <= 0.176848
+   (   0.36242,   -0.63758) * x <= 0.0674943
+   (  0.413657,  -0.586343) * x <= 0.0778868
+   (  0.902379,  -0.097621) * x <= 0.82629
+   (   0.94076, -0.0592404) * x <= 0.886527
+   (  0.559274,  -0.440726) * x <= 0.297414
+   (  0.643152,  -0.356848) * x <= 0.42622
+   (  0.412891,  -0.587109) * x <= 0.0771658
+   (  0.417758,  -0.582242) * x <= 0.083878
+
+10 Pareto optimal points found:
+   (0.9994871483, 0.922761322 )
+   (0.9771767144, 0.5684634297 )
+   (0.9965592402, 0.8608304371 )
+   (0.9757118145, 0.5641390766 )
+   ( 0.97104788, 0.5574173275 )
+   (0.1977671291, 0.007648480072 )
+   (0.1862323791,           0 )
+   (0.9586096487, 0.5449021136 )
+   (0.8378540163, 0.4582602064 )
+   (0.948808936, 0.5367081019 )
+
+
+Time for model checking: 17.815s.
+
+Performance statistics:
+  * peak memory usage: 202MB
+  * CPU time: 18.479s
+  * wallclock time: 18.569s	</pre>
+</div>
+</body>
+</html>

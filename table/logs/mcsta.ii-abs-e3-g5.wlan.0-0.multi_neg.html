@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.731s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.706s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -40,29 +40,29 @@ Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-bench
 wlan.0.jani:model: info: wlan.0 is an MDP model.
 wlan.0.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
 wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
-wlan.0.jani: info: Need 24 bytes per state.
+wlan.0.jani: info: Need 16 bytes per state.
 wlan.0.jani: info: Explored 2954 states for COL=0.
 
-Peak memory usage: 79 MB
+Peak memory usage: 78 MB
 Analysis results for wlan.0.jani
 Experiment COL=0
 
 + State space exploration
-  State size:         24 bytes
+  State size:         16 bytes
   States:             2954
   Transitions:        3972
   Branches:           5202
-  Rate:               92313 states/s
-  Peak memory:        37.70 MB
+  Rate:               89515 states/s
+  Peak memory:        29.70 MB
   Final size:         0.02 MB
   Time (exploration): 0.0 s
   Time (merging):     0.0 s
 
 + multi_neg
-  WSO instances:       6
-  Time:                0.3 s
-  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 <= 1, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 <= 28000.956937711, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.224880531, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.2248804661, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 <= 3791.9047618452, 0*x_1 + 1*x_2 + 0*x_3 + 1.0288646037*x_4 <= 31874.2137325315, 0*x_1 + 1*x_2 + 0*x_3 + 4.2463395427*x_4 <= 44074.5722743658, 0*x_1 + 0*x_2 + 1*x_3 + 0.0002135627*x_4 <= 2.0288568383, 0*x_1 + 0*x_2 + 1*x_3 + 0.3897455152*x_4 <= 1479.0969224076, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.2248804028, 1*x_1 + 1*x_2 + 6549.1762445385*x_3 + 1*x_4 <= 39787.507135395}
-  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 <= 1.0002391758, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 <= 28000.9571681215, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 <= 1.225105484, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 <= 3791.9049850151, 0*x_1 + 1*x_2 + 0*x_3 + 1.0288646195*x_4 <= 31874.2139540083, 0*x_1 + 0*x_2 + 1*x_3 + 0.0002135627*x_4 <= 2.0289690358}
+  WSO instances:       5
+  Time:                0.2 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9569377584, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2248804662, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2248805314, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.904761857, 1*x_1 + 0*x_2 + 1.0288646072*x_3 <= 31874.213745763, 1*x_1 + 0*x_2 + 3.0178426967*x_3 <= 39416.2292340178, 0*x_1 + 1*x_2 + 0.0002135627*x_3 <= 2.0288568394, 0*x_1 + 1*x_2 + 0.3099798196*x_3 <= 1176.6330015891}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9571681215, 0*x_1 + 1*x_2 + 0*x_3 <= 1.225105484, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.9049850151, 1*x_1 + 0*x_2 + 1.0288646195*x_3 <= 31874.2139777731, 0*x_1 + 1*x_2 + 0.0002135627*x_3 <= 2.0289847905}
 
   + Pareto Curve Approximation
     Time: 0.2 s	</pre>

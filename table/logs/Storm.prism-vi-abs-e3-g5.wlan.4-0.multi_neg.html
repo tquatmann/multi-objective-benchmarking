@@ -23,23 +23,23 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.972s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">10.033s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">8.337s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
 	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
 
-Date: Sun Nov 23 23:39:41 2025
+Date: Mon Nov 24 20:25:47 2025
 Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.4.prism --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.props multi_neg --constants COL=0 '--multiobjective:precision' 1e-3 abs --timemem
 Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
 
-Time for model input parsing: 0.007s.
+Time for model input parsing: 0.009s.
 
-Time for model construction: 1.259s.
+Time for model construction: 1.634s.
 
 -------------------------------------------------------------- 
 Model type: 	MDP (sparse)
@@ -47,24 +47,74 @@ States: 	345000
 Transitions: 	762252
 Choices: 	440206
 Reward Models:  time, cost, collisions
-State Labels: 	4 labels
+State Labels: 	3 labels
    * deadlock -> 0 item(s)
    * init -> 1 item(s)
-   * (col = 0) -> 345000 item(s)
    * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
 Choice Labels: 	none
 -------------------------------------------------------------- 
 
-Model checking property "multi_neg": multi(Pmax=? [F (col = 0)], R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
-ERROR (SparseMultiObjectivePreprocessor.cpp:451): The Probability for the objective Pmax=? [F (col = 0)] is always one as the rhs of the until formula is true in the initial state. This (trivial) case is currently not implemented.
-WARN  (model-handling.h:1118): Cannot handle property: NotImplementedException: The Probability for the objective Pmax=? [F (col = 0)] is always one as the rhs of the until formula is true in the initial state. This (trivial) case is currently not implemented.
-ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+Model checking property "multi_neg": multi(R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+WARN  (SparsePcaaQuery.cpp:132): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 7.58395e-08.
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 23 Halfspaces:
+   (  0.110358,          0,          1) * x <= 28942.5
+   (8.01447e-15,          1, 4.26023e-05) * x <= 1.36583
+   (4.02957e-14,          1, 0.000210866) * x <= 2.01586
+   (         0,          1, 2.47069e-06) * x <= 1.21097
+   (1.42153e-07,          1, 0.000240684) * x <= 2.16334
+   (         1,          0,          0) * x <= 227297
+   (2.57954e-08,          1, 4.36749e-05) * x <= 1.37583
+   (         0,          1, 0.000210866) * x <= 2.01586
+   (9.93393e-06,          1, 1.70691e-05) * x <= 3.52525
+   ( 0.0240495,          0,          1) * x <= 9325.06
+   (2.23496e-15,          1,          0) * x <= 1.20144
+   (         0,          1, 4.26022e-05) * x <= 1.36583
+   (         0,          1,          0) * x <= 1.20144
+   (0.000165922,          1,          0) * x <= 38.9149
+   (         0,          0,          1) * x <= 3883.5
+   (         0,          1, 2.08534e-13) * x <= 1.20144
+   (  0.680476,          0,          1) * x <= 158529
+   (0.00476735,          0,          1) * x <= 4945.9
+   (2.43751e-06,          1, 0.000143956) * x <= 2.31096
+   (3.72658e-06,          1, 0.000197557) * x <= 2.81079
+   (2.01339e-07,          1, 1.18908e-05) * x <= 1.29308
+   ( 0.0188633,          0,          1) * x <= 8147.24
+   (         0,          1, 1.00664e-05) * x <= 1.24028
 
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0,          0) * x <= 227297
+   (         0,          1,          0) * x <= 1.20144
+   (         0,          0,          1) * x <= 3883.5
+   (0.00562581,          0,   0.994374) * x <= 5119.13
+   ( 0.0252639,          0,   0.974736) * x <= 9503.6
+   (0.00474473,          0,   0.995255) * x <= 4922.44
+   (  0.102871,          0,   0.897129) * x <= 26843.7
+   ( 0.0234847,          0,   0.976515) * x <= 9106.07
+   ( 0.0993898,          0,    0.90061) * x <= 26065.9
+   (  0.404931,          0,   0.595069) * x <= 94335.5
+   (         0,   0.999789, 0.000210821) * x <= 2.01544
+
+11 Pareto optimal points found:
+   (93055.07901, 1.201439406, 2419.604616 )
+   (227109.8643, 1.201247296, 3863.191754 )
+   (227297.0265, 1.201439405, 3858.340762 )
+   (227109.8643, 1.201247296, 3863.191755 )
+   (227297.0265, 1.201439405, 3858.340761 )
+   ( 222850.454, 1.196965439,  3883.49785 )
+   (215061.0362, 1.201247296, 3863.191757 )
+   (227109.8643, 1.201247296, 3863.191755 )
+   (227293.1658,   1.2014351, 3858.783451 )
+   (227293.1658,   1.2014351, 3858.783451 )
+   (227296.9973, 1.201439356, 3858.360614 )
+
+
+Time for model checking: 8.337s.
 
 Performance statistics:
-  * peak memory usage: 176MB
-  * CPU time: 1.909s
-  * wallclock time: 1.939s	</pre>
+  * peak memory usage: 280MB
+  * CPU time: 9.911s
+  * wallclock time: 9.987s	</pre>
 </div>
 </body>
 </html>

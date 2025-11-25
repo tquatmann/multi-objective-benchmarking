@@ -23,24 +23,23 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">2.726s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">149.364s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">146.517s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
 	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
 
-Date: Sun Nov 23 23:35:44 2025
+Date: Mon Nov 24 20:38:22 2025
 Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants 'N=80,pover=0.3,pstay=0.3' '--multiobjective:precision' 1e-3 abs --timemem
 Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/tmp
 
-ERROR (model_descriptions.cpp:41): No JANI property with name 'multi' is known.
 Time for model input parsing: 0.001s.
 
-Time for model construction: 2.691s.
+Time for model construction: 2.787s.
 
 -------------------------------------------------------------- 
 Model type: 	MDP (sparse)
@@ -48,16 +47,47 @@ States: 	512000
 Transitions: 	9100800
 Choices: 	3072000
 Reward Models:  none
-State Labels: 	2 labels
+State Labels: 	4 labels
    * deadlock -> 0 item(s)
    * init -> 1 item(s)
+   * ((x != (80 - 1)) & (y != (80 - 2))) -> 499280 item(s)
+   * (((x = 80) & (y = 80)) & (z = 80)) -> 1 item(s)
 Choice Labels: 	none
 -------------------------------------------------------------- 
 
+Model checking property "multi": multi(Pmax=? [((x != (80 - 1)) & (y != (80 - 2))) U (((x = 80) & (y = 80)) & (z = 80))], Tmin=? [F (((x = 80) & (y = 80)) & (z = 80))]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:45): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1, -0.00818123) * x <= -1.82115
+   (         1, -1.43538e-08) * x <= 0.18367
+   (         1, -0.0227095) * x <= -5.3126
+   (         1, -0.0223981) * x <= -5.23798
+   (         1,          0) * x <= 0.183673
+   (         0,         -1) * x <= -237.9
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 0.183673
+   (         0,         -1) * x <= -237.9
+   (  0.999965, -3.47049e-05) * x <= 0.175163
+   (   0.98707, -0.0129297) * x <= -2.96426
+   (  0.977885, -0.0221151) * x <= -5.17301
+   (  0.991885, -0.00811484) * x <= -1.80637
+
+5 Pareto optimal points found:
+   (       0.09,       237.9 )
+   (0.1836734694, 245.0511315 )
+   (0.1451020408, 240.3365056 )
+   (0.1285714286, 239.5984694 )
+   (0.1836734694, 245.0511315 )
+
+
+Time for model checking: 146.517s.
+
 Performance statistics:
-  * peak memory usage: 351MB
-  * CPU time: 2.664s
-  * wallclock time: 2.694s	</pre>
+  * peak memory usage: 2280MB
+  * CPU time: 147.693s
+  * wallclock time: 149.308s	</pre>
 </div>
 </body>
 </html>

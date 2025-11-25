@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-rel-e3-g5 - human-uav performant_safe_bounded 1-750-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-rel-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-rel-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe_bounded -E Unf=1,B=750,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1.110s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe_bounded -E Unf=1,B=750,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 631, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 70530 states for Unf=1, B=750, COUNTER=0.
+
+Peak memory usage: 215 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=750, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             70530
+  Transitions:        118390
+  Branches:           381706
+  Rate:               213082 states/s
+  Peak memory:        81.12 MB
+  Final size:         0.54 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s
+
++ performant_safe_bounded
+  WSO instances:       2
+  Time:                0.3 s
+  Under Approximation: ∩{1x + -0y <= 0, 0x + -1y <= -0}
+  Over Approximation:  ∩{1x + -0y <= 0, 0x + -1y <= 0}
+
+  + Pareto Curve Approximation
+    Time: 0.3 s	</pre>
+</div>
+</body>
+</html>
