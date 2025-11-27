@@ -23,22 +23,51 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.294s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.561s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.100s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.2-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi
 
 
 
 
 csma.2-2.jani:model: info: csma.2-2 is an MDP model.
-csma.2-2.jani:properties[6].expression.values.properties[0].exp: error: Can only convert eventually probabilistic reachability.	</pre>
+csma.2-2.jani: info: Need 24 bytes per state.
+csma.2-2.jani: info: Explored 1582 states.
+csma.2-2.jani: warning: The specified primal feasibility tolerance is too low for Gurobi, using 1e-8 instead (minimum 1e-9, specified 1E-10).
+csma.2-2.jani: warning: The specified dual feasibility tolerance is too low for Gurobi, using 1e-9 instead (minimum 1e-9, specified 1E-10).
+csma.2-2.jani: error: The linear program is infeasible or unbounded.
+csma.2-2.jani: error: The linear program is infeasible or unbounded.
+csma.2-2.jani: error: The linear program is infeasible or unbounded.
+
+Peak memory usage: 61 MB
+Analysis results for csma.2-2.jani
+
++ State space exploration
+  State size:         24 bytes
+  States:             1582
+  Transitions:        1605
+  Branches:           1959
+  Rate:               49438 states/s
+  Peak memory:        36.86 MB
+  Final size:         0.01 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       3
+  Time:                0.1 s
+  Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.8752167371, -0*x_1 + -1*x_2 + 0*x_3 <= -0.5001538319, -1*x_1 + -0*x_2 + 1.33285E-05*x_3 <= -0.8742837532, -0*x_1 + -0*x_2 + 1*x_3 <= 71.6657574958}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.875, -0*x_1 + -1*x_2 + 0*x_3 <= -0.5, -0*x_1 + -0*x_2 + 1*x_3 <= 71.6659844478}
+
+  + Pareto Curve Approximation
+    Time: 0.1 s	</pre>
 </div>
 </body>
 </html>

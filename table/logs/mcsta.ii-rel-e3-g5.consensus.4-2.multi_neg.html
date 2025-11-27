@@ -23,15 +23,15 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.392s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">3.161s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.500s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.4.jani --props multi_neg -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS
 
 
@@ -42,7 +42,32 @@ consensus.4.jani:variables[6]: info: Expanding variable "pc1" into 4 locations i
 consensus.4.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
 consensus.4.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
 consensus.4.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
-consensus.4.jani:properties[6].expression.values.properties[1].exp: error: Type error.	</pre>
+consensus.4.jani: info: Need 16 bytes per state.
+consensus.4.jani: info: Explored 22720 states for K=2.
+
+Peak memory usage: 132 MB
+Analysis results for consensus.4.jani
+Experiment K=2
+
++ State space exploration
+  State size:         16 bytes
+  States:             22720
+  Transitions:        60608
+  Branches:           75296
+  Rate:               68640 states/s
+  Peak memory:        47.67 MB
+  Final size:         0.18 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                2.5 s
+  Under Approximation: ∩{1x + 0y <= 0.2944317537, 0x + 1y <= 363.9999931213, 1x + 4.218E-07y <= 0.2945468322, 1x + 0.0039681351y <= 1.4444011666, 1x + 0.0035087989y <= 1.304473467}
+  Over Approximation:  ∩{1x + 0y <= 0.2945033904, 0x + 1y <= 364.0897904995, 1x + 0.0032295324y <= 1.2242949865, 1x + 0.0038669712y <= 1.4138428073, 1x + 0.0039681186y <= 1.4446637158, 1x + 0.0035088394y <= 1.3047226989}
+
+  + Pareto Curve Approximation
+    Time: 2.4 s	</pre>
 </div>
 </body>
 </html>

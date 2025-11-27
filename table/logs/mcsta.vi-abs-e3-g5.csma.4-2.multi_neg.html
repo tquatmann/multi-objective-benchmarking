@@ -23,22 +23,47 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.323s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">20.635s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">18.300s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
 
 
 
 
 csma.4-2.jani:model: info: csma.4-2 is an MDP model.
-csma.4-2.jani:properties[6].expression.values.properties[0].exp: error: Can only convert eventually probabilistic reachability.	</pre>
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+csma.4-2.jani: warning: Multi-objective model checking with value iteration provides unsound results
+
+Peak memory usage: 816 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               632704 states/s
+  Peak memory:        231.56 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.8 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       9
+  Time:                18.3 s
+  Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0921243588, -1*x_1 + -0*x_2 + 0.0003233196*x_3 <= -0.0471243277, -0*x_1 + -1*x_2 + 0.010368882*x_3 <= 1.1295867116, -1*x_1 + -0*x_2 + 0.0123380777*x_3 <= 1.6689734272, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2114803502, -0*x_1 + -1*x_2 + 0.0022042236*x_3 <= -0.0396712179, -1*x_1 + -0.002395292*x_2 + 0*x_3 <= -0.0932279713, -1*x_1 + -0.0013016317*x_2 + 0.0002857504*x_3 <= -0.0529529769, -1*x_1 + -4665.9117488233*x_2 + 10.3055708568*x_3 <= -182.2827154107, -1*x_1 + -4.8837732529*x_2 + 0.0123380777*x_3 <= -0.0665058076, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3474138974}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0921243588, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3553276391, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2096578265, -1*x_1 + -0*x_2 + 0.0186795213*x_3 <= 2.5736705377, -1*x_1 + -0*x_2 + 0.1882334582*x_3 <= 26.8494167676, -1*x_1 + -0*x_2 + 0.0334718187*x_3 <= 4.6867715577, -1*x_1 + -0*x_2 + 50.3397715857*x_3 <= 7209.0881525118, -1*x_1 + -0.0112018026*x_2 + 0*x_3 <= -0.0963350482, -1*x_1 + -0*x_2 + 0.0003233196*x_3 <= -0.0474421022}
+
+  + Pareto Curve Approximation
+    Time: 18.0 s	</pre>
 </div>
 </body>
 </html>

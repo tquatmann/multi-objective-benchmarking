@@ -23,15 +23,15 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.080s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.164s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=2,B=10 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
 
 
@@ -39,32 +39,32 @@ Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-bench
 
 mars-rover.jani:model: info: mars-rover is an MDP model.
 mars-rover.jani: info: Need 16 bytes per state.
-mars-rover.jani: info: Explored 161410 states for Unf=2, B=10.
+mars-rover.jani: info: Explored 161818 states for Unf=2, B=10.
 mars-rover.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 200 MB
+Peak memory usage: 224 MB
 Analysis results for mars-rover.jani
 Experiment Unf=2, B=10
 
 + State space exploration
   State size:         16 bytes
-  States:             161410
-  Transitions:        201762
-  Branches:           302642
-  Rate:               314639 states/s
-  Peak memory:        69.15 MB
+  States:             161818
+  Transitions:        203798
+  Branches:           308748
+  Rate:               347996 states/s
+  Peak memory:        76.51 MB
   Final size:         1.23 MB
   Time (exploration): 0.5 s
   Time (merging):     0.0 s
 
 + safe_collection_tradeoff
-  WSO instances:       2
-  Time:                0.2 s
-  Under Approximation: ∩{1x + 0y <= -0, 0x + 1y <= 1}
-  Over Approximation:  ∩{1x + 0y <= 0, 0x + 1y <= 1}
+  WSO instances:       6
+  Time:                0.3 s
+  Under Approximation: ∩{0x + 1y <= 1, 1x + 25705.470958725y <= 25705.470958725, 1x + 0y <= 0.9999328344, 1x + 1.4085555488y <= 2.1777947991, 1x + 0.1873136522y <= 1.1445939463, 1x + 1.0002001925y <= 1.7724593583}
+  Over Approximation:  ∩{1x + 0y <= 0.9999241575, 0x + 1y <= 1, 1x + 1.5431871298y <= 2.3124217157, 1x + 0.3559683662y <= 1.2748310409, 1x + 1.0130660557y <= 1.7852788347, 1x + 0.9998441562y <= 1.7721547153}
 
   + Pareto Curve Approximation
-    Time: 0.1 s	</pre>
+    Time: 0.3 s	</pre>
 </div>
 </body>
 </html>

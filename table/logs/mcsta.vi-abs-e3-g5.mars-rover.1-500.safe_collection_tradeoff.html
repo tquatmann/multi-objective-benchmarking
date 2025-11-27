@@ -23,15 +23,15 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.769s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.635s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.100s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=1,B=500 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
 
 
@@ -42,7 +42,7 @@ mars-rover.jani: info: Need 16 bytes per state.
 mars-rover.jani: info: Explored 18751 states for Unf=1, B=500.
 mars-rover.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 86 MB
+Peak memory usage: 84 MB
 Analysis results for mars-rover.jani
 Experiment Unf=1, B=500
 
@@ -51,15 +51,15 @@ Experiment Unf=1, B=500
   States:             18751
   Transitions:        22501
   Branches:           35001
-  Rate:               124179 states/s
-  Peak memory:        37.32 MB
+  Rate:               132986 states/s
+  Peak memory:        37.34 MB
   Final size:         0.14 MB
-  Time (exploration): 0.2 s
+  Time (exploration): 0.1 s
   Time (merging):     0.0 s
 
 + safe_collection_tradeoff
   WSO instances:       2
-  Time:                0.2 s
+  Time:                0.1 s
   Under Approximation: ∩{1x + 0y <= 0, 0x + 1y <= -0}
   Over Approximation:  ∩{1x + 0y <= 0, 0x + 1y <= 0}
 

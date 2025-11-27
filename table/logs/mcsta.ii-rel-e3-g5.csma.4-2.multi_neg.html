@@ -23,22 +23,46 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.321s</td></tr>
-		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
-		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+		<tr><td>Walltime:</td><td style="tt">39.753s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">37.400s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
 </div>
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
-	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.412-g4d50cf471+4d50cf471706b53cfbd1f8b81f5fd37c4b708004.
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
 Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS
 
 
 
 
 csma.4-2.jani:model: info: csma.4-2 is an MDP model.
-csma.4-2.jani:properties[6].expression.values.properties[0].exp: error: Can only convert eventually probabilistic reachability.	</pre>
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+
+Peak memory usage: 834 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               598666 states/s
+  Peak memory:        231.57 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.9 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       9
+  Time:                37.4 s
+  Under Approximation: ∩{-0*x_1 + -0*x_2 + 1*x_3 <= 143.2121685632, -1*x_1 + -0*x_2 + 0*x_3 <= -0.0925027695, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3555457514, -0*x_1 + -1*x_2 + 95.0786965073*x_3 <= 13616.0706261547, -0*x_1 + -1*x_2 + 8.45688E-05*x_3 <= -0.343464658, -1*x_1 + -0*x_2 + 27801.5406475891*x_3 <= 3981518.786828208, -1*x_1 + -0*x_2 + 4.087E-07*x_3 <= -0.0924474072, -1*x_1 + -0.0273372288*x_2 + 0*x_3 <= -0.1022260219, -1*x_1 + -28.003257633*x_2 + 0*x_3 <= -10.0498614953, -1*x_1 + -0.6599484147*x_2 + 0.0377379477*x_3 <= 5.0629983871, -1*x_1 + -0*x_2 + 0.0377301666*x_3 <= 5.2965458178, -1*x_1 + -0*x_2 + 0.0012175555*x_3 <= 0.0805292754, -1*x_1 + -0.6676793702*x_2 + 0.0012114472*x_3 <= -0.1577512362}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0924505139, -0*x_1 + -1*x_2 + 0*x_3 <= -0.35546875, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2413546391, -1*x_1 + -0.2270522727*x_2 + 0*x_3 <= -0.1731605015, -1*x_1 + -0*x_2 + 0.0059579451*x_3 <= 0.7579282333, -1*x_1 + -0*x_2 + 0.1268703036*x_3 <= 18.0650625861, -1*x_1 + -0*x_2 + 0.0396193315*x_3 <= 5.5681572715, -1*x_1 + -0*x_2 + 0.0001242745*x_3 <= -0.0746895758, -1*x_1 + -0*x_2 + 0.0012410372*x_3 <= 0.0840295862}
+
+  + Pareto Curve Approximation
+    Time: 37.0 s	</pre>
 </div>
 </body>
 </html>
