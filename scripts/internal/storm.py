@@ -44,7 +44,7 @@ def get_configurations():
     cfgs = []
     # vi
     cfgs.append(Configuration(id="topovi-abs-e3-g5", note="(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs"))
-    cfgs.append(Configuration(id="prism-topovi-abs-e3-g5", note="prefer prism models, (unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs"))
+    # cfgs.append(Configuration(id="prism-topovi-abs-e3-g5", note="prefer prism models, (unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs"))
     # ii
     cfgs.append(Configuration(id="topoii-abs-e3-g5", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --sound"))
     cfgs.append(Configuration(id="ii-abs-e3-g5", note="(sound) II with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --sound --minmax:method ii --eqsolver native --native:method ii"))
