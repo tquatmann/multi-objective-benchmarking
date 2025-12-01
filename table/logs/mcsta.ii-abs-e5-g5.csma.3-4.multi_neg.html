@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e5-g5 - csma multi_neg 3-4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e5-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.3-4.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e5-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">96.836s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">96.836s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma.3-4.jani:model: info: csma.3-4 is an MDP model.
+csma.3-4.jani: info: Need 24 bytes per state.
+csma.3-4.jani: info: Explored 2355601 states.
+
+Peak memory usage: 1716 MB
+Analysis results for csma.3-4.jani
+
++ State space exploration
+  State size:         24 bytes
+  States:             2355601
+  Transitions:        2371900
+  Branches:           3888343
+  Rate:               663550 states/s
+  Peak memory:        390.10 MB
+  Final size:         18.25 MB
+  Time (exploration): 3.6 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       10
+  Time:                92.7 s
+  Under Approximation: ∩{-0*x_1 + -0*x_2 + 1*x_3 <= 117.81825583, -0*x_1 + -1*x_2 + 0*x_3 <= -0.9895232075, -1*x_1 + -1.6941227905*x_2 + 0*x_3 <= -2.5811879437, -1*x_1 + -0*x_2 + 0*x_3 <= -0.9046925666, -0*x_1 + -1*x_2 + 7627.1468528955*x_3 <= 898616.1495665794, -0*x_1 + -1*x_2 + 0.0611883569*x_3 <= 6.2195063532, -1*x_1 + -0*x_2 + 4291.1462458016*x_3 <= 505574.4614981444, -1*x_1 + -0*x_2 + 4.06E-08*x_3 <= -0.9046879109, -1*x_1 + -1.5725188208*x_2 + 2.1186E-06*x_3 <= -2.4606063402, -1*x_1 + -5.5429669245*x_2 + 0*x_3 <= -6.3897731176, -0*x_1 + -1*x_2 + 0.005691615*x_3 <= -0.3189632926, -0*x_1 + -1*x_2 + 0.0110041488*x_3 <= 0.306938993, -1*x_1 + -11.7522112853*x_2 + 0*x_3 <= -12.5339935997, -1*x_1 + -6.8201833146*x_2 + 0*x_3 <= -7.6536164274, -1*x_1 + -5.7511467421*x_2 + 1.5545E-06*x_3 <= -6.5955922255}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.904691431, -0*x_1 + -1*x_2 + 0*x_3 <= -0.9895225981, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8182580371, -1*x_1 + -290.5419778271*x_2 + 0*x_3 <= -288.4027592977, -0*x_1 + -1*x_2 + 2.44679E-05*x_3 <= -0.9866398893, -0*x_1 + -1*x_2 + 0.0271219027*x_3 <= 2.2058908301, -1*x_1 + -1.5210552754*x_2 + 0*x_3 <= -2.4099188222, -0*x_1 + -1*x_2 + 0.062698561*x_3 <= 6.3974376404, -1*x_1 + -7.2764276358*x_2 + 0*x_3 <= -8.1050735336, -0*x_1 + -1*x_2 + 0.0088939931*x_3 <= 0.0583301366}
+
+  + Pareto Curve Approximation
+    Time: 92.1 s	</pre>
+</div>
+</body>
+</html>

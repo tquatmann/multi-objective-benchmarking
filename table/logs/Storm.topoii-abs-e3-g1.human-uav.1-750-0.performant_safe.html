@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g1 - human-uav performant_safe 1-750-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g1</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g1)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe --constants Unf=1,B=750,COUNTER=0 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.1 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.1
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.470s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.470s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:01:20 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe --constants 'Unf=1,B=750,COUNTER=0' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.1 --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 0.810s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	160520
+Transitions: 	759202
+Choices: 	257796
+Reward Models:  ROZ
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * timeExceeded -> 0 item(s)
+   * deadlock -> 8854 item(s)
+   * mission -> 82444 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe": multi(Pmax=? [F ((!"timeExceeded") & "mission")], R{"ROZ"}min=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 60713 states.
+Final preprocessed model has 97631 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 12 refinement steps.
+Solving multi-objective query took 1.618s seconds (consisting of 0.170s seconds for preprocessing and 1.447s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 11 Halfspaces:
+   (  0.814828,         -1) * x <= 0.236408
+   (         1,  -0.720734) * x <= 0.569119
+   (         1,  -0.479253) * x <= 0.705345
+   (  0.704434,         -1) * x <= 0.131665
+   (         1,  -0.047277) * x <= 0.955862
+   (  0.980174,         -1) * x <= 0.394583
+   (         1, -0.0641857) * x <= 0.941306
+   (         0,         -1) * x <= 0
+   (  0.663082,         -1) * x <= 0.123487
+   (         1, -0.0828668) * x <= 0.92986
+   (         1,          0) * x <= 0.999487
+
+Overapproximation of achievable values: Polytope with 12 Halfspaces:
+   (         1,          0) * x <= 0.999487
+   (         0,         -1) * x <= 0
+   (  0.962572,  -0.271026) * x <= 0.786726
+   (  0.501627,  -0.865084) * x <= 0.0934192
+   (  0.582406,  -0.812898) * x <= 0.116303
+   (  0.575551,  -0.817766) * x <= 0.10757
+   (  0.727737,  -0.685856) * x <= 0.324438
+   (  0.676648,  -0.736307) * x <= 0.247427
+   (  0.831837,   -0.55502) * x <= 0.498526
+   (  0.999971, -0.00760581) * x <= 0.99244
+   (  0.997979, -0.0635475) * x <= 0.939841
+   (  0.997755, -0.0669749) * x <= 0.937395
+
+10 Pareto optimal points found:
+   (0.1862323791,           0 )
+   (0.9806352908, 0.6127387168 )
+   (0.9994871483, 0.922761322 )
+   (0.9965592402, 0.8608304371 )
+   (0.1977671291, 0.007648480072 )
+   (0.9767956635, 0.5664038019 )
+   (0.9699368161, 0.5561240907 )
+   (0.9757039236, 0.5641258002 )
+   (0.9566290111, 0.5430801214 )
+   (0.948808936, 0.5367081019 )
+
+
+Time for model checking: 1.618s.
+
+Performance statistics:
+  * peak memory usage: 125MB
+  * CPU time: 2.419s
+  * wallclock time: 2.438s	</pre>
+</div>
+</body>
+</html>

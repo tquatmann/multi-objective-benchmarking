@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g5 - consensus multi_neg 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/consensus/consensus.4.jani">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=2 --multiobjective:precision 1e-3 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.393s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.393s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:00:07 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=2 '--multiobjective:precision' 1e-3 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.088s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	22656
+Transitions: 	75232
+Choices: 	60544
+Reward Models:  steps
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 64 item(s)
+   * agree -> 4850 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmax=? [F ("finished" & (!"agree"))], R{"steps"}max=? [F "finished"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 22593 states.
+Final preprocessed model has 60481 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 2.269s seconds (consisting of 0.033s seconds for preprocessing and 2.236s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1, 0.00396813) * x <= 1.44043
+   (         1, 0.00350835) * x <= 1.30083
+   (         0,          1) * x <= 363
+   (         1, 6.97465e-09) * x <= 0.294419
+   (         1,          0) * x <= 0.294417
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 0.294572
+   (         0,          1) * x <= 363
+   (  0.999995, 0.00322936) * x <= 1.22095
+   (  0.999993, 0.00386683) * x <= 1.40982
+   (  0.999992, 0.00396809) * x <= 1.44059
+   (  0.999994, 0.00350831) * x <= 1.30097
+
+4 Pareto optimal points found:
+   (0.2944172848, 271.8315775 )
+   ( 0.29441718, 286.8615356 )
+   (          0,         363 )
+   (0.2355867642, 303.6302177 )
+
+
+Time for model checking: 2.270s.
+
+Performance statistics:
+  * peak memory usage: 78MB
+  * CPU time: 2.326s
+  * wallclock time: 2.361s	</pre>
+</div>
+</body>
+</html>

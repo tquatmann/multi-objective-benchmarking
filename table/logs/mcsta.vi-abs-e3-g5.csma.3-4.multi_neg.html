@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#csma">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.3-4.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 4</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">15.608s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">11.600s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">19.982s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">19.982s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -42,7 +42,7 @@ csma.3-4.jani: info: Need 24 bytes per state.
 csma.3-4.jani: info: Explored 2355601 states.
 csma.3-4.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 1399 MB
+Peak memory usage: 1402 MB
 Analysis results for csma.3-4.jani
 
 + State space exploration
@@ -50,20 +50,20 @@ Analysis results for csma.3-4.jani
   States:             2355601
   Transitions:        2371900
   Branches:           3888343
-  Rate:               673029 states/s
-  Peak memory:        390.09 MB
+  Rate:               591562 states/s
+  Peak memory:        390.12 MB
   Final size:         18.25 MB
-  Time (exploration): 3.5 s
+  Time (exploration): 4.0 s
   Time (merging):     0.1 s
 
 + multi_neg
   WSO instances:       3
-  Time:                11.6 s
+  Time:                15.4 s
   Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.9040840474, -0*x_1 + -1*x_2 + 0*x_3 <= -0.989195074, -1*x_1 + -0*x_2 + 3.80254E-05*x_3 <= -0.8996571039, -1*x_1 + -0.29260101*x_2 + 0*x_3 <= -1.1935808995, -1*x_1 + -659.310329155*x_2 + 0*x_3 <= -653.1002455736, -0*x_1 + -1*x_2 + 1.03881E-05*x_3 <= -0.9879857038, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8178314039}
   Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.9040840474, -0*x_1 + -1*x_2 + 0*x_3 <= -0.989195074, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8178314039}
 
   + Pareto Curve Approximation
-    Time: 10.9 s	</pre>
+    Time: 14.6 s	</pre>
 </div>
 </body>
 </html>

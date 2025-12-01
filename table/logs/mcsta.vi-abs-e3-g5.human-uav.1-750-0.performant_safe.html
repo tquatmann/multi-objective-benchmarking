@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.764s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.900s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.611s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.611s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -43,7 +43,7 @@ human-uav.jani: warning: The probabilities for a transition labelled "go" with 3
 human-uav.jani: info: Explored 70737 states for Unf=1, B=750, COUNTER=0.
 human-uav.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 244 MB
+Peak memory usage: 245 MB
 Analysis results for human-uav.jani
 Experiment Unf=1, B=750, COUNTER=0
 
@@ -52,7 +52,7 @@ Experiment Unf=1, B=750, COUNTER=0
   States:             70737
   Transitions:        118804
   Branches:           382327
-  Rate:               220364 states/s
+  Rate:               218324 states/s
   Peak memory:        80.12 MB
   Final size:         0.54 MB
   Time (exploration): 0.3 s
@@ -60,12 +60,12 @@ Experiment Unf=1, B=750, COUNTER=0
 
 + performant_safe
   WSO instances:       11
-  Time:                0.9 s
+  Time:                0.8 s
   Under Approximation: ∩{1x + -0y <= 0.9994343342, 0x + -1y <= 0, 1x + -0.0474250013y <= 0.9556864585, 1x + -0.0660321735y <= 0.9396976538, 1x + -1.008312585y <= 0.4093062757, 1x + -1.521603685y <= 0.1861497632, 1x + -1.4209900351y <= 0.1869169811, 1x + -1.2062270095y <= 0.3015054554, 1x + -1.4128247454y <= 0.190656978, 1x + -0.6233910397y <= 0.6239689518, 1x + -0.8075831281y <= 0.5209289861}
   Over Approximation:  ∩{1x + -0y <= 0.9994343342, 0x + -1y <= 0, 1x + -1.0834394555y <= 0.3682846792, 1x + -1.759768982y <= 0.1861926864, 1x + -1.4180116266y <= 0.1881126606, 1x + -0.1083071708y <= 0.9155478267, 1x + -0.0627297089y <= 0.9424567579, 1x + -0.8529604849y <= 0.4955993723, 1x + -1.4226650516y <= 0.1868505307, 1x + -1.393412824y <= 0.2010561756, 1x + -0.6824466201y <= 0.5906938655}
 
   + Pareto Curve Approximation
-    Time: 0.9 s	</pre>
+    Time: 0.8 s	</pre>
 </div>
 </body>
 </html>

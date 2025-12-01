@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#eajs">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/eajs/eajs.4.jani">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">energy_capacity</span> = 200, <span class="tt">B</span> = 9</td></tr>
 		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">4.448s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">2.800s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">4.084s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">4.084s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -47,7 +47,7 @@ eajs.4.jani: info: Need 24 bytes per state.
 eajs.4.jani: warning: The probabilities for a transition labelled "tick" with 4 branches in state (Battery.location = l, Process_1.location = Process_1_loc_1_2, Resources.location = Resources_user_1_3, Process_3.location = Process_3_loc_3_0, Process_4.location = Process_4_loc_4_2, Process_2.location = Process_2_loc_2_0, battery_load = 170, loc_1 = 2, t_1 = 0, boost_1 = 0, user_1 = 3, t_3 = 0, loc_3 = 0, loc_4 = 2, t_4 = 4, t_2 = 0, loc_2 = 0, failure_1 = False, reachability_reward_given_0 = False, reachability_reward_given_1 = False) do not sum up to the expected value of 1 (actual sum: 0.99999999999999989). Results will likely be affected by floating-point errors.
 eajs.4.jani: info: Explored 872410 states for energy_capacity=200, B=9.
 
-Peak memory usage: 536 MB
+Peak memory usage: 535 MB
 Analysis results for eajs.4.jani
 Experiment energy_capacity=200, B=9
 
@@ -56,20 +56,20 @@ Experiment energy_capacity=200, B=9
   States:             872410
   Transitions:        1113674
   Branches:           1806871
-  Rate:               747566 states/s
-  Peak memory:        190.25 MB
+  Rate:               757958 states/s
+  Peak memory:        190.29 MB
   Final size:         6.76 MB
   Time (exploration): 1.2 s
   Time (merging):     0.0 s
 
 + Multi
   WSO instances:       2
-  Time:                2.8 s
+  Time:                2.5 s
   Under Approximation: ∩{1x + 0y <= 8.0176355974, 0x + 1y <= 1}
   Over Approximation:  ∩{1x + 0y <= 8.0176355974, 0x + 1y <= 1.0000015388}
 
   + Pareto Curve Approximation
-    Time: 2.5 s	</pre>
+    Time: 2.3 s	</pre>
 </div>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g5 - random-grid multi 80-0.3-0.3</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/random-grid/random-grid.jani">random-grid</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 80, <span class="tt">pover</span> = 0.3, <span class="tt">pstay</span> = 0.3</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants N=80,pover=0.3,pstay=0.3 --multiobjective:precision 1e-3 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1188.707s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1188.707s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:56:20 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants 'N=80,pover=0.3,pstay=0.3' '--multiobjective:precision' 1e-3 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 2.799s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	512000
+Transitions: 	9100800
+Choices: 	3072000
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((x != (80 - 1)) & (y != (80 - 2))) -> 499280 item(s)
+   * (((x = 80) & (y = 80)) & (z = 80)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Pmax=? [((x != (80 - 1)) & (y != (80 - 2))) U (((x = 80) & (y = 80)) & (z = 80))], Tmin=? [F (((x = 80) & (y = 80)) & (z = 80))]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Weight Vector Checker Statistics:
+Final preprocessed model has 1011279 states.
+Final preprocessed model has 6067669 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+Solving multi-objective query took 1185.862s seconds (consisting of 6.264s seconds for preprocessing and 1179.598s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1, -0.0227064) * x <= -5.31186
+   (         1, -0.0223935) * x <= -5.23688
+   (         0,         -1) * x <= -237.9
+   (         1,          0) * x <= 0.18367
+   (         1, -0.00817826) * x <= -1.82044
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0) * x <= 0.18376
+   (         0,         -1) * x <= -237.9
+   (         1, -3.47005e-05) * x <= 0.175343
+   (  0.999925, -0.0122164) * x <= -2.79086
+   (  0.999973, -0.00737411) * x <= -1.62328
+   (  0.999744, -0.0226059) * x <= -5.28762
+   (  0.999967, -0.00817682) * x <= -1.81996
+
+4 Pareto optimal points found:
+   (0.1836696784, 245.0528861 )
+   (0.1451004191, 240.3368165 )
+   (       0.09,       237.9 )
+   (0.128569963, 239.5986357 )
+
+
+Time for model checking: 1185.863s.
+
+Performance statistics:
+  * peak memory usage: 2410MB
+  * CPU time: 1183.943s
+  * wallclock time: 1188.666s	</pre>
+</div>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#wlan">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.3.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 3, <span class="tt">COL</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">12.107s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">11.300s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">14.705s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">14.705s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -53,7 +53,7 @@ Experiment COL=0
   States:             96302
   Transitions:        123730
   Branches:           204576
-  Rate:               248842 states/s
+  Rate:               234311 states/s
   Peak memory:        85.68 MB
   Final size:         0.77 MB
   Time (exploration): 0.4 s
@@ -61,12 +61,12 @@ Experiment COL=0
 
 + multi_neg
   WSO instances:       14
-  Time:                11.3 s
+  Time:                13.7 s
   Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.1717061781, 1*x_1 + 0.9999728821*x_2 + 20013827.762801223*x_3 <= 77722361079.28287, 1*x_1 + 0*x_2 + 34422.6531019574*x_3 <= 133900537.55253135, 1*x_1 + 0*x_2 + 209.7433339347*x_3 <= 1037372.461375175, 1*x_1 + 0*x_2 + 41.5735315226*x_3 <= 387713.3068351893, 1*x_1 + 279.0444581059*x_2 + 0*x_3 <= 227632.3963999666, 1*x_1 + 137166.6904682344*x_2 + 47.4155402155*x_3 <= 575037.0973045538, 1*x_1 + 0*x_2 + 1.4727967444*x_3 <= 232979.6063829571, 1*x_1 + 0*x_2 + 9.0543791955*x_3 <= 262231.4882662182, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2014391948, 1*x_1 + 1421688.4105232363*x_2 + 509.6333268499*x_3 <= 3903518.676096676, 1*x_1 + 120035721.51136023*x_2 + 20014325.81585897*x_3 <= 77867959901.91122, 1*x_1 + 111746833.29959273*x_2 + 2892081.7952462*x_3 <= 11365140926.177435, 0*x_1 + 1*x_2 + 2.0639239802*x_3 <= 8016.2845568211, 1*x_1 + 116301396.01991463*x_2 + 7407.0363263575*x_3 <= 168534786.46673837, 0*x_1 + 1*x_2 + 3.98134E-05*x_3 <= 1.3550503338, 0*x_1 + 1*x_2 + 0.0002107621*x_3 <= 2.0154435868, 1*x_1 + 117540533.80030681*x_2 + 24345.8332346302*x_3 <= 235459662.9458528, 0*x_1 + 1*x_2 + 0.0002107758*x_3 <= 2.0155119021}
   Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.1717060097, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2013989558, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4219570303, 1*x_1 + 0*x_2 + 685.2341012904*x_3 <= 2883903.7484400184, 1*x_1 + 0*x_2 + 176.7274953061*x_3 <= 909828.5056475943, 1*x_1 + 0*x_2 + 38.5676567629*x_3 <= 376114.5225781078, 1*x_1 + 0*x_2 + 209.7434074414*x_3 <= 1037372.7469386756, 1*x_1 + 0*x_2 + 8.7035068624*x_3 <= 260877.7239057118, 1*x_1 + 0*x_2 + 41.5735738101*x_3 <= 387713.4702016213, 1*x_1 + 0*x_2 + 9.054414174*x_3 <= 262231.6232421743, 1*x_1 + 0*x_2 + 1.4736126841*x_3 <= 232982.7545087679, 1*x_1 + 162155440.04483056*x_2 + 34414.7022674312*x_3 <= 327963225.65940225, 0*x_1 + 1*x_2 + 0.0262092512*x_3 <= 102.9785432929, 0*x_1 + 1*x_2 + 0.0002052285*x_3 <= 1.9940632845}
 
   + Pareto Curve Approximation
-    Time: 11.1 s	</pre>
+    Time: 13.6 s	</pre>
 </div>
 </body>
 </html>

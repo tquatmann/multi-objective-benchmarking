@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topovi-abs-e3-g5 - ftwc Multi 8-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topovi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/ftwc/ftwc.jani">ftwc</a> <span class="tt">v.5</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 8, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topovi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants N=8,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --timemem --statistics</pre>
+	(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">150.207s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">150.207s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:16:49 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants 'N=8,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.046s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	11745
+Transitions: 	31745
+Choices: 	14909
+Markovian St.: 	4996
+Max. Rate: 	2.0307
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 2487 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	11745
+Transitions: 	31745
+Choices: 	14909
+Markovian St.: 	4996
+Max. Rate: 	2.0307
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 2487 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmax=? [F (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))], R{"((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)"}max=? [LRA[time]], Pmax=? [true U<=5 (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))]) ...
+Final preprocessed model has 8686 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 20483 states.
+Final preprocessed model has 25907 actions.
+Found 1 end components that are relevant for LRA-analysis.
+4895 states lie on such an end component.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000540821 exceeds specified value 0.000288675 by approx. 0.000252146. Weight vector isvector (3) [ 0, 1, 0 ].
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 0.00054006.
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 150.119s seconds (consisting of 0.014s seconds for preprocessing and 150.105s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         0,          0,          1) * x <= 1.07354e-06
+   (         0,          1,          0) * x <= 0.000542313
+   (         1,          0,          0) * x <= 1.99568e+06
+   (3.84576e-09,          0,          1) * x <= 0.0076749
+   (2.26084e-09,          1,          0) * x <= 0.00505346
+   (         0,          1,   0.705331) * x <= 0.000542313
+   (2.26084e-09,          1,   0.584098) * x <= 0.00505346
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0,          0) * x <= 1.99568e+06
+   (         0,          1,          0) * x <= 0.000541551
+   (         0,          0,          1) * x <= 0.000288304
+
+3 Pareto optimal points found:
+   (1995676.484, 0.0005415513748,           0 )
+   ( 1995339.77, 0.0005423126322,           0 )
+   (1995397.336, 0.0005415554342, 1.073535559e-06 )
+
+
+Time for model checking: 150.119s.
+
+Performance statistics:
+  * peak memory usage: 74MB
+  * CPU time: 149.676s
+  * wallclock time: 150.168s	</pre>
+</div>
+</body>
+</html>

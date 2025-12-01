@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g99 - firewire_abst-pta multi 360-500</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g99</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/pta/firewire_abst-pta/firewire_abst-pta.jani">firewire_abst-pta</a> <span class="tt">v.2</span> (PTA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">delay</span> = 360, <span class="tt">T</span> = 500</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g99)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire_abst-pta/firewire_abst-pta.jani --props multi -E delay=360,T=500 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.99 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.99
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.852s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.852s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/pta/firewire_abst-pta/firewire_abst-pta.jani --props multi -E delay=360,T=500 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.99 --lp-solver HiGHS
+
+
+
+
+firewire_abst-pta.jani:model: info: firewire_abst-pta is a PTA model.
+firewire_abst-pta.jani:variables[2]: info: Expanding variable "s" into 10 locations in automaton "abstract_firewire".
+firewire_abst-pta.jani: info: Need 8 bytes per state.
+firewire_abst-pta.jani: info: Explored 7671 states for delay=360, T=500.
+
+Peak memory usage: 68 MB
+Analysis results for firewire_abst-pta.jani
+Experiment delay=360, T=500
+
++ State space exploration
+  State size:         8 bytes
+  States:             7671
+  Transitions:        11776
+  Branches:           13942
+  Rate:               136982 states/s
+  Peak memory:        23.27 MB
+  Final size:         0.06 MB
+  Time (exploration): 0.1 s
+  Time (merging):     0.0 s
+
++ multi
+  WSO instances:       2
+  Time:                0.4 s
+  Under Approximation: ∩{-1x + -0y <= -1, -0x + -1y <= -1}
+  Over Approximation:  ∩{-1x + -0y <= -0.9995117188, -0x + -1y <= -0.9995117188}
+
+  + Pareto Curve Approximation
+    Time: 0.4 s	</pre>
+</div>
+</body>
+</html>

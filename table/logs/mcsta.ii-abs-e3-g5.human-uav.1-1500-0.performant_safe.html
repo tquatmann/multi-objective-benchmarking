@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1500, <span class="tt">COUNTER</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">5.158s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">4.100s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">5.403s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">5.403s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -42,7 +42,7 @@ human-uav.jani: info: Need 24 bytes per state.
 human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 1381, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
 human-uav.jani: info: Explored 215187 states for Unf=1, B=1500, COUNTER=0.
 
-Peak memory usage: 514 MB
+Peak memory usage: 516 MB
 Analysis results for human-uav.jani
 Experiment Unf=1, B=1500, COUNTER=0
 
@@ -51,7 +51,7 @@ Experiment Unf=1, B=1500, COUNTER=0
   States:             215187
   Transitions:        395029
   Branches:           1300927
-  Rate:               371653 states/s
+  Rate:               384950 states/s
   Peak memory:        129.06 MB
   Final size:         1.64 MB
   Time (exploration): 0.6 s
@@ -59,12 +59,12 @@ Experiment Unf=1, B=1500, COUNTER=0
 
 + performant_safe
   WSO instances:       13
-  Time:                4.1 s
+  Time:                4.3 s
   Under Approximation: ∩{1x + -0y <= 0.9999999961, 1x + -0.0002228123y <= 0.9997943232, 0x + -1y <= 0, 1x + -1.0454720013y <= 0.4764339275, 1x + -0.9999991688y <= 0.4813815515, 1x + -0.8011068765y <= 0.5704786991, 1x + -0.7013146009y <= 0.6181068478, 1x + -1.4176783895y <= 0.4599203996, 1x + -1.2826337878y <= 0.4621270977, 1x + -0.5630673848y <= 0.6882344549, 1x + -0.6131338102y <= 0.6620144579, 1x + -1.1208681852y <= 0.4701009129, 1x + -1.196528867y <= 0.4655120765}
   Over Approximation:  ∩{1x + -0y <= 1.0000566448, 0x + -1y <= 0, 1x + -1.0833350071y <= 0.4732540428, 1x + -0.5193186094y <= 0.7125261579, 1x + -6.7176572547y <= 0.4599904305, 1x + -0.9278437276y <= 0.5137134349, 1x + -1.0030985034y <= 0.4810520064, 1x + -0.6684106361y <= 0.6344994327, 1x + -1.2420698418y <= 0.4637224662, 1x + -0.7598514461y <= 0.5901800332, 1x + -1.3387663608y <= 0.4612101947, 1x + -0.5862714732y <= 0.6760865812, 1x + -1.1569982541y <= 0.4679101576}
 
   + Pareto Curve Approximation
-    Time: 4.0 s	</pre>
+    Time: 4.3 s	</pre>
 </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#brp-pta">brp-pta</a> <span class="tt">v.3</span> (PTA)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/pta/brp-pta/brp-pta.jani">brp-pta</a> <span class="tt">v.3</span> (PTA)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 16, <span class="tt">MAX</span> = 2, <span class="tt">TD</span> = 1, <span class="tt">TIME_BOUND</span> = 64</td></tr>
 		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.714s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.747s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.747s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -41,7 +41,7 @@ brp-pta.jani:model: info: brp-pta is a PTA model.
 brp-pta.jani: info: Need 40 bytes per state.
 brp-pta.jani: info: Explored 3959 states for N=16, MAX=2, TD=1, TIME_BOUND=64.
 
-Peak memory usage: 65 MB
+Peak memory usage: 67 MB
 Analysis results for brp-pta.jani
 Experiment N=16, MAX=2, TD=1, TIME_BOUND=64
 
@@ -50,8 +50,8 @@ Experiment N=16, MAX=2, TD=1, TIME_BOUND=64
   States:             3959
   Transitions:        4244
   Branches:           4593
-  Rate:               77627 states/s
-  Peak memory:        53.46 MB
+  Rate:               67102 states/s
+  Peak memory:        53.45 MB
   Final size:         0.03 MB
   Time (exploration): 0.1 s
   Time (merging):     0.0 s

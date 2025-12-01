@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topovi-abs-e3-g5 - firewire multi_neg true-3-400</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topovi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/firewire/firewire.true.jani">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = True, <span class="tt">delay</span> = 3, <span class="tt">deadline</span> = 400</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topovi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants delay=3,deadline=400 --multiobjective:precision 1e-3 abs --timemem --statistics</pre>
+	(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">7.893s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">7.893s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:41:56 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants 'delay=3,deadline=400' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 1.909s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	430537
+Transitions: 	586224
+Choices: 	577318
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 652 item(s)
+   * ((((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) & (t <= 400)) -> 650 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [F ((((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) & (t <= 400))], R{"time_sending"}max=? [F "done"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 429884 states.
+Final preprocessed model has 575361 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 9 refinement steps.
+Solving multi-objective query took 5.930s seconds (consisting of 0.548s seconds for preprocessing and 5.382s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         0,          0,          1) * x <= 18
+   (1.99189e-05,          0,          1) * x <= 18.0058
+   (         1,          0,   0.249938) * x <= 302.749
+   (         1,          0,          0) * x <= 299
+   (         0,         -1,          0) * x <= -0.781274
+   (         1,          0,    0.24999) * x <= 302.75
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,          0,          0) * x <= 299
+   (         0,         -1,          0) * x <= -0.781033
+   (         0,          0,          1) * x <= 18.0001
+   (         0,         -1, 0.000333167) * x <= -0.775091
+   ( 0.0163164,  -0.999619,  0.0222509) * x <= 4.48587
+   (7.06129e-05,          0,          1) * x <= 18.021
+   (  0.997863,          0,  0.0653411) * x <= 299.341
+   (  0.968744,          0,   0.248063) * x <= 293.393
+   (  0.970147,          0,   0.242518) * x <= 293.712
+
+4 Pareto optimal points found:
+   (298.9999828, 0.7812740563, 14.99966432 )
+   (298.2499822, 0.7812740563, 17.99990311 )
+   ( 298.862288, 0.7812740563, 15.55058102 )
+   (294.5614308, 0.7812740563, 17.99997658 )
+
+
+Time for model checking: 5.931s.
+
+Performance statistics:
+  * peak memory usage: 329MB
+  * CPU time: 7.792s
+  * wallclock time: 7.847s	</pre>
+</div>
+</body>
+</html>

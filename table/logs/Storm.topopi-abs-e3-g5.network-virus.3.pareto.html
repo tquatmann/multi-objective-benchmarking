@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-e3-g5 - network-virus pareto 3</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/network-virus/network-virus.3.jani">network-virus</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="color: red;">&gt 2700s (Timeout)</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:31:16 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 1.688s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19682
+Transitions: 	282106
+Choices: 	170578
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"withvirus"}max=? [LRA], R{"clean"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 19682 states.
+Final preprocessed model has 170578 actions.
+Found 2 end components that are relevant for LRA-analysis.
+19172 states lie on such an end component.
+
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:111): Scheduler generation not supported for the chosen LRA method. Try value-iteration.
+
+
+----------
+Computation aborted after 2700.1577389240265 seconds since the total time limit of 2700 seconds was exceeded.	</pre>
+</div>
+</body>
+</html>

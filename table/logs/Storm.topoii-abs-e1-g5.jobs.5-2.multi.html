@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e1-g5 - jobs multi 5-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e1-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/jobs/jobs.5-2.jani">jobs</a> <span class="tt">v.1</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e1-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.5-2.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-1 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.252s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.252s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:59:08 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/jobs/jobs.5-2.ma --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/jobs/jobs.csl multi '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.016s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	117
+Transitions: 	251
+Choices: 	171
+Markovian St.: 	86
+Max. Rate: 	6
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 20 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	117
+Transitions: 	251
+Choices: 	171
+Markovian St.: 	86
+Max. Rate: 	6
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 20 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Tmin=? [F "all_jobs_finished"], R{"avg_waiting_time"}max=? [F "all_jobs_finished"], Pmax=? [true U<=(5 / (4 * 2)) "half_of_jobs_finished"]) ...
+Final preprocessed model has 86 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 117 states.
+Final preprocessed model has 171 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 0.185s seconds (consisting of 0.000s seconds for preprocessing and 0.185s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         0,          1,   0.534206) * x <= 1.11383
+   (        -1,   0.280418,   0.939017) * x <= -0.956485
+   (         0,          0,          1) * x <= 0.607146
+   (         0,          1,          0) * x <= 0.9
+   (         0,          1,   0.351826) * x <= 1.02884
+   (        -1,          0,   0.736522) * x <= -1.29338
+   (        -1,          0,   0.366768) * x <= -1.46568
+   (         0,   0.664151,          1) * x <= 1.11387
+   (        -1,          0,          0) * x <= -1.6
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (        -1,          0,          0) * x <= -1.6
+   (         0,          1,          0) * x <= 0.9
+   (         0,          0,          1) * x <= 0.635609
+   ( -0.974235,          0,   0.225537) * x <= -1.4479
+   (  -0.86376,          0,   0.503904) * x <= -1.15025
+   (         0,   0.810718,   0.585436) * x <= 1.01992
+
+4 Pareto optimal points found:
+   (        1.6,         0.9, 0.3662146914 )
+   (1.740555532, 0.762968192, 0.6071460299 )
+   (1.726445788, 0.8040768112, 0.5798437171 )
+   (1.636597724, 0.8648933077, 0.4659990511 )
+
+
+Time for model checking: 0.185s.
+
+Performance statistics:
+  * peak memory usage: 62MB
+  * CPU time: 0.214s
+  * wallclock time: 0.207s	</pre>
+</div>
+</body>
+</html>

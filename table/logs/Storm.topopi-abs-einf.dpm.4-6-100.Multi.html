@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-einf - dpm Multi 4-6-100</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-einf</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/dpm/dpm.jani">dpm</a> <span class="tt">v.3</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">C</span> = 6, <span class="tt">TIME_BOUND</span> = 100</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-einf)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=4,C=6,TIME_BOUND=100 --multiobjective:precision 0 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=0, absolute precision
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">16.449s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:16:43 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=4,C=6,TIME_BOUND=100' '--multiobjective:precision' 0 abs --exact --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+WARN  (storm-cli.cpp:25): The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.
+Time for model construction: 16.330s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	131369
+Transitions: 	251860
+Choices: 	155820
+Markovian St.: 	37730
+Max. Rate: 	41/10
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * (((((((((((4 < 1) | (items1 = 6)) & ((4 < 2) | (items2 = 6))) & ((4 < 3) | (items3 = 6))) & ((4 < 4) | (items4 = 6))) & ((4 < 5) | (items5 = 6))) & ((4 < 6) | (items6 = 6))) & ((4 < 7) | (items7 = 6))) & ((4 < 8) | (items8 = 6))) & ((4 < 9) | (items9 = 6))) & ((4 < 10) | (items10 = 6))) -> 65 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	131369
+Transitions: 	251860
+Choices: 	155820
+Markovian St.: 	37730
+Max. Rate: 	41/10
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * (((((((((((4 < 1) | (items1 = 6)) & ((4 < 2) | (items2 = 6))) & ((4 < 3) | (items3 = 6))) & ((4 < 4) | (items4 = 6))) & ((4 < 5) | (items5 = 6))) & ((4 < 6) | (items6 = 6))) & ((4 < 7) | (items7 = 6))) & ((4 < 8) | (items8 = 6))) & ((4 < 9) | (items9 = 6))) & ((4 < 10) | (items10 = 6))) -> 65 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [F (((((((((((4 < 1) | (items1 = 6)) & ((4 < 2) | (items2 = 6))) & ((4 < 3) | (items3 = 6))) & ((4 < 4) | (items4 = 6))) & ((4 < 5) | (items5 = 6))) & ((4 < 6) | (items6 = 6))) & ((4 < 7) | (items7 = 6))) & ((4 < 8) | (items8 = 6))) & ((4 < 9) | (items9 = 6))) & ((4 < 10) | (items10 = 6)))], Tmin=? [F (((((((((((4 < 1) | (items1 = 6)) & ((4 < 2) | (items2 = 6))) & ((4 < 3) | (items3 = 6))) & ((4 < 4) | (items4 = 6))) & ((4 < 5) | (items5 = 6))) & ((4 < 6) | (items6 = 6))) & ((4 < 7) | (items7 = 6))) & ((4 < 8) | (items8 = 6))) & ((4 < 9) | (items9 = 6))) & ((4 < 10) | (items10 = 6)))], Pmax=? [true U<=100 (((((((((((4 < 1) | (items1 = 6)) & ((4 < 2) | (items2 = 6))) & ((4 < 3) | (items3 = 6))) & ((4 < 4) | (items4 = 6))) & ((4 < 5) | (items5 = 6))) & ((4 < 6) | (items6 = 6))) & ((4 < 7) | (items7 = 6))) & ((4 < 8) | (items8 = 6))) & ((4 < 9) | (items9 = 6))) & ((4 < 10) | (items10 = 6)))], R{"((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)"}max=? [LRA[time]]) ...
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 129MB
+  * CPU time: 16.327s
+  * wallclock time: 16.401s	</pre>
+</div>
+</body>
+</html>

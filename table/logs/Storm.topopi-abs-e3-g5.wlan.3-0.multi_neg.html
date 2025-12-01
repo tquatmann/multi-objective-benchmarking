@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-e3-g5 - wlan multi_neg 3-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.3.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 3, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.3.jani --janiproperty multi_neg --constants COL=0 --multiobjective:precision 1e-3 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">11.378s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">11.378s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:42:32 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.3.jani --janiproperty multi_neg --constants COL=0 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 2.680s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	96302
+Transitions: 	204576
+Choices: 	123730
+Reward Models:  time, cost, collisions
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 96296 states.
+Final preprocessed model has 123724 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 11 refinement steps.
+Solving multi-objective query took 8.564s seconds (consisting of 0.399s seconds for preprocessing and 8.165s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 11 Halfspaces:
+   (3257459/29494157,          0,          1) * x <= 5089215295017375/175720824832
+   (503708183/20940924137,          0,          1) * x <= 49995353692462925/5360876579072
+   (         1,          0,          0) * x <= 30509216674858475/134226116608
+   (         0,          1,          0) * x <= 5039517997/4194566144
+   (         0,          0,          1) * x <= 130322306383225/33558626304
+   (         0,          1, 4096/407182375) * x <= 5295398388051/4269616660480
+   (         0,          1, 287386816/1362999895825) * x <= 109900333360/54519995833
+   (         0,          1, 4096/1655338375) * x <= 21019676518131/17357480919040
+   (54519995833/11435204907847,          0,          1) * x <= 56557539266145800/11435204907847
+   (         0,          1, 536384/12592704575) * x <= 704473814815/515797179392
+   (13242707/19508909,          0,          1) * x <= 202198241480111925/1278535860224
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0,          0) * x <= 30509216674858475/134226116608
+   (         0,          1,          0) * x <= 5039517997/4194566144
+   (         0,          0,          1) * x <= 130322306383225/33558626304
+   (         0, 10808447074838710/10808447245712981, 1921918583104/10808447245712981) * x <= 2674945058860363406275/1416684797390091845632
+   (         0, 545199958330/545199970449, 574773632/2725999852245) * x <= 1099003333600/545199970449
+   (4435537322554/171125662711775,          0, 171068169006406/171125662711775) * x <= 8746537167174528143827/897191314518310912
+   (109039991666/22870669750963,          0, 22870409815694/22870669750963) * x <= 113115078532291600/22870669750963
+   (1007416366/41893962603,          0, 41881848274/41893962603) * x <= 49995353692462925/5362427213184
+   (3415747406/29924473449,          0, 29728887986/29924473449) * x <= 9733101431395880925/326855048658944
+   (6514918/59346991,          0, 5362574/5395181) * x <= 5089215295017375/176789291008
+   (26485414/47157897,          0, 39017818/47157897) * x <= 67399413826703975/515089989632
+
+5 Pareto optimal points found:
+   (1068365681045375/4794089472,  627633173/524353536, 130322306383225/33558626304 ) approx.    (222850.5929, 1.196965654, 3883.421961 )
+   (30509216674858475/134226116608, 5039517997/4194566144, 517879431469675/134226116608 ) approx.    (227297.1717,  1.20143963, 3858.261302 )
+   (2177571379618775/9588178944, 1259756765/1048707072, 259281612870625/67117252608 ) approx.    (227110.0062, 1.201247516, 3863.114219 )
+   (139479402606162575/613643452416, 2519916367/2097414144, 16573265726734825/4295504166912 ) approx.    (227297.1415, 1.201439579, 3858.281841 )
+   (4358657842931975/19176357888, 2519907437/2097414144, 517971368626225/134234505216 ) approx.    (227293.3092, 1.201435322, 3858.705091 )
+
+
+Time for model checking: 8.576s.
+
+Performance statistics:
+  * peak memory usage: 410MB
+  * CPU time: 11.219s
+  * wallclock time: 11.316s	</pre>
+</div>
+</body>
+</html>

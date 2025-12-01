@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#mars-rover">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1000</td></tr>
 		<tr><td>Property:</td><td><span class="tt">bounded_tradeoff</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.825s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.873s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.873s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -42,7 +42,7 @@ mars-rover.jani: info: Need 16 bytes per state.
 mars-rover.jani: info: Explored 37502 states for Unf=1, B=1000.
 mars-rover.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 114 MB
+Peak memory usage: 113 MB
 Analysis results for mars-rover.jani
 Experiment Unf=1, B=1000
 
@@ -51,10 +51,10 @@ Experiment Unf=1, B=1000
   States:             37502
   Transitions:        45005
   Branches:           70015
-  Rate:               154967 states/s
+  Rate:               147646 states/s
   Peak memory:        46.26 MB
   Final size:         0.29 MB
-  Time (exploration): 0.2 s
+  Time (exploration): 0.3 s
   Time (merging):     0.0 s
 
 + bounded_tradeoff

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e6-g5 - consensus multi_neg 2-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e6-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/consensus/consensus.2.jani">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e6-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.2.jani --janiproperty multi_neg --constants K=2 --multiobjective:precision 1e-6 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.122s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.122s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:17:49 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.2.jani --janiproperty multi_neg --constants K=2 '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.014s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	272
+Transitions: 	492
+Choices: 	400
+Reward Models:  steps
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 8 item(s)
+   * agree -> 154 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmax=? [F ("finished" & (!"agree"))], R{"steps"}max=? [F "finished"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 265 states.
+Final preprocessed model has 393 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 0.070s seconds (consisting of 0.000s seconds for preprocessing and 0.069s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.108333
+   (         0,          1) * x <= 75
+   (         1, 0.00462963) * x <= 0.347222
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.108333
+   (         0,          1) * x <= 75
+   (  0.999989, 0.00462958) * x <= 0.347219
+
+2 Pareto optimal points found:
+   (          0,          75 )
+   ( 0.10833333,        51.6 )
+
+
+Time for model checking: 0.070s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 0.100s
+  * wallclock time: 0.088s	</pre>
+</div>
+</body>
+</html>

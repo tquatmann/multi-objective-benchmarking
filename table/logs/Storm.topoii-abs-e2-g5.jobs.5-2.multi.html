@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e2-g5 - jobs multi 5-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e2-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/jobs/jobs.5-2.jani">jobs</a> <span class="tt">v.1</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e2-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.5-2.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-2 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.840s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.840s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:59:08 2025
+Command line arguments: --prism /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/jobs/jobs.5-2.ma --prop /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/jobs/jobs.csl multi '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.016s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	117
+Transitions: 	251
+Choices: 	171
+Markovian St.: 	86
+Max. Rate: 	6
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 20 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	117
+Transitions: 	251
+Choices: 	171
+Markovian St.: 	86
+Max. Rate: 	6
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 20 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Tmin=? [F "all_jobs_finished"], R{"avg_waiting_time"}max=? [F "all_jobs_finished"], Pmax=? [true U<=(5 / (4 * 2)) "half_of_jobs_finished"]) ...
+Final preprocessed model has 86 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 117 states.
+Final preprocessed model has 171 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 14 refinement steps.
+Solving multi-objective query took 0.771s seconds (consisting of 0.000s seconds for preprocessing and 0.770s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 25 Halfspaces:
+   ( -0.452899,          1,   0.677803) * x <= 0.447447
+   ( -0.465694,          1,    0.68159) * x <= 0.428138
+   ( -0.368171,          1,   0.597121) * x <= 0.548677
+   (  -0.83967,   0.454755,          1) * x <= -0.500112
+   ( -0.468742,   0.462093,          1) * x <= 0.146359
+   ( -0.733076,   0.373914,          1) * x <= -0.381005
+   (         0,          1,    0.47551) * x <= 1.09821
+   (        -1,   0.917343,   0.748039) * x <= -0.485796
+   (        -1,     0.3164,   0.644312) * x <= -1.05998
+   (         0,   0.588577,          1) * x <= 1.05873
+   (        -1,          0,   0.301151) * x <= -1.48649
+   (        -1,   0.795825,   0.581172) * x <= -0.664697
+   (         0,          1,   0.938612) * x <= 1.35232
+   ( -0.902159,          0,          1) * x <= -0.960602
+   (        -1,          0,   0.707691) * x <= -1.30269
+   (         0,          1,   0.687626) * x <= 1.20563
+   (        -1,   0.483576,   0.778432) * x <= -0.852155
+   (        -1,          0,          0) * x <= -1.6
+   (         0,          1,   0.406751) * x <= 1.06528
+   (         0,          1,          0) * x <= 0.9
+   (        -1,          0,   0.514697) * x <= -1.39457
+   (         0,          0,          1) * x <= 0.60964
+   (         0,          1,   0.135769) * x <= 0.951175
+   (        -1,          0,   0.685765) * x <= -1.31368
+   ( -0.887784,   0.393473,          1) * x <= -0.632458
+
+Overapproximation of achievable values: Polytope with 14 Halfspaces:
+   (        -1,          0,          0) * x <= -1.6
+   (         0,          1,          0) * x <= 0.9
+   (         0,          0,          1) * x <= 0.612496
+   ( -0.974443,          0,   0.224634) * x <= -1.47158
+   ( -0.856012,          0,   0.516956) * x <= -1.1548
+   ( -0.929869,          0,    0.36789) * x <= -1.34157
+   (         0,   0.805058,   0.593196) * x <= 0.996611
+   ( -0.722556,   0.172921,   0.669336) * x <= -0.710797
+   (         0,   0.836116,   0.548552) * x <= 0.997541
+   ( -0.113997,   0.925913,   0.360125) * x <= 0.797494
+   (         0,   0.919031,   0.394185) * x <= 0.991637
+   (         0,   0.525994,   0.850488) * x <= 0.923658
+   ( -0.584188,   0.608656,   0.536901) * x <= -0.171514
+   ( -0.793557,          0,   0.608496) * x <= -1.00306
+
+12 Pareto optimal points found:
+   (        1.6,         0.9, 0.3769281408 )
+   (1.637957114, 0.8637892154, 0.4728674341 )
+   (1.616108498, 0.8811789224, 0.4304179231 )
+   (1.722811512, 0.7710256408, 0.5936485559 )
+   (1.730234335, 0.8011938006, 0.5871662482 )
+   (1.726948256, 0.8037469254, 0.5844461423 )
+   (1.620887792, 0.8940060061, 0.4210767731 )
+   (1.631716945, 0.8766102672, 0.4568864324 )
+   (1.740537719, 0.7630098703, 0.6096404211 )
+   (1.663076767, 0.8574034062, 0.5064146095 )
+   (1.657390198, 0.8583588761, 0.501205264 )
+   (1.650790622, 0.8704830809, 0.4789080081 )
+
+
+Time for model checking: 0.771s.
+
+Performance statistics:
+  * peak memory usage: 63MB
+  * CPU time: 0.804s
+  * wallclock time: 0.794s	</pre>
+</div>
+</body>
+</html>

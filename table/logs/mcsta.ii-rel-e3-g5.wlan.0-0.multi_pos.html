@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#wlan">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.0.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 0, <span class="tt">COL</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.675s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.200s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.654s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.654s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -43,7 +43,7 @@ wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in aut
 wlan.0.jani: info: Need 16 bytes per state.
 wlan.0.jani: info: Explored 2954 states for COL=0.
 
-Peak memory usage: 77 MB
+Peak memory usage: 76 MB
 Analysis results for wlan.0.jani
 Experiment COL=0
 
@@ -52,7 +52,7 @@ Experiment COL=0
   States:             2954
   Transitions:        3972
   Branches:           5202
-  Rate:               84400 states/s
+  Rate:               95290 states/s
   Peak memory:        29.70 MB
   Final size:         0.02 MB
   Time (exploration): 0.0 s
@@ -60,7 +60,7 @@ Experiment COL=0
 
 + multi_pos
   WSO instances:       2
-  Time:                0.2 s
+  Time:                0.1 s
   Under Approximation: ∩{-1x + -0y <= -7625, -0x + -1y <= -1325}
   Over Approximation:  ∩{-1x + -0y <= -7625, -0x + -1y <= -1325}
 

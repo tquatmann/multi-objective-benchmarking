@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - eajs Multi 5-250-11</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/eajs/eajs.5.jani">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5, <span class="tt">energy_capacity</span> = 250, <span class="tt">B</span> = 11</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --janiproperty Multi --constants energy_capacity=250,B=11 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">204.484s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">204.484s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:28 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/eajs/eajs.5.jani --janiproperty Multi --constants 'energy_capacity=250,B=11' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 28.608s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3049471
+Transitions: 	6977654
+Choices: 	4256193
+Reward Models:  utilityLocal
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (battery_load = 0) -> 13476 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(R{"utilityLocal"}max=? [F (battery_load = 0)], Pmax=? [true Urew{"utilityLocal"}>=11 (battery_load = 0)]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 5 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 5.
+           #checked epochs overall: 60.
+# checked epochs per weight vector: 12.
+                      overall Time: 172.768s.
+         Epoch Model building time: 18.725s.
+         Epoch Model checking time: 76.112s.
+--------------------------------------------------
+Solving multi-objective query took 175.810s seconds (consisting of 3.037s seconds for preprocessing and 172.772s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 6 Halfspaces:
+   ( 0.0127838,          1) * x <= 0.161999
+   ( 0.0590661,          1) * x <= 0.626286
+   (0.00291579,          1) * x <= 0.0630573
+   (         0,          1) * x <= 0.0338869
+   (8.18956e-07,          1) * x <= 0.0338946
+   (         1,          0) * x <= 10.0329
+
+Overapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1,          0) * x <= 10.0329
+   (         0,          1) * x <= 0.0339046
+   (0.000313539,          1) * x <= 0.0370408
+   (0.00726899,   0.999974) * x <= 0.106721
+   ( 0.0221973,   0.999754) * x <= 0.256442
+
+5 Pareto optimal points found:
+   (10.00445201, 0.03388636171 )
+   (10.03293185, 0.03367933672 )
+   (9.370992244, 0.03388688049 )
+   ( 10.0265035, 0.03382206419 )
+   ( 10.0316236, 0.03375660974 )
+
+
+Time for model checking: 175.811s.
+
+Performance statistics:
+  * peak memory usage: 2278MB
+  * CPU time: 202.136s
+  * wallclock time: 204.435s	</pre>
+</div>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#wlan">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.0.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 0, <span class="tt">COL</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.760s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.747s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.747s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -43,7 +43,7 @@ wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in aut
 wlan.0.jani: info: Need 16 bytes per state.
 wlan.0.jani: info: Explored 2954 states for COL=0.
 
-Peak memory usage: 77 MB
+Peak memory usage: 73 MB
 Analysis results for wlan.0.jani
 Experiment COL=0
 
@@ -60,7 +60,7 @@ Experiment COL=0
 
 + multi_neg
   WSO instances:       5
-  Time:                0.3 s
+  Time:                0.2 s
   Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9569377584, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2248804662, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2248805314, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.904761857, 1*x_1 + 0*x_2 + 1.0288646072*x_3 <= 31874.213745763, 1*x_1 + 0*x_2 + 3.0178426967*x_3 <= 39416.2292340178, 0*x_1 + 1*x_2 + 0.0002135627*x_3 <= 2.0288568394, 0*x_1 + 1*x_2 + 0.3099798196*x_3 <= 1176.6330015891}
   Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9571681215, 0*x_1 + 1*x_2 + 0*x_3 <= 1.225105484, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.9049850151, 1*x_1 + 0*x_2 + 1.0288646195*x_3 <= 31874.2139777731, 0*x_1 + 1*x_2 + 0.0002135627*x_3 <= 2.0289847905}
 

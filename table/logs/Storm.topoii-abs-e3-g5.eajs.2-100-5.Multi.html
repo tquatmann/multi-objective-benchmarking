@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g5 - eajs Multi 2-100-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/eajs/eajs.2.jani">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2, <span class="tt">energy_capacity</span> = 100, <span class="tt">B</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.2.jani --janiproperty Multi --constants energy_capacity=100,B=5 --multiobjective:precision 1e-3 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.265s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.265s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:02 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/eajs/eajs.2.jani --janiproperty Multi --constants 'energy_capacity=100,B=5' '--multiobjective:precision' 1e-3 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.075s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	12828
+Transitions: 	21795
+Choices: 	14649
+Reward Models:  utilityLocal
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (battery_load = 0) -> 201 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(R{"utilityLocal"}max=? [F (battery_load = 0)], Pmax=? [true Urew{"utilityLocal"}>=5 (battery_load = 0)]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 2.
+           #checked epochs overall: 12.
+# checked epochs per weight vector: 6.
+                      overall Time: 0.136s.
+         Epoch Model building time: 0.023s.
+         Epoch Model checking time: 0.040s.
+--------------------------------------------------
+Solving multi-objective query took 0.144s seconds (consisting of 0.008s seconds for preprocessing and 0.136s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 4.02796
+   (         0,          1) * x <= 0.0279561
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 4.02813
+   (         0,          1) * x <= 0.0281329
+
+1 Pareto optimal points found:
+   (4.027956117, 0.02795611706 )
+
+
+Time for model checking: 0.145s.
+
+Performance statistics:
+  * peak memory usage: 67MB
+  * CPU time: 0.221s
+  * wallclock time: 0.224s	</pre>
+</div>
+</body>
+</html>

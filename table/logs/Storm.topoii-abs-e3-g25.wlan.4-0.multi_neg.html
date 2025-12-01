@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g25 - wlan multi_neg 4-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g25</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.4.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 4, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g25)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.4.jani --janiproperty multi_neg --constants COL=0 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.25 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.25
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">14.055s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">14.055s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:59:30 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.4.jani --janiproperty multi_neg --constants COL=0 '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.25 --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.008s.
+
+Time for model construction: 1.128s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	345000
+Transitions: 	762252
+Choices: 	440206
+Reward Models:  time, cost, collisions
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 344992 states.
+Final preprocessed model has 440198 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 11 refinement steps.
+Solving multi-objective query took 12.871s seconds (consisting of 0.744s seconds for preprocessing and 12.127s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 13 Halfspaces:
+   (         1,          0,          0) * x <= 227297
+   (0.00476735,          0,          1) * x <= 4945.9
+   ( 0.0240495,          0,          1) * x <= 9325.06
+   (         0,          1, 4.26023e-05) * x <= 1.36583
+   (  0.110358,          0,          1) * x <= 28942.5
+   (         0,          1,  2.016e-13) * x <= 1.20144
+   (         0,          0,          1) * x <= 3883.5
+   (         0,          1, 2.47071e-06) * x <= 1.21097
+   (         0,          1, 0.000210866) * x <= 2.01586
+   (         0,          1,          0) * x <= 1.20144
+   (2.16065e-15,          1,          0) * x <= 1.20144
+   (  0.680517,          0,          1) * x <= 158538
+   (         0,          1, 1.00664e-05) * x <= 1.24028
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0,          0) * x <= 227297
+   (         0,          1,          0) * x <= 1.20144
+   (         0,          0,          1) * x <= 3883.5
+   (         0,          1, 0.000177841) * x <= 1.88828
+   (   0.02591,          0,   0.999664) * x <= 9746.65
+   ( 0.0240425,          0,   0.999711) * x <= 9322.37
+   (         0,          1, 0.000210866) * x <= 2.01586
+   (0.00476729,          0,   0.999989) * x <= 4945.85
+   (   0.11392,          0,    0.99349) * x <= 29727
+   (  0.109692,          0,   0.993966) * x <= 28767.8
+   (  0.562602,          0,   0.826728) * x <= 131068
+
+6 Pareto optimal points found:
+   (227293.1658,   1.2014351, 3858.783451 )
+   (93055.07901, 1.201439406, 2419.604616 )
+   ( 222850.454, 1.196965439, 3883.497847 )
+   (227109.8643, 1.201247296, 3863.191754 )
+   (227296.9973, 1.201439356, 3858.360614 )
+   (227297.0264, 1.201439405, 3858.340762 )
+
+
+Time for model checking: 12.871s.
+
+Performance statistics:
+  * peak memory usage: 299MB
+  * CPU time: 13.760s
+  * wallclock time: 14.014s	</pre>
+</div>
+</body>
+</html>

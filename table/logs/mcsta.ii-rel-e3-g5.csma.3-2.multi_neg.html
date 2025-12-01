@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#csma">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.3-2.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 2</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.427s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.700s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.345s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.345s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -41,7 +41,7 @@ csma.3-2.jani:model: info: csma.3-2 is an MDP model.
 csma.3-2.jani: info: Need 24 bytes per state.
 csma.3-2.jani: info: Explored 51037 states.
 
-Peak memory usage: 141 MB
+Peak memory usage: 140 MB
 Analysis results for csma.3-2.jani
 
 + State space exploration
@@ -49,15 +49,15 @@ Analysis results for csma.3-2.jani
   States:             51037
   Transitions:        53343
   Branches:           77301
-  Rate:               158500 states/s
-  Peak memory:        53.64 MB
+  Rate:               153726 states/s
+  Peak memory:        53.67 MB
   Final size:         0.40 MB
   Time (exploration): 0.3 s
   Time (merging):     0.0 s
 
 + multi_neg
   WSO instances:       3
-  Time:                0.7 s
+  Time:                0.6 s
   Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.4351261806, -0*x_1 + -1*x_2 + 0*x_3 <= -0.5861273578, -1*x_1 + -0*x_2 + 1.47192E-05*x_3 <= -0.4336042275, -1*x_1 + -0.0017681753*x_2 + 0*x_3 <= -0.4362039498, -1*x_1 + -524167.9979652205*x_2 + 0*x_3 <= -307229.8488734803, -0*x_1 + -1*x_2 + 8.16E-08*x_3 <= -0.5861190953, -0*x_1 + -0*x_2 + 1*x_3 <= 106.21134197}
   Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.4349666249, -0*x_1 + -1*x_2 + 0*x_3 <= -0.5859375, -0*x_1 + -0*x_2 + 1*x_3 <= 106.2359118682}
 

@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#eajs">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/eajs/eajs.5.jani">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5, <span class="tt">energy_capacity</span> = 250, <span class="tt">B</span> = 11</td></tr>
 		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">10.972s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">6.200s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">11.873s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">11.873s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -49,7 +49,7 @@ eajs.5.jani: warning: The probabilities for a transition labelled "tick" with 4 
 eajs.5.jani: info: Explored 3049471 states for energy_capacity=250, B=11.
 eajs.5.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 1934 MB
+Peak memory usage: 1935 MB
 Analysis results for eajs.5.jani
 Experiment energy_capacity=250, B=11
 
@@ -58,20 +58,20 @@ Experiment energy_capacity=250, B=11
   States:             3049471
   Transitions:        4256193
   Branches:           6977654
-  Rate:               719045 states/s
-  Peak memory:        523.93 MB
+  Rate:               632670 states/s
+  Peak memory:        523.86 MB
   Final size:         23.63 MB
-  Time (exploration): 4.2 s
+  Time (exploration): 4.8 s
   Time (merging):     0.1 s
 
 + Multi
   WSO instances:       2
-  Time:                6.2 s
+  Time:                6.4 s
   Under Approximation: ∩{1x + 0y <= 10.0329356875, 1x + 4167957.20622435y <= 4167958.1973283994, 0x + 1y <= 0.9999999979}
   Over Approximation:  ∩{1x + 0y <= 10.0329356875, 0x + 1y <= 0.9999999979}
 
   + Pareto Curve Approximation
-    Time: 5.4 s	</pre>
+    Time: 5.5 s	</pre>
 </div>
 </body>
 </html>

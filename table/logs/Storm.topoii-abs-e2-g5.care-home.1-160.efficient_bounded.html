@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e2-g5 - care-home efficient_bounded 1-160</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e2-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/care-home/care-home.jani">care-home</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 160</td></tr>
+		<tr><td>Property:</td><td><span class="tt">efficient_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e2-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient_bounded --constants Unf=1,B=160 --multiobjective:precision 1e-2 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1693.431s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1693.431s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:50:35 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient_bounded --constants 'Unf=1,B=160' '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 14.543s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3408977
+Transitions: 	7252749
+Choices: 	6576217
+Reward Models:  time, interaction
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0))) -> 330996 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "efficient_bounded": multi(Pmax=? [true Urew{"time"}<=160 ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0)))], R{"interaction"}max=? [Crew{"time"}<=160]) ...
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Epoch model for epoch <_, _> is cyclic.
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 7.
+           #checked epochs overall: 1134.
+# checked epochs per weight vector: 162.
+                      overall Time: 1672.002s.
+         Epoch Model building time: 705.347s.
+         Epoch Model checking time: 909.434s.
+--------------------------------------------------
+Solving multi-objective query took 1678.675s seconds (consisting of 6.121s seconds for preprocessing and 1672.553s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,   0.707311) * x <= 3.71407
+   (         1,   0.475578) * x <= 2.80415
+   (         1,          1) * x <= 4.86779
+   (         1,   0.341247) * x <= 2.28696
+   (         0,          1) * x <= 3.99912
+   (         1, 0.00109579) * x <= 0.995535
+   (         1,          0) * x <= 0.995424
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0) * x <= 0.997192
+   (         0,          1) * x <= 4.00088
+   (  0.968848,   0.247658) * x <= 1.90271
+   (  0.199967,   0.979803) * x <= 4.09398
+   (  0.855264,   0.518193) * x <= 2.838
+   (  0.921889,   0.387453) * x <= 2.39089
+   (  0.729134,   0.684371) * x <= 3.37496
+
+6 Pareto optimal points found:
+   (0.9954240566, 0.1015161165 )
+   (0.9913750174, 3.796606439 )
+   (0.8686769703, 3.999116117 )
+   (0.9731146396, 3.850117184 )
+   (0.9259824497, 3.941810637 )
+   (0.9367410283, 3.926600105 )
+
+
+Time for model checking: 1678.750s.
+
+Performance statistics:
+  * peak memory usage: 8767MB
+  * CPU time: 1660.352s
+  * wallclock time: 1693.322s	</pre>
+</div>
+</body>
+</html>

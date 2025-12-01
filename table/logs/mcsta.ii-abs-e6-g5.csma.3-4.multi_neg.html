@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e6-g5 - csma multi_neg 3-4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e6-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.3-4.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e6-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-6, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">230.163s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">230.163s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma.3-4.jani:model: info: csma.3-4 is an MDP model.
+csma.3-4.jani: info: Need 24 bytes per state.
+csma.3-4.jani: info: Explored 2355601 states.
+
+Peak memory usage: 2049 MB
+Analysis results for csma.3-4.jani
+
++ State space exploration
+  State size:         24 bytes
+  States:             2355601
+  Transitions:        2371900
+  Branches:           3888343
+  Rate:               648747 states/s
+  Peak memory:        390.10 MB
+  Final size:         18.25 MB
+  Time (exploration): 3.6 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       20
+  Time:                226.0 s
+  Under Approximation: ∩{-0*x_1 + -0*x_2 + 1*x_3 <= 117.81825583, -0*x_1 + -1*x_2 + 0*x_3 <= -0.9895226562, -1*x_1 + -0*x_2 + 0*x_3 <= -0.9046915118, -0*x_1 + -1*x_2 + 0.0615683035*x_3 <= 6.2642715111, -0*x_1 + -1*x_2 + 0.0611602954*x_3 <= 6.2162007252, -1*x_1 + -0*x_2 + 0.0006086945*x_3 <= -0.8329762433, -1*x_1 + -0*x_2 + 7.8432E-05*x_3 <= -0.8954508191, -1*x_1 + -6.3327181873*x_2 + 0*x_3 <= -7.1712466649, -1*x_1 + -7.0121906413*x_2 + 1.2324E-06*x_3 <= -7.8434629706, -0*x_1 + -1*x_2 + 0.0096777751*x_3 <= 0.1506712741, -0*x_1 + -1*x_2 + 0.0114268197*x_3 <= 0.3567374351, -1*x_1 + -7.2369039526*x_2 + 0.0031862947*x_3 <= -7.6905710639, -1*x_1 + -8.4255215177*x_2 + 0*x_3 <= -9.242136003, -1*x_1 + -8.4255448552*x_2 + 3.687E-07*x_3 <= -9.2421168232, -1*x_1 + -1.9768610672*x_2 + 0.0197689259*x_3 <= -0.5318453817, -1*x_1 + -1.780522413*x_2 + 0.0091895214*x_3 <= -1.5839959823, -1*x_1 + -39.0549644248*x_2 + 0.3840692126*x_3 <= 5.6987795618, -1*x_1 + -8.2115888751*x_2 + 0.0212138653*x_3 <= -6.5311068012, -0*x_1 + -1*x_2 + 0.0032514913*x_3 <= -0.6064468987, -0*x_1 + -1*x_2 + 0.0069141782*x_3 <= -0.1749250821, -1*x_1 + -20.5131981437*x_2 + 0*x_3 <= -21.2031809755, -1*x_1 + -12.8976071585*x_2 + 0*x_3 <= -13.6673751889, -1*x_1 + -9.694350982*x_2 + 1.2758E-06*x_3 <= -10.497527812, -1*x_1 + -1.6524835714*x_2 + 0*x_3 <= -2.5399796636, -1*x_1 + -5.5474820303*x_2 + 0*x_3 <= -6.3942283136, -1*x_1 + -1.6546629861*x_2 + 8.76E-08*x_3 <= -2.5421260747, -1*x_1 + -5.4214976956*x_2 + 2.98E-07*x_3 <= -6.2695273444}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.904691431, -0*x_1 + -1*x_2 + 0*x_3 <= -0.9895225981, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8182560517, -1*x_1 + -288.8976530296*x_2 + 0*x_3 <= -286.7756627518, -0*x_1 + -1*x_2 + 2.41002E-05*x_3 <= -0.9866832226, -0*x_1 + -1*x_2 + 0.026681728*x_3 <= 2.1540295631, -1*x_1 + -1.5670549816*x_2 + 0*x_3 <= -2.4554398619, -0*x_1 + -1*x_2 + 0.0613395537*x_3 <= 6.2373208109, -1*x_1 + -7.2554049601*x_2 + 0*x_3 <= -8.0842709901, -0*x_1 + -1*x_2 + 0.0089215752*x_3 <= 0.0615788721, -1*x_1 + -1.5726362882*x_2 + 2.1949E-06*x_3 <= -2.4607044962, -1*x_1 + -1.7007654*x_2 + 0*x_3 <= -2.587756197, -1*x_1 + -1.9872466652*x_2 + 0.025368076*x_3 <= 0.1175593226, -1*x_1 + -5.7435085737*x_2 + 6.3141E-06*x_3 <= -6.5874589981, -0*x_1 + -1*x_2 + 0.0110197993*x_3 <= 0.3087839083, -1*x_1 + -11.6670296927*x_2 + 0*x_3 <= -12.4496869537, -1*x_1 + -1.8060156994*x_2 + 0.0093199728*x_3 <= -1.5938528097, -0*x_1 + -1*x_2 + 0.0057359461*x_3 <= -0.313739113, -1*x_1 + -5.4854721825*x_2 + 0*x_3 <= -6.3328668763, -1*x_1 + -1.6546622053*x_2 + 3.06E-08*x_3 <= -2.5421317321}
+
+  + Pareto Curve Approximation
+    Time: 225.4 s	</pre>
+</div>
+</body>
+</html>

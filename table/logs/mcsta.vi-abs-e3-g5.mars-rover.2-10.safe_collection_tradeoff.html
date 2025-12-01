@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#mars-rover">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 10</td></tr>
 		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.164s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.300s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.246s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.246s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -42,7 +42,7 @@ mars-rover.jani: info: Need 16 bytes per state.
 mars-rover.jani: info: Explored 161818 states for Unf=2, B=10.
 mars-rover.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 224 MB
+Peak memory usage: 218 MB
 Analysis results for mars-rover.jani
 Experiment Unf=2, B=10
 
@@ -51,20 +51,20 @@ Experiment Unf=2, B=10
   States:             161818
   Transitions:        203798
   Branches:           308748
-  Rate:               347996 states/s
-  Peak memory:        76.51 MB
+  Rate:               385281 states/s
+  Peak memory:        76.49 MB
   Final size:         1.23 MB
-  Time (exploration): 0.5 s
+  Time (exploration): 0.4 s
   Time (merging):     0.0 s
 
 + safe_collection_tradeoff
   WSO instances:       6
-  Time:                0.3 s
+  Time:                0.4 s
   Under Approximation: ∩{0x + 1y <= 1, 1x + 25705.470958725y <= 25705.470958725, 1x + 0y <= 0.9999328344, 1x + 1.4085555488y <= 2.1777947991, 1x + 0.1873136522y <= 1.1445939463, 1x + 1.0002001925y <= 1.7724593583}
   Over Approximation:  ∩{1x + 0y <= 0.9999241575, 0x + 1y <= 1, 1x + 1.5431871298y <= 2.3124217157, 1x + 0.3559683662y <= 1.2748310409, 1x + 1.0130660557y <= 1.7852788347, 1x + 0.9998441562y <= 1.7721547153}
 
   + Pareto Curve Approximation
-    Time: 0.3 s	</pre>
+    Time: 0.4 s	</pre>
 </div>
 </body>
 </html>

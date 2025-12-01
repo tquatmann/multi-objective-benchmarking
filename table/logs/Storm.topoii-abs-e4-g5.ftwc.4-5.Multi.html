@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - ftwc Multi 4-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/ftwc/ftwc.jani">ftwc</a> <span class="tt">v.5</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants N=4,TIME_BOUND=5 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="color: red;">&gt 2700s (Timeout)</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:57:45 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants 'N=4,TIME_BOUND=5' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.024s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	3873
+Transitions: 	10041
+Choices: 	4829
+Markovian St.: 	1636
+Max. Rate: 	2.0147
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 1015 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	3873
+Transitions: 	10041
+Choices: 	4829
+Markovian St.: 	1636
+Max. Rate: 	2.0147
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 1015 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmax=? [F (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))], R{"((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)"}max=? [LRA[time]], Pmax=? [true U<=5 (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))]) ...
+Final preprocessed model has 2710 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 6435 states.
+Final preprocessed model has 7979 actions.
+Found 1 end components that are relevant for LRA-analysis.
+1439 states lie on such an end component.
+
+
+
+----------
+Computation aborted after 2700.0014848709106 seconds since the total time limit of 2700 seconds was exceeded.	</pre>
+</div>
+</body>
+</html>

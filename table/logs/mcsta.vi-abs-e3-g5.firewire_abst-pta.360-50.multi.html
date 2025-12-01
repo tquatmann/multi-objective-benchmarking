@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire_abst-pta">firewire_abst-pta</a> <span class="tt">v.2</span> (PTA)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/pta/firewire_abst-pta/firewire_abst-pta.jani">firewire_abst-pta</a> <span class="tt">v.2</span> (PTA)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">delay</span> = 360, <span class="tt">T</span> = 50</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">2.072s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">1.600s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">2.508s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.508s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -43,7 +43,7 @@ firewire_abst-pta.jani: info: Need 8 bytes per state.
 firewire_abst-pta.jani: info: Explored 7671 states for delay=360, T=50.
 firewire_abst-pta.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 65 MB
+Peak memory usage: 66 MB
 Analysis results for firewire_abst-pta.jani
 Experiment delay=360, T=50
 
@@ -52,20 +52,20 @@ Experiment delay=360, T=50
   States:             7671
   Transitions:        11776
   Branches:           13942
-  Rate:               156551 states/s
-  Peak memory:        23.28 MB
+  Rate:               136982 states/s
+  Peak memory:        23.26 MB
   Final size:         0.06 MB
-  Time (exploration): 0.0 s
+  Time (exploration): 0.1 s
   Time (merging):     0.0 s
 
 + multi
   WSO instances:       2
-  Time:                1.6 s
+  Time:                2.0 s
   Under Approximation: ∩{-1x + -0y <= -0.9989602864, -0x + -1y <= -0.9989602864}
   Over Approximation:  ∩{-1x + -0y <= -0.9989602864, -0x + -1y <= -0.9989602864}
 
   + Pareto Curve Approximation
-    Time: 1.6 s	</pre>
+    Time: 2.0 s	</pre>
 </div>
 </body>
 </html>

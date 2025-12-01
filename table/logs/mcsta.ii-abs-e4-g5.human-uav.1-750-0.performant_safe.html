@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e4-g5 - human-uav performant_safe 1-750-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 750, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=750,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-4, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.434s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.434s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=750,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 631, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 70737 states for Unf=1, B=750, COUNTER=0.
+
+Peak memory usage: 294 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=750, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             70737
+  Transitions:        118804
+  Branches:           382327
+  Rate:               213707 states/s
+  Peak memory:        80.12 MB
+  Final size:         0.54 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s
+
++ performant_safe
+  WSO instances:       27
+  Time:                1.6 s
+  Under Approximation: ∩{1x + -0y <= 0.9994871483, 0x + -1y <= 0, 1x + -1.4204843101y <= 0.1869025829, 1x + -0.0641857579y <= 0.9413061812, 1x + -0.0460853083y <= 0.9569577983, 1x + -0.0512617511y <= 0.9524315605, 1x + -0.9101577294y <= 0.4637101908, 1x + -1.1055290439y <= 0.3562045361, 1x + -0.0719203566y <= 0.9365668918, 1x + -0.7443731666y <= 0.5561213788, 1x + -0.6676025167y <= 0.5990901103, 1x + -1.5567516973y <= 0.1862323791, 1x + -1.4420089103y <= 0.1867379525, 1x + -1.4170372063y <= 0.1884822534, 1x + -1.4102962349y <= 0.1918915206, 1x + -0.0960686172y <= 0.922565192, 1x + -0.0817442797y <= 0.9308085994, 1x + -0.9998456619y <= 0.4139409471, 1x + -1.0513064427y <= 0.385750546, 1x + -1.2486506799y <= 0.2788647473, 1x + -1.3306186446y <= 0.2346551289, 1x + -0.2519009763y <= 0.8341177807, 1x + -0.1504027889y <= 0.8916781873, 1x + -0.5211330011y <= 0.681719515, 1x + -0.406611996y <= 0.7464887453}
+  Over Approximation:  ∩{1x + -0y <= 0.9994876908, 0x + -1y <= 0, 1x + -1.083056609y <= 0.3684504442, 1x + -1.7592340633y <= 0.1862336001, 1x + -1.4174605866y <= 0.1882890268, 1x + -0.1081594053y <= 0.9156929117, 1x + -0.0629569647y <= 0.9423642045, 1x + -0.7880224547y <= 0.5317912257, 1x + -0.5548273714y <= 0.6627128107, 1x + -1.4219468064y <= 0.1868921992, 1x + -1.3937323926y <= 0.200782032, 1x + -0.0662952336y <= 0.9400142648, 1x + -0.0472173645y <= 0.9559681702, 1x + -0.9938488769y <= 0.4172693287, 1x + -0.338855758y <= 0.7848672871, 1x + -1.1960823426y <= 0.3072721174, 1x + -0.0781154755y <= 0.9329363494, 1x + -0.6936969952y <= 0.5844857219, 1x + -1.5081100624y <= 0.1864503834, 1x + -1.4204843101y <= 0.1869033827, 1x + -0.0641857579y <= 0.9413068216, 1x + -1.4143772655y <= 0.18982825, 1x + -0.0874289927y <= 0.9275379373, 1x + -1.0147566541y <= 0.4057732778, 1x + -1.3077110099y <= 0.2470109872, 1x + -0.1850611915y <= 0.8720240569, 1x + -0.4787319421y <= 0.705701626}
+
+  + Pareto Curve Approximation
+    Time: 1.6 s	</pre>
+</div>
+</body>
+</html>

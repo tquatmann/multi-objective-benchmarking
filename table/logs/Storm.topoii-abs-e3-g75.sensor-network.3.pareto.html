@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g75 - sensor-network pareto 3</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/sensor-network/sensor-network.3.jani">sensor-network</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.3.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.499s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.499s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:18:34 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/sensor-network/sensor-network.3.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.344s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	77766
+Transitions: 	320847
+Choices: 	299889
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"working"}max=? [LRA], R{"success"}max=? [LRA], R{"failure"}min=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 77758 states.
+Final preprocessed model has 299863 actions.
+Found 46613 end components that are relevant for LRA-analysis.
+68560 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 2.118s seconds (consisting of 0.107s seconds for preprocessing and 2.010s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         0,          1,          0) * x <= 0.991964
+   (         1,          0,          0) * x <= 0.624963
+   (1.12937e-20,          0,         -1) * x <= -3.60844e-05
+   (1.75793e-15, 1.36991e-15,         -1) * x <= -3.60844e-05
+   (         0,          0,         -1) * x <= -3.60844e-05
+   (1.91736e-20, 4.92536e-21,         -1) * x <= -3.60844e-05
+   (         1,   0.779273,          0) * x <= 0.773011
+   (         1,   0.625048,          0) * x <= 0.624963
+   (2.74113e-15, 1.71334e-15,         -1) * x <= -3.60844e-05
+   (         0, 2.11551e-19,         -1) * x <= -3.60844e-05
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0,          0) * x <= 0.625127
+   (         0,          1,          0) * x <= 0.992159
+   (         0,          0,         -1) * x <= 0.00014429
+   (  0.846081,   0.533054,          0) * x <= 0.533012
+   (  0.847979,    0.53003,          0) * x <= 0.530156
+   (  0.788826,   0.614616,          0) * x <= 0.609891
+
+5 Pareto optimal points found:
+   (0.02495734838, 0.9599323267, 3.608439182e-05 )
+   (0.02495745023, 0.9599319303, 3.608439182e-05 )
+   (0.024954217, 0.9599412916, 3.608439182e-05 )
+   (0.624963363,           0, 3.608439182e-05 )
+   (          0, 0.9919637223, 3.608439182e-05 )
+
+
+Time for model checking: 2.118s.
+
+Performance statistics:
+  * peak memory usage: 166MB
+  * CPU time: 2.394s
+  * wallclock time: 2.466s	</pre>
+</div>
+</body>
+</html>

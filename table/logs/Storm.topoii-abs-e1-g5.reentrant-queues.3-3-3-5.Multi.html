@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e1-g5 - reentrant-queues Multi 3-3-3-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e1-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/reentrant-queues/reentrant-queues.jani">reentrant-queues</a> <span class="tt">v.5</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">JOB_TYPES</span> = 3, <span class="tt">C_LEFT</span> = 3, <span class="tt">C_RIGHT</span> = 3, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e1-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani --janiproperty Multi --multiobjective:precision 1e-1 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5 Used moconv to handle currently unsupported jani feature 'nondet-selection'.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">144.641s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">144.641s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:20:25 2025
+Command line arguments: --jani '/rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani' --janiproperty Multi '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.300s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmin=? [F ((sizeLeft = 3) & (sizeRight = 3))], Pmax=? [true U<=5 ((sizeLeft = 3) & (sizeRight = 3))], R{"(((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)"}max=? [LRA[time]]) ...
+Final preprocessed model has 62299 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 145505 states.
+Final preprocessed model has 255737 actions.
+Found 1 end components that are relevant for LRA-analysis.
+90032 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 144.272s seconds (consisting of 0.172s seconds for preprocessing and 144.099s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -5.93653
+   (         0,          1,          0) * x <= 0.49287
+   (-0.00369838,          1,          0) * x <= 0.470176
+   (         0,          0,          1) * x <= 1.72052
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -5.93649
+   (         0,          1,          0) * x <= 0.521482
+   (         0,          0,          1) * x <= 1.72059
+   (  -0.92681,    0.37553,          0) * x <= -5.28861
+
+2 Pareto optimal points found:
+   ( 6.13623278,  0.49287025, 1.720518474 )
+   (  5.9365286, 0.4921316678, 1.720518474 )
+
+
+Time for model checking: 144.272s.
+
+Performance statistics:
+  * peak memory usage: 166MB
+  * CPU time: 143.942s
+  * wallclock time: 144.577s	</pre>
+</div>
+</body>
+</html>

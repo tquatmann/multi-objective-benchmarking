@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e5-g5 - human-uav performant_safe 1-1500-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e5-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1500, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e5-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1500,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">38.363s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">38.363s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1500,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 1381, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 215187 states for Unf=1, B=1500, COUNTER=0.
+
+Peak memory usage: 1119 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=1500, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             215187
+  Transitions:        395029
+  Branches:           1300927
+  Rate:               297220 states/s
+  Peak memory:        129.06 MB
+  Final size:         1.64 MB
+  Time (exploration): 0.7 s
+  Time (merging):     0.0 s
+
++ performant_safe
+  WSO instances:       71
+  Time:                37.0 s
+  Under Approximation: ∩{1x + -0y <= 0.9999999961, 0x + -1y <= 0, 1x + -1.0000002754y <= 0.4813814311, 1x + -0.9551157561y <= 0.5014878312, 1x + -1.5574024248y <= 0.4599774743, 1x + -0.0007532904y <= 0.9995497358, 1x + -0.591865205y <= 0.6731539888, 1x + -1.3259107274y <= 0.4614199303, 1x + -0.8039459095y <= 0.5695729019, 1x + -0.0077232336y <= 0.9956766422, 1x + -1.5196974799y <= 0.4600750589, 1x + -0.7854666573y <= 0.5781057906, 1x + -0.7940577765y <= 0.5741207213, 1x + -0.6343830206y <= 0.6514590681, 1x + -0.5641403754y <= 0.6877217197, 1x + -1.3827708586y <= 0.460664816, 1x + -1.3908165653y <= 0.4606130513, 1x + -0.7618394516y <= 0.5892200189, 1x + -0.6202447081y <= 0.6585827566, 1x + -0.6247707433y <= 0.6562894768, 1x + -1.2591569831y <= 0.4630500239, 1x + -1.2669606471y <= 0.4627732467, 1x + -1.3455077253y <= 0.4610997053, 1x + -1.3649778492y <= 0.4608477468, 1x + -1.1950373932y <= 0.4656249716, 1x + -1.1877660618y <= 0.4660435425, 1x + -0.0460686954y <= 0.9744407768, 1x + -0.2157799323y <= 0.8805047942, 1x + -1.2246852323y <= 0.4644051862, 1x + -1.197384174y <= 0.4655103227, 1x + -0.6819432914y <= 0.6277704641, 1x + -0.6755162893y <= 0.6309541738, 1x + -0.6942710352y <= 0.6217541223, 1x + -0.6874154588y <= 0.6250901497, 1x + -1.0408836237y <= 0.4769331611, 1x + -1.0444663552y <= 0.4765537646, 1x + -0.5805942572y <= 0.6790565984, 1x + -0.5737399053y <= 0.6826533419, 1x + -1.0610375505y <= 0.4751264761, 1x + -1.0471386558y <= 0.4763157628, 1x + -1.1201962987y <= 0.4701700392, 1x + -1.1128928108y <= 0.4707708164, 1x + -1.280373649y <= 0.4623698179, 1x + -1.2739838506y <= 0.4625495014, 1x + -7.3146E-06y <= 0.9999932442, 1x + -0.0001028367y <= 0.9999214337, 1x + -0.8343801504y <= 0.5556740649, 1x + -0.8212206409y <= 0.5616621787, 1x + -1.1408035193y <= 0.4688918307, 1x + -1.1241896015y <= 0.4699162304, 1x + -0.5955487267y <= 0.6712448628, 1x + -0.5988520563y <= 0.6695367559, 1x + -0.7323133729y <= 0.6034043734, 1x + -0.7159544713y <= 0.611285647, 1x + -0.9196192105y <= 0.5173891058, 1x + -0.8547235187y <= 0.5464767809, 1x + -1.4426001768y <= 0.4603552187, 1x + -1.4272936075y <= 0.4604283543, 1x + -1.5956568897y <= 0.4599204002, 1x + -1.5895393167y <= 0.4599257887, 1x + -0.7554994632y <= 0.5922459232, 1x + -0.7544293766y <= 0.5927588499, 1x + -0.7753562038y <= 0.5828362741, 1x + -0.7691972432y <= 0.5857360894, 1x + -1.3142569196y <= 0.4616430822, 1x + -1.302139147y <= 0.4618948586, 1x + -0.8438763858y <= 0.5513698988, 1x + -0.8510620509y <= 0.548123473, 1x + -0.6479009332y <= 0.6447088606, 1x + -0.661012172y <= 0.6381726801}
+  Over Approximation:  ∩{1x + -0y <= 0.9999999967, 0x + -1y <= 0, 1x + -1.0833350071y <= 0.4732540428, 1x + -0.5193186094y <= 0.7125261579, 1x + -6.7176572547y <= 0.4599204116, 1x + -0.928128284y <= 0.5135773596, 1x + -1.0030985034y <= 0.4810443549, 1x + -0.6693232819y <= 0.6340369521, 1x + -1.2420698348y <= 0.4637224665, 1x + -0.7602924023y <= 0.5899585076, 1x + -1.3387663458y <= 0.461210195, 1x + -0.5881419419y <= 0.6751038665, 1x + -1.1569982541y <= 0.4679101576, 1x + -1.4176783533y <= 0.4604784339, 1x + -0.9999991688y <= 0.4813819659, 1x + -0.8011083862y <= 0.5708780439, 1x + -0.5657633655y <= 0.6868648104, 1x + -0.613690772y <= 0.6619386714, 1x + -0.7016972079y <= 0.6181691072, 1x + -1.0454720014y <= 0.4764659717, 1x + -1.2826337878y <= 0.46232054, 1x + -1.5276128088y <= 0.460054695, 1x + -1.196528867y <= 0.4655522882, 1x + -1.1208681852y <= 0.4701276068, 1x + -0.8345470655y <= 0.5555984502, 1x + -0.7780519874y <= 0.5815750462, 1x + -0.6286476621y <= 0.6543412383, 1x + -1.3683183188y <= 0.460813467, 1x + -0.6852820067y <= 0.626135527, 1x + -1.2715764083y <= 0.4626263239, 1x + -0.0002227255y <= 0.9998529267, 1x + -1.5794548846y <= 0.4599421306, 1x + -0.8534394478y <= 0.547054313, 1x + -0.0034661425y <= 0.9980425335, 1x + -0.5952668739y <= 0.6713909447, 1x + -0.7460553633y <= 0.5967897809, 1x + -1.3179184114y <= 0.4615738615, 1x + -0.8195998552y <= 0.5624044546, 1x + -0.0221845588y <= 0.9876679445, 1x + -1.473407395y <= 0.4602444149, 1x + -0.7897140724y <= 0.5761356655, 1x + -0.6412891664y <= 0.6480110325, 1x + -0.5641795486y <= 0.687701037, 1x + -1.3848841126y <= 0.4606512548, 1x + -0.7681765766y <= 0.5862194531, 1x + -0.6222230961y <= 0.6575803406, 1x + -1.2629357564y <= 0.4629162064, 1x + -1.354053887y <= 0.460989236, 1x + -1.193135397y <= 0.4657346829, 1x + -0.0897391485y <= 0.9502690261, 1x + -1.2007243793y <= 0.4653752525, 1x + -0.6800489621y <= 0.6287090824, 1x + -0.6911532442y <= 0.6232716844, 1x + -1.0439385937y <= 0.4766121026, 1x + -0.575401067y <= 0.6817816661, 1x + -1.0514474517y <= 0.4759485092, 1x + -1.1195753866y <= 0.4702215154, 1x + -1.2779940265y <= 0.4624368184, 1x + -5.63001E-05y <= 0.9999564306, 1x + -0.8262500668y <= 0.559373624, 1x + -1.1299529414y <= 0.4695611053, 1x + -0.5982161733y <= 0.6698655633, 1x + -0.72077385y <= 0.6089639437, 1x + -0.8640853362y <= 0.5422806439, 1x + -1.4395450574y <= 0.4603698393, 1x + -1.5928897814y <= 0.4599229609, 1x + -0.7549698959y <= 0.5924998851, 1x + -0.7724273011y <= 0.5842153717, 1x + -1.3095235062y <= 0.4617414617, 1x + -0.8480812975y <= 0.5494701932, 1x + -0.6544379783y <= 0.6414506091}
+
+  + Pareto Curve Approximation
+    Time: 36.9 s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e5-g5 - firewire multi_neg false-3-800</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e5-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/firewire/firewire.false.jani">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 3, <span class="tt">deadline</span> = 800</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e5-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants delay=3,deadline=800 --multiobjective:precision 1e-5 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">5.979s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">5.979s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:05 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants 'delay=3,deadline=800' '--multiobjective:precision' 1e-5 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.033s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4093
+Transitions: 	5585
+Choices: 	5519
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=800 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 7.
+           #checked epochs overall: 5614.
+# checked epochs per weight vector: 802.
+                      overall Time: 5.900s.
+         Epoch Model building time: 1.364s.
+         Epoch Model checking time: 4.398s.
+--------------------------------------------------
+Solving multi-objective query took 5.904s seconds (consisting of 0.004s seconds for preprocessing and 5.900s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0,       0.25) * x <= 302.75
+   (         1,          0,          0) * x <= 299
+   (         0,          0,          1) * x <= 18
+   (         0,         -1,          0) * x <= -0.975495
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0,          0) * x <= 299
+   (         0,         -1,          0) * x <= -0.975494
+   (         0,          0,          1) * x <= 18
+   (         0,         -1, 9.56072e-06) * x <= -0.975322
+   (  0.609211,          0,   0.793008) * x <= 195.971
+   (  0.998043,          0,  0.0625345) * x <= 299.353
+   (  0.970143,          0,   0.242536) * x <= 293.711
+
+2 Pareto optimal points found:
+   (298.2499993, 0.9754951065, 17.99999928 )
+   (298.9999993, 0.9754951065, 14.99999928 )
+
+
+Time for model checking: 5.904s.
+
+Performance statistics:
+  * peak memory usage: 64MB
+  * CPU time: 5.926s
+  * wallclock time: 5.943s	</pre>
+</div>
+</body>
+</html>

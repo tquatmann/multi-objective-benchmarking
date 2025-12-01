@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#consensus">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/consensus/consensus.4.jani">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.412s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.700s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.326s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.326s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -45,7 +45,7 @@ consensus.4.jani:variables[12]: info: Expanding variable "pc4" into 4 locations 
 consensus.4.jani: info: Need 16 bytes per state.
 consensus.4.jani: info: Explored 22720 states for K=2.
 
-Peak memory usage: 116 MB
+Peak memory usage: 119 MB
 Analysis results for consensus.4.jani
 Experiment K=2
 
@@ -54,20 +54,20 @@ Experiment K=2
   States:             22720
   Transitions:        60608
   Branches:           75296
-  Rate:               73528 states/s
-  Peak memory:        47.98 MB
+  Rate:               72127 states/s
+  Peak memory:        47.99 MB
   Final size:         0.18 MB
   Time (exploration): 0.3 s
   Time (merging):     0.0 s
 
 + multi_pos
   WSO instances:       2
-  Time:                0.7 s
+  Time:                0.6 s
   Under Approximation: ∩{1x + -0y <= 1, 0x + -1y <= -193.0002414504}
   Over Approximation:  ∩{1x + -0y <= 1.0002490181, 0x + -1y <= -192.9999999843}
 
   + Pareto Curve Approximation
-    Time: 0.7 s	</pre>
+    Time: 0.6 s	</pre>
 </div>
 </body>
 </html>

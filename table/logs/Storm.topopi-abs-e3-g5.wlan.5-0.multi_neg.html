@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-e3-g5 - wlan multi_neg 5-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.5.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 5, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.5.jani --janiproperty multi_neg --constants COL=0 --multiobjective:precision 1e-3 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">220.284s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">220.284s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:31:25 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.5.jani --janiproperty multi_neg --constants COL=0 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.009s.
+
+Time for model construction: 37.576s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1295218
+Transitions: 	2929960
+Choices: 	1646074
+Reward Models:  time, cost, collisions
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1295208 states.
+Final preprocessed model has 1646064 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 11 refinement steps.
+Solving multi-objective query took 180.896s seconds (consisting of 7.864s seconds for preprocessing and 173.032s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 13 Halfspaces:
+   (222291243345045/2014315440377707,          0,          1) * x <= 15282494855080700604999425/528040706802373623808
+   (         0,          1, 2185542605504512/11001889435049646753324268725) * x <= 1328773347675263877987880031783713168831/1105984490179932720376810079541906112512
+   (11916436391360105157/2499598973071676336443,          0,          1) * x <= 12362774941478600681099700/2499598973071676336443
+   (         0,          1,          0) * x <= 5508217626823953517/4584682012849209344
+   (110083579092210507/4577401141049669813,          0,          1) * x <= 682951254899894819302075/73238418256794717008
+   (         0,          0,          1) * x <= 79796881563110097825/20547673299877888
+   (         0,          1, 12563858976803584/59582181956800525785) * x <= 8007303608602290299/3972145463786701719
+   (         0,          1, 279715693312/27786405418130625) * x <= 206497123464038174849/166492330558409932800
+   (         1,          0,          0) * x <= 26677467903150239524795325/117368309888902496256
+   (109262225835/160604949077,          0,          1) * x <= 109326880758757096204292325/689793003861460385792
+   (         0,          1, 117245740873984/2752089477305262675) * x <= 9622740562983570233/7045349061901472448
+   (2185542605504512/1026522737057262528054402419125,          1,          0) * x <= 867861146088860664309176063657035789959481/722351158765379557339945516886451803914240
+   (         0,          1, 33750272/13657778229375) * x <= 3788553554710487811649/3128517910996608614400
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (         1,          0,          0) * x <= 26677467903150239524795325/117368309888902496256
+   (         0,          1,          0) * x <= 5508217626823953517/4584682012849209344
+   (         0,          0,          1) * x <= 79796881563110097825/20547673299877888
+   (         0, 393684817561377146490/393684823787045270159, 70013584950980096/393684823787045270159) * x <= 1596415406832067663365584551295/845431721548441151902194860032
+   (138443490197764758/5343290585570847775,          0, 5341496764191841642/5343290585570847775) * x <= 15657416604832743892456174580461/1606448082263603647923355648
+   (7568318241050/66437468048649,          0, 902068094673138/907978729998203) * x <= 521658225636207002799640992475/17548825278626532106960896
+   (444582486690090/4053087756371393,          0, 4028630880755414/4053087756371393) * x <= 15282494855080700604999425/531246318403111223296
+   (23832872782720210314/4999254755515965203321,          0, 4999197946143352672886/4999254755515965203321) * x <= 24725549882957201362199400/4999254755515965203321
+   (31452451169203002/1308207048471649111,          0, 9154802282099339626/9157449339301543777) * x <= 682951254899894819302075/73259594714412350216
+   (         0, 23832872782720210314/23832873312578451319, 25127717953607168/119164366562892256595) * x <= 48043821651613741794/23832873312578451319
+   (218524451670/388495475713,          0, 321209898154/388495475713) * x <= 109326880758757096204292325/834287681415648641024
+
+6 Pareto optimal points found:
+   (1634723825193322831797125/7335519368056406016, 34298293556206321/28654372531470336, 79796881563110097825/20547673299877888 ) approx.    (222850.4545, 1.196965438, 3883.499625 )
+   (3331937624713437572005325/14671038736112812032, 68841974983053337/57308745062940672, 158759278785088535625/41095346599755776 ) approx.    (227109.8649, 1.201247295, 3863.193571 )
+   (109216733223707097198870925/1173678595289397592064, 5508217626823953517/4584682012849209344, 2839817563705885105482125/1173678595289397592064 ) approx.    (93055.06095, 1.201439404, 2419.587079 )
+   (26677467903150239524795325/117368309888902496256, 550823876145911881/458469960503525376, 1268479415565194818425/328762772798046208 ) approx.    ( 227297.027, 1.201439404, 3858.342612 )
+   (13338732239496249173625725/58684154944451248128, 275411926829698825/229234980251762688, 634242970403925332025/164381386399023104 ) approx.    (227296.9978, 1.201439355,  3858.36246 )
+   (6669253695767608506040925/29342077472225624064, 137705475551345257/114617490125881344, 317156237667002428825/82190693199511552 ) approx.    (227293.1663, 1.201435099, 3858.785287 )
+
+
+Time for model checking: 181.109s.
+
+Performance statistics:
+  * peak memory usage: 4925MB
+  * CPU time: 217.525s
+  * wallclock time: 220.024s	</pre>
+</div>
+</body>
+</html>

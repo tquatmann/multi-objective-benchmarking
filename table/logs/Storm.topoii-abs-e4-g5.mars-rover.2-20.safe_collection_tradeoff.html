@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - mars-rover safe_collection_tradeoff 2-20</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
+		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=2,B=20 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">28.028s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">28.028s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:30:44 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants 'Unf=2,B=20' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 5.448s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1376194
+Transitions: 	2580362
+Choices: 	1720242
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 26914 item(s)
+   * exceedTime -> 33970 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 18434 item(s)
+   * done -> 86013 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "safe_collection_tradeoff": multi(Pmax=? [F "valueCollected"], Pmax=? [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1286832 states.
+Final preprocessed model has 1630620 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+Solving multi-objective query took 22.477s seconds (consisting of 2.412s seconds for preprocessing and 20.065s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 8 Halfspaces:
+   (  0.623864,          1) * x <= 1.50304
+   (  0.824119,          1) * x <= 1.66585
+   (2.75374e-16,          1) * x <= 1
+   (         1,          1) * x <= 1.80944
+   (  0.666667,          1) * x <= 1.53758
+   (         0,          1) * x <= 1
+   (         1, 1.06283e-07) * x <= 1
+   (         1,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (  0.707107,   0.707107) * x <= 1.27947
+   (  0.187191,   0.982323) * x <= 1.13326
+   (  0.701374,   0.712793) * x <= 1.28043
+   (  0.569314,    0.82212) * x <= 1.28137
+   (  0.553544,    0.83282) * x <= 1.27918
+
+7 Pareto optimal points found:
+   (          0,           1 )
+   (0.8146663034, 0.9944641992 )
+   (          1,           0 )
+   (0.8164275413, 0.9930127294 )
+   (0.8067276923, 0.9997566068 )
+   (0.999999914, 0.8094402709 )
+   (0.8063375541,           1 )
+
+
+Time for model checking: 22.478s.
+
+Performance statistics:
+  * peak memory usage: 843MB
+  * CPU time: 27.434s
+  * wallclock time: 27.934s	</pre>
+</div>
+</body>
+</html>

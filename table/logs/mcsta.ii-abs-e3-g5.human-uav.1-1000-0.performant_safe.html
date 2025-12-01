@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#human-uav">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1000, <span class="tt">COUNTER</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">2.300s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">1.400s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">2.157s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.157s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -51,7 +51,7 @@ Experiment Unf=1, B=1000, COUNTER=0
   States:             118887
   Transitions:        210879
   Branches:           688527
-  Rate:               307202 states/s
+  Rate:               295739 states/s
   Peak memory:        83.29 MB
   Final size:         0.91 MB
   Time (exploration): 0.4 s
@@ -59,12 +59,12 @@ Experiment Unf=1, B=1000, COUNTER=0
 
 + performant_safe
   WSO instances:       10
-  Time:                1.4 s
+  Time:                1.3 s
   Under Approximation: ∩{1x + -0y <= 0.999990063, 0x + -1y <= 0, 1x + -0.7128716971y <= 0.5994616073, 1x + -0.0607686294y <= 0.962877976, 1x + -1.2657923918y <= 0.2943073964, 1x + -1.2618391869y <= 0.2963097483, 1x + -1.4205315824y <= 0.2903623582, 1x + -1.3008342567y <= 0.2926363133, 1x + -0.0009698787y <= 0.9990947882, 1x + -0.0073960538y <= 0.9935579344}
   Over Approximation:  ∩{1x + -0y <= 0.9999904764, 0x + -1y <= 0, 1x + -1.0833208092y <= 0.3949467269, 1x + -1.7984189899y <= 0.2903623663, 1x + -1.2726091154y <= 0.2940815574, 1x + -0.0185114529y <= 0.9872388916, 1x + -0.2072352001y <= 0.8812523305, 1x + -1.2654342505y <= 0.2945037277, 1x + -1.3485180783y <= 0.2918389541, 1x + -0.0062617787y <= 0.9945378781}
 
   + Pareto Curve Approximation
-    Time: 1.4 s	</pre>
+    Time: 1.2 s	</pre>
 </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#csma">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.2-2.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2, <span class="tt">K</span> = 2</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.534s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.100s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.564s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.564s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -42,7 +42,7 @@ csma.2-2.jani: info: Need 24 bytes per state.
 csma.2-2.jani: info: Explored 1582 states.
 csma.2-2.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 57 MB
+Peak memory usage: 60 MB
 Analysis results for csma.2-2.jani
 
 + State space exploration
@@ -50,7 +50,7 @@ Analysis results for csma.2-2.jani
   States:             1582
   Transitions:        1605
   Branches:           1959
-  Rate:               49438 states/s
+  Rate:               54552 states/s
   Peak memory:        36.88 MB
   Final size:         0.01 MB
   Time (exploration): 0.0 s
@@ -58,7 +58,7 @@ Analysis results for csma.2-2.jani
 
 + multi_neg
   WSO instances:       3
-  Time:                0.1 s
+  Time:                0.2 s
   Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.8749919723, -0*x_1 + -1*x_2 + 0*x_3 <= -0.4999974817, -0*x_1 + -0*x_2 + 1*x_3 <= 71.6645942249}
   Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.8749919723, -0*x_1 + -1*x_2 + 0*x_3 <= -0.4999974817, -0*x_1 + -0*x_2 + 1*x_3 <= 71.6645942249}
 

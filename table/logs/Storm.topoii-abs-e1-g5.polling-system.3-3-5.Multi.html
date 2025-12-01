@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e1-g5 - polling-system Multi 3-3-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e1-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/ma/polling-system/polling-system.jani">polling-system</a> <span class="tt">v.5</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">JOB_TYPES</span> = 3, <span class="tt">C</span> = 3, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e1-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/polling-system/converted_polling-system.JOB_TYPES=3,C=3,TIME_BOUND=5.jani --janiproperty Multi --multiobjective:precision 1e-1 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5 Used moconv to handle currently unsupported jani feature 'nondet-selection'.
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">52.672s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">52.672s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:18:59 2025
+Command line arguments: --jani '/rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/ma/polling-system/converted_polling-system.JOB_TYPES=3,C=3,TIME_BOUND=5.jani' --janiproperty Multi '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.042s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	13121
+Transitions: 	27686
+Choices: 	24244
+Markovian St.: 	5044
+Max. Rate: 	8.8
+Reward Models:  (((size[0] = 3) & (size[1] = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((size[0] = 3) & (size[1] = 3)) -> 4374 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	13121
+Transitions: 	27686
+Choices: 	24244
+Markovian St.: 	5044
+Max. Rate: 	8.8
+Reward Models:  (((size[0] = 3) & (size[1] = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((size[0] = 3) & (size[1] = 3)) -> 4374 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmin=? [F ((size[0] = 3) & (size[1] = 3))], Pmax=? [true U<=5 ((size[0] = 3) & (size[1] = 3))], R{"(((size[0] = 3) & (size[1] = 3)) ? 1 : 0)"}max=? [LRA[time]]) ...
+Final preprocessed model has 7658 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 21389 states.
+Final preprocessed model has 41210 actions.
+Found 1 end components that are relevant for LRA-analysis.
+12642 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 52.582s seconds (consisting of 0.014s seconds for preprocessing and 52.567s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 13 Halfspaces:
+   (         0,   0.118375,          1) * x <= 25
+   (         0,          1,          0) * x <= 0.0871421
+   (        -1,          0,          0) * x <= -10.9592
+   (-7.67032e-08,          1, 3.59172e-08) * x <= 0.0871412
+   (         0,          0,          1) * x <= 25
+   (        -1,  0.0290634,          0) * x <= -10.9592
+   (-0.000246872,   0.113254,          1) * x <= 24.9968
+   (        -1,  0.0289876, 2.64368e-07) * x <= -10.9592
+   (-0.000152281,          1,          0) * x <= 0.0854719
+   (-6.85432e-07,   0.118452,          1) * x <= 25
+   (        -1,          0, 2.64368e-07) * x <= -10.9592
+   (-0.000246872,          0,          1) * x <= 24.9968
+   (         0,          1, 4.12208e-10) * x <= 0.0871421
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (        -1,          0,          0) * x <= -10.959
+   (         0,          1,          0) * x <= 0.115757
+   (         0,          0,          1) * x <= 25
+   ( -0.997295,          0,  0.0735019) * x <= -9.09186
+   (-8.60569e-07,   0.999994, 0.00348589) * x <= 0.202877
+   (-0.00752506,   0.999966, 0.00348326) * x <= 0.120354
+
+6 Pareto optimal points found:
+   (10.96168782, 0.08714118546, 24.98964062 )
+   (10.95915521,           0, 0.001152442002 )
+   (10.96758459, 0.08714208343, 0.001152442002 )
+   (10.95916181,           0, 24.99950907 )
+   (12.80160023,           0, 24.99996392 )
+   ( 22.5344525, 0.08714207313, 24.98964845 )
+
+
+Time for model checking: 52.582s.
+
+Performance statistics:
+  * peak memory usage: 76MB
+  * CPU time: 52.454s
+  * wallclock time: 52.628s	</pre>
+</div>
+</body>
+</html>

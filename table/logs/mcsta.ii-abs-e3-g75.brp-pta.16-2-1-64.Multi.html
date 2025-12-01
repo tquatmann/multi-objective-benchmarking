@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g75 - brp-pta Multi 16-2-1-64</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/pta/brp-pta/brp-pta.jani">brp-pta</a> <span class="tt">v.3</span> (PTA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 16, <span class="tt">MAX</span> = 2, <span class="tt">TD</span> = 1, <span class="tt">TIME_BOUND</span> = 64</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.748s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.748s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+brp-pta.jani:model: info: brp-pta is a PTA model.
+brp-pta.jani: info: Need 40 bytes per state.
+brp-pta.jani: info: Explored 3959 states for N=16, MAX=2, TD=1, TIME_BOUND=64.
+
+Peak memory usage: 68 MB
+Analysis results for brp-pta.jani
+Experiment N=16, MAX=2, TD=1, TIME_BOUND=64
+
++ State space exploration
+  State size:         40 bytes
+  States:             3959
+  Transitions:        4244
+  Branches:           4593
+  Rate:               68259 states/s
+  Peak memory:        53.45 MB
+  Final size:         0.03 MB
+  Time (exploration): 0.1 s
+  Time (merging):     0.0 s
+
++ Multi
+  WSO instances:       6
+  Time:                0.3 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004233334, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 8E-06, 1*x_1 + 0.5518888371*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004379315, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 2.64531E-05, 1*x_1 + 0*x_2 + 1.5096717734*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0007029103, 1*x_1 + 0.5518888598*x_2 + 1.509671704*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0007175084, 0*x_1 + 1*x_2 + 2.7354639321*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0005330351, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0001851912, 1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0.0073398108*x_5 + 0*x_6 <= -0.0069133712, 1*x_1 + 0.5518888765*x_2 + 0*x_3 + 0*x_4 + -0.0073398109*x_5 + 0*x_6 <= -0.0068987732, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0.0132994358*x_5 + 0*x_6 <= -0.0132673546, 1*x_1 + 0*x_2 + 1.50967192*x_3 + 0*x_4 + -0.0073398117*x_5 + 0*x_6 <= -0.0066337952, 1*x_1 + 0.5518888989*x_2 + 1.5096717837*x_3 + 0*x_4 + -0.0073398112*x_5 + 0*x_6 <= -0.0066191966, 0*x_1 + 1*x_2 + 2.7354631934*x_3 + 0*x_4 + -0.0132994342*x_5 + 0*x_6 <= -0.0127607711, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0.0048618597*x_5 + 0*x_6 <= -0.004674611, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995766666, 1*x_1 + 0.5518887636*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004379316, 1*x_1 + 0*x_2 + 1.5096716288*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0007029104, 1*x_1 + 0.5518890361*x_2 + 1.5096723907*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0007175086, 0*x_1 + 1*x_2 + 2.7354628196*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.000533035, 1*x_1 + 0.5518887685*x_2 + 0*x_3 + 0*x_4 + -0.0073398093*x_5 + 0*x_6 <= -0.0068987715, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0.0132994341*x_5 + 0*x_6 <= -0.0132673528, 1*x_1 + 0*x_2 + 1.5096717823*x_3 + 0*x_4 + -0.0073398111*x_5 + 0*x_6 <= -0.0066337946, 1*x_1 + 0.5518889645*x_2 + 1.509672365*x_3 + 0*x_4 + -0.0073398126*x_5 + 0*x_6 <= -0.0066191979, 0*x_1 + 1*x_2 + 2.7354630561*x_3 + 0*x_4 + -0.0132994355*x_5 + 0*x_6 <= -0.0127607724, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0.0048618578*x_5 + 0*x_6 <= -0.004674609, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 4.5E-09*x_6 <= -0.9995766599, 0*x_1 + 1*x_2 + 0.3806390924*x_3 + 0*x_4 + -11521111.89624916*x_5 + 0*x_6 <= -11516236.292137822, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 1*x_6 <= 33.4731564508, 1*x_1 + 0.8403660345*x_2 + 0*x_3 + 0*x_4 + -3239007.643869373*x_5 + 0*x_6 <= -3237636.932088544, 1*x_1 + 0.0001904267*x_2 + 0*x_3 + 0*x_4 + -969.9990971421*x_5 + 0*x_6 <= -969.5881811774}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0005644599, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0002734023, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0002474202, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 3.88687E-05, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995457985, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 1*x_6 <= 33.4732356699}
+
+  + Pareto Curve Approximation
+    Time: 0.3 s	</pre>
+</div>
+</body>
+</html>

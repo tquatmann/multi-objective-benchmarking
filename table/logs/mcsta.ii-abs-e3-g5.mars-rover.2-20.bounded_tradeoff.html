@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#mars-rover">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
 		<tr><td>Property:</td><td><span class="tt">bounded_tradeoff</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">6.485s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">4.600s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">7.049s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">7.049s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -41,7 +41,7 @@ mars-rover.jani:model: info: mars-rover is an MDP model.
 mars-rover.jani: info: Need 16 bytes per state.
 mars-rover.jani: info: Explored 1376194 states for Unf=2, B=20.
 
-Peak memory usage: 833 MB
+Peak memory usage: 835 MB
 Analysis results for mars-rover.jani
 Experiment Unf=2, B=20
 
@@ -50,20 +50,20 @@ Experiment Unf=2, B=20
   States:             1376194
   Transitions:        1720242
   Branches:           2580362
-  Rate:               980894 states/s
-  Peak memory:        169.36 MB
+  Rate:               967788 states/s
+  Peak memory:        169.33 MB
   Final size:         10.50 MB
   Time (exploration): 1.4 s
   Time (merging):     0.1 s
 
 + bounded_tradeoff
   WSO instances:       2
-  Time:                4.6 s
+  Time:                5.1 s
   Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 1}
   Over Approximation:  ∩{1x + 0y <= 1.0002100447, 0x + 1y <= 1.0002141649}
 
   + Pareto Curve Approximation
-    Time: 4.4 s	</pre>
+    Time: 4.9 s	</pre>
 </div>
 </body>
 </html>

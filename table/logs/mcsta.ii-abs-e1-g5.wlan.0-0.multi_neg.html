@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e1-g5 - wlan multi_neg 0-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e1-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.0.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 0, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e1-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-1, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.777s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.777s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan.0.jani:model: info: wlan.0 is an MDP model.
+wlan.0.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.0.jani: info: Need 16 bytes per state.
+wlan.0.jani: info: Explored 2954 states for COL=0.
+
+Peak memory usage: 79 MB
+Analysis results for wlan.0.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         16 bytes
+  States:             2954
+  Transitions:        3972
+  Branches:           5202
+  Rate:               82056 states/s
+  Peak memory:        29.70 MB
+  Final size:         0.02 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       4
+  Time:                0.2 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9569337292, 1*x_1 + 1875596290.305858*x_2 + 0*x_3 <= 2297394286.999741, 0*x_1 + 1*x_2 + 5.4E-09*x_3 <= 1.2248929247, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2248803358, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.9047572407, 1*x_1 + 0*x_2 + 1.028864853*x_3 <= 31874.2146237597, 1*x_1 + 0*x_2 + 3.2335845986*x_3 <= 40234.3018827656, 0*x_1 + 1*x_2 + 0.0002134303*x_3 <= 2.0283508196, 0*x_1 + 1*x_2 + 0.3947612558*x_3 <= 1498.1161215143}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9801232806, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2487629818, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.9268794254, 1*x_1 + 0*x_2 + 1.0288660562*x_3 <= 31874.2391073863}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s	</pre>
+</div>
+</body>
+</html>

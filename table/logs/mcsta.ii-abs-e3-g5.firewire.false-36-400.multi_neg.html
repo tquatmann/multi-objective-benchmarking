@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#firewire">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/firewire/firewire.false.jani">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 400</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,9 +23,9 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.099s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.031s</td></tr>
 		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
-		<tr><td>Return code(s):</td><td style="tt; color: red;">0</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Unable to obtain tool result.</td></tr>
 	</table>
 </div>
@@ -45,7 +45,7 @@ firewire.false.jani: info: Need 24 bytes per state.
 firewire.false.jani: info: Explored 212270 states for delay=36, deadline=400.
 firewire.false.jani: error: Modelling Error: Potentially infinite reward for 'multi_neg' in subproperties: 0, 2
 
-Peak memory usage: 248 MB
+Peak memory usage: 246 MB
 Analysis results for firewire.false.jani
 Experiment delay=36, deadline=400
 
@@ -54,7 +54,7 @@ Experiment delay=36, deadline=400
   States:             212270
   Transitions:        478762
   Branches:           481798
-  Rate:               412977 states/s
+  Rate:               389486 states/s
   Peak memory:        121.24 MB
   Final size:         1.67 MB
   Time (exploration): 0.5 s

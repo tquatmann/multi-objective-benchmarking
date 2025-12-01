@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#wlan">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/wlan/wlan.1.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 1, <span class="tt">COL</span> = 0</td></tr>
 		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">1.101s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.500s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">0.937s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.937s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -52,7 +52,7 @@ Experiment COL=0
   States:             8625
   Transitions:        11356
   Branches:           16196
-  Rate:               125000 states/s
+  Rate:               148707 states/s
   Peak memory:        41.38 MB
   Final size:         0.07 MB
   Time (exploration): 0.1 s
@@ -60,12 +60,12 @@ Experiment COL=0
 
 + multi_neg
   WSO instances:       5
-  Time:                0.5 s
+  Time:                0.4 s
   Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 228206.3069534988, 0*x_1 + 1*x_2 + 0*x_3 <= 1.202368151, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681698, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681377, 0*x_1 + 0*x_2 + 1*x_3 <= 3865.1377209165, 1*x_1 + 0*x_2 + 206.6248296752*x_3 <= 1022349.0938183266, 0*x_1 + 1*x_2 + 0.0002077289*x_3 <= 2.0007503706, 1*x_1 + 0*x_2 + 41.8196754942*x_3 <= 388766.808774022, 1*x_1 + 0*x_2 + 45.0090753676*x_3 <= 401028.2410152793, 0*x_1 + 1*x_2 + 4.28374E-05*x_3 <= 1.3668359032, 0*x_1 + 1*x_2 + 5.7936E-05*x_3 <= 1.4248815686}
   Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 228262.2460758612, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2026573138, 0*x_1 + 0*x_2 + 1*x_3 <= 3866.0895883008, 1*x_1 + 0*x_2 + 174.1596614763*x_3 <= 897631.7077692514, 0*x_1 + 1*x_2 + 0.0002077289*x_3 <= 2.0009566857}
 
   + Pareto Curve Approximation
-    Time: 0.5 s	</pre>
+    Time: 0.4 s	</pre>
 </div>
 </body>
 </html>

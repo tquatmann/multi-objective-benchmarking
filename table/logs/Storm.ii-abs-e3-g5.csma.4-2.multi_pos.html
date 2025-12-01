@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.ii-abs-e3-g5 - csma multi_pos 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.ii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/csma/csma.4-2.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos --multiobjective:precision 1e-3 abs --sound --minmax:method ii --eqsolver native --native:method ii --timemem --statistics</pre>
+	(sound) II with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">21.634s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">21.634s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:50:34 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos '--multiobjective:precision' 1e-3 abs --sound '--minmax:method' ii --eqsolver native '--native:method' ii --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 3.205s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	761962
+Transitions: 	1327068
+Choices: 	825504
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 3444 item(s)
+   * all_delivered -> 9 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [(!"collision_max_backoff") U "all_delivered"], R{"time"}min=? [F "all_delivered"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1134249 states.
+Final preprocessed model has 1225739 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 18.384s seconds (consisting of 0.994s seconds for preprocessing and 17.389s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         0,         -1) * x <= -124.463
+   (         1, -0.00653991) * x <= -0.0654071
+   (         1, -1.5985e-07) * x <= 0.776439
+   (         1,          0) * x <= 0.77646
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 0.77646
+   (         0,         -1) * x <= -124.463
+   (  0.999989, -0.00471024) * x <= 0.170116
+   (  0.999979, -0.0065397) * x <= -0.0653928
+
+3 Pareto optimal points found:
+   (0.776459438, 128.7276125 )
+   (0.7764597027, 130.3839729 )
+   (0.7485725128, 124.4634956 )
+
+
+Time for model checking: 18.384s.
+
+Performance statistics:
+  * peak memory usage: 762MB
+  * CPU time: 21.426s
+  * wallclock time: 21.595s	</pre>
+</div>
+</body>
+</html>

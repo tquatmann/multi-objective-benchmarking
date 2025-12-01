@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topovi-abs-e3-g5 - client-server pareto 5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topovi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/client-server/client-server.5.jani">client-server</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topovi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.5.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --timemem --statistics</pre>
+	(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="color: red;">&gt 2700s (Timeout)</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:40:08 2025
+Command line arguments: --jani /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/client-server/client-server.5.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.044s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4864
+Transitions: 	21121
+Choices: 	16321
+Reward Models:  grants5, grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA], R{"grants4"}max=? [LRA], R{"grants5"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 4833 states.
+Final preprocessed model has 16241 actions.
+Found 782 end components that are relevant for LRA-analysis.
+4622 states lie on such an end component.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000306101 exceeds specified value 0.000223607 by approx. 8.24944e-05. Weight vector isvector (5) [ 1, 0, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000306101 exceeds specified value 0.000223607 by approx. 8.24944e-05. Weight vector isvector (5) [ 0, 1, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000306101 exceeds specified value 0.000223607 by approx. 8.24944e-05. Weight vector isvector (5) [ 0, 0, 1, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000306101 exceeds specified value 0.000223607 by approx. 8.24944e-05. Weight vector isvector (5) [ 0, 0, 0, 1, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000306101 exceeds specified value 0.000223607 by approx. 8.24944e-05. Weight vector isvector (5) [ 0, 0, 0, 0, 1 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.666667, 0.666667, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0, 0, 0.666667, 0.666667 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309458 exceeds specified value 0.000223607 by approx. 8.5851e-05. Weight vector isvector (5) [ 0.480708, 0.533586, 0, 0.484559, 0.499408 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310492 exceeds specified value 0.000223607 by approx. 8.6885e-05. Weight vector isvector (5) [ 0.460304, 0.467994, 0.473092, 0.473092, 0.348523 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308587 exceeds specified value 0.000223607 by approx. 8.49801e-05. Weight vector isvector (5) [ 0.645281, 0, 0.598193, 0.475161, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307644 exceeds specified value 0.000223607 by approx. 8.40368e-05. Weight vector isvector (5) [ 0.669334, 0.742961, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310571 exceeds specified value 0.000223607 by approx. 8.69645e-05. Weight vector isvector (5) [ 0.468014, 0.467903, 0.484608, 0.302092, 0.485722 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307638 exceeds specified value 0.000223607 by approx. 8.40315e-05. Weight vector isvector (5) [ 0.696929, 0, 0.71714, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309338 exceeds specified value 0.000223607 by approx. 8.57311e-05. Weight vector isvector (5) [ 0.500948, 0.501494, 0.501491, 0.00409941, 0.496029 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309372 exceeds specified value 0.000223607 by approx. 8.57649e-05. Weight vector isvector (5) [ 0.510097, 0.363517, 0.318408, 0.496199, 0.50996 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310326 exceeds specified value 0.000223607 by approx. 8.67194e-05. Weight vector isvector (5) [ 0.447214, 0.447214, 0.447214, 0.447214, 0.447214 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309393 exceeds specified value 0.000223607 by approx. 8.57861e-05. Weight vector isvector (5) [ 0.510837, 0.510837, 0.00566472, 0.516409, 0.459762 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307629 exceeds specified value 0.000223607 by approx. 8.40219e-05. Weight vector isvector (5) [ 0.729233, 0.121438, 0.0607188, 0.667907, 0.0607188 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308495 exceeds specified value 0.000223607 by approx. 8.4888e-05. Weight vector isvector (5) [ 0.59356, 0.594154, 0.054014, 0.54014, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48928e-05. Weight vector isvector (5) [ 0.597422, 0.59204, 0.0538218, 0.538218, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00030943 exceeds specified value 0.000223607 by approx. 8.58235e-05. Weight vector isvector (5) [ 0.523217, 0, 0.475651, 0.523217, 0.475651 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0.666667, 0, 0.666667, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309338 exceeds specified value 0.000223607 by approx. 8.57316e-05. Weight vector isvector (5) [ 0.501122, 0.496111, 0.501122, 0.501624, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309385 exceeds specified value 0.000223607 by approx. 8.57779e-05. Weight vector isvector (5) [ 0.513756, 0.462427, 0.50867, 0.513294, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308496 exceeds specified value 0.000223607 by approx. 8.4889e-05. Weight vector isvector (5) [ 0.594588, 0.0490543, 0, 0.594048, 0.539598 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309376 exceeds specified value 0.000223607 by approx. 8.57687e-05. Weight vector isvector (5) [ 0.111676, 0.506646, 0.502082, 0.511814, 0.465617 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00030943 exceeds specified value 0.000223607 by approx. 8.58234e-05. Weight vector isvector (5) [ 0.397222, 0.498804, 0.246006, 0.504153, 0.527939 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309362 exceeds specified value 0.000223607 by approx. 8.5755e-05. Weight vector isvector (5) [ 0.50507, 0, 0.481148, 0.505578, 0.507731 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 1.23902e-15, 0.707107, 1.36293e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 9.9948e-15, 9.08618e-15, 0.707107, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308462 exceeds specified value 0.000223607 by approx. 8.48556e-05. Weight vector isvector (5) [ 0, 0, 0.579259, 0.57404, 0.578737 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310549 exceeds specified value 0.000223607 by approx. 8.69418e-05. Weight vector isvector (5) [ 0.390663, 0.398555, 0.477477, 0.482252, 0.477477 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310542 exceeds specified value 0.000223607 by approx. 8.69349e-05. Weight vector isvector (5) [ 0.427765, 0.42738, 0.423529, 0.47952, 0.474391 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308465 exceeds specified value 0.000223607 by approx. 8.48581e-05. Weight vector isvector (5) [ 0, 0.575426, 0, 0.58118, 0.575426 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309435 exceeds specified value 0.000223607 by approx. 8.58279e-05. Weight vector isvector (5) [ 0.0430139, 0.477454, 0.473152, 0.524812, 0.520468 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309435 exceeds specified value 0.000223607 by approx. 8.58287e-05. Weight vector isvector (5) [ 0.509652, 0.509652, 0.31681, 0.31681, 0.528936 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308502 exceeds specified value 0.000223607 by approx. 8.48947e-05. Weight vector isvector (5) [ 0.537105, 0.596187, 6.96444e-16, 0.596724, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310562 exceeds specified value 0.000223607 by approx. 8.69549e-05. Weight vector isvector (5) [ 0.437134, 0.484781, 0.393779, 0.480848, 0.433157 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309317 exceeds specified value 0.000223607 by approx. 8.57103e-05. Weight vector isvector (5) [ 0.469646, 0.495359, 0.212509, 0.495593, 0.493234 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 7.92011e-15, 0.57735, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309341 exceeds specified value 0.000223607 by approx. 8.57338e-05. Weight vector isvector (5) [ 0.498348, 0.501746, 0.482162, 0.501925, 0.124465 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 0.5, 0, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48933e-05. Weight vector isvector (5) [ 0.592189, 0, 0.0489412, 0.597572, 0.538353 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0.511557, 0, 0.464629, 0.511092, 0.511092 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 1.27207e-13, 0, 0.707107, 1.39927e-13 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 1.27207e-13, 0, 0.707107, 1.27207e-13 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0.511557, 0.511092, 0, 0.511092, 0.464629 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 1.03864e-13, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310379 exceeds specified value 0.000223607 by approx. 8.67724e-05. Weight vector isvector (5) [ 0.455097, 0.413725, 0.455511, 0.455097, 0.455097 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309337 exceeds specified value 0.000223607 by approx. 8.573e-05. Weight vector isvector (5) [ 0.501125, 0, 0.501125, 0.49661, 0.501125 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 9.08618e-16, 0, 0.707107, 9.08618e-16 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0.57735, 0, 0.57735, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310453 exceeds specified value 0.000223607 by approx. 8.68461e-05. Weight vector isvector (5) [ 0.462585, 0.462206, 0.467261, 0.416365, 0.425075 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 6.60358e-15, 0.57735, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 0.5, 0.5, 0.5, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308504 exceeds specified value 0.000223607 by approx. 8.48967e-05. Weight vector isvector (5) [ 0.598289, 0.538999, 0.592899, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0.511092, 0, 0.511092, 0.511557, 0.464629 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 1.46525e-14, 0.707107, 1.57985e-14, 2.72585e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 5.04788e-16, 0.707107, 1.76676e-15, 1.43865e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309384 exceeds specified value 0.000223607 by approx. 8.57768e-05. Weight vector isvector (5) [ 6.59729e-15, 0.513416, 0.462537, 0.513416, 0.508791 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57262e-05. Weight vector isvector (5) [ 2.14936e-15, 0.500114, 0.500114, 0.499659, 0.500114 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0.57735, 7.41884e-15, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309447 exceeds specified value 0.000223607 by approx. 8.58397e-05. Weight vector isvector (5) [ 0.471027, 0.475309, 0.52284, 0.528064, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308462 exceeds specified value 0.000223607 by approx. 8.48551e-05. Weight vector isvector (5) [ 0.0470981, 0.580348, 0.57512, 0.574644, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309376 exceeds specified value 0.000223607 by approx. 8.57687e-05. Weight vector isvector (5) [ 0.511213, 0.511213, 0.511213, 0.464739, 2.05281e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309392 exceeds specified value 0.000223607 by approx. 8.57855e-05. Weight vector isvector (5) [ 0.511089, 0.516199, 0.459984, 0, 0.510628 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307643 exceeds specified value 0.000223607 by approx. 8.40362e-05. Weight vector isvector (5) [ 0, 0.672673, 0.73994, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0.57735, 0.57735, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308461 exceeds specified value 0.000223607 by approx. 8.48542e-05. Weight vector isvector (5) [ 0, 0.0522273, 0.5745, 0.574971, 0.580198 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309376 exceeds specified value 0.000223607 by approx. 8.57687e-05. Weight vector isvector (5) [ 0.464739, 1.32201e-14, 0.511213, 0.511213, 0.511213 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309473 exceeds specified value 0.000223607 by approx. 8.58664e-05. Weight vector isvector (5) [ 0.486416, 0.530636, 0.535058, 0.442197, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309342 exceeds specified value 0.000223607 by approx. 8.57353e-05. Weight vector isvector (5) [ 0, 0.502629, 0.497608, 0.502132, 0.497608 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0.57735, 0.57735, 0.57735, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0, 0.5, 0.5, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 6.76805e-15, 0.5, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 1.80087e-15, 0.707107, 1.63715e-15, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309338 exceeds specified value 0.000223607 by approx. 8.57316e-05. Weight vector isvector (5) [ 0.496111, 0.501122, 0.501624, 0, 0.501122 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 2.47805e-15, 1.3817e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0, 0.57735, 0.57735, 1.10355e-13 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0, 0.57735, 0.57735, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 2.47805e-15, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309443 exceeds specified value 0.000223607 by approx. 8.58357e-05. Weight vector isvector (5) [ 0.527001, 0.474348, 0.474348, 0, 0.521783 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 0.5, 0.5, 0, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308504 exceeds specified value 0.000223607 by approx. 8.48967e-05. Weight vector isvector (5) [ 0.592899, 0.598289, 0.538999, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48933e-05. Weight vector isvector (5) [ 0, 0.592171, 0.597604, 0.538338, 0.0489398 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00030938 exceeds specified value 0.000223607 by approx. 8.57733e-05. Weight vector isvector (5) [ 0.461205, 0.51245, 0.511938, 0, 0.51245 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 1.81724e-15, 1.38771e-14 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0.57735, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0.666667, 0.666667, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0, 0, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307643 exceeds specified value 0.000223607 by approx. 8.40362e-05. Weight vector isvector (5) [ 0, 0.672673, 0, 0, 0.73994 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309382 exceeds specified value 0.000223607 by approx. 8.57752e-05. Weight vector isvector (5) [ 0, 0.509044, 0.509511, 0.466659, 0.513325 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0, 0.511092, 0.511557, 0.464629, 0.511092 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000310552 exceeds specified value 0.000223607 by approx. 8.69448e-05. Weight vector isvector (5) [ 0.42502, 0.476022, 0.42502, 0.42502, 0.481122 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308461 exceeds specified value 0.000223607 by approx. 8.48538e-05. Weight vector isvector (5) [ 0.574468, 0.00522243, 0.580212, 0.0569763, 0.574515 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 1.81724e-15, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309373 exceeds specified value 0.000223607 by approx. 8.57661e-05. Weight vector isvector (5) [ 0.510515, 0.467547, 0.510473, 0, 0.51009 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 1.31784e-15, 0.707107, 0, 3.67609e-15 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0.511092, 0.464629, 0.511557, 0, 0.511092 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 0, 1.65203e-15 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0, 0.57735, 1.01082e-13, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 6.49148e-15, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308507 exceeds specified value 0.000223607 by approx. 8.48997e-05. Weight vector isvector (5) [ 6.10758e-19, 0.535384, 0.600166, 0, 0.594277 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 1.37554e-14, 1.36178e-14, 0.707107, 1.51309e-14, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 2.1249e-14, 0.57735, 0.57735, 1.93942e-14, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 1.35394e-14, 0.57735, 0.57735, 1.16847e-14, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0.57735, 0.57735, 1.16847e-14, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 1.16847e-13, 0.57735, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 1.85471e-15, 0.57735, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 1.50047e-16, 0, 0.707107, 1.65052e-15, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 6.51655e-15, 0, 0.57735, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 1.90888e-15, 0.5, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309333 exceeds specified value 0.000223607 by approx. 8.57258e-05. Weight vector isvector (5) [ 0.5, 0, 0.5, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308504 exceeds specified value 0.000223607 by approx. 8.48967e-05. Weight vector isvector (5) [ 0.598289, 0.592899, 1.11824e-14, 0, 0.538999 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48936e-05. Weight vector isvector (5) [ 0.538024, 0, 0.592316, 0.597745, 0.0489113 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0, 0.707107, 1.65203e-15, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309438 exceeds specified value 0.000223607 by approx. 8.58309e-05. Weight vector isvector (5) [ 0.473484, 0.520832, 0.477788, 0, 0.52561 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308504 exceeds specified value 0.000223607 by approx. 8.48967e-05. Weight vector isvector (5) [ 0, 0, 0.592899, 0.538999, 0.598289 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308498 exceeds specified value 0.000223607 by approx. 8.48917e-05. Weight vector isvector (5) [ 0.540738, 0.594812, 0, 0, 0.594812 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0.57735, 2.12364e-14, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0, 0.707107, 0, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48933e-05. Weight vector isvector (5) [ 0.538353, 0.592189, 0, 0.0489412, 0.597572 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000309377 exceeds specified value 0.000223607 by approx. 8.57698e-05. Weight vector isvector (5) [ 0.511092, 0.511557, 0, 0.464629, 0.511092 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 9.08618e-15, 0.707107, 9.08618e-15 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0.57735, 0, 2.95067e-15, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 8.26017e-15, 0.707107, 7.50924e-15, 8.33526e-15, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0.57735, 0, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308507 exceeds specified value 0.000223607 by approx. 8.48997e-05. Weight vector isvector (5) [ 0.594277, 0, 0, 0.535384, 0.600166 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0, 0.707107, 8.26017e-16 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0.707107, 0, 8.26017e-16, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0.707107, 0, 0, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0, 0.57735, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0.57735, 0, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48933e-05. Weight vector isvector (5) [ 0.0489412, 0, 0.538353, 0.597572, 0.592189 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.0003085 exceeds specified value 0.000223607 by approx. 8.48933e-05. Weight vector isvector (5) [ 0.592191, 0, 0.538355, 0.0489414, 0.597569 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0, 0.707107, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000308459 exceeds specified value 0.000223607 by approx. 8.48525e-05. Weight vector isvector (5) [ 0, 0.57735, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0, 0, 0.666667, 0.666667, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000307636 exceeds specified value 0.000223607 by approx. 8.40295e-05. Weight vector isvector (5) [ 0.707107, 0, 0.707107, 0, 0 ].
+
+
+----------
+Computation aborted after 2700.0031232833862 seconds since the total time limit of 2700 seconds was exceeded.	</pre>
+</div>
+</body>
+</html>

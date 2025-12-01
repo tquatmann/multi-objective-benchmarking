@@ -10,7 +10,7 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Model:</td><td><a href="http://qcomp.org/benchmarks/index.html#team-formation">team-formation</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/team-formation/team-formation.3.jani">team-formation</a> <span class="tt">v.1</span> (MDP)</td></tr>
 		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3</td></tr>
 		<tr><td>Property:</td><td><span class="tt">tradeoff_finish1_teamsize</span> (multi-tradeoff)</td></tr>
 	</table>
@@ -23,8 +23,8 @@
 <div class="box">
 	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
 	<table style="margin-bottom: 0.75ex;">
-		<tr><td>Walltime:</td><td style="tt">0.869s</td></tr>
-		<tr><td>Considered runtime:</td><td style="tt">0.100s</td></tr>
+		<tr><td>Walltime:</td><td style="tt">1.084s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.084s</td></tr>
 		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
 		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
 	</table>
@@ -43,7 +43,7 @@ team-formation.3.jani: warning: The probabilities for a transition labelled "τ"
 team-formation.3.jani: info: Explored 12475 states.
 team-formation.3.jani: warning: Multi-objective model checking with value iteration provides unsound results
 
-Peak memory usage: 119 MB
+Peak memory usage: 121 MB
 Analysis results for team-formation.3.jani
 
 + State space exploration
@@ -51,20 +51,20 @@ Analysis results for team-formation.3.jani
   States:             12475
   Transitions:        14935
   Branches:           15228
-  Rate:               135598 states/s
-  Peak memory:        40.65 MB
+  Rate:               126010 states/s
+  Peak memory:        40.64 MB
   Final size:         0.10 MB
   Time (exploration): 0.1 s
   Time (merging):     0.0 s
 
 + tradeoff_finish1_teamsize
   WSO instances:       5
-  Time:                0.1 s
+  Time:                0.2 s
   Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 2.3265306122, 1x + 0.5y <= 2.0102040816, 1x + 1y <= 3.0816326531}
   Over Approximation:  ∩{1x + 0y <= 1, 0x + 1y <= 2.3265306122, 1x + 0.8y <= 2.6530612245, 1x + 1y <= 3.0816326531, 1x + 0.5y <= 2.0102040816}
 
   + Pareto Curve Approximation
-    Time: 0.1 s	</pre>
+    Time: 0.2 s	</pre>
 </div>
 </body>
 </html>

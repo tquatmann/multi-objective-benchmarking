@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g75 - consensus multi_neg 6-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/mdp/consensus/consensus.6.jani">consensus</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 6, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_neg -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">464.205s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">464.205s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+		<tr><td>Note(s):</td><td>Correctness of result is not checked because no reference result is available.</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta /rwthfs/rz/cluster/home/tq429871/git/multi-objective-benchmarking/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_neg -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+consensus.6.jani:model: info: consensus.6 is an MDP model.
+consensus.6.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.6.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.6.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
+consensus.6.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
+consensus.6.jani:variables[14]: info: Expanding variable "pc5" into 4 locations in automaton "process5".
+consensus.6.jani:variables[16]: info: Expanding variable "pc6" into 4 locations in automaton "process6".
+consensus.6.jani: info: Need 24 bytes per state.
+consensus.6.jani: info: Explored 1258624 states for K=2.
+
+Peak memory usage: 1793 MB
+Analysis results for consensus.6.jani
+Experiment K=2
+
++ State space exploration
+  State size:         24 bytes
+  States:             1258624
+  Transitions:        5008512
+  Branches:           6237120
+  Rate:               233122 states/s
+  Peak memory:        578.26 MB
+  Final size:         9.75 MB
+  Time (exploration): 5.4 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                458.3 s
+  Under Approximation: ∩{1x + 0y <= 0.3636447467, 0x + 1y <= 868, 1x + 6.16E-08y <= 0.3636847764, 1x + 0.0028408521y <= 2.465859633, 1x + 0.0026881727y <= 2.3479923641}
+  Over Approximation:  ∩{1x + 0y <= 0.3640173378, 0x + 1y <= 868.000371841, 1x + 0.001666621y <= 1.5941712619, 1x + 0.0028010858y <= 2.4354254235, 1x + 0.0028408521y <= 2.4661287563, 1x + 0.0026881727y <= 2.3482612826}
+
+  + Pareto Curve Approximation
+    Time: 456.1 s	</pre>
+</div>
+</body>
+</html>
