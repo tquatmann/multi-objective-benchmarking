@@ -7,10 +7,8 @@ import os
 import itertools
 
 def get_runtime(result_json):
-    if "model-checking-time" in result_json:
-        if "bisimulation" in result_json and result_json["bisimulation"] and "preprocessing-time" in result_json:
-            return result_json["model-checking-time"] + result_json["preprocessing-time"]
-        return result_json["model-checking-time"]
+    if "wallclock-time" in result_json:
+        return result_json["wallclock-time"]
     else:
         raise AssertionError("no model checking time in {}".format(result_json))
 
