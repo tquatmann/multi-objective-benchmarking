@@ -50,13 +50,13 @@ def get_configurations():
     cfgs.append(Configuration(id="ii-abs-e3-g5", note="(sound) II with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --sound --minmax:method ii --eqsolver native --native:method ii"))
     # exact
     cfgs.append(Configuration(id="topopi-abs-e3-g5", note="exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --exact"))
+    cfgs.append(Configuration(id="topopi-abs-einf", note="exact topological PI with epsilon=0, absolute precision", command="--multiobjective:precision 0 abs --exact"))
     # different gammas
-    cfgs.append(Configuration(id="topoii-abs-e3-g2", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.2", command="--multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.2"))
-    cfgs.append(Configuration(id="topoii-abs-e3-g8", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.8", command="--multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.8"))
+    for gamma in [0.01, 0.1, 0.25, 0.75, 0.9, 0.99]: # 0.5 already covered
+        cfgs.append(Configuration(id="topoii-abs-e3-g{}".format(str(gamma)[2:]), note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma={}".format(gamma), command="--multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff {}".format(gamma)))
     # different precisions
-    cfgs.append(Configuration(id="topoii-abs-e2-g5", note="(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-2 abs --sound"))
-    cfgs.append(Configuration(id="topoii-abs-e4-g5", note="(sound) topological II with epsilon=10^-4, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-4 abs --sound"))
-    cfgs.append(Configuration(id="topoii-abs-e5-g5", note="(sound) topological II with epsilon=10^-5, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-5 abs --sound"))
+    for eps in [1,2,4,5,6]: # 10^-3 already covered
+        cfgs.append(Configuration(id="topoii-abs-e{}-g5".format(eps), note="(sound) topological II with epsilon=10^-{}  absolute precision, and gamma=0.5".format(eps), command="--multiobjective:precision 1e-{} abs --sound".format(eps)))
     return cfgs
 
 
@@ -65,7 +65,7 @@ def get_invocation(settings, benchmark : Benchmark, configuration : Configuratio
     Returns an invocation that invokes the tool for the given benchmark and the given storm configuration.
     It can be assumed that the current directory is the directory from which execute_invocations.py is executed.
     """
-    general_arguments = "--timemem --verbose" # Prints some timing and memory information
+    general_arguments = "--timemem" # Prints some timing and memory information
     
     invocation = Invocation()
     invocation.tool = get_name()
@@ -157,6 +157,18 @@ def get_MC_Time(logfile):
         pos2 = logfile.find("s.", pos)
         num = logfile[pos:pos2]
         return float(num)
+    return None
+
+def get_iterations(logfile):
+    """
+    Tries to parse the number of iterations
+    """
+    pos = logfile.find("Multi-objective Pareto Curve Approximation algorithm terminated after ")
+    if pos >= 0:
+        pos += len("Multi-objective Pareto Curve Approximation algorithm terminated after ")
+        pos2 = logfile.find(" refinement steps.\n", pos)
+        num = logfile[pos:pos2]
+        return int(num)
     return None
 
 def is_bisimulation_used(logfile):

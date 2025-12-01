@@ -65,13 +65,13 @@ def parse_tool_output(settings, execution_json):
         result = None
         mctime = storm.get_MC_Time(log)
         if mctime is not None:
-            if True: # old: float(mctime) <= 1800
-                execution_json["model-checking-time"] = mctime
-                result = storm.get_result(log, benchmark)
-                solve_time = storm.get_Solve_Time(log)
-                if solve_time is not None: execution_json["model-solving-time"] = solve_time
-            else:
-                execution_json["timeout"] = True
+            execution_json["model-checking-time"] = mctime
+            result = storm.get_result(log, benchmark)
+            iters = storm.get_iterations(log)
+            if iters is not None: execution_json["iterations"] = iters
+            solve_time = storm.get_Solve_Time(log)
+            if solve_time is not None: execution_json["model-solving-time"] = solve_time
+
             execution_json["memout"] = False
             execution_json["expected-error"] = False
         else:
@@ -87,6 +87,8 @@ def parse_tool_output(settings, execution_json):
             if True: # old: float(mctime) <= 1800
                 execution_json["model-checking-time"] = mctime
                 result = mcsta.get_result(log, benchmark)
+                iters = mcsta.get_iterations(log, benchmark)
+                if iters is not None: execution_json["iterations"] = iters
                 solve_time = mcsta.get_Solve_Time(log)
                 if solve_time is not None: execution_json["model-solving-time"] = solve_time
             else:

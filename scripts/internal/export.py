@@ -14,6 +14,12 @@ def get_runtime(result_json):
     else:
         raise AssertionError("no model checking time in {}".format(result_json))
 
+def get_iterations(result_json):
+    if "iterations" in result_json:
+        return result_json["iterations"]
+    else:
+        return None
+
 class CombinedResult(object):
     def __init__(self, result_json_array):
         if (len(result_json_array) == 0):
@@ -27,6 +33,7 @@ class CombinedResult(object):
         self.num_timeout = 0
         self.num_incorrect = 0
         self.runtimes = []
+        self.iters = []
         self.buildtimes = []
         self.walltimes = []
         self.return_codes = []
@@ -42,6 +49,8 @@ class CombinedResult(object):
                 self.num_incorrect += 1
             else:
                 self.runtimes.append(get_runtime(res_json))
+                if get_iterations(res_json) is not None:
+                    self.iters.append(get_iterations(res_json))
             self.walltimes.append(res_json["wallclock-time"])
             if "return-codes" in res_json:
                 self.return_codes += res_json["return-codes"]
@@ -55,22 +64,29 @@ class CombinedResult(object):
             return None
         return sum(self.runtimes) / len(self.runtimes)
 
+    def average_iters(self):
+        if len(self.iters) == 0:
+            return None
+        return sum(self.iters) / len(self.iters)
 
 
 
-# Generates a csv containing runtimes. A row corresponds to a benchmark, a column corresponds to a tool/config combination.
+
+# Generates a csv containing runtimes (or iterations, see type parameter). A row corresponds to a benchmark, a column corresponds to a tool/config combination.
 # The first three columns contain the benchmark id, the model type, and the original format
 # The last column contains the lowest runtime of the corresponding rows.
-def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_configs, property_filter=None):
-    MIN_VALUE = 1 # runtimes will be set to max(MIN_VALUE, actual runtime)
-    MAX_VALUE = 512 # runtimes will be set to min(MAX_VALUE, actual runtime)
-    TO_VALUE = 724 # timeout
-    MO_VALUE = 724 # Out of memory
-    NA_VALUE = 724 # not available
-    NS_VALUE = 724 # not supported
-    INC_VALUE = 724 # Incorrect result
-    ERR_VALUE = 724 # error
-    ND_VALUE = 724 # not displayed
+def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_configs, property_filter=None, data_type="runtime"):
+    if data_type not in ["runtime", "iterations"]:
+        raise AssertionError("data_type must be either 'runtime' or 'iterations'")
+    MIN_VALUE = 1 # runtimes/iterations will be set to max(MIN_VALUE, actual runtime)
+    MAX_VALUE = 2048 if data_type == "runtime" else 128  # runtimes/iterations will be set to min(MAX_VALUE, actual runtime)
+    TO_VALUE = MAX_VALUE * 2 # timeout
+    MO_VALUE = TO_VALUE # Out of memory
+    NA_VALUE = TO_VALUE # not available
+    NS_VALUE = TO_VALUE # not supported
+    INC_VALUE = TO_VALUE # Incorrect result
+    ERR_VALUE = TO_VALUE # error
+    ND_VALUE = TO_VALUE # not displayed
     
     result = [ ["benchmark", "Type", "Orig", "Prop", "Class"] + ["{}.{}.{}".format(g,t,c) for (g,t,c) in groups_tools_configs] + ["best"] ]
     for benchmark_id in benchmark_ids:
@@ -91,8 +107,11 @@ def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_config
                     value = NS_VALUE
                 elif combined_res.num_incorrect > 0: # count as incorrect if at least one result is inc.
                     value = INC_VALUE
-                elif len(combined_res.runtimes) > 0:
+                elif data_type == "runtime" and len(combined_res.runtimes) > 0:
                     value = min(MAX_VALUE, max(MIN_VALUE, combined_res.average_runtime()))
+                    best_value = min(best_value, value)
+                elif data_type == "iterations" and len(combined_res.iters) > 0:
+                    value = min(MAX_VALUE, max(MIN_VALUE, combined_res.average_iters()))
                     best_value = min(best_value, value)
                 elif combined_res.num_timeout > 0: # do not consider TO / MO in average
                     value = TO_VALUE
@@ -115,7 +134,7 @@ def generate_quantile_csv(settings, exec_data, benchmark_ids, groups_tools_confi
     for tc in selection_for_best:
         if tc not in [ "{}.{}".format(t,c) for (g,t,c) in groups_tools_configs ]:
             print("Selection for best runtime '{}' not in the list of tools/configs".format(tc))
-    MIN_VALUE = 0.1 # runtimes will be set to max(MIN_VALUE, actual runtime)
+    MIN_VALUE = 0.25 # runtimes will be set to max(MIN_VALUE, actual runtime)
     runtimes_best_dict = OrderedDict()
     runtimes_best_dict["overall-best"] = OrderedDict()
     runtimes_best_dict["selection-best"] = OrderedDict()
@@ -231,6 +250,13 @@ def get_best_configs(settings, exec_data, benchmark_ids, groups_tools_configs):
 
 def generate_stats_json(settings, exec_data, benchmark_ids, groups_tools_configs):
     stats = OrderedDict()
+
+    # Count for each scatter class how many benchmarks are in it
+    stats["num-benchmarks-per-scatter-class"] = OrderedDict()
+    scatter_classes = [ get_benchmark_from_id(settings, b).get_scatterclass() for b in benchmark_ids ]
+    for sc in  sorted(set(scatter_classes)):
+        stats["num-benchmarks-per-scatter-class"][sc] = len([ s for s in scatter_classes if s == sc ])
+
     stats["accumulated_walltime"] = OrderedDict()
     stats["num-cor-inc-nores"] = OrderedDict()
     all_walltime = 0.0

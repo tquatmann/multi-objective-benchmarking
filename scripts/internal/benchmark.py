@@ -221,6 +221,13 @@ class Benchmark(object):
     def is_multi_tradeoff(self):
         return self.get_property_type() == "multi-tradeoff"
 
+    def get_num_objectives(self):
+        if not self.is_multi_tradeoff():
+            raise AssertionError("Invalid operation: Not a multi-tradeoff property.")
+        property_json = self.get_property_jani()
+        return len(property_json["expression"]["values"]["properties"])
+
+
     def get_portable_directory(self):
         return os.path.join(self.settings.benchmark_dir(), "{}/{}".format(self.get_model_type(), self.get_model_short_name()))
 
@@ -447,14 +454,11 @@ class Benchmark(object):
         return [ s for s in benchmarksets.data.keys() if ident in benchmarksets.data[s] ]
 
     def get_scatterclass(self):
-        c = self.get_model_type().lower()
-        if "qvbs" in self.get_benchmark_sets():
-            c += "qvbs"
-        elif "gridworld" in self.get_benchmark_sets():
-            c += "grid"
-        if "mec-only" in self.get_benchmark_sets() or "mec-subset" in self.get_benchmark_sets():
-            c += "mec"
-        return c
+        numobj = self.get_num_objectives() if self.is_multi_tradeoff() else 1
+        if numobj <= 3:
+            return f"{numobj}obj"
+        else:
+            return "ge4obj"
 
     def get_property_jani(self):
         model_jani = self.load_jani_file()

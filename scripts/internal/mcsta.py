@@ -13,10 +13,16 @@ def get_configurations():
     
     cfgs = []
 
-    cfgs.append(Configuration(id="ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
     cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
     cfgs.append(Configuration(id="vi-abs-e3-g5", note="(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
-    cfgs.append(Configuration(id="gurobi-ii-abs-e3-g5", note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5. Uses Gurobi", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver Gurobi"))
+    # different gammas
+    for gamma in [0.01, 0.1, 0.25, 0.5, 0.75, 0.9, 0.99]:
+        cfgs.append(Configuration(id="ii-abs-e3-g{}".format(str(gamma)[2:]), note="Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma={}".format(gamma), command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma {} --lp-solver HiGHS".format(gamma)))
+
+    # different precisions
+    for eps in [1,2,4,5,6]: # 10^-3 already covered
+        cfgs.append(Configuration(id="ii-abs-e{}-g5".format(eps), note="Interval iteration with mo-epsilon=10^-{}, absolute precision, and gamma=0.5".format(eps), command=" --alg IntervalIteration --mo-epsilon 1e-{} --mo-gamma 0.5 --lp-solver HiGHS".format(eps)))
+
 
 
     return cfgs
@@ -121,7 +127,24 @@ def get_MC_Time(log, benchmark : Benchmark):
     num = log[pos:end_pos] # note that mcsta has rounded this to a multiple of 0.1 s
     return float(num)
 
-    
+
+def get_iterations(log, benchmark : Benchmark):
+    """
+    Tries to parse the number of iterations
+    """
+    pos = log.find("+ {}".format(benchmark.get_property_name()))
+    if pos < 0:
+        return None
+    pos = log.find("WSO instances:", pos)
+    if pos < 0:
+        return None
+    pos += len("WSO instances:")
+    end_pos = log.find("\n", pos)
+    if end_pos < 0:
+        return None
+    num = log[pos:end_pos]
+    return int(num)
+
 def get_Solve_Time(log):
     """
     Tries to parse the solving time of the underlying solution method (model checking time without prob0/1, ... preprocessing)

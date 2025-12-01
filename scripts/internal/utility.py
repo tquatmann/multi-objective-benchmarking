@@ -250,6 +250,9 @@ class Settings(object):
         if not "results-file-scatter" in self.json_data:
             self.json_data["results-file-scatter"] = "scatter.csv"
             set_an_option = True
+        if not "results-file-scatter2" in self.json_data:
+            self.json_data["results-file-scatter2"] = "scatteriters.csv"
+            set_an_option = True
         if not "results-file-quantile" in self.json_data:
             self.json_data["results-file-quantile"] = "quantile.csv"
             set_an_option = True
@@ -287,6 +290,10 @@ class Settings(object):
     def results_file_scatter(self):
         """ Retrieves the filename to which the tool execution results for scatter plots are stored. """
         return self.json_data["results-file-scatter"]
+
+    def results_file_scatter2(self):
+        """ Retrieves the filename to which the tool execution results for scatter plots are stored. """
+        return self.json_data["results-file-scatter2"]
 
     def results_file_quantile(self):
         """ Retrieves the filename to which the tool execution results for quantile plots are stored. """
