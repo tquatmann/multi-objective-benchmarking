@@ -65,7 +65,7 @@ def get_invocation(settings, benchmark : Benchmark, configuration : Configuratio
     Returns an invocation that invokes the tool for the given benchmark and the given storm configuration.
     It can be assumed that the current directory is the directory from which execute_invocations.py is executed.
     """
-    general_arguments = "--timemem" # Prints some timing and memory information
+    general_arguments = "--timemem --statistics" # Prints some timing and memory information
     
     invocation = Invocation()
     invocation.tool = get_name()
