@@ -265,6 +265,11 @@ def is_not_supported(logfile):
     known_messages.append("csma_abst") # Unsupported PTA benchmark
     known_messages.append("csma-pta") # Unsupported PTA benchmark
     known_messages.append("rectangle-tireworld.30.jani.gz") # too large jani benchmark
+    known_messages.append("Transition rewards are not supported and a reduction to action-based rewards was not possible.")
+    known_messages.append("Scheduler extraction is not yet implemented for LP based LRA method.")
+    known_messages.append("The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.")
+
+    # known_messages.append("")
     for m in known_messages:
         if m in logfile:
             return True

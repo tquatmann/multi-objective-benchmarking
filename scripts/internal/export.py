@@ -47,8 +47,9 @@ class CombinedResult(object):
                 self.num_incorrect += 1
             else:
                 self.runtimes.append(get_runtime(res_json))
-                if get_iterations(res_json) is not None:
-                    self.iters.append(get_iterations(res_json))
+                if get_iterations(res_json) is None:
+                    raise AssertionError("Missing iterations in result for {}.".format(res_json))
+                self.iters.append(get_iterations(res_json))
             self.walltimes.append(res_json["wallclock-time"])
             if "return-codes" in res_json:
                 self.return_codes += res_json["return-codes"]
@@ -80,11 +81,11 @@ def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_config
     MAX_VALUE = 2048 if data_type == "runtime" else 128  # runtimes/iterations will be set to min(MAX_VALUE, actual runtime)
     TO_VALUE = MAX_VALUE * 2 # timeout
     MO_VALUE = TO_VALUE # Out of memory
-    NA_VALUE = TO_VALUE # not available
-    NS_VALUE = TO_VALUE # not supported
-    INC_VALUE = TO_VALUE # Incorrect result
-    ERR_VALUE = TO_VALUE # error
-    ND_VALUE = TO_VALUE # not displayed
+    NA_VALUE = TO_VALUE * 2 # not available
+    NS_VALUE = NA_VALUE # not supported
+    INC_VALUE = NA_VALUE # Incorrect result
+    ERR_VALUE = NA_VALUE # error
+    ND_VALUE = NA_VALUE # not displayed
     
     result = [ ["benchmark", "Type", "Orig", "Prop", "Class"] + ["{}.{}.{}".format(g,t,c) for (g,t,c) in groups_tools_configs] + ["best"] ]
     for benchmark_id in benchmark_ids:
@@ -318,7 +319,7 @@ def create_log_page(settings, result_json_array, group, output_dir):
         write_line(f, indention, '<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>')
         write_line(f, indention, '<table style="margin-bottom: 0.75ex;">')
         indention += 1
-        write_line(f, indention, '<tr><td>Model:</td><td><a href="{}">{}</a> <span class="tt">v.{}</span> ({})</td></tr>'.format("http://qcomp.org/benchmarks/index.html#{}".format(b.get_model_short_name()), b.get_model_short_name(), b.index_json["version"], b.get_model_type().upper()))
+        write_line(f, indention, '<tr><td>Model:</td><td><a href="{}">{}</a> <span class="tt">v.{}</span> ({})</td></tr>'.format(b.get_url(), b.get_model_short_name(), b.index_json["version"], b.get_model_type().upper()))
         write_line(f, indention, '<tr><td>Parameter(s)</td><td>{}</td></tr>'.format(", ".join(['<span class="tt">{}</span> = {}'.format(p["name"], p["value"]) for p in b.get_parameters()])))
         write_line(f, indention, '<tr><td>Property:</td><td><span class="tt">{}</span> ({})</td></tr>'.format(b.get_property_name(), b.get_property_type()))
         indention -= 1
@@ -497,7 +498,7 @@ def generate_table(settings, exec_data, benchmark_ids, groups_tools_configs, out
             b = get_benchmark_from_id(settings, benchmark_id)
             write_line(tablefile, indention, '<tr>')
             indention += 1
-            write_line(tablefile, indention, '<td><a href="{}">{}</a></td>'.format("http://qcomp.org/benchmarks/index.html#{}".format(b.get_model_short_name()), b.get_model_short_name()))
+            write_line(tablefile, indention, '<td><a href="{}">{}</a></td>'.format(b.get_url(), b.get_model_short_name()))
             write_line(tablefile, indention, '<td>{}</td>'.format(b.get_model_type().upper()))
             write_line(tablefile, indention, '<td>{}</td>'.format(b.get_original_format()))
             write_line(tablefile, indention, '<td>{}</td>'.format(b.get_parameter_values_string()))

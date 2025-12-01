@@ -6,11 +6,11 @@ from .configuration import *
 def get_name():
     """ should return the name of the tool"""
     return "mcsta"
-    
-    
+
+
 def get_configurations():
     """ Returns the list of all tool configurations to benchmark """
-    
+
     cfgs = []
 
     cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
@@ -26,7 +26,7 @@ def get_configurations():
 
 
     return cfgs
-    
+
 
 def test_installation(settings, configuration = None):
     """
@@ -35,7 +35,7 @@ def test_installation(settings, configuration = None):
     """
     mcsta_executable = set_mdpmc_dir(os.path.join(settings.mcsta_binary_dir(), "modest"))
     if not os.path.exists(mcsta_executable):
-         return "Binary '{}' does not exist.".format(mcsta_executable)    
+         return "Binary '{}' does not exist.".format(mcsta_executable)
     command_line = mcsta_executable + " mcsta {}".format("" if configuration is None else configuration.command)
     try:
         test_out, test_time, test_code = execute_command_line(command_line, 10)
@@ -46,7 +46,7 @@ def test_installation(settings, configuration = None):
     except Exception:
         return "Error while executing\n\t{}\n".format(command_line)
 
-    
+
 def is_benchmark_supported(benchmark : Benchmark, configuration : Configuration):
     """ Auxiliary function that returns True if the provided benchmark is  supported by mcsta."""
     return benchmark.has_janifile()
@@ -58,7 +58,7 @@ def get_invocation(settings, benchmark : Benchmark, configuration : Configuratio
     It can be assumed that the current directory is the directory from which execute_invocations.py is executed.
     """
     general_arguments = "--unsafe -D -S Memory"
-    
+
     invocation = Invocation()
     invocation.tool = get_name()
     invocation.configuration_id = configuration.identifier
@@ -68,21 +68,21 @@ def get_invocation(settings, benchmark : Benchmark, configuration : Configuratio
 
     if is_benchmark_supported(benchmark, configuration):
         bdir = benchmark.get_portable_directory()
-        mcsta_executable = os.path.join(settings.mcsta_binary_dir(), "modest")    
-    
+        mcsta_executable = os.path.join(settings.mcsta_binary_dir(), "modest")
+
         janifile = benchmark.get_janifilename()
         par_defs = benchmark.get_open_parameter_def_string()
         benchmark_arguments = "mcsta {} --props {}".format(os.path.join(bdir, janifile), benchmark.get_property_name())
         if par_defs != "":
             benchmark_arguments += " -E " + par_defs
-        
+
         # We set the precision to the required one (if given). Otherwise, we keep the default value.
         #if settings.goal_precision() is not None:
         #        general_arguments += " --width {}".format(float(settings.goal_precision()))
-                
+
         invocation.add_command(mcsta_executable + " " + benchmark_arguments + " " + general_arguments + " " + configuration.command)
     else:
-        invocation.note += " Benchmark not supported by mcsta."    
+        invocation.note += " Benchmark not supported by mcsta."
     return invocation
 
 
@@ -94,6 +94,8 @@ def get_result(log, benchmark : Benchmark):
     """
 
     pos = log.find("+ {}".format(benchmark.get_property_name()))
+    if pos < 0:
+        pos = log.find("+ Property {}".format(benchmark.get_property_name()))
     if pos < 0:
         return None
     result = log[pos:]
@@ -109,12 +111,14 @@ def get_result(log, benchmark : Benchmark):
     #     return None
     # result = log[pos:end_pos]
     return result
-    
+
 def get_MC_Time(log, benchmark : Benchmark):
     """
     Tries to parse the model checking time (i.e. whatever happens after model building)
     """
     pos = log.find("+ {}".format(benchmark.get_property_name()))
+    if pos < 0:
+        pos = log.find("+ Property {}".format(benchmark.get_property_name()))
     if pos < 0:
         return None
     pos = log.find("Time:", pos)
@@ -133,6 +137,8 @@ def get_iterations(log, benchmark : Benchmark):
     Tries to parse the number of iterations
     """
     pos = log.find("+ {}".format(benchmark.get_property_name()))
+    if pos < 0:
+        pos = log.find("+ Property {}".format(benchmark.get_property_name()))
     if pos < 0:
         return None
     pos = log.find("WSO instances:", pos)
@@ -157,7 +163,7 @@ def get_Solve_Time(log):
         method = lp
     else:
         return None
-    
+
     pos = log.find(method)
     if pos < 0:
         return None
@@ -170,7 +176,7 @@ def get_Solve_Time(log):
         return None
     num = log[pos:end_pos] # note that mcsta has rounded this to a multiple of 0.1 s
     return float(num)
-    
+
 def get_Build_Time(log):
     """
     Tries to parse the model building time
@@ -204,12 +210,16 @@ def is_not_supported(logfile):
     Returns true if the logfile contains error messages that mean that the input is not supported.
     """
     # if one of the following error messages occurs, we are sure that the model is not supported.
-    known_messages = []
-    #known_messages.append("The model type Markov Automaton is not supported by the dd engine.")
+    known_messages = ["error: Open clock constraints are not allowed.",
+                      "Skipping unsupported property",
+                      "Error: Potentially infinite reward",
+                      "Multi-objective properties are only supported for MDPs and LTSs"
+                    ]
+
     for m in known_messages:
         if m in logfile:
             return True
-    
+
     return False
 
 
@@ -245,7 +255,7 @@ def is_memout(logfile):
     known_messages = []
     known_messages.append("The linear programming solver ran out of memory.")
     known_messages.append("Out of memory")
-    # known_messages.append("ERROR: The program received signal 11")
+    known_messages.append("Return code:\t-9")
     for m in known_messages:
         if m in logfile:
             return True

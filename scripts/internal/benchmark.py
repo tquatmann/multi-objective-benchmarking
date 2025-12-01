@@ -371,6 +371,9 @@ class Benchmark(object):
             if os.path.splitext(f)[1].lower() in [".props", ".pctl", ".csl", ".prctl", ".csrl"]:
                 return f
         raise AssertionError("Unable to find DRN property file.")
+
+    def get_url(self):
+        return "https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/{}/{}/{}".format(self.get_model_type(), self.get_model_short_name(), self.get_janifilename())
         
     def store_reference_result(self, result, cfg):
         ref_json = load_json(os.path.join(sys.path[0], "internal/reference_results.json"))
