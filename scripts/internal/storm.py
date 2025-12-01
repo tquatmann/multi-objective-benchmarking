@@ -48,6 +48,8 @@ def get_configurations():
     # ii
     cfgs.append(Configuration(id="topoii-abs-e3-g5", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --sound"))
     cfgs.append(Configuration(id="ii-abs-e3-g5", note="(sound) II with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --sound --minmax:method ii --eqsolver native --native:method ii"))
+    # exact
+    cfgs.append(Configuration(id="topopi-abs-e3-g5", note="exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5", command="--multiobjective:precision 1e-3 abs --exact"))
     # different gammas
     cfgs.append(Configuration(id="topoii-abs-e3-g2", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.2", command="--multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.2"))
     cfgs.append(Configuration(id="topoii-abs-e3-g8", note="(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.8", command="--multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.8"))
