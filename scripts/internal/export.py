@@ -68,6 +68,8 @@ class CombinedResult(object):
             return None
         return sum(self.iters) / len(self.iters)
 
+    def is_solved(self):
+        return self.num_not_supported +   self.num_ignored  + self.num_expected_error + self.num_unexpected_error  + self.num_memout + self.num_timeout + self.num_incorrect == 0
 
 
 
@@ -78,7 +80,7 @@ def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_config
     if data_type not in ["runtime", "iterations"]:
         raise AssertionError("data_type must be either 'runtime' or 'iterations'")
     MIN_VALUE = 1 # runtimes/iterations will be set to max(MIN_VALUE, actual runtime)
-    MAX_VALUE = 2048 if data_type == "runtime" else 128  # runtimes/iterations will be set to min(MAX_VALUE, actual runtime)
+    MAX_VALUE = 512 if data_type == "runtime" else 128  # runtimes/iterations will be set to min(MAX_VALUE, actual runtime)
     TO_VALUE = MAX_VALUE * 2 # timeout
     MO_VALUE = TO_VALUE # Out of memory
     NA_VALUE = TO_VALUE * 2 # not available
@@ -257,24 +259,24 @@ def generate_stats_json(settings, exec_data, benchmark_ids, groups_tools_configs
         stats["num-benchmarks-per-scatter-class"][sc] = len([ s for s in scatter_classes if s == sc ])
 
     stats["accumulated_walltime"] = OrderedDict()
-    stats["num-cor-inc-nores"] = OrderedDict()
+    stats["num-solved-nores-nosupport"] = OrderedDict()
     all_walltime = 0.0
     for (group, tool, config) in groups_tools_configs:
         gtc_walltime = 0.0
-        gtc_num_cor_inc_nores = [0, 0, 0]
+        gtc_solved_nores_nosupport = [0, 0, 0]
         for benchmark_id in benchmark_ids:
             if benchmark_id not in exec_data[group][tool][config]: continue
             res = CombinedResult(exec_data[group][tool][config][benchmark_id])
             gtc_walltime += sum(res.walltimes)
-            if res.num_incorrect > 0:
-                gtc_num_cor_inc_nores[1] += 1
-            elif res.average_runtime() is None:
-                gtc_num_cor_inc_nores[2] += 1
+            if res.is_solved():
+                gtc_solved_nores_nosupport[0] += 1
+            elif res.num_not_supported == 0:
+                gtc_solved_nores_nosupport[1] += 1
             else:
-                gtc_num_cor_inc_nores[0] += 1
+                gtc_solved_nores_nosupport[2] += 1
         gtc_string = "{}.{}.{}".format(group, tool, config)
         stats["accumulated_walltime"][gtc_string] = round(gtc_walltime/3600, 1)
-        stats["num-cor-inc-nores"][gtc_string] = "{} / {} / {}".format(*gtc_num_cor_inc_nores)
+        stats["num-solved-nores-nosupport"][gtc_string] = "{} / {} / {}".format(*gtc_solved_nores_nosupport)
         all_walltime += gtc_walltime
     stats["accumulated_walltime"]["total"] = round(all_walltime / 3600, 1)
     stats["group_scaling_factors"] = generate_group_scaling_factors(exec_data, benchmark_ids, groups_tools_configs)

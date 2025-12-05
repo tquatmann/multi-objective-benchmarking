@@ -373,7 +373,7 @@ class Benchmark(object):
         raise AssertionError("Unable to find DRN property file.")
 
     def get_url(self):
-        return "https://github.com/tquatmann/qcomp/tree/storm-conv-prism/benchmarks/{}/{}/{}".format(self.get_model_type(), self.get_model_short_name(), self.get_janifilename())
+        return "https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/{}/{}/{}".format(self.get_model_type(), self.get_model_short_name(), self.get_janifilename())
         
     def store_reference_result(self, result, cfg):
         ref_json = load_json(os.path.join(sys.path[0], "internal/reference_results.json"))

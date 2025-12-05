@@ -38,7 +38,8 @@ def process_tool_result(result, notes, settings, benchmark, execution_json):
             elif not execution_json["result-correct"]:
                 notes.append("Result '{}' is tagged as incorrect because it is different from the reference result '{}'.".format(result, benchmark.get_reference_result()))
         else:
-            notes.append("Correctness of result is not checked because no reference result is available.")
+            pass
+            # notes.append("Correctness of result is not checked because no reference result is available.")
     else:
         has_timeout = "timeout" in execution_json and execution_json["timeout"]
         has_error = "execution-error" in execution_json and execution_json["execution-error"]

@@ -13,7 +13,7 @@ def get_configurations():
 
     cfgs = []
 
-    cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
+    # cfgs.append(Configuration(id="ii-rel-e3-g5", note="Interval iteration with mo-epsilon=10^-3, relative precision, and gamma=0.5", command=" --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --relative-mo-epsilon --lp-solver HiGHS"))
     cfgs.append(Configuration(id="vi-abs-e3-g5", note="(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5", command=" --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"))
     # different gammas
     for gamma in [0.01, 0.1, 0.25, 0.5, 0.75, 0.9, 0.99]:
