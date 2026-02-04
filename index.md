@@ -7,4 +7,4 @@ by Arnd Hartmanns, Tim Quatmann, Mark van Wijk
 ## Experiments
 An interactive table with the full logfiles can be found [here](table/table.html).
 
-Checkout the [git repository](../).
+Checkout the [git repository](https://github.com/tquatmann/multi-objective-benchmarking/).
