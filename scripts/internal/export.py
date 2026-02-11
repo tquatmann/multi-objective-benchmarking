@@ -488,7 +488,7 @@ def generate_table(settings, exec_data, benchmark_ids, groups_tools_configs, out
         write_line(tablefile, indention, '<tr>')
         indention += 1
         for head in ["Model", "Type", "Original", "Parameters", "Property", "Type"] + ["{}.{}.{}".format(g,t,c) for (g,t,c) in groups_tools_configs]:
-            write_line(tablefile, indention, '<th>{}</th>'.format(head))
+            write_line(tablefile, indention, '<th>{}</th>'.format(head.replace("logs.", "").replace(".topo", ".").replace("-abs-e", " e=10^-").replace("-g", " g=0.")))
         indention -= 1
         write_line(tablefile, indention, '</tr>')
         indention -= 1
