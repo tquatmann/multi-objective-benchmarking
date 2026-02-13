@@ -5,6 +5,7 @@ from internal import storm
 from internal import mcsta
 from internal.invocation import *
 from internal.input import *
+from datetime import datetime
 
 import traceback
 
@@ -204,6 +205,7 @@ def run_invocations(settings, invocations):
         traceback.print_exc()
     
 if __name__ == "__main__":
+    #print current time and date
     print("MDP benchmarking tool.")
     print("This script selects and executes benchmarks.")
     print("Usages:")
@@ -230,7 +232,7 @@ if __name__ == "__main__":
                 if not os.path.isfile(filename):  raise AssertionError("Invocations input file {} does not exist".format(filename))
                 invocations_json += load_json(filename)
             invocations = [Invocation(inv) for inv in invocations_json]
-            print("Loaded {} invocations from {} files".format(len(invocations_json), len(sys.argv) - 2))
+            print("{} Loaded {} invocations from {} files".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(invocations_json), len(sys.argv) - 2))
         # save invocations
         while True:
             response = input("Enter a filename to store the invocations for later usage or press Return to continue: ")
@@ -259,7 +261,7 @@ if __name__ == "__main__":
             raise AssertionError("Invocations file {} does not exist".format(sys.argv[1]))
         invocations_json = load_json(sys.argv[1])
         invocations = [Invocation(inv) for inv in invocations_json]
-        print("Loaded {} invocations.".format(len(invocations)))
+        print("{} Loaded {} invocations.".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(invocations)))
         if len(sys.argv) == 3:
             if not is_number(sys.argv[2]): raise AssertionError("Expected a number for second argument but got '{}' instead.".format(sys.argv[2]))
             selected_index = int(sys.argv[2])
@@ -268,6 +270,7 @@ if __name__ == "__main__":
             print("Selected invocation #{}: {}".format(selected_index, invocations[0].get_identifier()))
         check_invocations(settings, invocations)
         run_invocations(settings, invocations)
+        print("\n{} Finished execution of invocations".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     
     
     

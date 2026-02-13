@@ -148,7 +148,7 @@ def get_instances_solved_in_time(settings, exec_data, benchmark_ids, groups_tool
 # Generates a csv containing runtimes. The first column denotes the row indices. Each of the remaining column corresponds to a tool/config combination. The last column corresponds to the fastest tool/config
 # An entry in the ith row corresponds to the runtime of the ith fastest benchmark
 def generate_quantile_csv(settings, exec_data, benchmark_ids, groups_tools_configs):
-    selection_for_best = ["{}.{}".format(storm.get_name(), cfg) for cfg in ["vi-topo-mecq", "pi-mono-gmres-topo"]] + ["{}.{}".format(mcsta.get_name(), cfg) for cfg in ["vi-es", "ii"]]
+    selection_for_best = ["{}.{}".format(storm.get_name(), cfg) for cfg in []] + ["{}.{}".format(mcsta.get_name(), cfg) for cfg in []]
     for tc in selection_for_best:
         if tc not in [ "{}.{}".format(t,c) for (g,t,c) in groups_tools_configs ]:
             print("Selection for best runtime '{}' not in the list of tools/configs".format(tc))

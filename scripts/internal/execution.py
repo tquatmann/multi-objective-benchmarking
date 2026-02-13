@@ -37,9 +37,6 @@ class CommandExecution(object):
         self.output = self.output + stdout.decode('utf8')
         if len(stderr) > 0:
             self.output = self.output + "\n" + "#"*30 + "Output to stderr" + "#"*30 + "\n" + stderr.decode('utf8')
-        if self.timeout and self.wall_time <= time_limit:
-            print("WARN: A timeout was triggered although the measured time is {} seconds which is still below the time limit of {} seconds".format(self.wall_time, time_limit))
-
 
 def execute_command_line(command_line_str : str, time_limit : int, warm_up_run = False):
     """

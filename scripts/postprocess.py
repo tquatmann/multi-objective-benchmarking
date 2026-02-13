@@ -4,6 +4,7 @@ from internal.utility import *
 from internal import benchmarksets
 import sys
 import os
+import shutil
 
 def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorted):
 
@@ -50,26 +51,34 @@ def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorte
     stats_json = generate_stats_json(settings, exec_data, benchmark_set, groups_tools_configs_filtered)
     save_json(stats_json, statsfile)
 
+    plotsfile_dest = os.path.join(benchmark_set_id, "plots.tex")
+    print("\tCreating file {} for plots".format(plotsfile_dest))
+    plotsfile_src = os.path.realpath(os.path.join(sys.path[0], "internal/plots.tex"))
+    shutil.copyfile(plotsfile_src, plotsfile_dest)
+
 
 if __name__ == "__main__":
     print("Benchmarking tool.")
     print("This script gathers data of executions and exports them in various ways.")
-    print("Usages:")
-    print("python3 {} reads the log file directory from the default settings file.".format(sys.argv[0]))
-    print("python3 {} path/to/first/logfiles/ path/to/second/logfiles/ ...    reads from multiple log file directories '".format(sys.argv[0]))
+    print("Usage:")
+    print("python3 {} <log_dir> <benchmark_set>".format(sys.argv[0]))
+    print("Reads logfiles from <log dir> and processes benchmarks from <benchmark_set>")
+    print("Possible benchmark sets: {}".format(", ".join(benchmarksets.data.keys())))
     print("")
-    if (len(sys.argv) == 2 and sys.argv[1] in ["-h", "-help", "--help"]):
+    if len(sys.argv) != 3:
         exit(1)
+    if not os.path.isdir(sys.argv[1]):
+        print("Error: log directory '{}' does not exist.".format(sys.argv[1]))
+        exit(1)
+    logdirs = [sys.argv[1]]
+    if sys.argv[2] not in benchmarksets.data:
+        print("Error: unknown benchmark set '{}'. Possible benchmark sets: {}".format(sys.argv[2], ", ".join(benchmarksets.data.keys())))
+        exit(1)
+    benchmarkset_id = sys.argv[2]
 
     settings = Settings()
-    logdirs = sys.argv[1:]
-    if len(logdirs) == 0:
-        logdirs = [settings.logs_dir()]
-    print("Selected log dir(s): {}".format(", ".join(logdirs)))
-    print("")
 
     groups_tools_configs = get_all_groups_tools_configs(logdirs) # group names are derived from the directory names
     exec_data = gather_execution_data(settings, logdirs, groups_tools_configs)  # Group -> Tool -> Config -> Benchmark -> [Data array]
-    for benchmarkset_id in benchmarksets.data.keys():
-        exportData(settings, benchmarkset_id, exec_data, groups_tools_configs)
+    exportData(settings, benchmarkset_id, exec_data, groups_tools_configs)
 

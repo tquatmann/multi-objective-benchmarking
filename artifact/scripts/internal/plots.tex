@@ -1,0 +1,444 @@
+\documentclass{article}
+\usepackage[a4paper, total={14cm, 28cm}]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{ifthen}
+
+
+\newcommand{\tool}[1]{\textsc{#1}}
+\newcommand{\mcsta}{\tool{mcsta}\xspace}
+\newcommand{\storm}{\tool{Storm}\xspace}
+
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+
+%%%%%%%%%%%%%%%%
+% Commands for Plots
+%%%%%%%%%%%%%%%%
+\newtoggle{showplots}
+\toggletrue{showplots}
+% \togglefalse{showplots}
+
+%% Colours
+\definecolor{plotred}{RGB}{255,0,0}
+\definecolor{plotgreen}{RGB}{0,255,0}
+\colorlet{plotblack}{black}
+\colorlet{plotblue}{blue}
+\colorlet{plotlightblue}{plotblue!60!white}
+\definecolor{plotyellow}{RGB}{230,230,0}
+\colorlet{plotcyan}{cyan!70!white}
+\definecolor{plotorange}{RGB}{255,127,0}
+\definecolor{plotpink}{RGB}{255,0,255}
+\colorlet{plotgray}{gray!70!white}
+\definecolor{plotdarkgray}{RGB}{128,128,128}
+\definecolor{plotdarkred}{RGB}{128,0,0}
+\definecolor{plotgreenyellow}{RGB}{128,128,0}
+\definecolor{plotdarkgreen}{RGB}{0,128,0}
+\definecolor{plotpurple}{RGB}{128,0,128}
+\definecolor{plotteal}{RGB}{0,128,128}
+\definecolor{plotdarkblue}{RGB}{0,0,128}
+\definecolor{plotlightred}{RGB}{205,92,92}
+
+
+%% Quantile Plots
+\newcommand{\numinstances}{261}
+\newcommand{\quantileplotxlabel}{solved benchmarks (out of \numinstances)}
+\newcommand{\quantileplotylabel}{runtime (seconds)}
+\newlength{\quantileplotwidth}
+\newlength{\quantileplotheight}
+\setlength{\quantileplotwidth}{0.6\textwidth}
+\setlength{\quantileplotheight}{0.4\textwidth}
+\newcommand{\quantileplotlegendcols}{1}
+\newcommand{\standardquantileplotlinestyle}{ultra thick}
+\newcommand{\quantileplotlinestyle}{\standardquantileplotlinestyle}
+\newcommand{\quantileplot}[8]{%
+% Arguments:
+% #1: csv filename
+% #2: comma separated list of tool.config/color items}
+% #3: comma separated list of readable config names 
+% #4: xmin
+% #5: xmax
+% #6: ymin
+% #7: ymax
+% #8: legend pos (e.g. "north west")
+	\begin{tikzpicture}
+	\begin{axis}[
+	width=\quantileplotwidth,
+	height=\quantileplotheight,
+	xmin=#4,
+	xmax=#5,
+	ymin=#6,
+	ymax=#7,
+	ymajorgrids,
+	ymode=log,
+	axis x line=bottom,
+	axis y line=left,
+	unbounded coords=discard,filter discard warning=false, % properly deal with missing data points
+	xlabel=\quantileplotxlabel,
+	xlabel style={font=\scriptsize,yshift=4pt},%{yshift=16pt},
+	ylabel=\quantileplotylabel,
+	ylabel style={font=\scriptsize,yshift=-7pt},%{yshift=-0.4cm},
+	log ticks with fixed point, % enable to avoid 10^-x notation
+	ytick={1,4,16,64,256,1024},
+	yticklabels={1,4,16,64,256,1024},
+	yticklabel style={font=\scriptsize},
+	scaled y ticks=false,
+	xticklabel style={font=\scriptsize},
+	legend columns=\quantileplotlegendcols,
+	legend pos={#8},
+	legend style={font=\footnotesize,nodes={scale=0.75, transform shape},inner sep=1pt},
+/pgfplots/legend image code/.code={\draw[mark repeat=2,mark phase=2,##1] plot coordinates {(0cm,0cm) (0.3cm,0cm)};}, % make the legend lines a bit smaller
+	every axis plot/.append style={\quantileplotlinestyle},
+	legend cell align={left}
+	]
+	\iftoggle{showplots}{
+	\foreach \tool\color in {#2}{%
+		\edef\loopbody{
+			\noexpand\addplot[\color] table [x=n,y=\tool shifted, col sep=tab] {#1};
+		}
+		\loopbody
+	}
+	\legend{#3}}{\node[anchor=south west, align=center, red] {\huge NOT\\ COMPILED};}
+	\end{axis}
+	\end{tikzpicture}%
+}
+
+
+%% Scatter plots
+\newlength\scatterplotsize
+\setlength{\scatterplotsize}{0.36\textwidth}
+\newcommand{\scatterplot}[6]{%
+% Arguments:
+% #1: csv filename
+% #2: tool.config identifier for x-axis
+% #3: label for x-axis
+% #4: tool.config identifier for y-axis
+% #5: label for y-axis
+% #6: trigger showing the legend (true/false)
+	\begin{tikzpicture}
+	\begin{axis}[
+	width=\scatterplotsize,
+	height=\scatterplotsize,
+	axis equal image,
+	xmin=1,
+	ymin=1,
+	ymax=2900, % approx (2048)*sqrt(2)
+	xmax=2900,
+	xmode=log,
+	ymode=log,
+	axis x line=bottom,
+	axis y line=left,
+	xtick={4,16,64,256},
+	xticklabels={4,16,64,256},
+	extra x ticks = {1,512,1024,2048},
+	extra x tick labels = {${\le}1$,,\,\,t/o,},
+	extra x tick style = {grid = major},
+	ytick={4,16,64,256},
+	yticklabels={4,16,64,256},
+	extra y ticks = {1,512,1024,2048},
+	extra y tick labels = {${\le}1$,$\ge$512,t/o,n/s},
+	extra y tick style = {grid = major},
+	xlabel={#3},
+	xlabel style={font=\scriptsize,yshift=5pt},%{yshift=16pt},
+	ylabel={#5},
+	ylabel style={font=\scriptsize,yshift=-14pt,xshift=-10pt},%{yshift=-0.4cm},
+	yticklabel style={font=\scriptsize},
+	xticklabel style={font=\scriptsize},%rotate=290,anchor=west,
+	legend pos=north east,
+	legend columns=4,
+	legend style={font=\footnotesize,nodes={scale=0.75, transform shape},inner sep=1.5pt, xshift=1mm, yshift=7mm},
+	set layers,
+	mark layer=axis background
+	]
+	
+	\ifthenelse{\NOT\equal{#6}{false}}{\addlegendimage{empty legend}}{}
+	\iftoggle{showplots}{\addplot[
+	scatter,
+	only marks,
+	scatter/classes={
+		2obj={mark=asterisk,plotgreen,mark size=1.75},
+		3obj={mark=triangle*,plotblue,mark size=1.75},
+		ge4obj={mark=diamond*,plotorange,mark size=1.75}%,
+	},
+	scatter src=explicit symbolic
+	]%
+	table [col sep=tab,x=#2,y=#4,meta=Class] {#1};
+	}{\node[anchor=south west, align=center, red] {\huge NOT\\ COMPILED};}
+	\ifthenelse{\NOT\equal{#6}{false}}{%
+	\addlegendentry{\hspace{-50pt}num obj}
+	\addlegendentry{2}
+	\addlegendentry{3}
+	\addlegendentry{$\ge$4}
+	}{}
+	\addplot[no marks] coordinates {(0.01,0.01) (2048,2048) };
+	\addplot[no marks, densely dotted] coordinates {(0.01,0.02) (1024,2048)};
+	\addplot[no marks, densely dotted] coordinates {(0.02,0.01) (2048,1024)};
+	\end{axis}
+	\end{tikzpicture}
+}
+
+\newcommand{\iterscatterplot}[6]{%
+% Arguments:
+% #1: csv filename
+% #2: xmax (num of configs + 1)
+% #3: list of index/config, e.g. 1/cfgA,2/cfgB,3/cfgC
+% #4: label for x-ticks
+% #5: label for x-axis
+% #6: trigger showing the legend (true/false)
+	\begin{tikzpicture}
+	\begin{axis}[
+	width=0.47\textwidth,
+	height=\scatterplotsize,
+	xmin=0,
+	ymin=2,
+	ymax=360,
+	xmax=#2.5,
+	ymode=log,
+	axis x line=bottom,
+	axis y line=left,
+    xtick=\empty,
+	extra x ticks={1,2,3,4,5,6,7},
+	extra x tick labels={#4},
+	extra x tick style = {grid = major},
+	ytick={1,2,4,8,16,32,64},
+	yticklabels={1,2,4,8,16,32,64},
+	extra y ticks = {128,256},
+	extra y tick labels = {$\ge$128,n/a},
+	extra y tick style = {grid = major},
+	xlabel={#5},
+	xlabel style={font=\scriptsize,yshift=5pt},%{yshift=16pt},
+	ylabel={\# iterations},
+	ylabel style={font=\scriptsize,yshift=-14pt,xshift=-10pt},%{yshift=-0.4cm},
+	yticklabel style={font=\scriptsize},
+	xticklabel style={font=\scriptsize},
+	legend pos=north east,
+	legend columns=4,
+	legend style={font=\footnotesize,nodes={scale=0.75, transform shape},inner sep=1.5pt, xshift=1mm, yshift=7mm},
+	set layers,
+	mark layer=axis background,
+	scatter/classes={
+		2obj={mark=asterisk,plotgreen,mark size=1.75},
+		3obj={mark=triangle*,plotblue,mark size=1.75},
+		ge4obj={mark=diamond*,plotorange,mark size=1.75}%,
+	},scatter src=explicit symbolic
+	]
+
+	\ifthenelse{\NOT\equal{#6}{false}}{\addlegendimage{empty legend}}{}
+	\foreach \myindex\myconfig in {#3}{%
+		\edef\loopbody{
+		\noexpand\addplot[scatter,only marks,
+			]%
+		table [col sep=tab,x expr=\myindex,y=\myconfig,meta=Class] {#1};
+		}
+		\loopbody
+	}
+	\ifthenelse{\NOT\equal{#6}{false}}{%
+	\addlegendentry{\hspace{-50pt}num obj}
+	\addlegendentry{2}
+	\addlegendentry{3}
+	\addlegendentry{$\ge$4}
+	}{}
+
+	\end{axis}
+	\end{tikzpicture}
+}
+
+\begin{document}
+
+\title{%
+	Reproduction of Experiments for the Paper:\\
+Tools and Algorithms for Sound\\ Multi-Objective Probabilistic Model Checking%
+}
+\date{\today}
+\maketitle
+\setcounter{figure}{5}    
+
+\begin{figure}[htp]
+	\quantileplot{quantile.csv}
+	{
+		logs.Storm.topopi-abs-e3-g5/plotblack,
+		logs.Storm.topoii-abs-e3-g5/plotblue,
+		logs.Storm.topovi-abs-e3-g5/plotpurple,
+		logs.mcsta.ii-abs-e3-g5/plotred,
+		logs.mcsta.vi-abs-e3-g5/plotorange
+	}
+	{
+		PI$^\mathrm{exact}_{\storm}$,
+		II$_{\storm}$,
+		VI$_{\storm}$,
+		II$_{\mcsta}$,
+		VI$_{\mcsta}$
+    }
+	{30}{157}{0.25}{2700}{north west}
+	\hfill
+	% IIm vs. IIs
+	\scatterplot{scatter.csv}
+    {logs.Storm.topoii-abs-e3-g5}{II$_{\storm}$}
+    {logs.mcsta.ii-abs-e3-g5}{II$_{\mcsta}$}
+    {true} % legend
+    \\
+    % VIm vs. IIm
+	\scatterplot{scatter.csv}
+    {logs.mcsta.ii-abs-e3-g5}{II$_{\mcsta}$}
+    {logs.mcsta.vi-abs-e3-g5}{VI$_{\mcsta}$}
+    {false} % legend
+    \hfill
+    % VIs vs. IIs
+	\scatterplot{scatter.csv}
+    {logs.Storm.topoii-abs-e3-g5}{II$_{\storm}$}
+    {logs.Storm.topovi-abs-e3-g5}{VI$_{\storm}$}
+    {false} % legend
+    \hfill
+    % PIs vs. IIs
+	\scatterplot{scatter.csv}
+    {logs.Storm.topoii-abs-e3-g5}{II$_{\storm}$}
+    {logs.Storm.topopi-abs-e3-g5}{PI$^\mathrm{exact}_{\storm}$}
+    {false} % legend
+\caption{Comparison of different single-objective solvers}
+  \label{plot:solvers}
+\end{figure}
+
+\begin{figure}[htp]
+% epsilon
+	\quantileplot{quantile.csv}
+	{
+		logs.Storm.topoii-abs-e1-g5/plotblue!20!plotgreen,
+		logs.Storm.topoii-abs-e2-g5/plotblue!60!plotgreen,
+		logs.Storm.topoii-abs-e3-g5/plotblue,
+		logs.Storm.topoii-abs-e4-g5/plotblue!60!plotorange,
+		logs.Storm.topoii-abs-e5-g5/plotblue!20!plotorange,
+		logs.Storm.topoii-abs-e6-g5/plotorange
+	}
+	{
+		{II$_{\storm}$/$\epsilon{=}10^{-1}$},
+		{II$_{\storm}$/$\epsilon{=}10^{-2}$},
+		{II$_{\storm}$/$\epsilon{=}10^{-3}$},
+		{II$_{\storm}$/$\epsilon{=}10^{-4}$},
+		{II$_{\storm}$/$\epsilon{=}10^{-5}$},
+		{II$_{\storm}$/$\epsilon{=}10^{-6}$}
+    }
+	{30}{157}{0.25}{2700}{north west}
+\hfill
+% epsilon vs. #iters
+\iterscatterplot{scatteriters.csv}{6}{%
+		1/logs.Storm.topoii-abs-e1-g5,
+		2/logs.Storm.topoii-abs-e2-g5,
+		3/logs.Storm.topoii-abs-e3-g5,
+		4/logs.Storm.topoii-abs-e4-g5,
+		5/logs.Storm.topoii-abs-e5-g5,
+		6/logs.Storm.topoii-abs-e6-g5
+	}{$10^{-1}$,$10^{-2}$,$10^{-3}$,$10^{-4}$,$10^{-5}$,$10^{-6}$}{precision parameter $\epsilon$}{true}
+    \\
+% gamma
+	\quantileplot{quantile.csv}
+	{
+		logs.Storm.topoii-abs-e3-g01/plotgreen,
+		logs.Storm.topoii-abs-e3-g1/plotblue!20!plotgreen,
+		logs.Storm.topoii-abs-e3-g25/plotblue!60!plotgreen,
+		logs.Storm.topoii-abs-e3-g5/plotblue,
+		logs.Storm.topoii-abs-e3-g75/plotblue!60!plotorange,
+		logs.Storm.topoii-abs-e3-g9/plotblue!20!plotorange,
+		logs.Storm.topoii-abs-e3-g99/plotorange
+	}
+	{
+		{II$_{\storm}$/$\gamma{=}0.01$},
+		{II$_{\storm}$/$\gamma{=}0.1$},
+		{II$_{\storm}$/$\gamma{=}0.25$},
+		{II$_{\storm}$/$\gamma{=}0.5$},
+		{II$_{\storm}$/$\gamma{=}0.75$},
+		{II$_{\storm}$/$\gamma{=}0.9$},
+		{II$_{\storm}$/$\gamma{=}0.99$}
+    }
+	{30}{157}{0.25}{2700}{north west}
+\hfill
+% gamma vs. #iters
+\iterscatterplot{scatteriters.csv}{7}{%
+        1/logs.Storm.topoii-abs-e3-g01,
+        2/logs.Storm.topoii-abs-e3-g1,
+        3/logs.Storm.topoii-abs-e3-g25,
+        4/logs.Storm.topoii-abs-e3-g5,
+        5/logs.Storm.topoii-abs-e3-g75,
+        6/logs.Storm.topoii-abs-e3-g9,
+        7/logs.Storm.topoii-abs-e3-g99
+	}{0.01,0.1,0.25,0.5,0.75,0.9,0.99}{approximation tradeoff $\gamma$}{false}
+\caption{Effect of precision parameter $\epsilon$ (top) and heuristic parameter $\gamma$ (bottom) }
+  \label{plot:parameters}
+\end{figure}
+
+
+
+\begin{figure}[htp]
+% epsilon
+	\quantileplot{quantile.csv}
+	{
+		logs.mcsta.ii-abs-e1-g5/plotblue!20!plotgreen,
+		logs.mcsta.ii-abs-e2-g5/plotblue!60!plotgreen,
+		logs.mcsta.ii-abs-e3-g5/plotblue,
+		logs.mcsta.ii-abs-e4-g5/plotblue!60!plotorange,
+		logs.mcsta.ii-abs-e5-g5/plotblue!20!plotorange,
+		logs.mcsta.ii-abs-e6-g5/plotorange
+	}
+	{
+		{II$_{\mcsta}$/$\epsilon{=}10^{-1}$},
+		{II$_{\mcsta}$/$\epsilon{=}10^{-2}$},
+		{II$_{\mcsta}$/$\epsilon{=}10^{-3}$},
+		{II$_{\mcsta}$/$\epsilon{=}10^{-4}$},
+		{II$_{\mcsta}$/$\epsilon{=}10^{-5}$},
+		{II$_{\mcsta}$/$\epsilon{=}10^{-6}$}
+    }
+	{30}{157}{0.25}{2700}{north west}
+\hfill
+% epsilon vs. #iters
+\iterscatterplot{scatteriters.csv}{6}{%
+		1/logs.mcsta.ii-abs-e1-g5,
+		2/logs.mcsta.ii-abs-e2-g5,
+		3/logs.mcsta.ii-abs-e3-g5,
+		4/logs.mcsta.ii-abs-e4-g5,
+		5/logs.mcsta.ii-abs-e5-g5,
+		6/logs.mcsta.ii-abs-e6-g5
+	}{$10^{-1}$,$10^{-2}$,$10^{-3}$,$10^{-4}$,$10^{-5}$,$10^{-6}$}{precision parameter $\epsilon$}{true}
+    \\
+% gamma
+	\quantileplot{quantile.csv}
+	{
+		logs.mcsta.ii-abs-e3-g01/plotgreen,
+		logs.mcsta.ii-abs-e3-g1/plotblue!20!plotgreen,
+		logs.mcsta.ii-abs-e3-g25/plotblue!60!plotgreen,
+		logs.mcsta.ii-abs-e3-g5/plotblue,
+		logs.mcsta.ii-abs-e3-g75/plotblue!60!plotorange,
+		logs.mcsta.ii-abs-e3-g9/plotblue!20!plotorange,
+		logs.mcsta.ii-abs-e3-g99/plotorange
+	}
+	{
+		{II$_{\mcsta}$/$\gamma{=}0.01$},
+		{II$_{\mcsta}$/$\gamma{=}0.1$},
+		{II$_{\mcsta}$/$\gamma{=}0.25$},
+		{II$_{\mcsta}$/$\gamma{=}0.5$},
+		{II$_{\mcsta}$/$\gamma{=}0.75$},
+		{II$_{\mcsta}$/$\gamma{=}0.9$},
+		{II$_{\mcsta}$/$\gamma{=}0.99$}
+    }
+	{30}{157}{0.25}{2700}{north west}
+\hfill
+% gamma vs. #iters
+\iterscatterplot{scatteriters.csv}{7}{%
+        1/logs.mcsta.ii-abs-e3-g01,
+        2/logs.mcsta.ii-abs-e3-g1,
+        3/logs.mcsta.ii-abs-e3-g25,
+        4/logs.mcsta.ii-abs-e3-g5,
+        5/logs.mcsta.ii-abs-e3-g75,
+        6/logs.mcsta.ii-abs-e3-g9,
+        7/logs.mcsta.ii-abs-e3-g99
+	}{0.01,0.1,0.25,0.5,0.75,0.9,0.99}{approximation tradeoff $\gamma$}{false}
+\caption{Effect of precision parameter $\epsilon$ (top) and heuristic parameter $\gamma$ (bottom) }
+  \label{plot:mcstaparameters}
+\end{figure}
+\end{document}

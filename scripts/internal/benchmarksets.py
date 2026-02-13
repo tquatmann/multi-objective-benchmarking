@@ -14,7 +14,11 @@ def load_benchmark_set(name : str, descr: str):
     description[name] = [descr, "({} benchmarks)".format(len(data[name]))]
 
 def reload_benchmark_sets():
-     load_benchmark_set("all", "All multi-objective benchmarks")
+    load_benchmark_set("all", "All multi-objective benchmarks")
+    load_benchmark_set("quickcheck", "A single, easy benchmark for quickly checking if the installation was successful.")
+    load_benchmark_set("subset-small", "Multi-objective benchmarks that some tool/config solved in 5 seconds")
+    load_benchmark_set("subset-medium", "Multi-objective benchmarks that some tool/config solved in 30 seconds")
+    load_benchmark_set("subset-large", "Multi-objective benchmarks that some tool/config solved in 300 seconds")
     # load_benchmark_set("qvbs", "All QVBS MDP/MA/PTA Benchmarks with reach-prob or exp-rew formula that storm and mcsta build in 3 minutes")
     # load_benchmark_set("gridworld", "gridworld benchmarks (not in qvbs)")
     # load_benchmark_set("mec-only", "benchmarks that contain mecs that (neither gridworld nor qvbs)")

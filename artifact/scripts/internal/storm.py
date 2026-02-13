@@ -255,16 +255,8 @@ def is_not_supported(logfile):
     """
     # if one of the following error messages occurs, we are sure that the model is not supported.
     known_messages = []
-    known_messages.append("The model type Markov Automaton is not supported by the dd engine.")
-    known_messages.append("The model type CTMC is not supported by the dd engine.")
-    known_messages.append("Cannot build symbolic model from JANI model whose system composition that refers to the automaton ")
-    known_messages.append("Cannot build symbolic model from JANI model whose system composition refers to the automaton ")
-    known_messages.append("The symbolic JANI model builder currently does not support assignment levels.")
-    known_messages.append("repudiation") # Unsupported PTA benchmark
-    known_messages.append("csma_abst") # Unsupported PTA benchmark
-    known_messages.append("csma-pta") # Unsupported PTA benchmark
-    known_messages.append("rectangle-tireworld.30.jani.gz") # too large jani benchmark
-    known_messages.append("Transition rewards are not supported and a reduction to action-based rewards was not possible.")
+    known_messages.append("Unable to compute finite upper bounds for visiting times")
+    known_messages.append("qcomp/benchmarks/pta/")
     known_messages.append("Scheduler extraction is not yet implemented for LP based LRA method.")
     known_messages.append("The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.")
 

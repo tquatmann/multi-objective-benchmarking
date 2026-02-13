@@ -63,6 +63,11 @@ class CombinedResult(object):
             return None
         return sum(self.runtimes) / len(self.runtimes)
 
+    def average_walltime(self):
+        if len(self.walltimes) == 0:
+            return None
+        return sum(self.walltimes) / len(self.walltimes)
+
     def average_iters(self):
         if len(self.iters) == 0:
             return None
@@ -127,11 +132,23 @@ def generate_scatter_csv(settings, exec_data, benchmark_ids, groups_tools_config
         result.append(row)
     return result
 
+# return a list of benchmark_ids that were solved within the given time limit (seconds)
+def get_instances_solved_in_time(settings, exec_data, benchmark_ids, groups_tools_configs, time_limit):
+    solved_instances = []
+    for benchmark_id in benchmark_ids:
+        for (group, tool, config) in groups_tools_configs:
+            if benchmark_id in exec_data[group][tool][config]:
+                combined_res = CombinedResult(exec_data[group][tool][config][benchmark_id])
+                if combined_res.is_solved() and combined_res.average_walltime() is not None and combined_res.average_walltime() <= time_limit:
+                    solved_instances.append(benchmark_id)
+                    break
+    # return sorted, deduplicated list
+    return sorted(solved_instances)
 
 # Generates a csv containing runtimes. The first column denotes the row indices. Each of the remaining column corresponds to a tool/config combination. The last column corresponds to the fastest tool/config
 # An entry in the ith row corresponds to the runtime of the ith fastest benchmark
 def generate_quantile_csv(settings, exec_data, benchmark_ids, groups_tools_configs):
-    selection_for_best = ["{}.{}".format(storm.get_name(), cfg) for cfg in ["vi-topo-mecq", "pi-mono-gmres-topo"]] + ["{}.{}".format(mcsta.get_name(), cfg) for cfg in ["vi-es", "ii"]]
+    selection_for_best = ["{}.{}".format(storm.get_name(), cfg) for cfg in []] + ["{}.{}".format(mcsta.get_name(), cfg) for cfg in []]
     for tc in selection_for_best:
         if tc not in [ "{}.{}".format(t,c) for (g,t,c) in groups_tools_configs ]:
             print("Selection for best runtime '{}' not in the list of tools/configs".format(tc))
@@ -182,43 +199,6 @@ def generate_quantile_csv(settings, exec_data, benchmark_ids, groups_tools_confi
                 row.append("")
         result.append(row)
     return result
-
-def generate_group_scaling_factors(exec_data, benchmark_ids, groups_tools_configs):
-    groups = sorted(set([g for (g,t,c) in groups_tools_configs]))
-    tools_configs = sorted(set([(t,c) for (g,t,c) in groups_tools_configs]))
-    scaling_factors = OrderedDict([(g, OrderedDict()) for g in groups])
-    for g1, g2 in itertools.product(groups, groups):
-        if g1 == g2: continue
-        scaling_factors[g1][g2] = OrderedDict()
-        sum_g1 = 0.0
-        sum_g2 = 0.0
-        for t,c in tools_configs:
-            sum_gtc1 = 0.0
-            sum_gtc2 = 0.0
-            if t not in exec_data[g1] or c not in exec_data[g1][t]: continue
-            if t not in exec_data[g2] or c not in exec_data[g2][t]: continue
-            for b in benchmark_ids:
-                if b not in exec_data[g1][t][c] or b not in exec_data[g2][t][c]: continue
-                time1 = CombinedResult(exec_data[g1][t][c][b]).average_runtime()
-                time2 = CombinedResult(exec_data[g2][t][c][b]).average_runtime()
-                if time1 is None or time2 is None: continue
-                sum_gtc1 += time1
-                sum_gtc2 += time2
-            if sum_gtc2 > 0:
-                scaling_factors[g1][g2]["{}.{}".format(t,c)] = sum_gtc1 / sum_gtc2
-            elif sum_gtc1 == 0:
-                scaling_factors[g1][g2]["{}.{}".format(t,c)] = 1.0
-            else:
-                print("Warning: Can not compute scaling factor for {} vs. {} with tool {} and config {}".format(g1, g2, t, c))
-            sum_g1 += sum_gtc1
-            sum_g2 += sum_gtc2
-        if sum_g2 > 0:
-            scaling_factors[g1][g2]["total"] = sum_g1 / sum_g2
-        elif sum_g1 == 0:
-            scaling_factors[g1][g2]["total"] = 1.0
-        else:
-            print("Warning: Can not compute total scaling factor for {} vs. {}".format(g1, g2))
-    return scaling_factors
 
 
 def get_best_configs(settings, exec_data, benchmark_ids, groups_tools_configs):
@@ -279,8 +259,10 @@ def generate_stats_json(settings, exec_data, benchmark_ids, groups_tools_configs
         stats["num-solved-nores-nosupport"][gtc_string] = "{} / {} / {}".format(*gtc_solved_nores_nosupport)
         all_walltime += gtc_walltime
     stats["accumulated_walltime"]["total"] = round(all_walltime / 3600, 1)
-    stats["group_scaling_factors"] = generate_group_scaling_factors(exec_data, benchmark_ids, groups_tools_configs)
     stats["best_configs"] = get_best_configs(settings, exec_data, benchmark_ids, groups_tools_configs)
+    stats["subset-small"] = get_instances_solved_in_time(settings, exec_data, benchmark_ids, groups_tools_configs, 5)
+    stats["subset-medium"] = get_instances_solved_in_time(settings, exec_data, benchmark_ids, groups_tools_configs, 30)
+    stats["subset-large"] = get_instances_solved_in_time(settings, exec_data, benchmark_ids, groups_tools_configs, 300)
     return stats
 
 
