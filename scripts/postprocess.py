@@ -8,8 +8,7 @@ import shutil
 
 def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorted):
 
-    # groups_tools_configs_filtered = [(g,t,c) for g,t,c in groups_tools_configs_sorted if g in exec_data and t in exec_data[g] and c in exec_data[g][t] and len(exec_data[g][t][c]) > 0]
-    groups_tools_configs_filtered = groups_tools_configs_sorted
+    groups_tools_configs_filtered = [(g,t,c) for g,t,c in groups_tools_configs_sorted if g in exec_data and t in exec_data[g] and c in exec_data[g][t] and len(exec_data[g][t][c]) > 0]
     benchmark_set = load_json(os.path.realpath(os.path.join(sys.path[0], "data/{}.json").format(benchmark_set_id)))
     ensure_directory(benchmark_set_id)
 
@@ -30,17 +29,17 @@ def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorte
 
     scatterfile = os.path.join(benchmark_set_id, settings.results_file_scatter())
     print("\tGenerating file {} for scatter plots".format(scatterfile))
-    scatter_csv = generate_scatter_csv(settings, exec_data, benchmark_set, groups_tools_configs_filtered, data_type="runtime")
+    scatter_csv = generate_scatter_csv(settings, exec_data, benchmark_set, groups_tools_configs_sorted, data_type="runtime")
     save_csv(scatter_csv, scatterfile)
 
     scatterfile2 = os.path.join(benchmark_set_id, settings.results_file_scatter2())
     print("\tGenerating file {} for scatter plots".format(scatterfile2))
-    scatter_csv2 = generate_scatter_csv(settings, exec_data, benchmark_set, groups_tools_configs_filtered, data_type="iterations")
+    scatter_csv2 = generate_scatter_csv(settings, exec_data, benchmark_set, groups_tools_configs_sorted, data_type="iterations")
     save_csv(scatter_csv2, scatterfile2)
 
     quantilefile = os.path.join(benchmark_set_id, settings.results_file_quantile())
     print("\tGenerating file {} for quantile plots".format(quantilefile))
-    quantile_csv = generate_quantile_csv(settings, exec_data, benchmark_set, groups_tools_configs_filtered)
+    quantile_csv = generate_quantile_csv(settings, exec_data, benchmark_set, groups_tools_configs_sorted)
     save_csv(quantile_csv, quantilefile)
     
     tabledir = os.path.join(benchmark_set_id, settings.results_dir_table())
@@ -49,7 +48,7 @@ def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorte
 
     statsfile = os.path.join(benchmark_set_id, settings.results_file_stats())
     print("\tGenerating file {} for statistics".format(statsfile))
-    stats_json = generate_stats_json(settings, exec_data, benchmark_set, groups_tools_configs_filtered)
+    stats_json = generate_stats_json(settings, exec_data, benchmark_set, groups_tools_configs_sorted)
     save_json(stats_json, statsfile)
 
     plotsfile_dest = os.path.join(benchmark_set_id, "plots.tex")

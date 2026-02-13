@@ -1,12 +1,17 @@
 #!/bin/bash
 
+# check if $1 is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <output_zip_file>"
+  exit 1
+fi
 zip -r $1 \
   artifact/LICENSE \
   artifact/README.md \
   artifact/experiments/all.json \
-  artifact/experiments/large.json \
-  artifact/experiments/medium.json \
-  artifact/experiments/small.json \
+  artifact/experiments/subset-large.json \
+  artifact/experiments/subset-medium.json \
+  artifact/experiments/subset-small.json \
   artifact/paper_results/ \
   artifact/qcomp/ \
   artifact/quickcheck/inv.json \
@@ -21,6 +26,7 @@ zip -r $1 \
   artifact/tools/storm/ \
   artifact/tools/mcsta/ \
   artifact/tools/mopmctools_docker.tar.gz \
-  artifact/tools/run_docker.sh
+  artifact/run_docker.sh
 
 du -h $1
+md5 $1
