@@ -1,0 +1,57 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants Unf=1,B=10 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	0.14896082878112793
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:28:44 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants 'Unf=1,B=10' '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.018s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	376
+Transitions: 	701
+Choices: 	451
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "lazy": multi(R{"time"}min=? [C], R{"energy"}min=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 376 states.
+Final preprocessed model has 451 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 0.085s seconds (consisting of 0.000s seconds for preprocessing and 0.084s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         0,         -1) * x <= -40.0005
+   (        -1,          0) * x <= -41.6671
+   ( -0.171428,         -1) * x <= -57.1434
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -41.6662
+   (         0,         -1) * x <= -39.9992
+   ( -0.168963,  -0.985622) * x <= -56.32
+
+2 Pareto optimal points found:
+   (41.66709298, 50.00049701 )
+   (100.0005618, 40.00051343 )
+
+
+Time for model checking: 0.085s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 0.110s
+  * wallclock time: 0.108s
+

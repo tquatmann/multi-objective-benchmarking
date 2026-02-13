@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "erlang.10-10-5.MultiNeg",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e5-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiNeg --constants K=10,R=10,TIME_BOUND=5 --multiobjective:precision 1e-5 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.10493731498718262,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e5-g5.erlang.10-10-5.MultiNeg.run1.log"
+}

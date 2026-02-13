@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e5-g5 - firewire multi_pos false-36-800</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e5-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/firewire/firewire.false.jani">firewire</a> <span class="tt">v.3</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">explicit_timer</span> = False, <span class="tt">delay</span> = 36, <span class="tt">deadline</span> = 800</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e5-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_pos --constants delay=36,deadline=800 --multiobjective:precision 1e-5 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">3.118s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">3.118s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:27:43 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_pos --constants 'delay=36,deadline=800' '--multiobjective:precision' 1e-5 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 1.371s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax>=1 [F "done"], R{"time"}min=? [F "done"]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula Pmax>=1 [F "done"] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 212267 states.
+Final preprocessed model has 478751 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 1.694s seconds (consisting of 0.320s seconds for preprocessing and 1.373s seconds for analyzing the preprocessed model).
+Result (for initial states): 138.25001
+Time for model checking: 1.695s.
+
+Performance statistics:
+  * peak memory usage: 199MB
+  * CPU time: 3.026s
+  * wallclock time: 3.073s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "eajs.4-200-9.Multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e1-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.4.jani --janiproperty Multi --constants energy_capacity=200,B=9 --multiobjective:precision 1e-1 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 20.749531030654907,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e1-g5.eajs.4-200-9.Multi.run1.log"
+}

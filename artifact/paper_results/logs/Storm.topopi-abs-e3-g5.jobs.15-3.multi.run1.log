@@ -1,0 +1,59 @@
+Command:	$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	102.96122789382935
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:24:17 2025
+Command line arguments: --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.055s.
+
+WARN  (storm-cli.cpp:25): The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.
+Time for model construction: 101.550s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Tmin=? [F "all_jobs_finished"], R{"avg_waiting_time"}max=? [F "all_jobs_finished"], Pmax=? [true U<=(15 / (4 * 3)) "half_of_jobs_finished"]) ...
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 1353MB
+  * CPU time: 102.194s
+  * wallclock time: 102.887s
+

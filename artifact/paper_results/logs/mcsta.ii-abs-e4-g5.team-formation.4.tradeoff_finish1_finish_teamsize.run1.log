@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.4.jani --props tradeoff_finish1_finish_teamsize --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	1.8443644046783447
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.4.jani --props tradeoff_finish1_finish_teamsize --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+team-formation.4.jani:model: info: team-formation.4 is an MDP model.
+team-formation.4.jani: info: Need 32 bytes per state.
+team-formation.4.jani: warning: The probabilities for a transition labelled "τ" with 24 branches in state (controller.location = l, sensor1.location = l, sensor2.location = l, sensor3.location = l, sensor4.location = l, status = 0, t1_r1 = 0, t1_r2 = 0, t1_r3 = 0, t2_r1 = 0, t2_r2 = 0, t2_r3 = 0, m1_t1 = 0, m1_t2 = 0, m2_t1 = 0, m2_t2 = 0, m3_t1 = 0, m3_t2 = 0, m4_t1 = 0, m4_t2 = 0, controller.turn1_turn5 = 0, controller.turn2 = 0, controller.turn3 = 0, controller.turn4 = 0, sensor1.state1 = 0, sensor2.state2 = 0, sensor3.state3 = 0, sensor4.state4 = 0, reachability_reward_given_0 = False, reachability_reward_given_1 = False) do not sum up to the expected value of 1 (actual sum: 0.99999999999999956). Results will likely be affected by floating-point errors.
+team-formation.4.jani: info: Explored 96665 states.
+
+Peak memory usage: 208 MB
+Analysis results for team-formation.4.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             96665
+  Transitions:        115289
+  Branches:           116464
+  Rate:               139287 states/s
+  Peak memory:        80.26 MB
+  Final size:         0.74 MB
+  Time (exploration): 0.7 s
+  Time (merging):     0.0 s
+
++ tradeoff_finish1_finish_teamsize
+  WSO instances:       11
+  Time:                0.4 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 1, 1*x_1 + 0*x_2 + 1*x_3 <= 1.4285714286, 0*x_1 + 1*x_2 + 0*x_3 <= 2.5510204082, 0*x_1 + 0*x_2 + 1*x_3 <= 1, 1*x_1 + 0.5*x_2 + 0*x_3 <= 2.1632653061, 1*x_1 + 1*x_2 + 0*x_3 <= 3.3673469388, 0*x_1 + 1*x_2 + 1*x_3 <= 3.3673469388, 0*x_1 + 1*x_2 + 2*x_3 <= 4.3265306122}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 1, 0*x_1 + 1*x_2 + 0*x_3 <= 2.5510204082, 0*x_1 + 0*x_2 + 1*x_3 <= 1, 1*x_1 + 0*x_2 + 1*x_3 <= 1.4285714286, 0*x_1 + 1*x_2 + 0.5789473684*x_3 <= 3.0236305048, 1*x_1 + 0.8181818182*x_2 + 0*x_3 <= 2.9294990724, 0*x_1 + 1*x_2 + 1.2222222222*x_3 <= 3.5804988662, 1*x_1 + 1*x_2 + 0*x_3 <= 3.3673469388, 0*x_1 + 1*x_2 + 1*x_3 <= 3.3673469388, 1*x_1 + 0.5*x_2 + 0*x_3 <= 2.1632653061, 0*x_1 + 1*x_2 + 2*x_3 <= 4.3265306122}
+
+  + Pareto Curve Approximation
+    Time: 0.4 s
+
+

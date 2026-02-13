@@ -1,0 +1,14 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants delay=36,deadline=800 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.1 --timemem --statistics
+Repitition:	1
+Wallclock time:	538.5019280910492
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:40:41 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants 'delay=36,deadline=800' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.1 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "csma.4-6.multi_pos",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e4-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-4, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-6.jani --props multi_pos --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 211.0544309616089,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e4-g5.csma.4-6.multi_pos.run1.log"
+}

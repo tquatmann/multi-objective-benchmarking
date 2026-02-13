@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient_bounded -E Unf=0,B=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.25 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.2931087017059326
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient_bounded -E Unf=0,B=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.25 --lp-solver HiGHS
+
+
+
+
+care-home.jani:model: info: care-home is an MDP model.
+care-home.jani:properties[2]: warning: Skipping unsupported property "efficient_bounded".
+care-home.jani: error: No properties to check.
+

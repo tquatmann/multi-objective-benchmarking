@@ -1,0 +1,69 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --janiproperty tradeoff_finish1_finish_teamsize --multiobjective:precision 1e-1 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	13.886088848114014
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:04:21 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --janiproperty tradeoff_finish1_finish_teamsize '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.034s.
+
+Time for model construction: 4.715s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((!((t2_r3 = 1)) | (m3_t2 = 1)) & (!((t2_r1 = 1)) | ((m1_t2 = 1) | (m4_t2 = 1)))) & ((!((t2_r2 = 1)) | ((m2_t2 = 1) | (m5_t2 = 1))) & (status = 7))) -> 52200 item(s)
+   * (((!((t1_r3 = 1)) | (m3_t1 = 1)) & (!((t1_r1 = 1)) | ((m1_t1 = 1) | (m4_t1 = 1)))) & ((!((t1_r2 = 1)) | ((m2_t1 = 1) | (m5_t1 = 1))) & (status = 7))) -> 52200 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "tradeoff_finish1_finish_teamsize": multi(Pmax=? [F (((!((t1_r3 = 1)) | (m3_t1 = 1)) & (!((t1_r1 = 1)) | ((m1_t1 = 1) | (m4_t1 = 1)))) & ((!((t1_r2 = 1)) | ((m2_t1 = 1) | (m5_t1 = 1))) & (status = 7)))], R{"w_1_total"}max=? [C], Pmax=? [F (((!((t2_r3 = 1)) | (m3_t2 = 1)) & (!((t2_r1 = 1)) | ((m1_t2 = 1) | (m4_t2 = 1)))) & ((!((t2_r2 = 1)) | ((m2_t2 = 1) | (m5_t2 = 1))) & (status = 7)))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 521898 states.
+Final preprocessed model has 660458 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 9.025s seconds (consisting of 0.855s seconds for preprocessing and 8.169s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 8 Halfspaces:
+   (         0,          0,          1) * x <= 1
+   (         1,          0,          1) * x <= 1.67347
+   (         1,          0,          1) * x <= 1.67347
+   (         0,          1,          0) * x <= 2.89796
+   (         0,   0.833333,          1) * x <= 3.31293
+   (         1,   0.833333,          0) * x <= 3.31293
+   (         1,          0,          1) * x <= 1.67347
+   (         1,          0,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0,          0) * x <= 1
+   (         0,          1,          0) * x <= 2.89796
+   (         0,          0,          1) * x <= 1
+   (  0.707107,          0,   0.707107) * x <= 1.18332
+   (         0,   0.854421,   0.519581) * x <= 2.94264
+   (  0.699294,   0.714834,          0) * x <= 2.6995
+
+4 Pareto optimal points found:
+   (0.8979591837, 2.897959184, 0.7755102041 )
+   (          1, 2.775510204, 0.6734693878 )
+   (0.7755102041, 2.897959184, 0.8979591837 )
+   (0.6734693878, 2.775510204,           1 )
+
+
+Time for model checking: 9.025s.
+
+Performance statistics:
+  * peak memory usage: 416MB
+  * CPU time: 13.623s
+  * wallclock time: 13.827s
+

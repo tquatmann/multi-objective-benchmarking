@@ -1,0 +1,33 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants Unf=1,B=1500,COUNTER=0 --multiobjective:precision 1e-6 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0179245471954
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:59:33 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants 'Unf=1,B=1500,COUNTER=0' '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.008s.
+
+Time for model construction: 6.038s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	874100
+Transitions: 	5092664
+Choices: 	1657491
+Reward Models:  time, ROZ
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 10244 item(s)
+   * mission -> 552930 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe_bounded": multi(Pmax=? [true Urew{"time"}<=1500 "mission"], R{"ROZ"}min=? [Crew{"time"}<=1500]) ...
+
+
+----------
+Computation aborted after 2700.0179245471954 seconds since the total time limit of 2700 seconds was exceeded.

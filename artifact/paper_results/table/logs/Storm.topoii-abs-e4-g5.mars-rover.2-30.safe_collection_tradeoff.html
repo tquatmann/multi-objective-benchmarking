@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - mars-rover safe_collection_tradeoff 2-30</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 30</td></tr>
+		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=2,B=30 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">124.795s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">124.795s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:39:01 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants 'Unf=2,B=30' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 14.744s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4743010
+Transitions: 	8893142
+Choices: 	5928762
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 60370 item(s)
+   * exceedTime -> 78578 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 40610 item(s)
+   * done -> 296439 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "safe_collection_tradeoff": multi(Pmax=? [F "valueCollected"], Pmax=? [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 4441496 states.
+Final preprocessed model has 5626852 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+Solving multi-objective query took 109.988s seconds (consisting of 9.553s seconds for preprocessing and 100.435s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 8 Halfspaces:
+   (  0.622045,          1) * x <= 1.52021
+   (  0.816348,          1) * x <= 1.68362
+   (  0.666667,          1) * x <= 1.55754
+   (2.65511e-16,          1) * x <= 1
+   (         1,          1) * x <= 1.83855
+   (         1, 8.76516e-08) * x <= 1
+   (         0,          1) * x <= 1
+   (         1,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (  0.707107,   0.707107) * x <= 1.30005
+   (  0.159383,   0.987217) * x <= 1.12051
+   (  0.702174,   0.712006) * x <= 1.30077
+   (  0.568331,     0.8228) * x <= 1.29822
+   (    0.5537,   0.832716) * x <= 1.29578
+
+7 Pareto optimal points found:
+   (          1,           0 )
+   (0.9999999265, 0.8385537237 )
+   (          0,           1 )
+   (0.8436026488, 0.9949510743 )
+   (0.8423573636, 0.9959676598 )
+   (0.8362930856,           1 )
+   (0.836528665, 0.999853459 )
+
+
+Time for model checking: 109.989s.
+
+Performance statistics:
+  * peak memory usage: 2685MB
+  * CPU time: 121.889s
+  * wallclock time: 124.738s	</pre>
+</div>
+</body>
+</html>

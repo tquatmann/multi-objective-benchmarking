@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "eajs.2-100-5.Multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g25",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.25",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.2.jani --props Multi -E energy_capacity=100,B=5 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.25 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.8136332035064697,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g25.eajs.2-100-5.Multi.run1.log"
+}

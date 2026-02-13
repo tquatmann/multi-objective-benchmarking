@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g99 - csma multi_neg 3-4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g99</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/csma/csma.3-4.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">K</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g99)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --janiproperty multi_neg --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.99 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.99
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">57.848s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">57.848s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:58:41 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --janiproperty multi_neg '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.99 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 6.485s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1460287
+Transitions: 	2396727
+Choices: 	1471059
+Reward Models:  time
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * collision_max_backoff -> 1427 item(s)
+   * all_delivered -> 13 item(s)
+   * init -> 1 item(s)
+   * ((min((min(((s1 = 4) ? cd1 : 5), ((s2 = 4) ? cd2 : 5))), ((s3 = 4) ? cd3 : 5))) < 4) -> 51876 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmin=? [(!"collision_max_backoff") U "all_delivered"], Pmin=? [F ((min((min(((s1 = 4) ? cd1 : 5), ((s2 = 4) ? cd2 : 5))), ((s3 = 4) ? cd3 : 5))) < 4)], R{"time"}max=? [F "all_delivered"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 2355011 states.
+Final preprocessed model has 2370785 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 51.302s seconds (consisting of 3.403s seconds for preprocessing and 47.899s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (        -1,          0,          0) * x <= -0.904691
+   (         0,          0,          1) * x <= 116.818
+   (        -1, -2.57141e-12,          0) * x <= -0.904691
+   (         0,         -1,          0) * x <= -0.989523
+   (-0.00762682,         -1,          0) * x <= -0.996498
+   (        -1,          0, 1.40526e-16) * x <= -0.904691
+   (         0,         -1, 2.27566e-05) * x <= -0.98694
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0,          0) * x <= -0.904691
+   (         0,         -1,          0) * x <= -0.989523
+   (         0,          0,          1) * x <= 116.818
+
+3 Pareto optimal points found:
+   (0.9146510434, 0.9895225981,  113.480317 )
+   (0.904691431, 0.9895985583, 116.8182558 )
+   (0.904691431, 0.9896849097,  115.238163 )
+
+
+Time for model checking: 51.303s.
+
+Performance statistics:
+  * peak memory usage: 1573MB
+  * CPU time: 57.165s
+  * wallclock time: 57.796s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "wlan-large.2.MultiNeg",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g1",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.1 Used moconv to convert the PTA to an MDP using digital-clocks semantics.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/wlan-large/converted_wlan-large.K=2.jani --janiproperty MultiNeg --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.1 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.057793617248535156,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	],
+	"log": "Storm.topoii-abs-e3-g1.wlan-large.2.MultiNeg.run1.log"
+}

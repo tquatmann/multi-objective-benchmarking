@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - client-server qual1 4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/client-server/client-server.4.jani">client-server</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">qual1</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty qual1 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.114s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.114s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:41:25 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty qual1 '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.024s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "qual1": multi(R{"grants1"}max>=(1 / 50) [LRA], R{"grants2"}max>=(7 / 25) [LRA], R{"grants3"}max>=(7 / 250) [LRA], R{"grants4"}max>=7/2500 [LRA]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants1"}max>=(1 / 50) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants2"}max>=(7 / 25) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants3"}max>=(7 / 250) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants4"}max>=7/2500 [LRA] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 945 states.
+Final preprocessed model has 2753 actions.
+Found 176 end components that are relevant for LRA-analysis.
+880 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 5 refinement steps.
+Solving multi-objective query took 0.031s seconds (consisting of 0.002s seconds for preprocessing and 0.029s seconds for analyzing the preprocessed model).
+Result (for initial states): true
+
+Time for model checking: 0.031s.
+
+Performance statistics:
+  * peak memory usage: 60MB
+  * CPU time: 0.082s
+  * wallclock time: 0.061s	</pre>
+</div>
+</body>
+</html>

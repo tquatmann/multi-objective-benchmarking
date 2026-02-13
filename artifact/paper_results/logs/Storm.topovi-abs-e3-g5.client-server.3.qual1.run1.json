@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "client-server.3.qual1",
+	"tool": "Storm",
+	"configuration-id": "topovi-abs-e3-g5",
+	"invocation-note": "(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty qual1 --multiobjective:precision 1e-3 abs --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.09435892105102539,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topovi-abs-e3-g5.client-server.3.qual1.run1.log"
+}

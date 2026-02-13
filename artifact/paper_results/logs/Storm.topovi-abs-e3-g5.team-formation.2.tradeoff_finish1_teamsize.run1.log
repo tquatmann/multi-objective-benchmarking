@@ -1,0 +1,63 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.2.jani --janiproperty tradeoff_finish1_teamsize --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	0.1751694679260254
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:52:30 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.2.jani --janiproperty tradeoff_finish1_teamsize '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 0.022s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1847
+Transitions: 	2288
+Choices: 	2191
+Reward Models:  w_1_total
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((!((t1_r3 = 1)) & (!((t1_r1 = 1)) | (m1_t1 = 1))) & ((!((t1_r2 = 1)) | (m2_t1 = 1)) & (status = 4))) -> 58 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "tradeoff_finish1_teamsize": multi(Pmax=? [F ((!((t1_r3 = 1)) & (!((t1_r1 = 1)) | (m1_t1 = 1))) & ((!((t1_r2 = 1)) | (m2_t1 = 1)) & (status = 4)))], R{"w_1_total"}max=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 576 states.
+Final preprocessed model has 768 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 0.111s seconds (consisting of 0.001s seconds for preprocessing and 0.110s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1, 8.33807e-07) * x <= 0.428528
+   (         1,  0.0526464) * x <= 0.477929
+   (         0,          1) * x <= 0.979548
+   (         1,   0.999103) * x <= 1.36638
+   (         1,          0) * x <= 0.428527
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 0.428748
+   (         0,          1) * x <= 0.979769
+   (  0.993884,   0.110432) * x <= 0.529797
+   (  0.710173,   0.704027) * x <= 0.96546
+
+4 Pareto optimal points found:
+   (0.3877109079, 0.9795476426 )
+   (0.4285091984, 0.9387127368 )
+   (0.4285272344, 0.6122007038 )
+   (0.4285269624, 0.9383753149 )
+
+
+Time for model checking: 0.111s.
+
+Performance statistics:
+  * peak memory usage: 63MB
+  * CPU time: 0.152s
+  * wallclock time: 0.145s
+

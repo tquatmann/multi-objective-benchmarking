@@ -1,0 +1,32 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --props multi -E N=80,pover=0.3,pstay=0.3 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	9.274722576141357
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --props multi -E N=80,pover=0.3,pstay=0.3 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+random-grid.jani:model: info: random-grid is an MDP model.
+random-grid.jani: info: Need 8 bytes per state.
+random-grid.jani: info: Explored 1523278 states for N=80, pover=0.3, pstay=0.3.
+random-grid.jani: error: Modelling Error: Potentially infinite reward for 'multi' in subproperty: 1
+
+Peak memory usage: 3608 MB
+Analysis results for random-grid.jani
+Experiment N=80, pover=0.3, pstay=0.3
+
++ State space exploration
+  State size:         8 bytes
+  States:             1523278
+  Transitions:        9139668
+  Branches:           27419004
+  Rate:               264688 states/s
+  Peak memory:        1465.14 MB
+  Final size:         11.80 MB
+  Time (exploration): 5.8 s
+  Time (merging):     0.4 s
+
+

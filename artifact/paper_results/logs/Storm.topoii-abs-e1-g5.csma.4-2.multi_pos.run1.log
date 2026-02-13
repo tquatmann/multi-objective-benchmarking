@@ -1,0 +1,58 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos --multiobjective:precision 1e-1 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	14.717917203903198
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:50:34 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 3.203s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	761962
+Transitions: 	1327068
+Choices: 	825504
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 3444 item(s)
+   * all_delivered -> 9 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [(!"collision_max_backoff") U "all_delivered"], R{"time"}min=? [F "all_delivered"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1134249 states.
+Final preprocessed model has 1225739 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 11.463s seconds (consisting of 1.038s seconds for preprocessing and 10.425s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.77646
+   (         0,         -1) * x <= -124.464
+   (         1, -0.00471035) * x <= 0.162304
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.77646
+   (         0,         -1) * x <= -124.463
+
+2 Pareto optimal points found:
+   (0.7485725128, 124.4636763 )
+   (0.7764601493, 130.3841728 )
+
+
+Time for model checking: 11.464s.
+
+Performance statistics:
+  * peak memory usage: 749MB
+  * CPU time: 14.488s
+  * wallclock time: 14.673s
+

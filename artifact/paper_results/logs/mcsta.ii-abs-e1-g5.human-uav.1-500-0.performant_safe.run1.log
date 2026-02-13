@@ -1,0 +1,41 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=500,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	1.0028698444366455
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=500,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 381, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 24003 states for Unf=1, B=500, COUNTER=0.
+
+Peak memory usage: 142 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=500, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             24003
+  Transitions:        33253
+  Branches:           105391
+  Rate:               120015 states/s
+  Peak memory:        54.76 MB
+  Final size:         0.18 MB
+  Time (exploration): 0.2 s
+  Time (merging):     0.0 s
+
++ performant_safe
+  WSO instances:       5
+  Time:                0.3 s
+  Under Approximation: ∩{1x + -0y <= 0.9727105696, 0x + -1y <= -0.0051498517, 1x + -8.5878161976y <= -0.0442202208, 1x + -1.3667073368y <= 0.0531208058, 1x + -0.5717933474y <= 0.452039718, 1x + -0.9736374966y <= 0.2336801565}
+  Over Approximation:  ∩{1x + -0y <= 0.9731350448, 0x + -1y <= 0, 1x + -1.0742862516y <= 0.197282921, 1x + -1.4991433796y <= 0.0670274414, 1x + -0.646631541y <= 0.4119303888}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s
+
+

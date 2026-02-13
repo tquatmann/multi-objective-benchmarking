@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "sensor-network.4.pareto",
+	"tool": "Storm",
+	"configuration-id": "topopi-abs-e3-g5",
+	"invocation-note": "exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.4.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --exact --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 30.278587579727173,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topopi-abs-e3-g5.sensor-network.4.pareto.run1.log"
+}

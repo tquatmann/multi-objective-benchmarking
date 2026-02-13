@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "firewire_abst-pta.30-10000.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g99",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.99 Used moconv to convert the PTA to an MDP using digital-clocks semantics.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/firewire_abst-pta/converted_firewire_abst-pta.delay=30,T=10000.jani --janiproperty multi --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.99 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.03696084022521973,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	],
+	"log": "Storm.topoii-abs-e3-g99.firewire_abst-pta.30-10000.multi.run1.log"
+}

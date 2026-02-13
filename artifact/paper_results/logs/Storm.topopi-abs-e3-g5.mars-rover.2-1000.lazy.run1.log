@@ -1,0 +1,14 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants Unf=2,B=1000 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	2080.196590900421
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:02:30 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants 'Unf=2,B=1000' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "client-server.3.pareto",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e1-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-1, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --props pareto --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.23558783531188965,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e1-g5.client-server.3.pareto.run1.log"
+}

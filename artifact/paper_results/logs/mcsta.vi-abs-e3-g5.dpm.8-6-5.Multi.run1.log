@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --props Multi -E N=8,C=6,TIME_BOUND=5 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.29536962509155273
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --props Multi -E N=8,C=6,TIME_BOUND=5 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+dpm.jani:model: info: dpm is an MA model.
+dpm.jani:properties[7]: warning: Skipping unsupported property "Multi".
+dpm.jani: error: No properties to check.
+

@@ -1,0 +1,39 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	54.348024129867554
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+csma.4-2.jani:model: info: csma.4-2 is an MDP model.
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+
+Peak memory usage: 951 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               590568 states/s
+  Peak memory:        231.57 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.9 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       14
+  Time:                51.9 s
+  Under Approximation: ∩{-0*x_1 + -0*x_2 + 1*x_3 <= 143.2121690891, -1*x_1 + -0*x_2 + 214272.8660569491*x_3 <= 30686481.785981145, -0*x_1 + -1*x_2 + 1170.1609640895*x_3 <= 167580.9340242491, -1*x_1 + -200.5850896769*x_2 + 0*x_3 <= -71.4446069946, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3556496082, -1*x_1 + -0*x_2 + 0.0367610857*x_3 <= 5.158036381, -1*x_1 + -7.4435772805*x_2 + 0*x_3 <= -2.7412685935, -1*x_1 + -0*x_2 + 0.0012891875*x_3 <= 0.0906908533, -1*x_1 + -0*x_2 + 0*x_3 <= -0.09252394, -1*x_1 + -0.1022212389*x_2 + 0*x_3 <= -0.1289155427, -1*x_1 + -3.0605470684*x_2 + 7.44328E-05*x_3 <= -1.171525774}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0924505139, -0*x_1 + -1*x_2 + 0*x_3 <= -0.35546875, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2125969992, -1*x_1 + -0*x_2 + 0.0055294004*x_3 <= 0.6967984762, -1*x_1 + -0*x_2 + 0.1274751665*x_3 <= 18.1497035604, -1*x_1 + -0*x_2 + 0.0367608308*x_3 <= 5.1583262188, -1*x_1 + -0.0031843746*x_2 + 0*x_3 <= -0.0935824596, -1*x_1 + -0.0317581941*x_2 + 0*x_3 <= -0.1037395595, -1*x_1 + -0.3076615016*x_2 + 0*x_3 <= -0.2018145633, -1*x_1 + -6.8938E-06*x_2 + 0.0001264069*x_3 <= -0.0742689042, -1*x_1 + -8.74759E-05*x_2 + 0.0001264056*x_3 <= -0.0742977454, -1*x_1 + -0.0010773662*x_2 + 0.0001263888*x_3 <= -0.0746520387, -1*x_1 + -0.0114093031*x_2 + 0.0001262133*x_3 <= -0.0783499595, -1*x_1 + -0.1500989396*x_2 + 0.0001238581*x_3 <= -0.1279885992}
+
+  + Pareto Curve Approximation
+    Time: 51.6 s
+
+

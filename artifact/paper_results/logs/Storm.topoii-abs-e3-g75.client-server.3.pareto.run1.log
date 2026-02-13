@@ -1,0 +1,89 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics
+Repitition:	1
+Wallclock time:	0.4385671615600586
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:18:17 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.014s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	184
+Transitions: 	541
+Choices: 	439
+Reward Models:  grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 177 states.
+Final preprocessed model has 427 actions.
+Found 38 end components that are relevant for LRA-analysis.
+158 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 10 refinement steps.
+Solving multi-objective query took 0.387s seconds (consisting of 0.000s seconds for preprocessing and 0.387s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 19 Halfspaces:
+   (         0,          1, 0.000462677) * x <= 0.299963
+   (0.000622087,          1,  0.0011535) * x <= 0.299984
+   (         1,          0,          0) * x <= 0.299962
+   (         1,          0, 0.000531073) * x <= 0.299964
+   (  0.999688,   0.999738,          1) * x <= 0.332802
+   (         0,          1,          0) * x <= 0.299962
+   (  0.999918,          0,          1) * x <= 0.329872
+   (         0,          1,   0.713165) * x <= 0.321306
+   (   0.99982,   0.998918,          1) * x <= 0.332803
+   (         0,          1,          1) * x <= 0.329896
+   (         1,          1,          0) * x <= 0.329926
+   (0.000931741, 0.000633249,          1) * x <= 0.299967
+   (  0.998918,   0.999815,          1) * x <= 0.332802
+   (0.00325042, 0.00320311,          1) * x <= 0.300044
+   (         0,          0,          1) * x <= 0.299962
+   (  0.999738,   0.999738,          1) * x <= 0.332803
+   (0.00648206,   0.999929,          1) * x <= 0.329894
+   (         0, 0.000530911,          1) * x <= 0.299964
+   (0.00093112,          0,          1) * x <= 0.299965
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0,          0) * x <= 0.300057
+   (         0,          1,          0) * x <= 0.300057
+   (         0,          0,          1) * x <= 0.300057
+   (  0.707107,          0,   0.707107) * x <= 0.233406
+   (  0.666667,   0.666667,          0) * x <= 0.220058
+   (  0.577142,   0.577142,   0.577767) * x <= 0.192436
+   (0.00135114,   0.707045,   0.707168) * x <= 0.233427
+   (  0.537958,   0.595995,   0.596146) * x <= 0.198398
+   (0.00457859,   0.739668,   0.672957) * x <= 0.242164
+   (         0,   0.707108,   0.707106) * x <= 0.233407
+
+9 Pareto optimal points found:
+   (0.00296389587, 0.00296389587, 0.2999619418 )
+   (          0, 0.02994882867, 0.2999476152 )
+   (0.002932916246, 0.02993931942, 0.2999381124 )
+   (0.2999619418, 0.02996371822, 0.00296389587 )
+   (0.2999476108, 0.00296389587, 0.02994883315 )
+   (0.00296389587, 0.2999476109, 0.02994883308 )
+   (          0, 0.2999494577, 0.02994624351 )
+   (0.02993740555, 0.002937470247, 0.2999368262 )
+   (0.02996371822, 0.2999619418, 0.00296389587 )
+
+
+Time for model checking: 0.387s.
+
+Performance statistics:
+  * peak memory usage: 62MB
+  * CPU time: 0.416s
+  * wallclock time: 0.405s
+

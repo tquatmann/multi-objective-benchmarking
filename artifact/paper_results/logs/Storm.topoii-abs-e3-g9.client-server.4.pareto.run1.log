@@ -1,0 +1,38 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.9 --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0025606155396
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:29:02 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.9 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.020s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA], R{"grants4"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 945 states.
+Final preprocessed model has 2753 actions.
+Found 176 end components that are relevant for LRA-analysis.
+880 states lie on such an end component.
+
+
+
+----------
+Computation aborted after 2700.0025606155396 seconds since the total time limit of 2700 seconds was exceeded.

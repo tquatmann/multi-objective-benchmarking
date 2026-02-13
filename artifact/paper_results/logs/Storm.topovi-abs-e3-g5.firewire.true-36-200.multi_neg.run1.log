@@ -1,0 +1,131 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants delay=36,deadline=200 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	519.8810725212097
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:02:19 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --janiproperty multi_neg --constants 'delay=36,deadline=200' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 41.306s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	6932041
+Transitions: 	15783496
+Choices: 	15669930
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * done -> 252 item(s)
+   * init -> 1 item(s)
+   * ((((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) & (t <= 200)) -> 250 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [F ((((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) & (t <= 200))], R{"time_sending"}max=? [F "done"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 6931788 states.
+Final preprocessed model has 15669173 actions.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00153031 exceeds specified value 0.000288675 by approx. 0.00124164. Weight vector isvector (3) [ 0.997631, 0, 0.0687926 ].
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 5.63851e-05.
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 3.14227e-05.
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 4.84654e-05.
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 7.03058e-05.
+Multi-objective Pareto Curve Approximation algorithm terminated after 23 refinement steps.
+Solving multi-objective query took 478.439s seconds (consisting of 14.338s seconds for preprocessing and 464.100s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 35 Halfspaces:
+   (2.34826e-14,         -1, 1.76145e-14) * x <= -2.40562e-05
+   (2.55557e-16,         -1, 1.92067e-16) * x <= -2.40563e-05
+   (1.3771e-14,         -1, 1.70873e-14) * x <= -2.40563e-05
+   (         1,          0,    0.24995) * x <= 409.99
+   (         1,          0,   0.249969) * x <= 409.994
+   (5.69235e-16,         -1, 3.07315e-16) * x <= -2.40563e-05
+   ( 0.0250104,          0,          1) * x <= 211.179
+   (         1,          0,   0.557707) * x <= 470.342
+   (         0,         -1,          0) * x <= -2.40563e-05
+   (         0,          0,          1) * x <= 202.25
+   (         1,          0,   0.535657) * x <= 466.007
+   (6.58673e-18,         -1, 1.64598e-18) * x <= -2.40563e-05
+   (5.59403e-17,         -1, 3.05729e-17) * x <= -2.40563e-05
+   (2.00859e-18,         -1,          0) * x <= -2.40563e-05
+   (3.90377e-16,         -1, 5.38002e-12) * x <= -2.40552e-05
+   (  0.799881,          0,          1) * x <= 487.807
+   (         1,          0,   0.694494) * x <= 497.628
+   (2.6696e-17,         -1, 1.45968e-17) * x <= -2.40563e-05
+   (7.89061e-14,         -1, 5.91869e-14) * x <= -2.40562e-05
+   (4.23431e-14,         -1, 2.36145e-14) * x <= -2.40562e-05
+   (         1,          0,   0.750091) * x <= 508.768
+   (         0,         -1, 2.37312e-12) * x <= -2.40558e-05
+   (         1,          0,   0.613746) * x <= 481.471
+   (4.76109e-17,         -1, 2.93097e-17) * x <= -2.40563e-05
+   (1.20631e-15,         -1, 3.01526e-16) * x <= -2.40563e-05
+   (         1,          0,          0) * x <= 365
+   (         1,          0,   0.583349) * x <= 475.399
+   (         1,          0,   0.576538) * x <= 474.054
+   (7.73863e-05,          0,          1) * x <= 202.278
+   (3.68793e-17,         -1, 2.13596e-17) * x <= -2.40563e-05
+   (3.81518e-17,         -1, 2.22136e-17) * x <= -2.40563e-05
+   (         1,          0,   0.540927) * x <= 467.041
+   (4.06073e-14,         -1, 2.34116e-14) * x <= -2.40562e-05
+   (6.28397e-17,         -1, 4.10653e-17) * x <= -2.40563e-05
+   (8.57718e-14,         -1, 5.95678e-14) * x <= -2.40562e-05
+
+Overapproximation of achievable values: Polytope with 23 Halfspaces:
+   (         1,          0,          0) * x <= 364.998
+   (         0,         -1,          0) * x <= 0.000216506
+   (         0,          0,          1) * x <= 202.25
+   (         0,  -0.999991, 0.00428262) * x <= 0.866304
+   (0.00743522,          0,   0.999972) * x <= 204.899
+   (  0.997631,          0,  0.0687926) * x <= 376.516
+   (  0.940327,          0,   0.340271) * x <= 406.158
+   (  0.970152,          0,   0.242497) * x <= 397.754
+   (  0.837519,          0,   0.546408) * x <= 409.721
+   (  0.866682,          0,   0.498861) * x <= 410.693
+   (  0.782392,          0,   0.622786) * x <= 405.317
+   (  0.802922,          0,   0.596084) * x <= 407.263
+   (  0.862782,          0,   0.505575) * x <= 410.62
+   (  0.852281,          0,   0.523084) * x <= 410.348
+   (  0.821351,          0,   0.570423) * x <= 408.727
+   (  0.864145,          0,   0.503242) * x <= 410.645
+   (  0.863773,          0,   0.503881) * x <= 410.637
+   (  0.799965,          0,   0.600047) * x <= 406.997
+   (  0.877585,          0,   0.479422) * x <= 410.795
+   (  0.873358,          0,   0.487078) * x <= 410.777
+   (  0.880218,          0,   0.474569) * x <= 410.791
+   (  0.515105,          0,   0.857127) * x <= 357.246
+   (  0.624382,          0,   0.781119) * x <= 380.885
+
+17 Pareto optimal points found:
+   (360.1874722, 2.405626122e-05, 197.4998803 )
+   (358.8749721, 2.405626122e-05, 199.7498218 )
+   (  358.46872, 2.405626122e-05, 200.3747436 )
+   (357.1562199, 2.405626122e-05,   202.12452 )
+   (358.6640338, 2.405626122e-05,  200.093512 )
+   (358.4687207, 2.405626122e-05, 200.3747314 )
+   (356.9994001, 2.405626122e-05, 202.2499692 )
+   (360.8671602, 2.405626122e-05,  196.281159 )
+   (357.1562193, 2.405626122e-05, 202.1245325 )
+   (362.6406002, 2.405626122e-05, 189.4365559 )
+   (364.9999759, 2.405626122e-05, 179.9971672 )
+   (360.9843494, 2.405626122e-05, 196.0623823 )
+   (360.6347382, 2.405626122e-05, 196.7108327 )
+   (356.9992909, 2.405626122e-05, 202.2499719 )
+   ( 356.947483, 2.405626122e-05, 202.2499759 )
+   (360.4081754, 2.405626122e-05, 197.1170723 )
+   (360.4081756, 2.405626122e-05, 197.1170705 )
+
+
+Time for model checking: 478.441s.
+
+Performance statistics:
+  * peak memory usage: 5341MB
+  * CPU time: 510.117s
+  * wallclock time: 519.808s
+

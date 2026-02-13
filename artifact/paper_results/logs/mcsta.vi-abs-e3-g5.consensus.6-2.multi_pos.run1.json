@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "consensus.6-2.multi_pos",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_pos -E K=2 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 76.40882277488708,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.vi-abs-e3-g5.consensus.6-2.multi_pos.run1.log"
+}

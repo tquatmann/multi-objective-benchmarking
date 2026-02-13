@@ -1,0 +1,42 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.1.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	1.2347192764282227
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.1.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan.1.jani:model: info: wlan.1 is an MDP model.
+wlan.1.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.1.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.1.jani: info: Need 24 bytes per state.
+wlan.1.jani: info: Explored 8625 states for COL=0.
+
+Peak memory usage: 96 MB
+Analysis results for wlan.1.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             8625
+  Transitions:        11356
+  Branches:           16196
+  Rate:               148707 states/s
+  Peak memory:        41.38 MB
+  Final size:         0.07 MB
+  Time (exploration): 0.1 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       11
+  Time:                0.7 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 228206.3071853138, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681384, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681382, 0*x_1 + 0*x_2 + 1*x_3 <= 3865.1377683906, 1*x_1 + 0*x_2 + 8.048410371*x_3 <= 259106.9994830025, 0*x_1 + 1*x_2 + 4.28425E-05*x_3 <= 1.3668555833, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023684966, 1*x_1 + 0*x_2 + 206.6251140921*x_3 <= 1022350.207866676, 1*x_1 + 0*x_2 + 41.8210781889*x_3 <= 388772.2089105388, 0*x_1 + 1*x_2 + 4.28425E-05*x_3 <= 1.3668554772, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023682689, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023682703, 1*x_1 + 542739033.0641309*x_2 + 113259.6488417359*x_3 <= 1088101092.8936815, 1*x_1 + 6079637056.50106*x_2 + 260508.3049130527*x_3 <= 8310373551.072874, 0*x_1 + 1*x_2 + 0.0002077289*x_3 <= 2.000750305, 0*x_1 + 1*x_2 + 0.0002077289*x_3 <= 2.0007501267, 0*x_1 + 1*x_2 + 0.000207729*x_3 <= 2.0007505196, 0*x_1 + 1*x_2 + 4.2842E-05*x_3 <= 1.3668536381, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681416, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681041, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681379, 1*x_1 + 6079817398.43437*x_2 + 260513.4306358697*x_3 <= 8310610054.728463, 0*x_1 + 1*x_2 + 4.2842E-05*x_3 <= 1.366853762, 1*x_1 + 426767037.4163224*x_2 + 18325.3791448404*x_3 <= 583716901.0320526, 0*x_1 + 1*x_2 + 4.2842E-05*x_3 <= 1.3668536379, 0*x_1 + 1*x_2 + 8.5611E-06*x_3 <= 1.2352371092, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023681376, 1*x_1 + 1.8801538962*x_2 + 0*x_3 <= 228208.5678222827, 0*x_1 + 1*x_2 + 5E-10*x_3 <= 1.2023688282, 1*x_1 + 2041611546.1307297*x_2 + 0.9999999974*x_3 <= 2455000716.949847, 0*x_1 + 1*x_2 + 5E-10*x_3 <= 1.2023688933, 0*x_1 + 1*x_2 + 6E-10*x_3 <= 1.2023689592}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 228206.3072083306, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023919697, 0*x_1 + 0*x_2 + 1*x_3 <= 3865.1377932648, 1*x_1 + 0*x_2 + 174.1614953205*x_3 <= 897546.0178827693, 1*x_1 + 0*x_2 + 41.8210781676*x_3 <= 388772.2094238624, 1*x_1 + 0*x_2 + 206.6251140899*x_3 <= 1022350.2106846252, 0*x_1 + 1*x_2 + 0.000207729*x_3 <= 2.000764949, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2023822248, 0*x_1 + 1*x_2 + 3.0916E-06*x_3 <= 1.2142521465, 0*x_1 + 1*x_2 + 0.000175245*x_3 <= 1.8758812975, 0*x_1 + 1*x_2 + 2.65941E-05*x_3 <= 1.3044857014}
+
+  + Pareto Curve Approximation
+    Time: 0.7 s
+
+

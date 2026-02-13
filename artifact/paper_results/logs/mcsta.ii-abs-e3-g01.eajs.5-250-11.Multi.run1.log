@@ -1,0 +1,47 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --props Multi -E energy_capacity=250,B=11 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	18.3080792427063
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --props Multi -E energy_capacity=250,B=11 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS
+
+
+
+
+eajs.5.jani:model: info: eajs.5 is an MDP model.
+eajs.5.jani:variables[11]: info: Expanding variable "loc_1" into 3 locations in automaton "Process_1".
+eajs.5.jani:variables[15]: info: Expanding variable "loc_2" into 3 locations in automaton "Process_2".
+eajs.5.jani:variables[17]: info: Expanding variable "user_1" into 6 locations in automaton "Resources".
+eajs.5.jani:variables[19]: info: Expanding variable "loc_3" into 3 locations in automaton "Process_3".
+eajs.5.jani:variables[20]: info: Expanding variable "loc_5" into 3 locations in automaton "Process_5".
+eajs.5.jani:variables[23]: info: Expanding variable "loc_4" into 3 locations in automaton "Process_4".
+eajs.5.jani: info: Need 24 bytes per state.
+eajs.5.jani: warning: The probabilities for a transition labelled "tick" with 4 branches in state (Battery.location = l, Process_1.location = Process_1_loc_1_2, Process_2.location = Process_2_loc_2_0, Resources.location = Resources_user_1_4, Process_3.location = Process_3_loc_3_0, Process_5.location = Process_5_loc_5_2, Process_4.location = Process_4_loc_4_0, battery_load = 220, loc_1 = 2, t_1 = 0, t_2 = 0, loc_2 = 0, boost_1 = 0, user_1 = 4, t_3 = 0, loc_3 = 0, loc_5 = 2, t_5 = 4, t_4 = 0, loc_4 = 0, failure_1 = False, reachability_reward_given_0 = False, reachability_reward_given_1 = False) do not sum up to the expected value of 1 (actual sum: 0.99999999999999989). Results will likely be affected by floating-point errors.
+eajs.5.jani: info: Explored 3049471 states for energy_capacity=250, B=11.
+
+Peak memory usage: 1934 MB
+Analysis results for eajs.5.jani
+Experiment energy_capacity=250, B=11
+
++ State space exploration
+  State size:         24 bytes
+  States:             3049471
+  Transitions:        4256193
+  Branches:           6977654
+  Rate:               633854 states/s
+  Peak memory:        523.86 MB
+  Final size:         23.63 MB
+  Time (exploration): 4.8 s
+  Time (merging):     0.1 s
+
++ Multi
+  WSO instances:       2
+  Time:                12.8 s
+  Under Approximation: ∩{1x + 0y <= 10.0329406884, 0x + 1y <= 1}
+  Over Approximation:  ∩{1x + 0y <= 10.0329406884, 0x + 1y <= 1.0000040664}
+
+  + Pareto Curve Approximation
+    Time: 12.0 s
+
+

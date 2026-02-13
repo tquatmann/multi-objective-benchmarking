@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "erlang.5000-10-5.MultiPos",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g75",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiPos --constants K=5000,R=10,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 512.4690518379211,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g75.erlang.5000-10-5.MultiPos.run1.log"
+}

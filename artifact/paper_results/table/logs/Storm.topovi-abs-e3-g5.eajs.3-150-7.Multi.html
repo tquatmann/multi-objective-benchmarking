@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topovi-abs-e3-g5 - eajs Multi 3-150-7</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topovi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/eajs/eajs.3.jani">eajs</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3, <span class="tt">energy_capacity</span> = 150, <span class="tt">B</span> = 7</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topovi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.3.jani --janiproperty Multi --constants energy_capacity=150,B=7 --multiobjective:precision 1e-3 abs --timemem --statistics</pre>
+	(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.288s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.288s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:33 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.3.jani --janiproperty Multi --constants 'energy_capacity=150,B=7' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.693s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	143155
+Transitions: 	274496
+Choices: 	169447
+Reward Models:  utilityLocal
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (battery_load = 0) -> 1227 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(R{"utilityLocal"}max=? [F (battery_load = 0)], Pmax=? [true Urew{"utilityLocal"}>=7 (battery_load = 0)]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 2.
+           #checked epochs overall: 16.
+# checked epochs per weight vector: 8.
+                      overall Time: 1.456s.
+         Epoch Model building time: 0.259s.
+         Epoch Model checking time: 0.689s.
+--------------------------------------------------
+Solving multi-objective query took 1.558s seconds (consisting of 0.100s seconds for preprocessing and 1.457s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 6.00743
+   (         0,          1) * x <= 0.00743102
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 6.00761
+   (         0,          1) * x <= 0.0076078
+
+1 Pareto optimal points found:
+   (6.007431019, 0.007431019498 )
+
+
+Time for model checking: 1.558s.
+
+Performance statistics:
+  * peak memory usage: 139MB
+  * CPU time: 2.219s
+  * wallclock time: 2.256s	</pre>
+</div>
+</body>
+</html>

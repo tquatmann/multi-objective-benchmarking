@@ -1,0 +1,34 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_pos --constants COL=0 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	459.0047559738159
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:54:05 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_pos --constants COL=0 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.013s.
+
+Time for model construction: 154.169s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5007548
+Transitions: 	11475748
+Choices: 	6350470
+Reward Models:  time, cost
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(R{"cost"}min=? [F ((s1 = 12) & (s2 = 12))], R{"time"}min=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 5007536 states.
+Final preprocessed model has 6350458 actions.
+
+

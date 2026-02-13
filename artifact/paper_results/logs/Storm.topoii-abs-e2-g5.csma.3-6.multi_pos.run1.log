@@ -1,0 +1,31 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-6.jani --janiproperty multi_pos --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	385.6860773563385
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:15:45 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-6.jani --janiproperty multi_pos '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 348.486s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	84856004
+Transitions: 	147200984
+Choices: 	84988757
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 13256 item(s)
+   * all_delivered -> 125 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [(!"collision_max_backoff") U "all_delivered"], R{"time"}min=? [F "all_delivered"]) ...
+

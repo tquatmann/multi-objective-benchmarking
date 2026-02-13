@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "sensor-network.3.pareto",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g9",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.9",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.3.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.9 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2.495061159133911,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g9.sensor-network.3.pareto.run1.log"
+}

@@ -1,0 +1,82 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani --janiproperty Multi --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	1572.8332526683807
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:20:34 2025
+Command line arguments: --jani '$MDPMC_DIR/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani' --janiproperty Multi '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.301s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmin=? [F ((sizeLeft = 3) & (sizeRight = 3))], Pmax=? [true U<=5 ((sizeLeft = 3) & (sizeRight = 3))], R{"(((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)"}max=? [LRA[time]]) ...
+Final preprocessed model has 62299 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 145505 states.
+Final preprocessed model has 255737 actions.
+Found 1 end components that are relevant for LRA-analysis.
+90032 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 1572.472s seconds (consisting of 0.195s seconds for preprocessing and 1572.277s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -5.93653
+   (         0,          1,          0) * x <= 0.493214
+   (-0.000702408,          1,          0) * x <= 0.488904
+   (         0,          0,          1) * x <= 1.72055
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0,          0) * x <= -5.93652
+   (         0,          1,          0) * x <= 0.496075
+   (         0,          0,          1) * x <= 1.72056
+   ( -0.927022,   0.375007,          0) * x <= -5.31553
+
+2 Pareto optimal points found:
+   ( 6.13604728, 0.4932139473, 1.720549647 )
+   (5.936528254, 0.4930738036, 1.720549647 )
+
+
+Time for model checking: 1572.473s.
+
+Performance statistics:
+  * peak memory usage: 166MB
+  * CPU time: 1566.294s
+  * wallclock time: 1572.779s
+

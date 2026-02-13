@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "firewire_abst-pta.30-5000.multi",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire_abst-pta/firewire_abst-pta.jani --props multi -E delay=30,T=5000 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 1.461397409439087,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.vi-abs-e3-g5.firewire_abst-pta.30-5000.multi.run1.log"
+}

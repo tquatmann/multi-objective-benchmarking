@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topovi-abs-e3-g5 - client-server qual2 4</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topovi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/client-server/client-server.4.jani">client-server</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4</td></tr>
+		<tr><td>Property:</td><td><span class="tt">qual2</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topovi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty qual2 --multiobjective:precision 1e-3 abs --timemem --statistics</pre>
+	(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.092s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.092s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 16:56:38 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty qual2 '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.020s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "qual2": multi(R{"grants1"}max>=3/100 [LRA], R{"grants2"}max>=(7 / 25) [LRA], R{"grants3"}max>=(7 / 250) [LRA], R{"grants4"}max>=7/2500 [LRA]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants1"}max>=3/100 [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants2"}max>=(7 / 25) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants3"}max>=(7 / 250) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants4"}max>=7/2500 [LRA] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 945 states.
+Final preprocessed model has 2753 actions.
+Found 176 end components that are relevant for LRA-analysis.
+880 states lie on such an end component.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 1, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 1, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 0, 1, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 0, 0, 1 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283417 exceeds specified value 0.00025 by approx. 3.34174e-05. Weight vector isvector (4) [ 0.573835, 0.5791, 0.5791, 0 ].
+Multi-objective Pareto Curve Approximation algorithm terminated after 5 refinement steps.
+Solving multi-objective query took 0.020s seconds (consisting of 0.001s seconds for preprocessing and 0.018s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.020s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 0.064s
+  * wallclock time: 0.044s	</pre>
+</div>
+</body>
+</html>

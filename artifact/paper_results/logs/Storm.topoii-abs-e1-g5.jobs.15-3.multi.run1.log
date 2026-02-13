@@ -1,0 +1,98 @@
+Command:	$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-1 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	952.6285674571991
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:24:17 2025
+Command line arguments: --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.054s.
+
+Time for model construction: 77.698s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Tmin=? [F "all_jobs_finished"], R{"avg_waiting_time"}max=? [F "all_jobs_finished"], Pmax=? [true U<=(15 / (4 * 3)) "half_of_jobs_finished"]) ...
+Final preprocessed model has 1863801 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 1896568 states.
+Final preprocessed model has 3727601 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+Solving multi-objective query took 874.767s seconds (consisting of 3.917s seconds for preprocessing and 870.849s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 13 Halfspaces:
+   (        -1,          0,   0.425792) * x <= -3.37044
+   (         0,          1,   0.602945) * x <= 2.06504
+   (        -1,          0,   0.130538) * x <= -3.44014
+   (        -1,          0,          0) * x <= -3.44014
+   ( -0.254874,          0,          1) * x <= -0.259661
+   (         0,          1,          0) * x <= 1.9523
+   (        -1,          0,   0.445671) * x <= -3.36302
+   (         0,          0,          1) * x <= 0.71897
+   (         0,   0.246547,          1) * x <= 1.05736
+   (         0,          1,   0.965157) * x <= 2.2003
+   (        -1,          0,   0.618932) * x <= -3.2751
+   (         0,   0.916797,          1) * x <= 2.07566
+   (         0,          1,   0.125383) * x <= 1.9523
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (        -1,          0,          0) * x <= -3.44014
+   (         0,          1,          0) * x <= 1.9523
+   (         0,          0,          1) * x <= 0.747548
+   ( -0.874104,          0,   0.485739) * x <= -2.86227
+   (         0,   0.902779,   0.430105) * x <= 1.86589
+   (         0,   0.787809,    0.61592) * x <= 1.70804
+   (         0,   0.530482,   0.847696) * x <= 1.41332
+
+6 Pareto optimal points found:
+   (3.589160265, 1.710553405, 0.5074250056 )
+   (3.697695708, 1.519279508, 0.6827843445 )
+   (3.839669695, 1.372510631, 0.7189697849 )
+   (3.440139111, 1.952302669,           0 )
+   (3.529439566, 1.839886232, 0.3734232102 )
+   (3.470955031, 1.922703572, 0.2360686017 )
+
+
+Time for model checking: 874.768s.
+
+Performance statistics:
+  * peak memory usage: 1970MB
+  * CPU time: 947.355s
+  * wallclock time: 952.570s
+

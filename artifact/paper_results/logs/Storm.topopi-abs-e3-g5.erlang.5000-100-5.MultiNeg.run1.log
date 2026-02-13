@@ -1,0 +1,66 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiNeg --constants K=5000,R=100,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	0.2189791202545166
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:22:40 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiNeg --constants 'K=5000,R=100,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.126s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	20027
+Transitions: 	20033
+Choices: 	20030
+Markovian St.: 	10014
+Max. Rate: 	100
+Reward Models:  (goal ? 0 : 1)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * goal -> 10018 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	20027
+Transitions: 	20033
+Choices: 	20030
+Markovian St.: 	10014
+Max. Rate: 	100
+Reward Models:  (goal ? 0 : 1)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * goal -> 10018 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "MultiNeg": multi(Pmin=? [F (goal)], R{"(goal ? 0 : 1)"}max=? [LRA[steps]]) ...
+Final preprocessed model has 5005 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 10010 states.
+Final preprocessed model has 10011 actions.
+Found 2 end components that are relevant for LRA-analysis.
+3 states lie on such an end component.
+
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:111): Scheduler generation not supported for the chosen LRA method. Try value-iteration.
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:261): Scheduler extraction is not yet implemented for LP based LRA method.
+WARN  (model-handling.h:1118): Cannot handle property: NotImplementedException: Scheduler extraction is not yet implemented for LP based LRA method.
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 80MB
+  * CPU time: 0.188s
+  * wallclock time: 0.188s
+

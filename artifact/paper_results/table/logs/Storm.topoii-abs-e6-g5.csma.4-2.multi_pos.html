@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e6-g5 - csma multi_pos 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e6-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/csma/csma.4-2.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_pos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e6-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos --multiobjective:precision 1e-6 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">19.180s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">19.180s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:50:35 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --janiproperty multi_pos '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 3.296s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	761962
+Transitions: 	1327068
+Choices: 	825504
+Reward Models:  time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * collision_max_backoff -> 3444 item(s)
+   * all_delivered -> 9 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [(!"collision_max_backoff") U "all_delivered"], R{"time"}min=? [F "all_delivered"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1134249 states.
+Final preprocessed model has 1225739 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 15.840s seconds (consisting of 1.071s seconds for preprocessing and 14.769s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         0,         -1) * x <= -124.463
+   (         1, -0.00654028) * x <= -0.0654541
+   (         1,          0) * x <= 0.77646
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 0.77646
+   (         0,         -1) * x <= -124.463
+   (  0.999989, -0.00471032) * x <= 0.170104
+   (  0.999979, -0.00654014) * x <= -0.0654527
+
+2 Pareto optimal points found:
+   (0.7764601493, 128.7274748 )
+   (0.7485725128, 124.4634955 )
+
+
+Time for model checking: 15.841s.
+
+Performance statistics:
+  * peak memory usage: 773MB
+  * CPU time: 18.939s
+  * wallclock time: 19.143s	</pre>
+</div>
+</body>
+</html>

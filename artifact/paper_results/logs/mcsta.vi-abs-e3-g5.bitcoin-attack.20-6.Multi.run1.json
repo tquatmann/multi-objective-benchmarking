@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "bitcoin-attack.20-6.Multi",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/bitcoin-attack/bitcoin-attack.jani --props Multi -E MALICIOUS=20,CD=6 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.22524762153625488,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.vi-abs-e3-g5.bitcoin-attack.20-6.Multi.run1.log"
+}

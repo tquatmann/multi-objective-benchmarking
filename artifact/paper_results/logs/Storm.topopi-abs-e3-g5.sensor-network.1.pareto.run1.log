@@ -1,0 +1,45 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.1.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	0.07339882850646973
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:15:40 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.1.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.018s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	462
+Transitions: 	1186
+Choices: 	1079
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"working"}max=? [LRA], R{"success"}max=? [LRA], R{"failure"}min=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 460 states.
+Final preprocessed model has 1077 actions.
+Found 130 end components that are relevant for LRA-analysis.
+264 states lie on such an end component.
+
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:111): Scheduler generation not supported for the chosen LRA method. Try value-iteration.
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:261): Scheduler extraction is not yet implemented for LP based LRA method.
+WARN  (model-handling.h:1118): Cannot handle property: NotImplementedException: Scheduler extraction is not yet implemented for LP based LRA method.
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 60MB
+  * CPU time: 0.047s
+  * wallclock time: 0.042s
+

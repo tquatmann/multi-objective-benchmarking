@@ -1,0 +1,55 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan-mec/wlan-mec.4.jani --janiproperty multi_pos --constants COL=0 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	779.247846364975
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:18:52 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan-mec/wlan-mec.4.jani --janiproperty multi_pos --constants COL=0 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 119.538s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3450000
+Transitions: 	14177520
+Choices: 	7852060
+Reward Models:  time, cost
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 10 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(R{"cost"}min=? [F ((s1 = 12) & (s2 = 12))], R{"time"}min=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 3449911 states.
+Final preprocessed model has 7851881 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 653.992s seconds (consisting of 32.171s seconds for preprocessing and 621.821s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= 0
+   (         0,         -1) * x <= 0
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= 0
+   (         0,         -1) * x <= 0
+
+1 Pareto optimal points found:
+   (                   0,                    0 ) approx.    (          0,           0 )
+
+
+Time for model checking: 654.675s.
+
+Performance statistics:
+  * peak memory usage: 13728MB
+  * CPU time: 770.339s
+  * wallclock time: 778.114s
+

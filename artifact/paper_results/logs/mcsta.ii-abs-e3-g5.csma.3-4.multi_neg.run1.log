@@ -1,0 +1,39 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	23.663014888763428
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma.3-4.jani:model: info: csma.3-4 is an MDP model.
+csma.3-4.jani: info: Need 24 bytes per state.
+csma.3-4.jani: info: Explored 2355601 states.
+
+Peak memory usage: 1416 MB
+Analysis results for csma.3-4.jani
+
++ State space exploration
+  State size:         24 bytes
+  States:             2355601
+  Transitions:        2371900
+  Branches:           3888343
+  Rate:               730645 states/s
+  Peak memory:        390.08 MB
+  Final size:         18.25 MB
+  Time (exploration): 3.2 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       3
+  Time:                20.0 s
+  Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.904923474, -0*x_1 + -1*x_2 + 0*x_3 <= -0.989747766, -1*x_1 + -0*x_2 + 1.06535E-05*x_3 <= -0.9036832663, -1*x_1 + -0.0312443942*x_2 + 0*x_3 <= -0.9358651083, -1*x_1 + -264.1754907181*x_2 + 0*x_3 <= -262.3939699974, -0*x_1 + -1*x_2 + 2.537E-05*x_3 <= -0.9868417269, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8182558282}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.9046914212, -0*x_1 + -1*x_2 + 0*x_3 <= -0.9895225981, -0*x_1 + -0*x_2 + 1*x_3 <= 117.8184786201}
+
+  + Pareto Curve Approximation
+    Time: 19.4 s
+
+

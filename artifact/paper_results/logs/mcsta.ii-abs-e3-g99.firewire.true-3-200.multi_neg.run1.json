@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "firewire.true-3-200.multi_neg",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g99",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.99",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --props multi_neg -E delay=3,deadline=200 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.99 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.8956148624420166,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g99.firewire.true-3-200.multi_neg.run1.log"
+}

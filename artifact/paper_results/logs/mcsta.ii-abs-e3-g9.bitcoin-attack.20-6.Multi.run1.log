@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/bitcoin-attack/bitcoin-attack.jani --props Multi -E MALICIOUS=20,CD=6 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.23363304138183594
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/bitcoin-attack/bitcoin-attack.jani --props Multi -E MALICIOUS=20,CD=6 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+bitcoin-attack.jani:model: info: bitcoin-attack is an MA model.
+bitcoin-attack.jani:properties[2]: warning: Multi-objective properties are only supported for MDPs and LTSs, skipping property "Multi".
+bitcoin-attack.jani: error: No properties to check.
+

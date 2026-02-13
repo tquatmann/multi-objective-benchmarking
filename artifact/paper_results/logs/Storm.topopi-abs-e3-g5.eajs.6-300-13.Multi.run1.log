@@ -1,0 +1,30 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.6.jani --janiproperty Multi --constants energy_capacity=300,B=13 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	1265.08389878273
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:10:14 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.6.jani --janiproperty Multi --constants 'energy_capacity=300,B=13' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 732.794s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	7901694
+Transitions: 	19722777
+Choices: 	11897412
+Reward Models:  utilityLocal
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (battery_load = 0) -> 28620 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(R{"utilityLocal"}max=? [F (battery_load = 0)], Pmax=? [true Urew{"utilityLocal"}>=13 (battery_load = 0)]) ...
+

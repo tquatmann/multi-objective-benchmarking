@@ -1,0 +1,19 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.2.jani --props qual1 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.2945866584777832
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.2.jani --props qual1 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+network-virus.2.jani:model: info: network-virus.2 is an MDP model.
+network-virus.2.jani:variables[3]: info: Expanding variable "s11" into 3 locations in automaton "n11".
+network-virus.2.jani:variables[4]: info: Expanding variable "s21" into 3 locations in automaton "n21".
+network-virus.2.jani:variables[5]: info: Expanding variable "s12" into 3 locations in automaton "n12".
+network-virus.2.jani:variables[6]: info: Expanding variable "s22" into 3 locations in automaton "n22".
+network-virus.2.jani:properties[0]: warning: Skipping unsupported property "qual1".
+network-virus.2.jani: error: No properties to check.
+

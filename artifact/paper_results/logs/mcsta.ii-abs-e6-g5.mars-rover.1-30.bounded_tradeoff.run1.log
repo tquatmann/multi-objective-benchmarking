@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props bounded_tradeoff -E Unf=1,B=30 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.6393318176269531
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props bounded_tradeoff -E Unf=1,B=30 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+mars-rover.jani:model: info: mars-rover is an MDP model.
+mars-rover.jani: info: Need 16 bytes per state.
+mars-rover.jani: info: Explored 1127 states for Unf=1, B=30.
+
+Peak memory usage: 58 MB
+Analysis results for mars-rover.jani
+Experiment Unf=1, B=30
+
++ State space exploration
+  State size:         16 bytes
+  States:             1127
+  Transitions:        1355
+  Branches:           2115
+  Rate:               34152 states/s
+  Peak memory:        28.95 MB
+  Final size:         0.01 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ bounded_tradeoff
+  WSO instances:       2
+  Time:                0.1 s
+  Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= -0}
+  Over Approximation:  ∩{1x + 0y <= 1.000000216, 0x + 1y <= 0}
+
+  + Pareto Curve Approximation
+    Time: 0.1 s
+
+

@@ -1,0 +1,59 @@
+Command:	$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.csl multi --constants N=500 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	1.4986226558685303
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:59:20 2025
+Command line arguments: --prism $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.csl multi --constants N=500 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+WARN  (storm-cli.cpp:25): The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.
+Time for model construction: 1.342s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	376251
+Transitions: 	750501
+Choices: 	501001
+Markovian St.: 	250501
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 125249 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	376251
+Transitions: 	750501
+Choices: 	501001
+Markovian St.: 	250501
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 125249 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(R{"buffering"}min=? [F "done"], Pmin=? [F "underrun"], Pmin=? [true U<=2 "underrun"]) ...
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 220MB
+  * CPU time: 1.411s
+  * wallclock time: 1.445s
+

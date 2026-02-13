@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "repudiation_malicious.20.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g9",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.9",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --props multi -E T=20 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.24921679496765137,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g9.repudiation_malicious.20.multi.run1.log"
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e2-g5 - mars-rover safe_collection_tradeoff 2-20</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e2-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
+		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e2-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=2,B=20 --multiobjective:precision 1e-2 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">20.705s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">20.705s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:30:43 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants 'Unf=2,B=20' '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 5.117s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1376194
+Transitions: 	2580362
+Choices: 	1720242
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 26914 item(s)
+   * exceedTime -> 33970 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 18434 item(s)
+   * done -> 86013 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "safe_collection_tradeoff": multi(Pmax=? [F "valueCollected"], Pmax=? [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1286832 states.
+Final preprocessed model has 1630620 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 15.510s seconds (consisting of 2.191s seconds for preprocessing and 13.318s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (2.75374e-16,          1) * x <= 1
+   (  0.984024,          1) * x <= 1.79346
+   (         0,          1) * x <= 1
+   (         1, 1.0984e-05) * x <= 1
+   (         1,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (  0.707107,   0.707107) * x <= 1.27951
+   (  0.187193,   0.982323) * x <= 1.13326
+
+4 Pareto optimal points found:
+   (0.9999999999,           0 )
+   (0.999991109, 0.8094402709 )
+   (          0,           1 )
+   (0.8063375541,           1 )
+
+
+Time for model checking: 15.511s.
+
+Performance statistics:
+  * peak memory usage: 844MB
+  * CPU time: 20.302s
+  * wallclock time: 20.635s	</pre>
+</div>
+</body>
+</html>

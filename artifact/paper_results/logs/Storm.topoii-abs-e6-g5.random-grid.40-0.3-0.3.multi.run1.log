@@ -1,0 +1,72 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants N=40,pover=0.3,pstay=0.3 --multiobjective:precision 1e-6 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	75.40433192253113
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:03:40 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants 'N=40,pover=0.3,pstay=0.3' '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.417s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	64000
+Transitions: 	1123200
+Choices: 	384000
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((x != (40 - 1)) & (y != (40 - 2))) -> 60840 item(s)
+   * (((x = 40) & (y = 40)) & (z = 40)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Pmax=? [((x != (40 - 1)) & (y != (40 - 2))) U (((x = 40) & (y = 40)) & (z = 40))], Tmin=? [F (((x = 40) & (y = 40)) & (z = 40))]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Weight Vector Checker Statistics:
+Final preprocessed model has 124839 states.
+Final preprocessed model has 749029 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 9 refinement steps.
+Solving multi-objective query took 74.927s seconds (consisting of 0.877s seconds for preprocessing and 74.050s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1, -0.00818122) * x <= -0.839398
+   (         1, -0.0223981) * x <= -2.55021
+   (         1, -0.0227095) * x <= -2.58745
+   (         1, -5.15816e-06) * x <= 0.183028
+   (         1,          0) * x <= 0.183673
+   (         0,         -1) * x <= -117.9
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,          0) * x <= 0.183674
+   (         0,         -1) * x <= -117.9
+   (         1, -9.24666e-05) * x <= 0.172111
+   (  0.999914, -0.0130977) * x <= -1.43104
+   (  0.999967, -0.00818069) * x <= -0.839336
+   (  0.999967, -0.00818095) * x <= -0.83937
+   (  0.999744, -0.0226094) * x <= -2.57551
+   (  0.999742, -0.0227037) * x <= -2.58679
+   (  0.999749, -0.0223925) * x <= -2.54957
+
+5 Pareto optimal points found:
+   (0.1836734658, 125.0512864 )
+   (       0.09,       117.9 )
+   (0.1285714271, 119.5984695 )
+   (0.183673465, 125.0511333 )
+   (0.1451020385, 120.3365059 )
+
+
+Time for model checking: 74.928s.
+
+Performance statistics:
+  * peak memory usage: 327MB
+  * CPU time: 74.715s
+  * wallclock time: 75.349s
+

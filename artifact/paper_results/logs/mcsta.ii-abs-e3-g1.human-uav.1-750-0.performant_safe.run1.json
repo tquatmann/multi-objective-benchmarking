@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "human-uav.1-750-0.performant_safe",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g1",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.1",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=750,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 1.5185565948486328,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g1.human-uav.1-750-0.performant_safe.run1.log"
+}

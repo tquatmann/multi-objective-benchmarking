@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e2-g5 - client-server pareto 3</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e2-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/client-server/client-server.3.jani">client-server</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 3</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e2-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty pareto --multiobjective:precision 1e-2 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.517s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.517s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:18:26 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty pareto '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.014s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	184
+Transitions: 	541
+Choices: 	439
+Reward Models:  grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 177 states.
+Final preprocessed model has 427 actions.
+Found 38 end components that are relevant for LRA-analysis.
+158 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 9 refinement steps.
+Solving multi-objective query took 0.472s seconds (consisting of 0.000s seconds for preprocessing and 0.472s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 17 Halfspaces:
+   (  0.006868, 0.00458341,          1) * x <= 0.2998
+   (  0.998768,   0.992425,          1) * x <= 0.331693
+   (         0,          1,          1) * x <= 0.329324
+   (         1,          0, 0.00388599) * x <= 0.299779
+   (         0,          1,   0.845698) * x <= 0.324747
+   (  0.999419,          0,          1) * x <= 0.32915
+   (  0.992427,   0.998192,          1) * x <= 0.331521
+   (         1,          1,          0) * x <= 0.329529
+   (         0,          1,          0) * x <= 0.299768
+   (         1,          0,          0) * x <= 0.299768
+   (         0,          0,          1) * x <= 0.299768
+   (   0.83869,          1,   0.845698) * x <= 0.327062
+   (         0, 0.00387887,          1) * x <= 0.299779
+   (         0,          1, 0.00333096) * x <= 0.299777
+   (  0.998188,   0.998188,          1) * x <= 0.331691
+   (  0.909501,   0.990704,          1) * x <= 0.329048
+   (0.00683771,          0,          1) * x <= 0.299787
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,          0,          0) * x <= 0.300319
+   (         0,          1,          0) * x <= 0.300319
+   (         0,          0,          1) * x <= 0.300319
+   (  0.707107,          0,   0.707107) * x <= 0.233671
+   (  0.575886,   0.575886,   0.580268) * x <= 0.193422
+   (  0.707107,   0.707107,          0) * x <= 0.233671
+   (0.00950757,   0.706643,   0.707507) * x <= 0.233806
+   (         0,   0.739698,   0.672939) * x <= 0.242422
+   (         0,    0.70711,   0.707103) * x <= 0.233672
+
+8 Pareto optimal points found:
+   (0.02976032407, 0.2997683042, 0.002759526056 )
+   (0.002759526056, 0.2996787582, 0.02964246648 )
+   (0.2997683042, 0.02976032407, 0.002759526056 )
+   (0.2996637686, 0.002759526056, 0.02966019064 )
+   (0.002759526056, 0.002759526056, 0.2997683042 )
+   (          0, 0.02965996713, 0.299663961 )
+   (0.002759526056, 0.2996637703, 0.02966018894 )
+   (0.02958222097, 0.00258226865, 0.2995848984 )
+
+
+Time for model checking: 0.472s.
+
+Performance statistics:
+  * peak memory usage: 62MB
+  * CPU time: 0.484s
+  * wallclock time: 0.489s	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --props MultiPos -E K=5000,R=100,TIME_BOUND=5 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.2862424850463867
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --props MultiPos -E K=5000,R=100,TIME_BOUND=5 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+
+
+
+
+erlang.jani:model: info: erlang is an MA model.
+erlang.jani:properties[4]: warning: Multi-objective properties are only supported for MDPs and LTSs, skipping property "MultiPos".
+erlang.jani: error: No properties to check.
+

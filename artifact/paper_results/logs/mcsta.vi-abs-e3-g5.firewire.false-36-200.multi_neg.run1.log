@@ -1,0 +1,35 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --props multi_neg -E delay=36,deadline=200 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	1.8866677284240723
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --props multi_neg -E delay=36,deadline=200 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+firewire.false.jani:model: info: firewire.false is an MDP model.
+firewire.false.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire.false.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire.false.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire.false.jani: info: Need 24 bytes per state.
+firewire.false.jani: info: Explored 212270 states for delay=36, deadline=200.
+firewire.false.jani: error: Modelling Error: Potentially infinite reward for 'multi_neg' in subproperties: 0, 2
+
+Peak memory usage: 245 MB
+Analysis results for firewire.false.jani
+Experiment delay=36, deadline=200
+
++ State space exploration
+  State size:         24 bytes
+  States:             212270
+  Transitions:        478762
+  Branches:           481798
+  Rate:               228986 states/s
+  Peak memory:        121.24 MB
+  Final size:         1.67 MB
+  Time (exploration): 0.9 s
+  Time (merging):     0.0 s
+
+

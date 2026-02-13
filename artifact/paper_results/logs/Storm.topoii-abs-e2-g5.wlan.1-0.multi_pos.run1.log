@@ -1,0 +1,55 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.1.jani --janiproperty multi_pos --constants COL=0 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	0.16964125633239746
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:15:53 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.1.jani --janiproperty multi_pos --constants COL=0 '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 0.045s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	8625
+Transitions: 	16196
+Choices: 	11356
+Reward Models:  time, cost
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(R{"cost"}min=? [F ((s1 = 12) & (s2 = 12))], R{"time"}min=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 8623 states.
+Final preprocessed model has 11354 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 0.076s seconds (consisting of 0.007s seconds for preprocessing and 0.068s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -7625
+   (         0,         -1) * x <= -1325
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -7625
+   (         0,         -1) * x <= -1325
+
+1 Pareto optimal points found:
+   (       7625,        1325 )
+
+
+Time for model checking: 0.076s.
+
+Performance statistics:
+  * peak memory usage: 66MB
+  * CPU time: 0.138s
+  * wallclock time: 0.129s
+

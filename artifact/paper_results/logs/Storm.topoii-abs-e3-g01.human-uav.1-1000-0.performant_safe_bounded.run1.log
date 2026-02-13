@@ -1,0 +1,83 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants Unf=1,B=1000,COUNTER=0 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics
+Repitition:	1
+Wallclock time:	87.62371397018433
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:37:14 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants 'Unf=1,B=1000,COUNTER=0' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.01 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 2.453s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	389554
+Transitions: 	2100412
+Choices: 	696780
+Reward Models:  time, ROZ
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 10228 item(s)
+   * mission -> 232276 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe_bounded": multi(Pmax=? [true Urew{"time"}<=1000 "mission"], R{"ROZ"}min=? [Crew{"time"}<=1000]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 10 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 10.
+           #checked epochs overall: 1020.
+# checked epochs per weight vector: 102.
+                      overall Time: 84.617s.
+         Epoch Model building time: 25.772s.
+         Epoch Model checking time: 57.170s.
+--------------------------------------------------
+Solving multi-objective query took 85.098s seconds (consisting of 0.466s seconds for preprocessing and 84.631s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,  -0.354791) * x <= 0.798905
+   (  0.790092,         -1) * x <= 0.232558
+   (  0.779558,         -1) * x <= 0.228648
+   (  0.708862,         -1) * x <= 0.205824
+   (         1,  -0.037956) * x <= 0.975704
+   (         1, -0.00602936) * x <= 0.994423
+   (  0.985671,         -1) * x <= 0.426554
+   (         0,         -1) * x <= -1.76777e-06
+   (         1,          0) * x <= 0.999988
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0) * x <= 0.999992
+   (         0,         -1) * x <= 1.76777e-06
+   (  0.983259,  -0.182212) * x <= 0.878522
+   (  0.488441,  -0.872597) * x <= 0.141827
+   (  0.619802,  -0.784758) * x <= 0.182421
+   (  0.600586,   -0.79956) * x <= 0.175488
+   (  0.622207,  -0.782853) * x <= 0.185714
+   (  0.809975,  -0.586464) * x <= 0.481105
+   (         1, -0.000641734) * x <= 0.999399
+   (  0.999964, -0.00850468) * x <= 0.992939
+
+8 Pareto optimal points found:
+   (0.9999882953, 0.9230725758 )
+   (0.9979578986, 0.5863208336 )
+   (0.2903605904, 1.767766953e-06 )
+   (0.3228457481, 0.02302926703 )
+   (0.991905441, 0.5511384718 )
+   (0.3711923805, 0.06071827223 )
+   (0.9958094668, 0.554986558 )
+   (0.9968834743, 0.5580137131 )
+
+
+Time for model checking: 85.098s.
+
+Performance statistics:
+  * peak memory usage: 546MB
+  * CPU time: 87.064s
+  * wallclock time: 87.564s
+

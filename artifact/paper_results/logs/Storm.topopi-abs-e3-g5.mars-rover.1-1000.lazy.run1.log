@@ -1,0 +1,57 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants Unf=1,B=1000 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	5.851420640945435
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:14:49 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants 'Unf=1,B=1000' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 2.261s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	37501
+Transitions: 	70001
+Choices: 	45001
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "lazy": multi(R{"time"}min=? [C], R{"energy"}min=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 37501 states.
+Final preprocessed model has 45001 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 3.537s seconds (consisting of 0.073s seconds for preprocessing and 3.464s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         0,         -1) * x <= -4000
+   (        -1,          0) * x <= -12500/3
+   (     -6/35,         -1) * x <= -40000/7
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -12500/3
+   (         0,         -1) * x <= -4000
+   (    -12/71,     -70/71) * x <= -400000/71
+
+2 Pareto optimal points found:
+   (             12500/3,                 5000 ) approx.    (4166.666667,        5000 )
+   (               10000,                 4000 ) approx.    (      10000,        4000 )
+
+
+Time for model checking: 3.541s.
+
+Performance statistics:
+  * peak memory usage: 168MB
+  * CPU time: 5.782s
+  * wallclock time: 5.817s
+

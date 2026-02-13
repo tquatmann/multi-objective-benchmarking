@@ -1,0 +1,59 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants N=4,TIME_BOUND=5 --multiobjective:precision 1e-4 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0014848709106
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:57:45 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/ftwc/ftwc.jani --janiproperty Multi --constants 'N=4,TIME_BOUND=5' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.024s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	3873
+Transitions: 	10041
+Choices: 	4829
+Markovian St.: 	1636
+Max. Rate: 	2.0147
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 1015 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	3873
+Transitions: 	10041
+Choices: 	4829
+Markovian St.: 	1636
+Max. Rate: 	2.0147
+Reward Models:  ((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) -> 1015 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmax=? [F (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))], R{"((((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1])) ? 1 : 0)"}max=? [LRA[time]], Pmax=? [true U<=5 (((workstations_up[0] = 0) | switches_down[0]) & ((workstations_up[1] = 0) | switches_down[1]))]) ...
+Final preprocessed model has 2710 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 6435 states.
+Final preprocessed model has 7979 actions.
+Found 1 end components that are relevant for LRA-analysis.
+1439 states lie on such an end component.
+
+
+
+----------
+Computation aborted after 2700.0014848709106 seconds since the total time limit of 2700 seconds was exceeded.

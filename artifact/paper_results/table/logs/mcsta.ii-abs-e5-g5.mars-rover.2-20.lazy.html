@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e5-g5 - mars-rover lazy 2-20</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e5-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
+		<tr><td>Property:</td><td><span class="tt">lazy</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e5-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props lazy -E Unf=2,B=20 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">4.296s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">4.296s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props lazy -E Unf=2,B=20 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+mars-rover.jani:model: info: mars-rover is an MDP model.
+mars-rover.jani: info: Need 16 bytes per state.
+mars-rover.jani: info: Explored 1376194 states for Unf=2, B=20.
+
+Peak memory usage: 880 MB
+Analysis results for mars-rover.jani
+Experiment Unf=2, B=20
+
++ State space exploration
+  State size:         16 bytes
+  States:             1376194
+  Transitions:        1720242
+  Branches:           2580362
+  Rate:               967788 states/s
+  Peak memory:        183.49 MB
+  Final size:         10.50 MB
+  Time (exploration): 1.4 s
+  Time (merging):     0.1 s
+
++ lazy
+  WSO instances:       2
+  Time:                2.5 s
+  Under Approximation: ∩{-1x + -0y <= 0, -0x + -1y <= -0}
+  Over Approximation:  ∩{-1x + -0y <= 0, -0x + -1y <= 0}
+
+  + Pareto Curve Approximation
+    Time: 2.3 s	</pre>
+</div>
+</body>
+</html>

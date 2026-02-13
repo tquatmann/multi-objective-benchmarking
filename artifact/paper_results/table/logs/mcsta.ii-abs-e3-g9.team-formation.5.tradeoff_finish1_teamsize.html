@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g9 - team-formation tradeoff_finish1_teamsize 5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g9</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani">team-formation</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">tradeoff_finish1_teamsize</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g9)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --props tradeoff_finish1_teamsize --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.9
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">6.616s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">6.616s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --props tradeoff_finish1_teamsize --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+team-formation.5.jani:model: info: team-formation.5 is an MDP model.
+team-formation.5.jani: info: Need 40 bytes per state.
+team-formation.5.jani: warning: The probabilities for a transition labelled "τ" with 120 branches in state (controller.location = l, sensor1.location = l, sensor2.location = l, sensor3.location = l, sensor4.location = l, sensor5.location = l, status = 0, t1_r1 = 0, t1_r2 = 0, t1_r3 = 0, t2_r1 = 0, t2_r2 = 0, t2_r3 = 0, turn1 = 0, turn2 = 0, turn3 = 0, turn4 = 0, turn5 = 0, m1_t1 = 0, m1_t2 = 0, m2_t1 = 0, m2_t2 = 0, m3_t1 = 0, m3_t2 = 0, m4_t1 = 0, m4_t2 = 0, m5_t1 = 0, m5_t2 = 0, sensor1.state1 = 0, sensor2.state2 = 0, sensor3.state3 = 0, sensor4.state4 = 0, sensor5.state5 = 0, reachability_reward_given_0 = False) do not sum up to the expected value of 1 (actual sum: 0.99999999999999889). Results will likely be affected by floating-point errors.
+team-formation.5.jani: info: Explored 907993 states.
+
+Peak memory usage: 615 MB
+Analysis results for team-formation.5.jani
+
++ State space exploration
+  State size:         40 bytes
+  States:             907993
+  Transitions:        1078873
+  Branches:           1084752
+  Rate:               218846 states/s
+  Peak memory:        132.70 MB
+  Final size:         6.93 MB
+  Time (exploration): 4.1 s
+  Time (merging):     0.0 s
+
++ tradeoff_finish1_teamsize
+  WSO instances:       5
+  Time:                1.2 s
+  Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 2.8979591837, 1x + 0.5y <= 2.387755102, 1x + 1y <= 3.7959183673}
+  Over Approximation:  ∩{1x + 0y <= 1, 0x + 1y <= 2.8979591837, 1x + 0.8333333333y <= 3.3265306122, 1x + 1y <= 3.7959183673, 1x + 0.5y <= 2.387755102}
+
+  + Pareto Curve Approximation
+    Time: 1.1 s	</pre>
+</div>
+</body>
+</html>

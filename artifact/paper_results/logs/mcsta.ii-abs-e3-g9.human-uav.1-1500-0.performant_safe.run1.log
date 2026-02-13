@@ -1,0 +1,41 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1500,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	5.4876708984375
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1500,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 1381, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 215187 states for Unf=1, B=1500, COUNTER=0.
+
+Peak memory usage: 514 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=1500, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             215187
+  Transitions:        395029
+  Branches:           1300927
+  Rate:               382895 states/s
+  Peak memory:        129.06 MB
+  Final size:         1.64 MB
+  Time (exploration): 0.6 s
+  Time (merging):     0.0 s
+
++ performant_safe
+  WSO instances:       13
+  Time:                4.4 s
+  Under Approximation: ∩{1x + -0y <= 0.9999999961, 1x + -0.0002225919y <= 0.9997944452, 0x + -1y <= 0, 1x + -1.0454720015y <= 0.4764339275, 1x + -0.9999991688y <= 0.4813815515, 1x + -0.8011068765y <= 0.5704786991, 1x + -0.7013146009y <= 0.6181068478, 1x + -1.4176783895y <= 0.4599203996, 1x + -1.2826339782y <= 0.4621270946, 1x + -0.5630673848y <= 0.6882344549, 1x + -0.6131338102y <= 0.6620144579, 1x + -1.1208681851y <= 0.4701009129, 1x + -1.1965286757y <= 0.4655120881}
+  Over Approximation:  ∩{1x + -0y <= 1.0000566448, 0x + -1y <= 0, 1x + -1.0829056678y <= 0.4732901059, 1x + -0.5190922033y <= 0.7129603402, 1x + -6.7176572547y <= 0.4599904305, 1x + -0.9278437276y <= 0.5137134349, 1x + -1.0030985034y <= 0.4810520064, 1x + -0.6684106361y <= 0.6344994327, 1x + -1.2420698418y <= 0.4637224662, 1x + -0.7598514462y <= 0.5901800332, 1x + -1.338766477y <= 0.4612101928, 1x + -0.5862714732y <= 0.6760865812, 1x + -1.1569981657y <= 0.4679101629}
+
+  + Pareto Curve Approximation
+    Time: 4.4 s
+
+

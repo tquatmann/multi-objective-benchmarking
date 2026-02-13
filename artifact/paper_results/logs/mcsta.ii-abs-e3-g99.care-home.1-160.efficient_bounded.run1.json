@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "care-home.1-160.efficient_bounded",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g99",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.99",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient_bounded -E Unf=1,B=160 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.99 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.2847132682800293,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g99.care-home.1-160.efficient_bounded.run1.log"
+}

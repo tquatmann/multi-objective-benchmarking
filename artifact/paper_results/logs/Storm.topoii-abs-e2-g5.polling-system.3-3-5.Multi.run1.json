@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "polling-system.3-3-5.Multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e2-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5 Used moconv to handle currently unsupported jani feature 'nondet-selection'.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/polling-system/converted_polling-system.JOB_TYPES=3,C=3,TIME_BOUND=5.jani --janiproperty Multi --multiobjective:precision 1e-2 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 517.3811991214752,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e2-g5.polling-system.3-3-5.Multi.run1.log"
+}

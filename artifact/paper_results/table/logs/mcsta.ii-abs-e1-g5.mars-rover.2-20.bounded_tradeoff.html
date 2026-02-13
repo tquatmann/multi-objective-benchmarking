@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e1-g5 - mars-rover bounded_tradeoff 2-20</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e1-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
+		<tr><td>Property:</td><td><span class="tt">bounded_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e1-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props bounded_tradeoff -E Unf=2,B=20 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-1, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">6.142s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">6.142s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props bounded_tradeoff -E Unf=2,B=20 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+mars-rover.jani:model: info: mars-rover is an MDP model.
+mars-rover.jani: info: Need 16 bytes per state.
+mars-rover.jani: info: Explored 1376194 states for Unf=2, B=20.
+
+Peak memory usage: 834 MB
+Analysis results for mars-rover.jani
+Experiment Unf=2, B=20
+
++ State space exploration
+  State size:         16 bytes
+  States:             1376194
+  Transitions:        1720242
+  Branches:           2580362
+  Rate:               959689 states/s
+  Peak memory:        169.36 MB
+  Final size:         10.50 MB
+  Time (exploration): 1.4 s
+  Time (merging):     0.1 s
+
++ bounded_tradeoff
+  WSO instances:       2
+  Time:                4.3 s
+  Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 1}
+  Over Approximation:  ∩{1x + 0y <= 1.0227393182, 0x + 1y <= 1.0236349547}
+
+  + Pareto Curve Approximation
+    Time: 4.1 s	</pre>
+</div>
+</body>
+</html>

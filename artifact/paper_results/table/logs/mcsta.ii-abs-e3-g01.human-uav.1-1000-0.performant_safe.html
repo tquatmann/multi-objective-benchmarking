@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g01 - human-uav performant_safe 1-1000-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g01</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1000, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g01)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1000,COUNTER=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.01
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">2.142s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">2.142s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --props performant_safe -E Unf=1,B=1000,COUNTER=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS
+
+
+
+
+human-uav.jani:model: info: human-uav is an MDP model.
+human-uav.jani: info: Need 24 bytes per state.
+human-uav.jani: warning: The probabilities for a transition labelled "go" with 32 branches in state (operator.location = l, UAV.location = l, timemodule.location = l, c = 0, w = 2, a = 0, r = 0, operator.k = 1, operator.t = 1, operator.s = 1, time_counter = 881, stop = False, w2 = True, w6 = False, reachability_reward_given_0 = False, UAV.send = False, UAV.in = True) do not sum up to the expected value of 1 (actual sum: 0.99999999999999922). Results will likely be affected by floating-point errors.
+human-uav.jani: info: Explored 118887 states for Unf=1, B=1000, COUNTER=0.
+
+Peak memory usage: 345 MB
+Analysis results for human-uav.jani
+Experiment Unf=1, B=1000, COUNTER=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             118887
+  Transitions:        210879
+  Branches:           688527
+  Rate:               290677 states/s
+  Peak memory:        83.29 MB
+  Final size:         0.91 MB
+  Time (exploration): 0.4 s
+  Time (merging):     0.0 s
+
++ performant_safe
+  WSO instances:       10
+  Time:                1.3 s
+  Under Approximation: ∩{1x + -0y <= 0.999990063, 0x + -1y <= 0, 1x + -0.7784573924y <= 0.5632437513, 1x + -0.0841445225y <= 0.9497607217, 1x + -1.2657923918y <= 0.2943073964, 1x + -1.2618391869y <= 0.2963097483, 1x + -1.4250861279y <= 0.2903623582, 1x + -1.2980872171y <= 0.2927673147, 1x + -0.0009690932y <= 0.9990955201, 1x + -0.0072993615y <= 0.9936412597}
+  Over Approximation:  ∩{1x + -0y <= 0.9999904764, 0x + -1y <= 0, 1x + -1.083329032y <= 0.3948869643, 1x + -1.7984189899y <= 0.2903623663, 1x + -1.2726091154y <= 0.2939823204, 1x + -0.0185118027y <= 0.9872386919, 1x + -0.249125028y <= 0.8579177663, 1x + -1.2654342505y <= 0.2944888002, 1x + -1.3485180783y <= 0.2918123151, 1x + -0.0061942979y <= 0.9945960127}
+
+  + Pareto Curve Approximation
+    Time: 1.2 s	</pre>
+</div>
+</body>
+</html>

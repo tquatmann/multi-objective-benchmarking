@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "consensus.2-16.multi_neg",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g25",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.25",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.2.jani --janiproperty multi_neg --constants K=16 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.25 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2.1445531845092773,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g25.consensus.2-16.multi_neg.run1.log"
+}

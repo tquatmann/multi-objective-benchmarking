@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "network-virus.4.qual2",
+	"tool": "Storm",
+	"configuration-id": "topopi-abs-e3-g5",
+	"invocation-note": "exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.4.jani --janiproperty qual2 --multiobjective:precision 1e-3 abs --exact --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 325.89188623428345,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topopi-abs-e3-g5.network-virus.4.qual2.run1.log"
+}

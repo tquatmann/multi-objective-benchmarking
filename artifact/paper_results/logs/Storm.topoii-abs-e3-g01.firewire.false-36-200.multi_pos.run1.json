@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "firewire.false-36-200.multi_pos",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g01",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.01",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_pos --constants delay=36,deadline=200 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 4.306707143783569,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g01.firewire.false-36-200.multi_pos.run1.log"
+}

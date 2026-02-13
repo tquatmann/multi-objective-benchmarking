@@ -1,0 +1,93 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_neg --constants COL=0 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	342.5662248134613
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:19:36 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_neg --constants COL=0 '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.010s.
+
+Time for model construction: 16.508s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5007548
+Transitions: 	11475748
+Choices: 	6350470
+Reward Models:  time, cost, collisions
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"cost"}max=? [F ((s1 = 12) & (s2 = 12))], R{"collisions"}max=? [F ((s1 = 12) & (s2 = 12))], R{"time"}max=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 5007536 states.
+Final preprocessed model has 6350458 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 12 refinement steps.
+Solving multi-objective query took 325.959s seconds (consisting of 11.676s seconds for preprocessing and 314.282s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   (8.46639e-12,          1, 4.26028e-05) * x <= 1.36581
+   ( 7.396e-08,          1, 2.58058e-06) * x <= 1.22818
+   (9.05743e-11,          1, 4.26062e-05) * x <= 1.36584
+   (1.95588e-09,          1, 1.00844e-05) * x <= 1.24077
+   (8.32999e-09,          1, 4.29488e-05) * x <= 1.36903
+   (4.48469e-10,          1, 0.00021096) * x <= 2.0163
+   (         0,          1,          0) * x <= 1.20142
+   ( 2.129e-15,          1,          0) * x <= 1.20142
+   (3.8972e-07,          1, 1.35981e-05) * x <= 1.34246
+   (         1,          0,          0) * x <= 227297
+   (         0,          1, 0.000210866) * x <= 2.01584
+   ( 0.0240493,          0,          1) * x <= 9325.02
+   (4.19068e-11,          1, 0.000210875) * x <= 2.01588
+   (         0,          1, 2.47117e-06) * x <= 1.21095
+   (0.00476734,          0,          1) * x <= 4945.9
+   (         0,          1, 4.26024e-05) * x <= 1.3658
+   (         0,          0,          1) * x <= 3883.5
+   (         0,          1, 1.98645e-13) * x <= 1.20142
+   (         0,          1, 1.00666e-05) * x <= 1.24026
+   (  0.110352,          0,          1) * x <= 28941
+   (  0.679703,          0,          1) * x <= 158353
+
+Overapproximation of achievable values: Polytope with 12 Halfspaces:
+   (         1,          0,          0) * x <= 227297
+   (         0,          1,          0) * x <= 1.20166
+   (         0,          0,          1) * x <= 3883.5
+   (         0,          1, 0.000177842) * x <= 1.8885
+   (0.00565753,          0,   0.999984) * x <= 5148.01
+   (0.00476729,          0,   0.999989) * x <= 4945.85
+   (         0,          1, 0.000210866) * x <= 2.01608
+   ( 0.0259092,          0,   0.999664) * x <= 9746.47
+   (  0.024042,          0,   0.999711) * x <= 9322.25
+   (   0.11389,          0,   0.993493) * x <= 29720.1
+   (   0.10967,          0,   0.993968) * x <= 28762.6
+   (  0.560026,          0,   0.828475) * x <= 130489
+
+10 Pareto optimal points found:
+   (93055.06095, 1.201415348, 2419.587082 )
+   (222850.4545, 1.196941381, 3883.499622 )
+   (227293.1661, 1.201411042, 3858.785285 )
+   (227109.8639, 1.201223239, 3863.193568 )
+   (227296.9978, 1.201415299, 3858.362453 )
+   ( 227297.027, 1.201415348,  3858.34261 )
+   (227109.8598, 1.201223239, 3863.193568 )
+   (227296.9976, 1.201415299, 3858.362457 )
+   (227109.8606, 1.201223239, 3863.193568 )
+   (227293.1654, 1.201411042, 3858.785285 )
+
+
+Time for model checking: 325.960s.
+
+Performance statistics:
+  * peak memory usage: 3424MB
+  * CPU time: 337.662s
+  * wallclock time: 342.503s
+

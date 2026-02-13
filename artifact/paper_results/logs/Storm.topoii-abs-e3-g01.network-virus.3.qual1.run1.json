@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "network-virus.3.qual1",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g01",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.01",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --janiproperty qual1 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.6812746524810791,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g01.network-virus.3.qual1.run1.log"
+}

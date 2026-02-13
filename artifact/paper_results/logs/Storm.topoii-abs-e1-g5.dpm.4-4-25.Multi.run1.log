@@ -1,0 +1,66 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=4,C=4,TIME_BOUND=25 --multiobjective:precision 1e-1 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	86.26565766334534
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:16:44 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=4,C=4,TIME_BOUND=25' '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.087s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	34625
+Transitions: 	66700
+Choices: 	41700
+Markovian St.: 	11250
+Max. Rate: 	4.1
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((4 < 1) | (items1 = 4)) & ((4 < 2) | (items2 = 4))) & ((4 < 3) | (items3 = 4))) & ((4 < 4) | (items4 = 4))) & ((4 < 5) | (items5 = 4))) & ((4 < 6) | (items6 = 4))) & ((4 < 7) | (items7 = 4))) & ((4 < 8) | (items8 = 4))) & ((4 < 9) | (items9 = 4))) & ((4 < 10) | (items10 = 4))) -> 65 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	34625
+Transitions: 	66700
+Choices: 	41700
+Markovian St.: 	11250
+Max. Rate: 	4.1
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((4 < 1) | (items1 = 4)) & ((4 < 2) | (items2 = 4))) & ((4 < 3) | (items3 = 4))) & ((4 < 4) | (items4 = 4))) & ((4 < 5) | (items5 = 4))) & ((4 < 6) | (items6 = 4))) & ((4 < 7) | (items7 = 4))) & ((4 < 8) | (items8 = 4))) & ((4 < 9) | (items9 = 4))) & ((4 < 10) | (items10 = 4))) -> 65 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [F (((((((((((4 < 1) | (items1 = 4)) & ((4 < 2) | (items2 = 4))) & ((4 < 3) | (items3 = 4))) & ((4 < 4) | (items4 = 4))) & ((4 < 5) | (items5 = 4))) & ((4 < 6) | (items6 = 4))) & ((4 < 7) | (items7 = 4))) & ((4 < 8) | (items8 = 4))) & ((4 < 9) | (items9 = 4))) & ((4 < 10) | (items10 = 4)))], Tmin=? [F (((((((((((4 < 1) | (items1 = 4)) & ((4 < 2) | (items2 = 4))) & ((4 < 3) | (items3 = 4))) & ((4 < 4) | (items4 = 4))) & ((4 < 5) | (items5 = 4))) & ((4 < 6) | (items6 = 4))) & ((4 < 7) | (items7 = 4))) & ((4 < 8) | (items8 = 4))) & ((4 < 9) | (items9 = 4))) & ((4 < 10) | (items10 = 4)))], Pmax=? [true U<=25 (((((((((((4 < 1) | (items1 = 4)) & ((4 < 2) | (items2 = 4))) & ((4 < 3) | (items3 = 4))) & ((4 < 4) | (items4 = 4))) & ((4 < 5) | (items5 = 4))) & ((4 < 6) | (items6 = 4))) & ((4 < 7) | (items7 = 4))) & ((4 < 8) | (items8 = 4))) & ((4 < 9) | (items9 = 4))) & ((4 < 10) | (items10 = 4)))], R{"((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)"}max=? [LRA[time]]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Final preprocessed model has 22450 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 69185 states.
+Final preprocessed model has 83300 actions.
+Found 1 end components that are relevant for LRA-analysis.
+34625 states lie on such an end component.
+
+ERROR (BaierUpperRewardBoundsComputer.cpp:174): Unable to compute finite upper bounds for visiting times: No more candidates.
+WARN  (model-handling.h:1118): Cannot handle property: InvalidOperationException: Unable to compute finite upper bounds for visiting times: No more candidates.
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 89MB
+  * CPU time: 86.045s
+  * wallclock time: 86.221s
+

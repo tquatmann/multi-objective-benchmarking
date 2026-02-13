@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e2-g5 - sensor-network pareto 2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e2-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/sensor-network/sensor-network.2.jani">sensor-network</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e2-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.2.jani --janiproperty pareto --multiobjective:precision 1e-2 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.403s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.403s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:16:51 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/sensor-network/sensor-network.2.jani --janiproperty pareto '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.041s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	7860
+Transitions: 	26624
+Choices: 	24584
+Reward Models:  working, success, failure
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"working"}max=? [LRA], R{"success"}max=? [LRA], R{"failure"}min=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 7855 states.
+Final preprocessed model has 24573 actions.
+Found 3996 end components that are relevant for LRA-analysis.
+6105 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 0.324s seconds (consisting of 0.009s seconds for preprocessing and 0.315s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 8 Halfspaces:
+   (         1,          0,          0) * x <= 0.624763
+   (         0,          0,         -1) * x <= -0.000240563
+   (         0,          1,          0) * x <= 0.959759
+   (         1,   0.625393,          0) * x <= 0.624763
+   (5.4205e-20,          0,         -1) * x <= -0.000240563
+   (         1,   0.778603,          0) * x <= 0.747271
+   (1.21682e-19, 4.22011e-20,         -1) * x <= -0.000240563
+   (         0, 1.69247e-19,         -1) * x <= -0.000240563
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0,          0) * x <= 0.625948
+   (         0,          1,          0) * x <= 0.960845
+   (         0,          0,         -1) * x <= 0.000836904
+   (  0.838076,   0.545553,          0) * x <= 0.542014
+   (  0.789084,   0.614285,          0) * x <= 0.590933
+   (  0.847849,   0.530238,          0) * x <= 0.530971
+
+4 Pareto optimal points found:
+   (          0, 0.9597594374, 0.0002405626122 )
+   (0.124716107, 0.7995445402, 0.0002405626122 )
+   (0.1246938756, 0.7996086418, 0.0002405626122 )
+   (0.6247634535,           0, 0.0002405626122 )
+
+
+Time for model checking: 0.324s.
+
+Performance statistics:
+  * peak memory usage: 68MB
+  * CPU time: 0.368s
+  * wallclock time: 0.369s	</pre>
+</div>
+</body>
+</html>

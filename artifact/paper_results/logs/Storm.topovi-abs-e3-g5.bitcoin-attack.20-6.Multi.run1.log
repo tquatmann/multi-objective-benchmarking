@@ -1,0 +1,57 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/bitcoin-attack/bitcoin-attack.jani --janiproperty Multi --constants MALICIOUS=20,CD=6 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.002076148987
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:22:15 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/bitcoin-attack/bitcoin-attack.jani --janiproperty Multi --constants 'MALICIOUS=20,CD=6' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.014s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	189
+Transitions: 	308
+Choices: 	245
+Markovian St.: 	63
+Max. Rate: 	0.08333333333
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((m_len >= 6) & (m_diff > 0)) -> 17 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	189
+Transitions: 	308
+Choices: 	245
+Markovian St.: 	63
+Max. Rate: 	0.08333333333
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((m_len >= 6) & (m_diff > 0)) -> 17 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [true U<=2880 ((m_len >= 6) & (m_diff > 0))], Tmin=? [F ((m_len >= 6) & (m_diff > 0))]) ...
+Final preprocessed model has 58 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 172 states.
+Final preprocessed model has 222 actions.
+
+
+
+----------
+Computation aborted after 2700.002076148987 seconds since the total time limit of 2700 seconds was exceeded.

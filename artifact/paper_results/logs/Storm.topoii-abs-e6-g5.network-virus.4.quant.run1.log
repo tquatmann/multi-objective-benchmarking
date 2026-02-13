@@ -1,0 +1,14 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.4.jani --janiproperty quant --multiobjective:precision 1e-6 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	386.18133664131165
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:17:08 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.4.jani --janiproperty quant '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+

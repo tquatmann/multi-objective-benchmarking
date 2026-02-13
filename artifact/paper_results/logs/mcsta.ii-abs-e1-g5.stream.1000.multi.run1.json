@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "stream.1000.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e1-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-1, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.jani --props multi -E N=1000 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.4565718173980713,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e1-g5.stream.1000.multi.run1.log"
+}

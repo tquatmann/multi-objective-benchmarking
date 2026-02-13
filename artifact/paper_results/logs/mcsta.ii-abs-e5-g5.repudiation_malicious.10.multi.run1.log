@@ -1,0 +1,16 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --props multi -E T=10 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.27891039848327637
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --props multi -E T=10 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+repudiation_malicious.jani:model: info: repudiation_malicious is a PTA model.
+repudiation_malicious.jani:variables[1]: info: Expanding variable "o" into 13 locations in automaton "originator".
+repudiation_malicious.jani:automata[1].variables[0]: info: Expanding variable "r" into 10 locations in automaton "recipient".
+repudiation_malicious.jani:automata[0].edges[0].guard.exp.right: error: Open clock constraints are not allowed.
+

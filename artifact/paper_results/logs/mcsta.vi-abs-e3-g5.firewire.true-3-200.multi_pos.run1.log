@@ -1,0 +1,35 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --props multi_pos -E delay=3,deadline=200 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.8401033878326416
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.true.jani --props multi_pos -E delay=3,deadline=200 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+firewire.true.jani:model: info: firewire.true is an MDP model.
+firewire.true.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire.true.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire.true.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire.true.jani: info: Need 24 bytes per state.
+firewire.true.jani: info: Explored 83229 states for delay=3, deadline=200.
+firewire.true.jani: error: Modelling Error: Potentially infinite reward for 'multi_pos' in subproperty: 1
+
+Peak memory usage: 127 MB
+Analysis results for firewire.true.jani
+Experiment delay=3, deadline=200
+
++ State space exploration
+  State size:         24 bytes
+  States:             83229
+  Transitions:        113423
+  Branches:           115695
+  Rate:               259280 states/s
+  Peak memory:        77.96 MB
+  Final size:         0.64 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s
+
+

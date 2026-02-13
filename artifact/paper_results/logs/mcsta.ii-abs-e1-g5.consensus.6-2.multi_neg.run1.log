@@ -1,0 +1,46 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_neg -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	255.25800156593323
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_neg -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-1 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+consensus.6.jani:model: info: consensus.6 is an MDP model.
+consensus.6.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.6.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.6.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
+consensus.6.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
+consensus.6.jani:variables[14]: info: Expanding variable "pc5" into 4 locations in automaton "process5".
+consensus.6.jani:variables[16]: info: Expanding variable "pc6" into 4 locations in automaton "process6".
+consensus.6.jani: info: Need 24 bytes per state.
+consensus.6.jani: info: Explored 1258624 states for K=2.
+
+Peak memory usage: 1673 MB
+Analysis results for consensus.6.jani
+Experiment K=2
+
++ State space exploration
+  State size:         24 bytes
+  States:             1258624
+  Transitions:        5008512
+  Branches:           6237120
+  Rate:               233641 states/s
+  Peak memory:        578.27 MB
+  Final size:         9.75 MB
+  Time (exploration): 5.4 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       4
+  Time:                249.4 s
+  Under Approximation: ∩{1x + 0y <= 0.3636436582, 0x + 1y <= 867.9999999972, 1x + 4.0897E-06y <= 0.3663012068, 1x + 0.002837043y <= 2.4625532989, 1x + 0.0026884125y <= 2.347811831}
+  Over Approximation:  ∩{1x + 0y <= 0.3883798664, 0x + 1y <= 868.0249596383, 1x + 0.001666616y <= 1.6115511682, 1x + 0.0027983311y <= 2.45061275}
+
+  + Pareto Curve Approximation
+    Time: 247.2 s
+
+

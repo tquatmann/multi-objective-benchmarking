@@ -1,0 +1,228 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	148.5589656829834
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:28:56 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.4.jani --janiproperty pareto '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.033s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	960
+Transitions: 	3521
+Choices: 	2785
+Reward Models:  grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"grants1"}max=? [LRA], R{"grants2"}max=? [LRA], R{"grants3"}max=? [LRA], R{"grants4"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 945 states.
+Final preprocessed model has 2753 actions.
+Found 176 end components that are relevant for LRA-analysis.
+880 states lie on such an end component.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 1, 0, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 1, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 0, 1, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000280531 exceeds specified value 0.00025 by approx. 3.05311e-05. Weight vector isvector (4) [ 0, 0, 0, 1 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0, 0.666667, 0.666667, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283412 exceeds specified value 0.00025 by approx. 3.34123e-05. Weight vector isvector (4) [ 0.572738, 0.577992, 0.0572738, 0.578461 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000281523 exceeds specified value 0.00025 by approx. 3.15234e-05. Weight vector isvector (4) [ 0, 0.742961, 0, 0.669334 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282424 exceeds specified value 0.00025 by approx. 3.24243e-05. Weight vector isvector (4) [ 0.700409, 0.706835, 0.0700409, 0.0700409 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000281523 exceeds specified value 0.00025 by approx. 3.15233e-05. Weight vector isvector (4) [ 0, 0.672673, 0.73994, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283523 exceeds specified value 0.00025 by approx. 3.35227e-05. Weight vector isvector (4) [ 0.612251, 0.556546, 0, 0.56161 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000284547 exceeds specified value 0.00025 by approx. 3.45469e-05. Weight vector isvector (4) [ 0.463634, 0.514634, 0.509998, 0.509998 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000281495 exceeds specified value 0.00025 by approx. 3.14952e-05. Weight vector isvector (4) [ 0.735767, 0.674453, 0, 0.0613139 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0.707107, 0.707107, 0, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000284455 exceeds specified value 0.00025 by approx. 3.44549e-05. Weight vector isvector (4) [ 0.5, 0.5, 0.5, 0.5 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00028463 exceeds specified value 0.00025 by approx. 3.46295e-05. Weight vector isvector (4) [ 0.477788, 0.52561, 0.520832, 0.473484 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283411 exceeds specified value 0.00025 by approx. 3.34111e-05. Weight vector isvector (4) [ 0.57735, 0.57735, 0.57735, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.538999, 0.598289, 0, 0.592899 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283488 exceeds specified value 0.00025 by approx. 3.34876e-05. Weight vector isvector (4) [ 0.540738, 0, 0.594812, 0.594812 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283411 exceeds specified value 0.00025 by approx. 3.34111e-05. Weight vector isvector (4) [ 0.57735, 0.57735, 0, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0.707107, 0, 0.707107, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283422 exceeds specified value 0.00025 by approx. 3.34222e-05. Weight vector isvector (4) [ 0.580833, 0, 0.575601, 0.575601 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283488 exceeds specified value 0.00025 by approx. 3.34876e-05. Weight vector isvector (4) [ 1.51779e-15, 0.594812, 0.594812, 0.540738 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00028335 exceeds specified value 0.00025 by approx. 3.33495e-05. Weight vector isvector (4) [ 0.251067, 0.557926, 0.560716, 0.557926 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283411 exceeds specified value 0.00025 by approx. 3.34111e-05. Weight vector isvector (4) [ 0, 0.666667, 0.666667, 0.666667 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283534 exceeds specified value 0.00025 by approx. 3.35336e-05. Weight vector isvector (4) [ 0.559712, 0, 0.554669, 0.615683 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283411 exceeds specified value 0.00025 by approx. 3.34111e-05. Weight vector isvector (4) [ 0.57735, 0, 0.57735, 0.57735 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283493 exceeds specified value 0.00025 by approx. 3.34929e-05. Weight vector isvector (4) [ 0, 0.542462, 0.591333, 0.596708 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000281523 exceeds specified value 0.00025 by approx. 3.15233e-05. Weight vector isvector (4) [ 0.672673, 0, 0.73994, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.592899, 0, 0.598289, 0.538999 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.598289, 0, 0.538999, 0.592899 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.592899, 0.538999, 0, 0.598289 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0, 0.592899, 0.538999, 0.598289 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.538999, 0, 0.592899, 0.598289 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0, 0.707107, 9.08618e-16, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0, 0.538999, 0.598289, 0.592899 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000283499 exceeds specified value 0.00025 by approx. 3.34985e-05. Weight vector isvector (4) [ 0.592899, 0.598289, 0.538999, 0 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0, 0, 0.666667, 0.666667 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 1.81724e-15, 0.707107, 0, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0, 0.707107, 0, 0.707107 ].
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.000282464 exceeds specified value 0.00025 by approx. 3.24636e-05. Weight vector isvector (4) [ 0.707107, 0, 0, 0.707107 ].
+Multi-objective Pareto Curve Approximation algorithm terminated after 40 refinement steps.
+Solving multi-objective query took 148.455s seconds (consisting of 0.002s seconds for preprocessing and 148.453s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 71 Halfspaces:
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,   0.720721,          1,          1) * x <= 0.333216
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1, 2.05597e-14, 2.26157e-14,          0) * x <= 0.3
+   (         1, 2.05597e-14,          1,          0) * x <= 0.33
+   (         1,          0,          1,          1) * x <= 0.333
+   (         1,          1,          1,          0) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          0,          1) * x <= 0.33
+   (         0,          0,          0,          1) * x <= 0.3
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         0,          1,          1,          0) * x <= 0.33
+   (         1,          0,          1,          1) * x <= 0.333
+   (2.18447e-15,          1, 3.46945e-15,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          0,          1,          0) * x <= 0.33
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          0) * x <= 0.333
+   (       0.8,          1,          1,          1) * x <= 0.33324
+   (         1,          0,          0,          0) * x <= 0.3
+   (         1,          1,          0,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (2.56996e-15,          1,          0,          1) * x <= 0.33
+   (         1,          1,          1,          0) * x <= 0.333
+   (         0,          1,          1, 2.56996e-15) * x <= 0.33
+   (         0,          1,          1,          1) * x <= 0.333
+   (2.56996e-15,          1,          1,          0) * x <= 0.33
+   (         1,          1,          0,          0) * x <= 0.33
+   (         0,          1,          0,          0) * x <= 0.3
+   (         1,          1,          1,          0) * x <= 0.333
+   (2.56996e-15,          1,          1, 2.56996e-15) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (2.56996e-15,          1,          1, 2.56996e-15) * x <= 0.33
+   (         0,          0,          1,          0) * x <= 0.3
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          0,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1,          1,          1) * x <= 0.333
+   (         1,          1,          1,          1) * x <= 0.3333
+   (         0,          1, 3.46945e-15,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+   (2.31296e-15,          1, 2.31296e-15,          1) * x <= 0.33
+   (         1,          0,          0, 2.05597e-15) * x <= 0.3
+   (         0,          0,          1,          1) * x <= 0.33
+   (         1,          1,          1,          1) * x <= 0.3333
+
+Overapproximation of achievable values: Polytope with 40 Halfspaces:
+   (         1,          0,          0,          0) * x <= 0.300281
+   (         0,          1,          0,          0) * x <= 0.300281
+   (         0,          0,          1,          0) * x <= 0.300281
+   (         0,          0,          0,          1) * x <= 0.300281
+   (         0,   0.666667,   0.666667,          0) * x <= 0.220266
+   (  0.572738,   0.577992,  0.0572738,   0.578461) * x <= 0.192897
+   (         0,   0.742961,          0,   0.669334) * x <= 0.24325
+   (  0.700409,   0.706835,  0.0700409,  0.0700409) * x <= 0.233576
+   (         0,   0.672673,    0.73994,          0) * x <= 0.242444
+   (  0.612251,   0.556546,          0,    0.56161) * x <= 0.202477
+   (  0.463634,   0.514634,   0.509998,   0.509998) * x <= 0.171644
+   (  0.735767,   0.674453,          0,  0.0613139) * x <= 0.241429
+   (  0.707107,   0.707107,          0,          0) * x <= 0.233628
+   (       0.5,        0.5,        0.5,        0.5) * x <= 0.166934
+   (  0.477788,    0.52561,   0.520832,   0.473484) * x <= 0.175168
+   (   0.57735,    0.57735,    0.57735,          0) * x <= 0.192541
+   (  0.538999,   0.598289,          0,   0.592899) * x <= 0.199174
+   (  0.540738,          0,   0.594812,   0.594812) * x <= 0.198194
+   (   0.57735,    0.57735,          0,    0.57735) * x <= 0.192541
+   (  0.707107,          0,   0.707107,          0) * x <= 0.233628
+   (  0.580833,          0,   0.575601,   0.575601) * x <= 0.193528
+   (1.51779e-15,   0.594812,   0.594812,   0.540738) * x <= 0.198194
+   (  0.251067,   0.557926,   0.560716,   0.557926) * x <= 0.186985
+   (         0,   0.666667,   0.666667,   0.666667) * x <= 0.222327
+   (  0.559712,          0,   0.554669,   0.615683) * x <= 0.203444
+   (   0.57735,          0,    0.57735,    0.57735) * x <= 0.192541
+   (         0,   0.542462,   0.591333,   0.596708) * x <= 0.198663
+   (  0.672673,          0,    0.73994,          0) * x <= 0.242444
+   (  0.592899,          0,   0.598289,   0.538999) * x <= 0.199174
+   (  0.598289,          0,   0.538999,   0.592899) * x <= 0.199174
+   (  0.592899,   0.538999,          0,   0.598289) * x <= 0.199174
+   (         0,   0.592899,   0.538999,   0.598289) * x <= 0.199174
+   (  0.538999,          0,   0.592899,   0.598289) * x <= 0.199174
+   (         0,   0.707107, 9.08618e-16,   0.707107) * x <= 0.233628
+   (         0,   0.538999,   0.598289,   0.592899) * x <= 0.199174
+   (  0.592899,   0.598289,   0.538999,          0) * x <= 0.199174
+   (         0,          0,   0.666667,   0.666667) * x <= 0.220266
+   (1.81724e-15,   0.707107,          0,   0.707107) * x <= 0.233628
+   (         0,   0.707107,          0,   0.707107) * x <= 0.233628
+   (  0.707107,          0,          0,   0.707107) * x <= 0.233628
+
+26 Pareto optimal points found:
+   (       0.03,         0.3,       0.003,      0.0003 )
+   (      0.003,        0.03,         0.3,      0.0003 )
+   (     0.0003,         0.3,        0.03,       0.003 )
+   (     0.0003,         0.3,       0.003,        0.03 )
+   (     0.0003,        0.03,       0.003,         0.3 )
+   (        0.3,        0.03,      0.0003,       0.003 )
+   (        0.3,      0.0003,       0.003,        0.03 )
+   (     0.0003,       0.003,        0.03,         0.3 )
+   (      0.003,      0.0003,        0.03,         0.3 )
+   (     0.0003,         0.3,           0,        0.03 )
+   (     0.0003,        0.03,         0.3,       0.003 )
+   (      0.003,         0.3,        0.03,      0.0003 )
+   (        0.3,      0.0003,        0.03,       0.003 )
+   (        0.3,        0.03,       0.003,      0.0003 )
+   (        0.3,       0.003,      0.0003,        0.03 )
+   (     0.0003,       0.003,         0.3,        0.03 )
+   (       0.03,      0.0003,       0.003,         0.3 )
+   (       0.03,         0.3,      0.0003,       0.003 )
+   (       0.03,       0.003,         0.3,      0.0003 )
+   (     0.0003,         0.3,        0.03,      0.0003 )
+   (        0.3,       0.003,        0.03,      0.0003 )
+   (       0.03,      0.0003,         0.3,       0.003 )
+   (      0.003,      0.0003,         0.3,        0.03 )
+   (      0.003,         0.3,      0.0003,        0.03 )
+   (      0.003,        0.03,      0.0003,         0.3 )
+   (       0.03,       0.003,      0.0003,         0.3 )
+
+
+Time for model checking: 148.455s.
+
+Performance statistics:
+  * peak memory usage: 63MB
+  * CPU time: 147.786s
+  * wallclock time: 148.494s
+

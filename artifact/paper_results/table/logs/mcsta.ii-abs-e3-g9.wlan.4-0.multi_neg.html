@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g9 - wlan multi_neg 4-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g9</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/wlan/wlan.4.jani">wlan</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">MAX_BACKOFF</span> = 4, <span class="tt">COL</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g9)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.4.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.9
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">141.829s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">141.829s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.4.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+wlan.4.jani:model: info: wlan.4 is an MDP model.
+wlan.4.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.4.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.4.jani: info: Need 24 bytes per state.
+wlan.4.jani: info: Explored 345000 states for COL=0.
+
+Peak memory usage: 428 MB
+Analysis results for wlan.4.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             345000
+  Transitions:        440206
+  Branches:           762252
+  Rate:               412679 states/s
+  Peak memory:        134.64 MB
+  Final size:         2.76 MB
+  Time (exploration): 0.8 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       11
+  Time:                140.4 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.0264498325, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2014394059, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4978474812, 0*x_1 + 1*x_2 + 0.0002108656*x_3 <= 2.0158617154, 0*x_1 + 1*x_2 + 4.26023E-05*x_3 <= 1.3658280032, 1*x_1 + 0*x_2 + 209.7602107045*x_3 <= 1037453.780710184, 0*x_1 + 1*x_2 + 0.0002108674*x_3 <= 2.0158701986, 0*x_1 + 1*x_2 + 0.0002108656*x_3 <= 2.0158617178, 1*x_1 + 1.0013115581*x_2 + 4546850599.931017*x_3 <= 17657684740247.812, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4978476646, 0*x_1 + 1*x_2 + 2.4703E-06*x_3 <= 1.2109705993, 0*x_1 + 1*x_2 + 1.00664E-05*x_3 <= 1.2402792446, 1*x_1 + 0*x_2 + 41.5809602577*x_3 <= 387745.087117079, 1*x_1 + 0*x_2 + 9.0613909697*x_3 <= 262259.1113057208, 0*x_1 + 1*x_2 + 1.2E-09*x_3 <= 1.2014410908, 1*x_1 + 0*x_2 + 1.4694720652*x_3 <= 232966.7504170931}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 227297.0268919494, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2018892225, 0*x_1 + 0*x_2 + 1*x_3 <= 3883.4982962362, 1*x_1 + 0*x_2 + 176.7522887166*x_3 <= 909937.8938120758, 1*x_1 + 0*x_2 + 38.5822346948*x_3 <= 376173.6642971309, 1*x_1 + 0*x_2 + 209.7602107064*x_3 <= 1037453.8347929054, 1*x_1 + 0*x_2 + 8.7209263702*x_3 <= 260945.4783470911, 1*x_1 + 0*x_2 + 41.5809602588*x_3 <= 387745.0978721535, 1*x_1 + 0*x_2 + 9.0613909717*x_3 <= 262259.1136640225, 1*x_1 + 0*x_2 + 1.4694720417*x_3 <= 232966.7507836081, 0*x_1 + 1*x_2 + 0.0002108656*x_3 <= 2.016119854}
+
+  + Pareto Curve Approximation
+    Time: 139.4 s	</pre>
+</div>
+</body>
+</html>

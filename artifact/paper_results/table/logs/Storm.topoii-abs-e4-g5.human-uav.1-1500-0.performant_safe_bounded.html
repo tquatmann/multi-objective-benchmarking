@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e4-g5 - human-uav performant_safe_bounded 1-1500-0</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e4-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/human-uav/human-uav.jani">human-uav</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 1, <span class="tt">B</span> = 1500, <span class="tt">COUNTER</span> = 0</td></tr>
+		<tr><td>Property:</td><td><span class="tt">performant_safe_bounded</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e4-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants Unf=1,B=1500,COUNTER=0 --multiobjective:precision 1e-4 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1029.996s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1029.996s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:59:31 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe_bounded --constants 'Unf=1,B=1500,COUNTER=0' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.007s.
+
+Time for model construction: 5.839s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	874100
+Transitions: 	5092664
+Choices: 	1657491
+Reward Models:  time, ROZ
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 10244 item(s)
+   * mission -> 552930 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe_bounded": multi(Pmax=? [true Urew{"time"}<=1500 "mission"], R{"ROZ"}min=? [Crew{"time"}<=1500]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 32 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 32.
+           #checked epochs overall: 4864.
+# checked epochs per weight vector: 152.
+                      overall Time: 1022.900s.
+         Epoch Model building time: 297.279s.
+         Epoch Model checking time: 716.917s.
+--------------------------------------------------
+Solving multi-objective query took 1024.080s seconds (consisting of 1.144s seconds for preprocessing and 1022.936s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 32 Halfspaces:
+   (  0.886668,         -1) * x <= 0.416438
+   (  0.792771,         -1) * x <= 0.366998
+   (  0.783063,         -1) * x <= 0.362114
+   (  0.722212,         -1) * x <= 0.332669
+   (         1,  -0.595266) * x <= 0.671359
+   (         1,  -0.575398) * x <= 0.681764
+   (         1,         -1) * x <= 0.481364
+   (  0.957749,         -1) * x <= 0.456428
+   (         1,  -0.819607) * x <= 0.562354
+   (         1, -8.3993e-05) * x <= 0.999923
+   (         1, -2.0503e-08) * x <= 0.999991
+   (  0.944728,         -1) * x <= 0.449041
+   (         0,         -1) * x <= -8.83883e-06
+   (         1, -0.00230253) * x <= 0.998656
+   (  0.892983,         -1) * x <= 0.419857
+   (  0.999602,         -1) * x <= 0.481129
+   (         1,  -0.622223) * x <= 0.657555
+   (         1,          0) * x <= 0.999991
+   (         1,  -0.746081) * x <= 0.596726
+   (         1,  -0.562945) * x <= 0.688339
+   (  0.764353,         -1) * x <= 0.352892
+   (  0.835116,         -1) * x <= 0.38873
+   (  0.840404,         -1) * x <= 0.391531
+   (  0.633114,         -1) * x <= 0.291167
+   (         1,  -0.680077) * x <= 0.62867
+   (         1,  -0.641173) * x <= 0.648032
+   (         1,  -0.768182) * x <= 0.586177
+   (         1,  -0.789713) * x <= 0.576103
+   (  0.738499,         -1) * x <= 0.340403
+   (  0.678452,         -1) * x <= 0.312204
+   (         1,   -0.85358) * x <= 0.546956
+   (         1,  -0.691176) * x <= 0.623234
+
+Overapproximation of achievable values: Polytope with 32 Halfspaces:
+   (         1,          0) * x <= 1.00001
+   (         0,         -1) * x <= 8.83883e-06
+   (  0.994538,  -0.104379) * x <= 0.936713
+   (  0.484286,   -0.87491) * x <= 0.222742
+   (  0.715765,  -0.698341) * x <= 0.352371
+   (  0.690376,  -0.723451) * x <= 0.328802
+   (  0.629047,  -0.777367) * x <= 0.291869
+   (  0.656273,  -0.754524) * x <= 0.307376
+   (  0.641816,  -0.766859) * x <= 0.298864
+   (  0.598826,  -0.800879) * x <= 0.276207
+   (  0.615154,  -0.788407) * x <= 0.284421
+   (  0.618869,  -0.785494) * x <= 0.28636
+   (  0.668266,  -0.743922) * x <= 0.314594
+   (  0.665762,  -0.746164) * x <= 0.313006
+   (         1, -6.80727e-06) * x <= 1
+   (  0.831168,  -0.556021) * x <= 0.527149
+   (         1, -0.000242187) * x <= 0.999851
+   (  0.576403,  -0.817166) * x <= 0.26543
+   (  0.706162,   -0.70805) * x <= 0.339737
+   (  0.707107,  -0.707107) * x <= 0.340397
+   (  0.590071,  -0.807352) * x <= 0.271922
+   (  0.862194,  -0.506579) * x <= 0.582348
+   (  0.547627,  -0.836722) * x <= 0.251947
+   (  0.796034,  -0.605252) * x <= 0.46962
+   (  0.870743,  -0.491738) * x <= 0.598565
+   (   0.85231,  -0.523036) * x <= 0.564195
+   (  0.846622,  -0.532195) * x <= 0.554005
+   (  0.780431,  -0.625242) * x <= 0.445525
+   (  0.818569,  -0.574408) * x <= 0.506013
+   (  0.789246,  -0.614077) * x <= 0.459014
+   (  0.767733,  -0.640769) * x <= 0.426533
+   (  0.824885,    -0.5653) * x <= 0.516489
+
+31 Pareto optimal points found:
+   (0.9456014429, 0.4678892189 )
+   (0.5673337832, 0.08693511441 )
+   (0.9999911573, 9.528175264 )
+   (0.976167089,  0.51205379 )
+   (0.9831063673, 0.5237112276 )
+   (0.4748723106, 0.01028985872 )
+   (0.5132231315, 0.03987051745 )
+   (0.5031272602, 0.03186680787 )
+   (0.9855687736, 0.5279907131 )
+   (0.5901765773, 0.1088127863 )
+   (0.9293319696, 0.4479680782 )
+   (0.5904391741, 0.1090752785 )
+   (0.9999300642, 0.5535017205 )
+   (0.9393204941, 0.4599357593 )
+   (0.9617832796, 0.4898168378 )
+   (0.9999713592, 0.5714363148 )
+   (0.4928481145, 0.02381758895 )
+   (0.4676464433, 0.005071250817 )
+   (0.9338477992, 0.4532585396 )
+   (0.9999909784, 0.8050183751 )
+   (0.9528164616, 0.4772815499 )
+   (0.5296884496, 0.05362097008 )
+   (0.5639923542, 0.08377837167 )
+   (0.4599115613, 8.838834765e-06 )
+   (0.5383713815, 0.0609181397 )
+   (0.9569301295, 0.482795253 )
+   (0.5413593182, 0.0635674471 )
+   (0.9702434981, 0.5025337465 )
+   (0.4830771535, 0.01634912472 )
+   (0.4639993637, 0.002596882261 )
+   (0.9671408117, 0.4976946693 )
+
+
+Time for model checking: 1024.081s.
+
+Performance statistics:
+  * peak memory usage: 1383MB
+  * CPU time: 1024.560s
+  * wallclock time: 1029.936s	</pre>
+</div>
+</body>
+</html>

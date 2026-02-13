@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "consensus.6-2.multi_neg",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e5-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.6.jani --props multi_neg -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 532.6432435512543,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e5-g5.consensus.6-2.multi_neg.run1.log"
+}

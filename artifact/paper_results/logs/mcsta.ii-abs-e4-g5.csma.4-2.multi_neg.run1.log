@@ -1,0 +1,39 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	32.14509105682373
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma.4-2.jani:model: info: csma.4-2 is an MDP model.
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+
+Peak memory usage: 836 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               669658 states/s
+  Peak memory:        231.56 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.7 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       9
+  Time:                30.0 s
+  Under Approximation: ∩{-0*x_1 + -0*x_2 + 1*x_3 <= 143.212169097, -1*x_1 + -0*x_2 + 3768429.847307232*x_3 <= 539685012.384256, -0*x_1 + -1*x_2 + 1402.9467746319*x_3 <= 200918.6952318323, -1*x_1 + -4017.2794532743*x_2 + 0*x_3 <= -1428.164701026, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3554789294, -1*x_1 + -0*x_2 + 0.0368167999*x_3 <= 5.1661117832, -1*x_1 + -0*x_2 + 0.0012239684*x_3 <= 0.0814902813, -1*x_1 + -1018.623972639*x_2 + 0*x_3 <= -362.1960515015, -1*x_1 + -1018.3406453908*x_2 + 3.404E-07*x_3 <= -362.0952850737, -1*x_1 + -0*x_2 + 0*x_3 <= -0.0924559196}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0924505139, -0*x_1 + -1*x_2 + 0*x_3 <= -0.35546875, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2121922132, -1*x_1 + -0*x_2 + 0.0055259736*x_3 <= 0.6960746008, -1*x_1 + -0*x_2 + 0.1266524075*x_3 <= 18.0316841794, -1*x_1 + -0*x_2 + 0.036816786*x_3 <= 5.166127797, -1*x_1 + -0.0043879329*x_2 + 0*x_3 <= -0.0940102869, -1*x_1 + -0*x_2 + 0.00012213*x_3 <= -0.0750817925, -1*x_1 + -0*x_2 + 0.0012239684*x_3 <= 0.0815083815}
+
+  + Pareto Curve Approximation
+    Time: 29.7 s
+
+

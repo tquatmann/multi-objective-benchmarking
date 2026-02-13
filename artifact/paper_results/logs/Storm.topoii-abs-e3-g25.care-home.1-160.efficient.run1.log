@@ -1,0 +1,78 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient --constants Unf=1,B=160 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.25 --timemem --statistics
+Repitition:	1
+Wallclock time:	152.50333094596863
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 16:56:37 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient --constants 'Unf=1,B=160' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.25 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 17.578s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3408977
+Transitions: 	7252749
+Choices: 	6576217
+Reward Models:  interaction
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * timeExceeded -> 47296 item(s)
+   * ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0))) -> 330996 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "efficient": multi(Pmax=? [F ((!"timeExceeded") & ((((wants_water11 > 0) & ((((((wants_water6 = 1) & !(delivered_water6)) ? 1 : 0) + (((wants_water7 = 1) & !(delivered_water7)) ? 1 : 0)) + (((wants_water11 = 1) & !(delivered_water11)) ? 1 : 0)) = 0)) & (wants_water6 > 0)) & ((wants_water7 > 0) & (n_water = 0))))], R{"interaction"}max=? [F "timeExceeded"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 2979796 states.
+Final preprocessed model has 5956224 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 10 refinement steps.
+Solving multi-objective query took 134.837s seconds (consisting of 8.450s seconds for preprocessing and 126.386s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (         1,   0.327803) * x <= 2.27225
+   (         1,   0.723351) * x <= 3.833
+   (  0.558921,          1) * x <= 4.52069
+   (         1,   0.163376) * x <= 1.63107
+   (         1,   0.502167) * x <= 2.95785
+   (         1,   0.422137) * x <= 2.6422
+   (         0,          1) * x <= 4
+   (         1,   0.996931) * x <= 4.91985
+   (         1,          0) * x <= 0.996133
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0) * x <= 0.996133
+   (         0,          1) * x <= 4
+   (  0.970363,   0.241653) * x <= 1.90685
+   (   0.10062,   0.994925) * x <= 4.07344
+   (  0.849667,    0.52732) * x <= 2.9114
+   (  0.927562,   0.373669) * x <= 2.38065
+   (  0.911645,   0.410978) * x <= 2.51184
+   (  0.740486,   0.672072) * x <= 3.38032
+   (  0.701356,   0.712811) * x <= 3.50499
+   (         1, 0.000550556) * x <= 0.998273
+
+8 Pareto optimal points found:
+   (0.9327935492, 3.999331979 )
+   (0.9315983519,           4 )
+   (0.9593193665,  3.97272449 )
+   (0.9961332801, 3.886333751 )
+   (0.9709611915, 3.956630204 )
+   (0.9772348129, 3.944137104 )
+   (0.9866815861, 3.921758665 )
+   (0.9939864018, 3.899474502 )
+
+
+Time for model checking: 134.839s.
+
+Performance statistics:
+  * peak memory usage: 2272MB
+  * CPU time: 150.492s
+  * wallclock time: 152.436s
+

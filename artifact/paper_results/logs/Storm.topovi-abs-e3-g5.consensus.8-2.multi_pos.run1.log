@@ -1,0 +1,30 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.8.jani --janiproperty multi_pos --constants K=2 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	530.6157903671265
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:42:31 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.8.jani --janiproperty multi_pos --constants K=2 '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 474.572s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	61018112
+Transitions: 	403856384
+Choices: 	323981312
+Reward Models:  steps
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 2048 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax=? [F "finished"], R{"steps"}min=? [F "finished"]) ...
+

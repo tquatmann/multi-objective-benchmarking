@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=2,B=20 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	46.75907015800476
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=2,B=20 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+mars-rover.jani:model: info: mars-rover is an MDP model.
+mars-rover.jani: info: Need 16 bytes per state.
+mars-rover.jani: info: Explored 1377844 states for Unf=2, B=20.
+
+Peak memory usage: 1388 MB
+Analysis results for mars-rover.jani
+Experiment Unf=2, B=20
+
++ State space exploration
+  State size:         16 bytes
+  States:             1377844
+  Transitions:        1728488
+  Branches:           2605098
+  Rate:               911876 states/s
+  Peak memory:        164.10 MB
+  Final size:         10.51 MB
+  Time (exploration): 1.5 s
+  Time (merging):     0.1 s
+
++ safe_collection_tradeoff
+  WSO instances:       20
+  Time:                44.9 s
+  Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 1, 1x + 4E-10y <= 1.0000000002, 1x + 1.0000000001y <= 1.8094402709, 1x + 1.4999999677y <= 2.3063625702, 1x + 1.059999686y <= 1.8690207227, 1x + 1.116970546y <= 1.925616341, 1x + 1.6190469254y <= 2.4253851046, 1x + 1.5999993679y <= 2.4063376312, 1x + 1.3080002906y <= 2.1154491325, 1x + 2.2040913109y <= 3.010427212, 1x + 1.1999953799y <= 2.0080943571, 1x + 1.2083147201y <= 2.0163632402, 1x + 1.3704234336y <= 2.177510955, 1x + 1.280000278y <= 2.0876143733, 1x + 1.2599965683y <= 2.0677317023, 1x + 1.4343973945y <= 2.2411231598, 1x + 1.4117655178y <= 2.2186165827}
+  Over Approximation:  ∩{1x + 0y <= 1.0000002269, 0x + 1y <= 1.0000002242, 1x + 1.6870937432y <= 2.4934316611, 1x + 0.3267171566y <= 1.2644581854, 1x + 1.0162665243y <= 1.8255932206, 1x + 1.0000000001y <= 1.8094405205, 1x + 1.4438656572y <= 2.2505391014, 1x + 1.5043311639y <= 2.3106927176, 1x + 1.2134167971y <= 2.0214344226, 1x + 1.1392302116y <= 1.947729557, 1x + 1.3431864582y <= 2.150431706, 1x + 1.4999999677y <= 2.3063626646, 1x + 1.0600508261y <= 1.8690715395, 1x + 1.6000410515y <= 2.4063793216, 1x + 1.2906116085y <= 2.098163132, 1x + 207082.7603984532y <= 207083.5671396851, 1x + 1.2000159339y <= 2.0081148297, 1x + 1.4005649913y <= 2.207480401, 1x + 1.2784001851y <= 2.0860240188, 1x + 1.4118421987y <= 2.2186929321}
+
+  + Pareto Curve Approximation
+    Time: 44.6 s
+
+

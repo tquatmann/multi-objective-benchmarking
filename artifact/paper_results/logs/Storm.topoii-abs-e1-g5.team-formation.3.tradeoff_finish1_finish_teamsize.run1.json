@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "team-formation.3.tradeoff_finish1_finish_teamsize",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e1-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.3.jani --janiproperty tradeoff_finish1_finish_teamsize --multiobjective:precision 1e-1 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.41189074516296387,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e1-g5.team-formation.3.tradeoff_finish1_finish_teamsize.run1.log"
+}

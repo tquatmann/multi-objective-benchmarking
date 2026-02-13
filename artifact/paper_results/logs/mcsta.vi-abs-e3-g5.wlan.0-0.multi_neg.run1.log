@@ -1,0 +1,43 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.7395303249359131
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.0.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan.0.jani:model: info: wlan.0 is an MDP model.
+wlan.0.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.0.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.0.jani: info: Need 16 bytes per state.
+wlan.0.jani: info: Explored 2954 states for COL=0.
+wlan.0.jani: warning: Multi-objective model checking with value iteration provides unsound results
+
+Peak memory usage: 78 MB
+Analysis results for wlan.0.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         16 bytes
+  States:             2954
+  Transitions:        3972
+  Branches:           5202
+  Rate:               92313 states/s
+  Peak memory:        29.70 MB
+  Final size:         0.02 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       7
+  Time:                0.3 s
+  Under Approximation: ∩{0*x_1 + 0*x_2 + 1*x_3 <= 3791.9039940919, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2239848945, 1*x_1 + 0*x_2 + 0*x_3 <= 28000.95582013, 1*x_1 + 0*x_2 + 6.0775050304*x_3 <= 51018.1699110756, 0*x_1 + 1*x_2 + 0.3343469569*x_3 <= 1269.0296769745, 0*x_1 + 1*x_2 + 0.0002113809*x_3 <= 2.0197477704, 1*x_1 + 0*x_2 + 1.0288620601*x_3 <= 31874.2019197044, 1*x_1 + 0*x_2 + 1.0288620601*x_3 <= 31874.2019197052}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 <= 28000.9546870855, 0*x_1 + 1*x_2 + 0*x_3 <= 1.2228586273, 0*x_1 + 0*x_2 + 1*x_3 <= 3791.9026240544, 1*x_1 + 0*x_2 + 3.6441308177*x_3 <= 41791.049256797, 1*x_1 + 0*x_2 + 1.0288113174*x_3 <= 31874.0112924095, 0*x_1 + 1*x_2 + 0.0002149002*x_3 <= 2.0327569561, 1*x_1 + 0*x_2 + 1.0289152346*x_3 <= 31874.4038930473}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s
+
+

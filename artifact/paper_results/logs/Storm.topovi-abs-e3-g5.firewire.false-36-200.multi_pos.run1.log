@@ -1,0 +1,44 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_pos --constants delay=36,deadline=200 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	5.9825544357299805
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:23:25 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_pos --constants 'delay=36,deadline=200' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 1.121s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(Pmax>=1 [F "done"], R{"time"}min=? [F "done"]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula Pmax>=1 [F "done"] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 212267 states.
+Final preprocessed model has 478751 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 21 refinement steps.
+Solving multi-objective query took 4.811s seconds (consisting of 0.269s seconds for preprocessing and 4.541s seconds for analyzing the preprocessed model).
+Result (for initial states): 138.2508232
+Time for model checking: 4.811s.
+
+Performance statistics:
+  * peak memory usage: 195MB
+  * CPU time: 5.905s
+  * wallclock time: 5.938s
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "eajs.5-250-11.Multi",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --props Multi -E energy_capacity=250,B=11 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 11.873006582260132,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.vi-abs-e3-g5.eajs.5-250-11.Multi.run1.log"
+}

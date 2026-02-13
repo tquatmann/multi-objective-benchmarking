@@ -1,0 +1,65 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty bounded_tradeoff --constants Unf=1,B=30 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	689.3771753311157
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:58:38 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty bounded_tradeoff --constants 'Unf=1,B=30' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.081s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1126
+Transitions: 	2101
+Choices: 	1351
+Reward Models:  value, time, energy
+State Labels: 	3 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * done -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "bounded_tradeoff": multi(Pmax=? [true Urew{"value"}>=150 true], Pmax=? [true U^{rew{"time"}<=270 , rew{"energy"}<=150 }(done)]) ...
+Epoch model for epoch <_, _, _> is cyclic.
+Epoch model for epoch <0, _, _> is cyclic.
+Epoch model for epoch <_, _, _> is cyclic.
+Epoch model for epoch <0, _, _> is cyclic.
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 2.
+           #checked epochs overall: 592878.
+# checked epochs per weight vector: 296439.
+                      overall Time: 684.250s.
+         Epoch Model building time: 254.088s.
+         Epoch Model checking time: 424.441s.
+--------------------------------------------------
+Solving multi-objective query took 685.815s seconds (consisting of 0.001s seconds for preprocessing and 685.813s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 0
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 0
+
+1 Pareto optimal points found:
+   (                   1,                    0 ) approx.    (          1,           0 )
+
+
+Time for model checking: 689.158s.
+
+Performance statistics:
+  * peak memory usage: 3441MB
+  * CPU time: 686.274s
+  * wallclock time: 689.244s
+

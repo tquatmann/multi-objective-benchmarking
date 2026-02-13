@@ -1,0 +1,33 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty bounded_tradeoff --constants Unf=1,B=20 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.25 --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0024106502533
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:19:37 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty bounded_tradeoff --constants 'Unf=1,B=20' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.25 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.016s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	751
+Transitions: 	1401
+Choices: 	901
+Reward Models:  value, time, energy
+State Labels: 	3 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * done -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "bounded_tradeoff": multi(Pmax=? [true Urew{"value"}>=100 true], Pmax=? [true U^{rew{"time"}<=180 , rew{"energy"}<=100 }(done)]) ...
+
+
+----------
+Computation aborted after 2700.0024106502533 seconds since the total time limit of 2700 seconds was exceeded.

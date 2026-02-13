@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "repudiation_honest.40.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e5-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5 Unsupported PTA Benchmark.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_honest/repudiation_honest.jani --janiproperty multi --constants T=40 --multiobjective:precision 1e-5 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.03513002395629883,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	],
+	"log": "Storm.topoii-abs-e5-g5.repudiation_honest.40.multi.run1.log"
+}

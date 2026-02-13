@@ -1,0 +1,32 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --props multi -E N=20,slippery=0.2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	6.561975479125977
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --props multi -E N=20,slippery=0.2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+avoid-mdp.jani:model: info: avoid-mdp is an MDP model.
+avoid-mdp.jani: info: Need 16 bytes per state.
+avoid-mdp.jani: info: Explored 2056721 states for N=20, slippery=0.2.
+avoid-mdp.jani: error: Modelling Error: Potentially infinite reward for 'multi' in subproperty: 1
+
+Peak memory usage: 2155 MB
+Analysis results for avoid-mdp.jani
+Experiment N=20, slippery=0.2
+
++ State space exploration
+  State size:         16 bytes
+  States:             2056721
+  Transitions:        4902441
+  Branches:           11672275
+  Rate:               581652 states/s
+  Peak memory:        471.14 MB
+  Final size:         15.94 MB
+  Time (exploration): 3.5 s
+  Time (merging):     0.2 s
+
+

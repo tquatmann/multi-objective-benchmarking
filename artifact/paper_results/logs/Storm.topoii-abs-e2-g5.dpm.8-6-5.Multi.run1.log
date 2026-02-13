@@ -1,0 +1,14 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=8,C=6,TIME_BOUND=5 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	285.61915493011475
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:22:14 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=8,C=6,TIME_BOUND=5' '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "care-home.0-0.efficient_bounded",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e5-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --janiproperty efficient_bounded --constants Unf=0,B=0 --multiobjective:precision 1e-5 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.7045834064483643,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e5-g5.care-home.0-0.efficient_bounded.run1.log"
+}

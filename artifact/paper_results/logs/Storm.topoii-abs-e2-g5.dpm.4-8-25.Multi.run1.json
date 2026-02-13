@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "dpm.4-8-25.Multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e2-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-2  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=4,C=8,TIME_BOUND=25 --multiobjective:precision 1e-2 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2700.007276535034,
+	"timeout": true,
+	"execution-error": false,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topoii-abs-e2-g5.dpm.4-8-25.Multi.run1.log"
+}

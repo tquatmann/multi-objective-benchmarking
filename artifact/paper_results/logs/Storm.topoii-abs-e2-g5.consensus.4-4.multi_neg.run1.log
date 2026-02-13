@@ -1,0 +1,63 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=4 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	16.501410722732544
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:30:52 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=4 '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.185s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	43136
+Transitions: 	144352
+Choices: 	115840
+Reward Models:  steps
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 64 item(s)
+   * agree -> 9170 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmax=? [F ("finished" & (!"agree"))], R{"steps"}max=? [F "finished"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 43073 states.
+Final preprocessed model has 115777 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 5 refinement steps.
+Solving multi-objective query took 16.271s seconds (consisting of 0.099s seconds for preprocessing and 16.171s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1, 0.00125074) * x <= 1.35456
+   (         0,          1) * x <= 1083
+   (         1,          0) * x <= 0.155976
+   (         1, 0.00105571) * x <= 1.16496
+
+Overapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1,          0) * x <= 0.157754
+   (         0,          1) * x <= 1083
+   (  0.999999, 0.00109291) * x <= 1.20286
+   (  0.999999, 0.00125072) * x <= 1.3563
+   (         1, 0.000543271) * x <= 0.676983
+
+3 Pareto optimal points found:
+   (0.1559758893, 955.7380237 )
+   (0.1386753034, 972.1256947 )
+   (          0,        1083 )
+
+
+Time for model checking: 16.271s.
+
+Performance statistics:
+  * peak memory usage: 93MB
+  * CPU time: 16.345s
+  * wallclock time: 16.460s
+

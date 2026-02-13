@@ -1,0 +1,59 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani --janiproperty Multi --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.001757621765
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:19:52 2025
+Command line arguments: --jani '$MDPMC_DIR/qcomp/benchmarks/ma/reentrant-queues/converted_reentrant-queues.JOB_TYPES=3,C_LEFT=3,C_RIGHT=3,TIME_BOUND=5.jani' --janiproperty Multi '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.239s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	90033
+Transitions: 	206729
+Choices: 	145149
+Markovian St.: 	41518
+Max. Rate: 	6.1
+Reward Models:  (((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((sizeLeft = 3) & (sizeRight = 3)) -> 34560 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Tmin=? [F ((sizeLeft = 3) & (sizeRight = 3))], Pmax=? [true U<=5 ((sizeLeft = 3) & (sizeRight = 3))], R{"(((sizeLeft = 3) & (sizeRight = 3)) ? 1 : 0)"}max=? [LRA[time]]) ...
+Final preprocessed model has 62299 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 145505 states.
+Final preprocessed model has 255737 actions.
+Found 1 end components that are relevant for LRA-analysis.
+90032 states lie on such an end component.
+
+
+
+----------
+Computation aborted after 2700.001757621765 seconds since the total time limit of 2700 seconds was exceeded.

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "wlan.6-0.multi_pos",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e4-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-4, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --props multi_pos -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 290.49308729171753,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e4-g5.wlan.6-0.multi_pos.run1.log"
+}

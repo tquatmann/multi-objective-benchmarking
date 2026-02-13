@@ -1,0 +1,59 @@
+Command:	$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0143942832947
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:24:18 2025
+Command line arguments: --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.15-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.054s.
+
+Time for model construction: 77.443s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1896568
+Transitions: 	7455066
+Choices: 	3727601
+Markovian St.: 	1863801
+Max. Rate: 	9
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 231660 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Tmin=? [F "all_jobs_finished"], R{"avg_waiting_time"}max=? [F "all_jobs_finished"], Pmax=? [true U<=(15 / (4 * 3)) "half_of_jobs_finished"]) ...
+Final preprocessed model has 1863801 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 1896568 states.
+Final preprocessed model has 3727601 actions.
+
+
+
+----------
+Computation aborted after 2700.0143942832947 seconds since the total time limit of 2700 seconds was exceeded.

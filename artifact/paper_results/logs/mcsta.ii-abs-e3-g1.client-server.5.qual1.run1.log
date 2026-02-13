@@ -1,0 +1,21 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.5.jani --props qual1 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.26097559928894043
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.5.jani --props qual1 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+
+
+
+
+client-server.5.jani:model: info: client-server.5 is an MDP model.
+client-server.5.jani:automata[0].variables[0]: info: Expanding variable "s" into 4 locations in automaton "server".
+client-server.5.jani:automata[1].variables[0]: info: Expanding variable "c1" into 5 locations in automaton "client1".
+client-server.5.jani:automata[2].variables[0]: info: Expanding variable "c2" into 5 locations in automaton "client2".
+client-server.5.jani:automata[3].variables[0]: info: Expanding variable "c3" into 5 locations in automaton "client3".
+client-server.5.jani:automata[4].variables[0]: info: Expanding variable "c4" into 5 locations in automaton "client4".
+client-server.5.jani:automata[5].variables[0]: info: Expanding variable "c5" into 5 locations in automaton "client5".
+client-server.5.jani:properties[0]: warning: Skipping unsupported property "qual1".
+client-server.5.jani: error: No properties to check.
+

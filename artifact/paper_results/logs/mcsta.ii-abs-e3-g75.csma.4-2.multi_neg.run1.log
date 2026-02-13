@@ -1,0 +1,39 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	22.48346447944641
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+csma.4-2.jani:model: info: csma.4-2 is an MDP model.
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+
+Peak memory usage: 773 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               646396 states/s
+  Peak memory:        231.56 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.8 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                20.2 s
+  Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0927344803, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2121690911, -1*x_1 + -0*x_2 + 8.90232E-05*x_3 <= -0.0807279605, -1*x_1 + -0.0035145716*x_2 + 0*x_3 <= -0.0946953503, -1*x_1 + -0*x_2 + 277532.5802582936*x_3 <= 39746042.67334196, -1*x_1 + -0*x_2 + 0.0368474293*x_3 <= 5.1704018418, -0*x_1 + -1*x_2 + 1520.0258138297*x_3 <= 217685.8380465054, -1*x_1 + -3972.0410489397*x_2 + 0*x_3 <= -1412.7614413432, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3556496082}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0924505139, -0*x_1 + -1*x_2 + 0*x_3 <= -0.35546875, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2124974489, -1*x_1 + -0*x_2 + 0.0055320804*x_3 <= 0.6971240668, -1*x_1 + -0*x_2 + 0.1272992869*x_3 <= 18.1245151822, -1*x_1 + -0*x_2 + 0.0368474293*x_3 <= 5.1706741606}
+
+  + Pareto Curve Approximation
+    Time: 19.9 s
+
+

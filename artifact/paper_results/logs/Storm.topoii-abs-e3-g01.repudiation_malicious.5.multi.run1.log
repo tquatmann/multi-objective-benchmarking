@@ -1,0 +1,16 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --janiproperty multi --constants T=5 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics
+Repitition:	1
+Wallclock time:	0.03170156478881836
+Return code:	1
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:47:15 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --janiproperty multi --constants T=5 '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.01 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+ERROR (SymbolicModelDescription.cpp:61): Expected other JANI model type.
+ERROR (storm-cli.cpp:47): An exception caused Storm to terminate. The message of the exception is: InvalidTypeException: Expected other JANI model type.
+

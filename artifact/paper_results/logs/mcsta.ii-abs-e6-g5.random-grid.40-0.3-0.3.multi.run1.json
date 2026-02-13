@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "random-grid.40-0.3-0.3.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e6-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-6, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --props multi -E N=40,pover=0.3,pstay=0.3 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 1.3359465599060059,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e6-g5.random-grid.40-0.3-0.3.multi.run1.log"
+}

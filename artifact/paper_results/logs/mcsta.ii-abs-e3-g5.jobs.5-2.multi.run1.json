@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "jobs.5-2.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.5-2.jani --props multi --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.2745070457458496,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g5.jobs.5-2.multi.run1.log"
+}

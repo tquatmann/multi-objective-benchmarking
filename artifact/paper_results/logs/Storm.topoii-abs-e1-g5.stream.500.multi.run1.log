@@ -1,0 +1,118 @@
+Command:	$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.csl multi --constants N=500 --multiobjective:precision 1e-1 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	574.7960407733917
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:59:32 2025
+Command line arguments: --prism $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.csl multi --constants N=500 '--multiobjective:precision' 1e-1 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.554s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	376251
+Transitions: 	750501
+Choices: 	501001
+Markovian St.: 	250501
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 125249 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	376251
+Transitions: 	750501
+Choices: 	501001
+Markovian St.: 	250501
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 125249 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(R{"buffering"}min=? [F "done"], Pmin=? [F "underrun"], Pmin=? [true U<=2 "underrun"]) ...
+Final preprocessed model has 374252 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 499502 states.
+Final preprocessed model has 624252 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 15 refinement steps.
+Solving multi-objective query took 574.183s seconds (consisting of 6.334s seconds for preprocessing and 567.849s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   ( -0.845288,         -1,          0) * x <= -6.2604
+   (        -1,          0,          0) * x <= -6.30625
+   ( -0.159551,         -1,          0) * x <= -1.74505
+   (-0.00331723, -0.0281435,         -1) * x <= -0.0926814
+   (-5.13597e-06,          0,         -1) * x <= -0.0476518
+   (         0,          0,         -1) * x <= -0.0474969
+   (         0,         -1,          0) * x <= -0.203345
+   (        -1,          0, -0.0577295) * x <= -6.36398
+   ( -0.340926,         -1,          0) * x <= -3.02601
+   (  -0.71388,         -1, -0.00628883) * x <= -5.42601
+   (        -1,  -0.491452,          0) * x <= -6.7853
+   (-0.0415507,         -1,          0) * x <= -0.72529
+   (        -1,          0,  -0.497204) * x <= -6.4581
+   (-0.0610729,         -1, -0.0388366) * x <= -0.951427
+   ( -0.551385,         -1,          0) * x <= -4.38017
+   (-0.00238587,         -1,          0) * x <= -0.27533
+   (        -1,          0, -0.0927377) * x <= -6.37757
+   (-6.28822e-05,          0,         -1) * x <= -0.0483153
+   ( -0.228566,         -1, -0.0741417) * x <= -2.30661
+   (-0.0853573,         -1,          0) * x <= -1.14558
+   (        -1,  -0.987288,          0) * x <= -7.23297
+
+Overapproximation of achievable values: Polytope with 15 Halfspaces:
+   (        -1,          0,          0) * x <= -6.30625
+   (         0,         -1,          0) * x <= -0.203345
+   (         0,          0,         -1) * x <= -0.0189189
+   (-0.0398799,          0,  -0.999204) * x <= -0.275897
+   (  -0.99108,          0,   -0.13327) * x <= -6.30817
+   (-0.0264917,  -0.999649,          0) * x <= -0.552192
+   ( -0.605158,  -0.796105,          0) * x <= -4.55032
+   ( -0.964817,          0,  -0.262921) * x <= -6.15915
+   (-0.0239554,  -0.903661,  -0.427578) * x <= -0.507332
+   (-0.00223857, -0.0838158,  -0.996479) * x <= -0.0653504
+   ( -0.114868,  -0.993381,          0) * x <= -1.38101
+   ( -0.112772,  -0.975148,  -0.190704) * x <= -1.35935
+   (-0.0628722,  -0.543262,  -0.837206) * x <= -0.77151
+   (-0.0608975,  -0.998144,          0) * x <= -0.910301
+   ( -0.223034,  -0.974811,          0) * x <= -2.17783
+
+10 Pareto optimal points found:
+   (9.594220411, 0.326643781, 0.9999980869 )
+   ( 6.34157979, 0.9028704476, 0.3880881283 )
+   (7.062525185, 0.6182191338, 0.9999980869 )
+   (8.079819849, 0.4559089059, 0.05304793324 )
+   (11.48889708, 0.2479186952, 0.04759282876 )
+   (6.306254545, 0.9747497316, 0.9999980869 )
+   (  6.4342811, 0.8324036384, 0.04791067438 )
+   (6.397433696, 0.852720734, 0.9999980869 )
+   (30.17148693, 0.2033445361, 0.04749687548 )
+   (6.359105421, 0.8851191701, 0.1991074246 )
+
+
+Time for model checking: 574.184s.
+
+Performance statistics:
+  * peak memory usage: 401MB
+  * CPU time: 572.636s
+  * wallclock time: 574.745s
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "eajs.2-100-5.Multi",
+	"tool": "Storm",
+	"configuration-id": "topopi-abs-e3-g5",
+	"invocation-note": "exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.2.jani --janiproperty Multi --constants energy_capacity=100,B=5 --multiobjective:precision 1e-3 abs --exact --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 1.159782886505127,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topopi-abs-e3-g5.eajs.2-100-5.Multi.run1.log"
+}

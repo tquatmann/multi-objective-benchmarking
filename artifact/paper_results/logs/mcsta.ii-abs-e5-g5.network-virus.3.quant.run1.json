@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "network-virus.3.quant",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e5-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --props quant --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.2662954330444336,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e5-g5.network-virus.3.quant.run1.log"
+}

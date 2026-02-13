@@ -1,0 +1,31 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants N=200,pover=0.3,pstay=0.3 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.9 --timemem --statistics
+Repitition:	1
+Wallclock time:	86.40514779090881
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:08:03 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants 'N=200,pover=0.3,pstay=0.3' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.9 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 46.052s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	8000000
+Transitions: 	143280000
+Choices: 	48000000
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((x != (200 - 1)) & (y != (200 - 2))) -> 7920200 item(s)
+   * (((x = 200) & (y = 200)) & (z = 200)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Pmax=? [((x != (200 - 1)) & (y != (200 - 2))) U (((x = 200) & (y = 200)) & (z = 200))], Tmin=? [F (((x = 200) & (y = 200)) & (z = 200))]) ...
+

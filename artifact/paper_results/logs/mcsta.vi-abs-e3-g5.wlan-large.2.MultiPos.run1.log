@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/wlan-large/wlan-large.jani --props MultiPos -E K=2 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	218.76313042640686
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/wlan-large/wlan-large.jani --props MultiPos -E K=2 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan-large.jani:model: info: wlan-large is an STA model.
+wlan-large.jani: info: Need 24 bytes per state.
+wlan-large.jani: info: Explored 3283371 states for K=2.
+wlan-large.jani: warning: Multi-objective model checking with value iteration provides unsound results
+
+Peak memory usage: 1734 MB
+Analysis results for wlan-large.jani
+Experiment K=2
+
++ State space exploration
+  State size:         24 bytes
+  States:             3283371
+  Transitions:        6200795
+  Branches:           6221633
+  Rate:               49916 states/s
+  Peak memory:        572.96 MB
+  Final size:         25.05 MB
+  Time (exploration): 65.8 s
+  Time (merging):     0.1 s
+
++ Property MultiPos
+  Result:        False
+  WSO instances: 1
+  Time:          152.0 s
+
+  + Pareto Curve Approximation
+    Time: 151.2 s
+
+

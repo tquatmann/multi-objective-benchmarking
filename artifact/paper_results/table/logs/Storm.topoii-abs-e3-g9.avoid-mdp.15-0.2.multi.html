@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g9 - avoid-mdp multi 15-0.2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g9</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani">avoid-mdp</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 15, <span class="tt">slippery</span> = 0.2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g9)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --janiproperty multi --constants N=15,slippery=0.2 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.9 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.9
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1953.066s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1953.066s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:01:17 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --janiproperty multi --constants 'N=15,slippery=0.2' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.9 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 1.921s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	404101
+Transitions: 	2211765
+Choices: 	956701
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * notbad -> 281581 item(s)
+   * goal -> 900 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Pmax=? ["notbad" U "goal"], Tmin=? [F "goal"]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Weight Vector Checker Statistics:
+Final preprocessed model has 645932 states.
+Final preprocessed model has 1524962 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 16 refinement steps.
+Solving multi-objective query took 1951.091s seconds (consisting of 1.463s seconds for preprocessing and 1949.627s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 16 Halfspaces:
+   (         1, -0.0432133) * x <= -2.67884
+   (         1, -0.0302094) * x <= -1.75032
+   (         1, -0.0331972) * x <= -1.96396
+   (         1,   -0.14533) * x <= -9.93595
+   (         1,          0) * x <= 0.424901
+   (         1, -0.000279402) * x <= 0.403615
+   (         0,         -1) * x <= -71
+   (         1,  -0.199951) * x <= -13.8158
+   (         1, -0.00791239) * x <= -0.150996
+   (         1, -1.07113e-05) * x <= 0.423955
+   (         1, -0.0503317) * x <= -3.18603
+   (         1, -0.0162863) * x <= -0.753043
+   (         1, -0.00119369) * x <= 0.335995
+   (         1, -0.0178267) * x <= -0.863602
+   (         1, -0.0611698) * x <= -3.95694
+   (         1, -0.00360887) * x <= 0.160189
+
+Overapproximation of achievable values: Polytope with 16 Halfspaces:
+   (         1,          0) * x <= 0.42493
+   (         0,         -1) * x <= -71
+   (         1, -2.62626e-06) * x <= 0.424711
+   (  0.999997, -0.00255074) * x <= 0.237221
+   (         1, -0.000129635) * x <= 0.414976
+   (         1, -0.000646327) * x <= 0.376494
+   (  0.999723, -0.0235467) * x <= -1.27332
+   (  0.999965, -0.00839255) * x <= -0.185525
+   (  0.999853, -0.0171692) * x <= -0.816466
+   (    0.9986, -0.0528903) * x <= -3.36857
+   (  0.999223, -0.0394019) * x <= -2.40712
+   (  0.999984, -0.00559608) * x <= 0.0164955
+   (  0.999492, -0.0318692) * x <= -1.86921
+   (  0.994705,  -0.102768) * x <= -6.9143
+   (  0.983156,  -0.182768) * x <= -12.6018
+   (  0.998908, -0.0467293) * x <= -2.92979
+
+15 Pareto optimal points found:
+   (0.4228861296, 72.79212752 )
+   (0.4158886688, 71.77379135 )
+   (0.4054039053, 71.37255591 )
+   (0.4001557568,  71.2511083 )
+   (0.4098175727,  71.5055091 )
+   (0.3806757798, 71.00000018 )
+   (0.4129610706, 71.60956593 )
+   (0.3871552709, 71.03240562 )
+   (0.3887864405, 71.04362955 )
+   (0.4249014588, 88.33833341 )
+   (0.4247660947, 75.70081715 )
+   (0.424279553, 73.95944835 )
+   (0.4178671931, 71.89527503 )
+   (0.4211441241, 72.30942688 )
+   (0.3940159284, 71.12912094 )
+
+
+Time for model checking: 1951.092s.
+
+Performance statistics:
+  * peak memory usage: 668MB
+  * CPU time: 1945.805s
+  * wallclock time: 1953.017s	</pre>
+</div>
+</body>
+</html>

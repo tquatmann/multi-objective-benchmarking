@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "avoid-mdp.40-0.2.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e4-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-4  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --janiproperty multi --constants N=40,slippery=0.2 --multiobjective:precision 1e-4 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 173.17523789405823,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topoii-abs-e4-g5.avoid-mdp.40-0.2.multi.run1.log"
+}

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "network-virus.3.qual2",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g99",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.99",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --props qual2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.99 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.3076791763305664,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g99.network-virus.3.qual2.run1.log"
+}

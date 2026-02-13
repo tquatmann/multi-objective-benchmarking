@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=2,B=10 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	4.407633066177368
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --props safe_collection_tradeoff -E Unf=2,B=10 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+mars-rover.jani:model: info: mars-rover is an MDP model.
+mars-rover.jani: info: Need 16 bytes per state.
+mars-rover.jani: info: Explored 161818 states for Unf=2, B=10.
+
+Peak memory usage: 251 MB
+Analysis results for mars-rover.jani
+Experiment Unf=2, B=10
+
++ State space exploration
+  State size:         16 bytes
+  States:             161818
+  Transitions:        203798
+  Branches:           308748
+  Rate:               349499 states/s
+  Peak memory:        76.49 MB
+  Final size:         1.23 MB
+  Time (exploration): 0.5 s
+  Time (merging):     0.0 s
+
++ safe_collection_tradeoff
+  WSO instances:       12
+  Time:                3.5 s
+  Under Approximation: ∩{1x + 0y <= 1, 0x + 1y <= 1, 1x + 3.39E-08y <= 1.000000017, 1x + 1.0000000151y <= 1.7723899744, 1x + 1.599504824y <= 2.3687394099, 1x + 1.5000007729y <= 2.2692383367, 1x + 1.0599980927y <= 1.8319443474, 1x + 1.1999817744y <= 1.9710058456, 1x + 1.3806597047y <= 2.1505740137, 1x + 1.334117544y <= 2.1043083737}
+  Over Approximation:  ∩{1x + 0y <= 1.0000021972, 0x + 1y <= 1.0000004824, 1x + 2y <= 2.7692345859, 1x + 0.4615308281y <= 1.3564836526, 1x + 1.0138630832y <= 1.7861510856, 1x + 1.0000000151y <= 1.7723924684, 1x + 1.4266720873y <= 2.1963283223, 1x + 1.5005259009y <= 2.2697663168, 1x + 1.1838367536y <= 1.9549699157, 1x + 1.2928770425y <= 2.0633268839, 1x + 1.0599980927y <= 1.831946558, 1x + 1.3573879946y <= 2.127443406}
+
+  + Pareto Curve Approximation
+    Time: 3.4 s
+
+

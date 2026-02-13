@@ -1,0 +1,169 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants delay=36,deadline=600 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.25 --timemem --statistics
+Repitition:	1
+Wallclock time:	1333.7161748409271
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:11:45 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants 'delay=36,deadline=600' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.25 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 1.204s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	212268
+Transitions: 	481792
+Choices: 	478756
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=600 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Multi-objective Pareto Curve Approximation algorithm terminated after 33 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 33.
+           #checked epochs overall: 19866.
+# checked epochs per weight vector: 602.
+                      overall Time: 1332.120s.
+         Epoch Model building time: 291.540s.
+         Epoch Model checking time: 1035.846s.
+--------------------------------------------------
+Solving multi-objective query took 1332.455s seconds (consisting of 0.329s seconds for preprocessing and 1332.125s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 29 Halfspaces:
+   (         1,          0,   0.583333) * x <= 475.396
+   (         1,          0,   0.557692) * x <= 470.339
+   (         1,          0,   0.576531) * x <= 474.052
+   (      0.05,         -1,  0.0288265) * x <= 22.8354
+   ( 0.0550847,         -1,  0.0307203) * x <= 25.0413
+   ( 0.0481928,         -1,  0.0281124) * x <= 22.0434
+   ( 0.0420164,         -1,  0.0251823) * x <= 19.2416
+   (         1,          0,   0.613636) * x <= 481.449
+   ( 0.0382942,         -1,  0.0234987) * x <= 17.5695
+   ( 0.0483115,         -1,  0.0281287) * x <= 22.0894
+   ( 0.0611354,         -1,  0.0327511) * x <= 27.6229
+   (         0,          0,          1) * x <= 202.25
+   ( 0.0194175,         -1,  0.0145631) * x <= 9.01142
+   (         1,          0,   0.694444) * x <= 497.618
+   (       0.8,          0,          1) * x <= 487.85
+   (         1,          0,   0.540909) * x <= 467.037
+   ( 0.0597826,         -1,   0.032337) * x <= 27.0535
+   (         1,          0,          0) * x <= 365
+   ( 0.0570362,         -1,  0.0313166) * x <= 25.8624
+   (         1,          0,       0.25) * x <= 410
+   (0.00610687,         -1, 0.00763359) * x <= 2.85682
+   (         0,         -1, 0.00440529) * x <= 0.0237454
+   (0.00610687,         -1, 0.00763359) * x <= 2.85682
+   (         1,          0,       0.75) * x <= 508.75
+   (         0,         -1,          0) * x <= -0.851599
+   (         1, -1.76711e-08,       0.25) * x <= 410
+   ( 0.0197493,         -1,  0.0146601) * x <= 9.14981
+   ( 0.0244068,         -1,  0.0169492) * x <= 11.278
+   (         1,          0,   0.535714) * x <= 466.018
+
+Overapproximation of achievable values: Polytope with 33 Halfspaces:
+   (         1,          0,          0) * x <= 365
+   (         0,         -1,          0) * x <= -0.851526
+   (         0,          0,          1) * x <= 202.25
+   (         0,         -1, 0.000336247) * x <= -0.784713
+   (  0.991391,          0,   0.130937) * x <= 385.426
+   (  0.681328,          0,   0.731978) * x <= 391.292
+   (  0.942522,          0,   0.334143) * x <= 405.749
+   ( 0.0025502,  -0.999995, 0.00161031) * x <= 0.384186
+   ( 0.0665684,  -0.996896,  0.0420342) * x <= 31.422
+   ( 0.0200849,  -0.999687,  0.0149092) * x <= 9.32035
+   (  0.024396,  -0.999559,  0.0169417) * x <= 11.2731
+   (   0.82137,          0,   0.570396) * x <= 408.729
+   ( 0.0247803,  -0.999667, 0.00716752) * x <= 9.49848
+   ( 0.0535469,   -0.99809,  0.0308206) * x <= 24.5085
+   ( 0.0474919,  -0.998484,  0.0278283) * x <= 21.7365
+   (  0.864151,          0,   0.503233) * x <= 410.645
+   (  0.888889,          0,   0.518519) * x <= 422.574
+   ( 0.0470812,  -0.998513,   0.027464) * x <= 21.5167
+   ( 0.0488609,  -0.998408,  0.0281698) * x <= 22.2972
+   (         0,   -0.99999, 0.00456616) * x <= 0.056364
+   ( 0.0588194,  -0.997751,  0.0321328) * x <= 26.668
+   (0.000447126,  -0.999994, 0.00344696) * x <= -0.00613644
+   (  0.852323,          0,   0.523016) * x <= 410.35
+   ( 0.0169421,  -0.999771,  0.0130749) * x <= 7.82751
+   (0.00610658,  -0.999952, 0.00763322) * x <= 2.85676
+   (  0.866333,          0,   0.499467) * x <= 410.687
+   (         0,   -0.99999, 0.00440524) * x <= 0.0238175
+   (  0.873364,          0,   0.487068) * x <= 410.777
+   (  0.970143,          0,   0.242536) * x <= 397.758
+   (       0.8,          0,        0.6) * x <= 407
+   (4.95283e-05,  -0.999989, 0.00459104) * x <= 0.079077
+   (  0.624695,          0,   0.780869) * x <= 380.947
+   (  0.880216,          0,   0.474574) * x <= 410.791
+
+17 Pareto optimal points found:
+   (358.9823858, 0.8515985844, 198.6171514 )
+   (360.1874639, 0.8672235844, 197.4999639 )
+   (357.1562139, 0.8672235844, 202.1249639 )
+   (358.4687139, 0.8672235844, 200.3749639 )
+   (358.6640264, 0.8672235844, 200.0937139 )
+   (360.9843389, 0.8672235844, 196.0624639 )
+   (358.8749639, 0.8672235844, 199.7499639 )
+   ( 360.408167, 0.8672235844, 197.1171514 )
+   (360.6347295, 0.8672235844, 196.7109014 )
+   (358.8749639, 0.8515985844, 198.7030889 )
+   (360.9784795, 0.8515985844, 195.5859014 )
+   (360.8671514, 0.8672235844, 196.2812139 )
+   (360.2870733, 0.8515985844, 196.7734014 )
+   (364.9999639, 0.8515985844, 179.9999639 )
+   (360.0190069, 0.8515985844,  197.220667 )
+   (361.2079717, 0.8515985844, 195.1679327 )
+   (356.9999639, 0.8672235844, 202.2499639 )
+
+
+Time for model checking: 1332.455s.
+
+Performance statistics:
+  * peak memory usage: 386MB
+  * CPU time: 1327.580s
+  * wallclock time: 1333.667s
+

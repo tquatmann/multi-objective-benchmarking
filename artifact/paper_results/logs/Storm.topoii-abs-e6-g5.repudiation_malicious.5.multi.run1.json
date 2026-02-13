@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "repudiation_malicious.5.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e6-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5 Unsupported PTA Benchmark.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/repudiation_malicious/repudiation_malicious.jani --janiproperty multi --constants T=5 --multiobjective:precision 1e-6 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.04268193244934082,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	],
+	"log": "Storm.topoii-abs-e6-g5.repudiation_malicious.5.multi.run1.log"
+}

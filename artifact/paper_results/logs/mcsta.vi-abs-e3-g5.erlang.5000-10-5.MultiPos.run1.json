@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "erlang.5000-10-5.MultiPos",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --props MultiPos -E K=5000,R=10,TIME_BOUND=5 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.2402334213256836,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.vi-abs-e3-g5.erlang.5000-10-5.MultiPos.run1.log"
+}

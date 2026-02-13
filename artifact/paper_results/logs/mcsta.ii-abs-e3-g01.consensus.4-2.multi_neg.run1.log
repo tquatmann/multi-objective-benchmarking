@@ -1,0 +1,44 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --props multi_neg -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	3.0360379219055176
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --props multi_neg -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.01 --lp-solver HiGHS
+
+
+
+
+consensus.4.jani:model: info: consensus.4 is an MDP model.
+consensus.4.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.4.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.4.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
+consensus.4.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
+consensus.4.jani: info: Need 16 bytes per state.
+consensus.4.jani: info: Explored 22720 states for K=2.
+
+Peak memory usage: 133 MB
+Analysis results for consensus.4.jani
+Experiment K=2
+
++ State space exploration
+  State size:         16 bytes
+  States:             22720
+  Transitions:        60608
+  Branches:           75296
+  Rate:               70341 states/s
+  Peak memory:        47.67 MB
+  Final size:         0.18 MB
+  Time (exploration): 0.3 s
+  Time (merging):     0.0 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                2.3 s
+  Under Approximation: ∩{1x + 0y <= 0.2944318499, 0x + 1y <= 363.9999999996, 1x + 0.0039682522y <= 1.4444437958, 1x + 6.8E-09y <= 0.2944337042, 1x + 0.0035087717y <= 1.3044721694}
+  Over Approximation:  ∩{1x + 0y <= 0.2944368463, 0x + 1y <= 364.0000049739, 1x + 0.0032295376y <= 1.2240950301, 1x + 0.0038670565y <= 1.4136201038, 1x + 0.0039682522y <= 1.4444473727, 1x + 0.0035087717y <= 1.3044757287}
+
+  + Pareto Curve Approximation
+    Time: 2.3 s
+
+

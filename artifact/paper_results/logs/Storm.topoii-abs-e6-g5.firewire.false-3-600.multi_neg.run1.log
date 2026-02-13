@@ -1,0 +1,77 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants delay=3,deadline=600 --multiobjective:precision 1e-6 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	5.153181791305542
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:07 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire/firewire.false.jani --janiproperty multi_neg --constants 'delay=3,deadline=600' '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 0.037s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4093
+Transitions: 	5585
+Choices: 	5519
+Reward Models:  time_sending, time
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 2 item(s)
+   * (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8))) -> 2 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(R{"time"}max=? [F "done"], Pmin=? [true Urew{"time"}<=600 (((s1 = 8) & (s2 = 7)) | ((s1 = 7) & (s2 = 8)))], R{"time_sending"}max=? [F "done"]) ...
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Epoch model for epoch <_> is cyclic.
+Multi-objective Pareto Curve Approximation algorithm terminated after 7 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 7.
+           #checked epochs overall: 4214.
+# checked epochs per weight vector: 602.
+                      overall Time: 5.072s.
+         Epoch Model building time: 1.170s.
+         Epoch Model checking time: 3.733s.
+--------------------------------------------------
+Solving multi-objective query took 5.076s seconds (consisting of 0.004s seconds for preprocessing and 5.072s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0,          0) * x <= 299
+   (         1,          0,       0.25) * x <= 302.75
+   (         0,          0,          1) * x <= 18
+   (         0,         -1,          0) * x <= -0.931641
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1,          0,          0) * x <= 299
+   (         0,         -1,          0) * x <= -0.931641
+   (         0,          0,          1) * x <= 18
+   (         0,         -1, 0.00069836) * x <= -0.91907
+   (  0.798006,          0,   0.602649) * x <= 248.853
+   (  0.998015,          0,  0.0629736) * x <= 299.351
+   (  0.970143,          0,   0.242536) * x <= 293.711
+
+2 Pareto optimal points found:
+   (298.2499999, 0.9316406972, 17.99999993 )
+   (298.9999999, 0.9316406972, 14.99999993 )
+
+
+Time for model checking: 5.076s.
+
+Performance statistics:
+  * peak memory usage: 64MB
+  * CPU time: 5.106s
+  * wallclock time: 5.119s
+

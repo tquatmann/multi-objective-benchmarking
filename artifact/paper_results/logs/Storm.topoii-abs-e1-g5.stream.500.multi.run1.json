@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "stream.500.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e1-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-1  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/stream/stream.csl multi --constants N=500 --multiobjective:precision 1e-1 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 574.7960407733917,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e1-g5.stream.500.multi.run1.log"
+}

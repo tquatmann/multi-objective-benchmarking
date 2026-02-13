@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "firewire-pta.30-2500.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e4-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-4, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=30,T=2500 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 15.956368923187256,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e4-g5.firewire-pta.30-2500.multi.run1.log"
+}

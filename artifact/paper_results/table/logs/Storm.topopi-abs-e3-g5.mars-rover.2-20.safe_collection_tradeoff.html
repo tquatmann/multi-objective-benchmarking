@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-e3-g5 - mars-rover safe_collection_tradeoff 2-20</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 20</td></tr>
+		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=2,B=20 --multiobjective:precision 1e-3 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">85.403s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">85.403s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:30:43 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants 'Unf=2,B=20' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 11.033s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1376194
+Transitions: 	2580362
+Choices: 	1720242
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 26914 item(s)
+   * exceedTime -> 33970 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 18434 item(s)
+   * done -> 86013 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "safe_collection_tradeoff": multi(Pmax=? [F "valueCollected"], Pmax=? [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1286832 states.
+Final preprocessed model has 1630620 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 73.699s seconds (consisting of 6.034s seconds for preprocessing and 67.664s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (3963491680203338448098/4809364735977177085435,          1) * x <= 131263105727492943779741732523492514671404310393/78796631834250069367767040000000000000000000000
+   (         1,          1) * x <= 7411467349721325213937053/4096000000000000000000000
+   (453492800983428847994855/682291169458338448398266,          1) * x <= 17169767553738273226312490981987147195507739552369/11178658520405417138557190144000000000000000000000
+   (         0,          1) * x <= 1
+   (         1,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (       2/3,        2/3) * x <= 2470489116573775071312351/2048000000000000000000000
+   (228959020555811600575118/26753677556399245634652099, 8917565939442137770690514/8917892518799748544884033) * x <= 157621780918606957273126465654449473155141839471043/156547233244301871599335710720000000000000000000000
+   (228959020555811600575118/402166216862340444647557, 1653144223075307521922632/2010831084311702223237785) * x <= 21107660725563061539704742957691922635649868864159/16472728242681464612763934720000000000000000000000
+   (10846346993148062799808294/11030125657583795526962953, 6015302181673586687928458/33090376972751386580888859) * x <= 76611724916924813828341946594152790461147489677137/67769092040194839717660383232000000000000000000000
+
+4 Pareto optimal points found:
+   (66055172434278379519217539/81920000000000000000000000,                    1 ) approx.    (0.8063375541,           1 )
+   (                   1, 3315467349721325213937053/4096000000000000000000000 ) approx.    (          1, 0.8094402709 )
+   (13347492720747343593523161/16384000000000000000000000, 16293301439803314230401029/16384000000000000000000000 ) approx.    (0.8146663038, 0.9944641992 )
+   (13376348909163206656035771/16384000000000000000000000, 16269520489722094199712441/16384000000000000000000000 ) approx.    (0.8164275457, 0.9930127252 )
+
+
+Time for model checking: 74.126s.
+
+Performance statistics:
+  * peak memory usage: 3645MB
+  * CPU time: 83.306s
+  * wallclock time: 85.212s	</pre>
+</div>
+</body>
+</html>

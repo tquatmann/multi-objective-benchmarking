@@ -1,0 +1,44 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=30,T=7500 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	14.87607717514038
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=30,T=7500 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+firewire-pta.jani:model: info: firewire-pta is a PTA model.
+firewire-pta.jani:variables[3]: info: Expanding variable "w12" into 10 locations in automaton "wire12".
+firewire-pta.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire-pta.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire-pta.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire-pta.jani: info: Need 24 bytes per state.
+firewire-pta.jani: info: Explored 386118 states for delay=30, T=7500.
+
+Peak memory usage: 306 MB
+Analysis results for firewire-pta.jani
+Experiment delay=30, T=7500
+
++ State space exploration
+  State size:         24 bytes
+  States:             386118
+  Transitions:        602140
+  Branches:           604312
+  Rate:               644604 states/s
+  Peak memory:        101.62 MB
+  Final size:         2.95 MB
+  Time (exploration): 0.6 s
+  Time (merging):     0.0 s
+
++ multi
+  WSO instances:       2
+  Time:                13.8 s
+  Under Approximation: ∩{-1x + -0y <= -1, -0x + -1y <= -1}
+  Over Approximation:  ∩{-1x + -0y <= -0.9999997616, -0x + -1y <= -0.9999997616}
+
+  + Pareto Curve Approximation
+    Time: 13.7 s
+
+

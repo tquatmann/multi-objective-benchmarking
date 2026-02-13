@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --props MultiNeg -E K=5000,R=10,TIME_BOUND=5 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.29555177688598633
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --props MultiNeg -E K=5000,R=10,TIME_BOUND=5 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+erlang.jani:model: info: erlang is an MA model.
+erlang.jani:properties[5]: warning: Skipping unsupported property "MultiNeg".
+erlang.jani: error: No properties to check.
+

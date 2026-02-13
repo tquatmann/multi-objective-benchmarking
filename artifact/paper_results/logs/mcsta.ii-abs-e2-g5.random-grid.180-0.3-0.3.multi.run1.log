@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --props multi -E N=180,pover=0.3,pstay=0.3 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-2 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	24.34796404838562
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --props multi -E N=180,pover=0.3,pstay=0.3 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-2 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+random-grid.jani:model: info: random-grid is an MDP model.
+random-grid.jani: info: Need 8 bytes per state.
+random-grid.jani: error: Out of memory.
+

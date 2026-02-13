@@ -1,0 +1,24 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --props quant --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.26882243156433105
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --props quant --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+network-virus.3.jani:model: info: network-virus.3 is an MDP model.
+network-virus.3.jani:variables[3]: info: Expanding variable "s11" into 3 locations in automaton "n11".
+network-virus.3.jani:variables[4]: info: Expanding variable "s21" into 3 locations in automaton "n21".
+network-virus.3.jani:variables[5]: info: Expanding variable "s31" into 3 locations in automaton "n31".
+network-virus.3.jani:variables[6]: info: Expanding variable "s12" into 3 locations in automaton "n12".
+network-virus.3.jani:variables[7]: info: Expanding variable "s22" into 3 locations in automaton "n22".
+network-virus.3.jani:variables[8]: info: Expanding variable "s32" into 3 locations in automaton "n32".
+network-virus.3.jani:variables[9]: info: Expanding variable "s13" into 3 locations in automaton "n13".
+network-virus.3.jani:variables[10]: info: Expanding variable "s23" into 3 locations in automaton "n23".
+network-virus.3.jani:variables[11]: info: Expanding variable "s33" into 3 locations in automaton "n33".
+network-virus.3.jani:properties[2]: warning: Skipping unsupported property "quant".
+network-virus.3.jani: error: No properties to check.
+

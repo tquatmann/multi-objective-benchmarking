@@ -1,0 +1,34 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan-mec/wlan-mec.5.jani --props multi_pos -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	34.021562337875366
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan-mec/wlan-mec.5.jani --props multi_pos -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+wlan-mec.5.jani:model: info: wlan-mec.5 is an MDP model.
+wlan-mec.5.jani:variables[5]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan-mec.5.jani:variables[7]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan-mec.5.jani: info: Need 24 bytes per state.
+wlan-mec.5.jani: info: Explored 12952180 states for COL=0.
+wlan-mec.5.jani: error: Modelling Error: Potentially infinite reward for 'multi_pos' in subproperties: 0, 1
+
+Peak memory usage: 9281 MB
+Analysis results for wlan-mec.5.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             12952180
+  Transitions:        29412920
+  Branches:           55203960
+  Rate:               450464 states/s
+  Peak memory:        3387.81 MB
+  Final size:         101.91 MB
+  Time (exploration): 28.8 s
+  Time (merging):     0.8 s
+
+

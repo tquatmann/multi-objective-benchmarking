@@ -1,0 +1,47 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/wlan-large/converted_wlan-large.K=2.jani --janiproperty MultiPos --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	997.4269094467163
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:47:20 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/pta/wlan-large/converted_wlan-large.K=2.jani --janiproperty MultiPos '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.015s.
+
+Time for model construction: 11.467s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3283371
+Transitions: 	6221633
+Choices: 	6200795
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (success1_seen & success2_seen) -> 2 item(s)
+   * ((bc1 = 2) | (bc2 = 2)) -> 2521541 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "MultiPos": multi(Pmax>=1 [F (success1_seen & success2_seen)], Pmax=? [F ((bc1 = 2) | (bc2 = 2))]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula Pmax>=1 [F (success1_seen & success2_seen)] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 3283370 states.
+Final preprocessed model has 6200794 actions.
+
+WARN  (GmmxxLinearEquationSolver.cpp:140): Iterative solver did not converge within 228 iteration(s).
+WARN  (SparsePcaaQuery.cpp:100): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 1.88819e-16.
+Multi-objective Pareto Curve Approximation algorithm terminated after 44 refinement steps.
+Solving multi-objective query took 985.883s seconds (consisting of 3.719s seconds for preprocessing and 982.163s seconds for analyzing the preprocessed model).
+Result (for initial states): 0.0380625
+Time for model checking: 985.884s.
+
+Performance statistics:
+  * peak memory usage: 2163MB
+  * CPU time: 992.643s
+  * wallclock time: 997.373s
+

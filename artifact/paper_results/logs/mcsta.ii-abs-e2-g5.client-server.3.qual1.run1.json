@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "client-server.3.qual1",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e2-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-2, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --props qual1 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-2 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.23547697067260742,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e2-g5.client-server.3.qual1.run1.log"
+}

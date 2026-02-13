@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g75 - erlang MultiPos 10-10-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/ma/erlang/erlang.jani">erlang</a> <span class="tt">v.3</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">K</span> = 10, <span class="tt">R</span> = 10, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">MultiPos</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiPos --constants K=10,R=10,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">1.582s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">1.582s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:18:37 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/erlang/erlang.jani --janiproperty MultiPos --constants 'K=10,R=10,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.013s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	67
+Transitions: 	73
+Choices: 	70
+Markovian St.: 	34
+Max. Rate: 	10
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * goal -> 38 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	67
+Transitions: 	73
+Choices: 	70
+Markovian St.: 	34
+Max. Rate: 	10
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * goal -> 38 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "MultiPos": multi(Tmin=? [F (goal)], Pmax=? [true U<=5 (goal)]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Final preprocessed model has 12 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 25 states.
+Final preprocessed model has 25 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 1.532s seconds (consisting of 0.000s seconds for preprocessing and 1.531s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0) * x <= -2
+   (         0,          1) * x <= 0.980676
+   (        -1, 2.2642e-16) * x <= -2
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -2
+   (         0,          1) * x <= 0.981201
+
+2 Pareto optimal points found:
+   (          2, 0.9806755538 )
+   (          2,           0 )
+
+
+Time for model checking: 1.532s.
+
+Performance statistics:
+  * peak memory usage: 62MB
+  * CPU time: 1.552s
+  * wallclock time: 1.547s	</pre>
+</div>
+</body>
+</html>

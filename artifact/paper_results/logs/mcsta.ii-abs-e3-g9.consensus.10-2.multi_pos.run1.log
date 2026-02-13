@@ -1,0 +1,25 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.10.jani --props multi_pos -E K=2 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	128.1954743862152
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.10.jani --props multi_pos -E K=2 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+consensus.10.jani:model: info: consensus.10 is an MDP model.
+consensus.10.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.10.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.10.jani:variables[10]: info: Expanding variable "pc3" into 4 locations in automaton "process3".
+consensus.10.jani:variables[12]: info: Expanding variable "pc4" into 4 locations in automaton "process4".
+consensus.10.jani:variables[14]: info: Expanding variable "pc5" into 4 locations in automaton "process5".
+consensus.10.jani:variables[16]: info: Expanding variable "pc6" into 4 locations in automaton "process6".
+consensus.10.jani:variables[18]: info: Expanding variable "pc7" into 4 locations in automaton "process7".
+consensus.10.jani:variables[20]: info: Expanding variable "pc8" into 4 locations in automaton "process8".
+consensus.10.jani:variables[22]: info: Expanding variable "pc9" into 4 locations in automaton "process9".
+consensus.10.jani:variables[24]: info: Expanding variable "pc10" into 4 locations in automaton "process10".
+consensus.10.jani: info: Need 40 bytes per state.
+consensus.10.jani: error: Out of memory.
+

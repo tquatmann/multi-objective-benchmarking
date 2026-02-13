@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=64,MAX=12,TD=32,TIME_BOUND=256 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	58.97495102882385
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=64,MAX=12,TD=32,TIME_BOUND=256 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-4 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+brp-pta.jani:model: info: brp-pta is a PTA model.
+brp-pta.jani: info: Need 48 bytes per state.
+brp-pta.jani: error: Out of memory.
+

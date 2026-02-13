@@ -1,0 +1,21 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	2700.0232088565826
+Return code:	None
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --props multi_neg -E COL=0 --unsafe -D -S Memory --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan.6.jani:model: info: wlan.6 is an MDP model.
+wlan.6.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.6.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.6.jani: info: Need 24 bytes per state.
+wlan.6.jani: info: Explored 5007548 states for COL=0.
+wlan.6.jani: warning: Multi-objective model checking with value iteration provides unsound results
+
+
+----------
+Computation aborted after 2700.0232088565826 seconds since the total time limit of 2700 seconds was exceeded.

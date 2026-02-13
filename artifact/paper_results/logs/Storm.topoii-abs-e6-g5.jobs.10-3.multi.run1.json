@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "jobs.10-3.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e6-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --prism $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.10-3.ma --prop $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.csl multi --multiobjective:precision 1e-6 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2700.00155043602,
+	"timeout": true,
+	"execution-error": false,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topoii-abs-e6-g5.jobs.10-3.multi.run1.log"
+}

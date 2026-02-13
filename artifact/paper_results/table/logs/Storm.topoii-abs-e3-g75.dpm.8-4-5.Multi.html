@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g75 - dpm Multi 8-4-5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/ma/dpm/dpm.jani">dpm</a> <span class="tt">v.3</span> (MA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 8, <span class="tt">C</span> = 4, <span class="tt">TIME_BOUND</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">Multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=8,C=4,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">191.045s</td></tr>
+		<tr><td>Considered runtime:</td><td style="color: red">None</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">-9</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:57:05 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=8,C=4,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 141.825s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	52265625
+Transitions: 	105687500
+Choices: 	61937500
+Markovian St.: 	14218750
+Max. Rate: 	8.4
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * (((((((((((8 < 1) | (items1 = 4)) & ((8 < 2) | (items2 = 4))) & ((8 < 3) | (items3 = 4))) & ((8 < 4) | (items4 = 4))) & ((8 < 5) | (items5 = 4))) & ((8 < 6) | (items6 = 4))) & ((8 < 7) | (items7 = 4))) & ((8 < 8) | (items8 = 4))) & ((8 < 9) | (items9 = 4))) & ((8 < 10) | (items10 = 4))) -> 153 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	52265625
+Transitions: 	105687500
+Choices: 	61937500
+Markovian St.: 	14218750
+Max. Rate: 	8.4
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+   * (((((((((((8 < 1) | (items1 = 4)) & ((8 < 2) | (items2 = 4))) & ((8 < 3) | (items3 = 4))) & ((8 < 4) | (items4 = 4))) & ((8 < 5) | (items5 = 4))) & ((8 < 6) | (items6 = 4))) & ((8 < 7) | (items7 = 4))) & ((8 < 8) | (items8 = 4))) & ((8 < 9) | (items9 = 4))) & ((8 < 10) | (items10 = 4))) -> 153 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [F (((((((((((8 < 1) | (items1 = 4)) & ((8 < 2) | (items2 = 4))) & ((8 < 3) | (items3 = 4))) & ((8 < 4) | (items4 = 4))) & ((8 < 5) | (items5 = 4))) & ((8 < 6) | (items6 = 4))) & ((8 < 7) | (items7 = 4))) & ((8 < 8) | (items8 = 4))) & ((8 < 9) | (items9 = 4))) & ((8 < 10) | (items10 = 4)))], Tmin=? [F (((((((((((8 < 1) | (items1 = 4)) & ((8 < 2) | (items2 = 4))) & ((8 < 3) | (items3 = 4))) & ((8 < 4) | (items4 = 4))) & ((8 < 5) | (items5 = 4))) & ((8 < 6) | (items6 = 4))) & ((8 < 7) | (items7 = 4))) & ((8 < 8) | (items8 = 4))) & ((8 < 9) | (items9 = 4))) & ((8 < 10) | (items10 = 4)))], Pmax=? [true U<=5 (((((((((((8 < 1) | (items1 = 4)) & ((8 < 2) | (items2 = 4))) & ((8 < 3) | (items3 = 4))) & ((8 < 4) | (items4 = 4))) & ((8 < 5) | (items5 = 4))) & ((8 < 6) | (items6 = 4))) & ((8 < 7) | (items7 = 4))) & ((8 < 8) | (items8 = 4))) & ((8 < 9) | (items9 = 4))) & ((8 < 10) | (items10 = 4)))], R{"((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)"}max=? [LRA[time]]) ...	</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=360,T=5000 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	78.63985967636108
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=360,T=5000 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.9 --lp-solver HiGHS
+
+
+
+
+firewire-pta.jani:model: info: firewire-pta is a PTA model.
+firewire-pta.jani:variables[3]: info: Expanding variable "w12" into 10 locations in automaton "wire12".
+firewire-pta.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire-pta.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire-pta.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire-pta.jani: info: Need 24 bytes per state.
+firewire-pta.jani: error: Out of memory.
+

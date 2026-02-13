@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "csma.2-6.multi_pos",
+	"tool": "Storm",
+	"configuration-id": "topovi-abs-e3-g5",
+	"invocation-note": "(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.2-6.jani --janiproperty multi_pos --multiobjective:precision 1e-3 abs --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.5518767833709717,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topovi-abs-e3-g5.csma.2-6.multi_pos.run1.log"
+}

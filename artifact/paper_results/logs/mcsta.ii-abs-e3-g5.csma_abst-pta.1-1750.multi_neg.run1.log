@@ -1,0 +1,17 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/csma_abst-pta/csma_abst-pta.jani --props multi_neg -E K=1,T=1750 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.27823781967163086
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/csma_abst-pta/csma_abst-pta.jani --props multi_neg -E K=1,T=1750 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma_abst-pta.jani:model: info: csma_abst-pta is a PTA model.
+csma_abst-pta.jani:automata[0].variables[0]: info: Expanding variable "b" into 3 locations in automaton "bus".
+csma_abst-pta.jani:variables[1]: info: Expanding variable "s1" into 5 locations in automaton "station1".
+csma_abst-pta.jani:variables[2]: info: Expanding variable "s2" into 5 locations in automaton "station2".
+csma_abst-pta.jani:automata[0].edges[6].guard.exp.right: error: Open clock constraints are not allowed.
+

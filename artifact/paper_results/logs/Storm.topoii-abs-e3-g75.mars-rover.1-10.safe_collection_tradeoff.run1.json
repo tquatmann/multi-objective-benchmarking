@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "mars-rover.1-10.safe_collection_tradeoff",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g75",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=1,B=10 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.09906506538391113,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e3-g75.mars-rover.1-10.safe_collection_tradeoff.run1.log"
+}

@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.7469513416290283
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+brp-pta.jani:model: info: brp-pta is a PTA model.
+brp-pta.jani: info: Need 40 bytes per state.
+brp-pta.jani: info: Explored 3959 states for N=16, MAX=2, TD=1, TIME_BOUND=64.
+
+Peak memory usage: 67 MB
+Analysis results for brp-pta.jani
+Experiment N=16, MAX=2, TD=1, TIME_BOUND=64
+
++ State space exploration
+  State size:         40 bytes
+  States:             3959
+  Transitions:        4244
+  Branches:           4593
+  Rate:               67102 states/s
+  Peak memory:        53.45 MB
+  Final size:         0.03 MB
+  Time (exploration): 0.1 s
+  Time (merging):     0.0 s
+
++ Multi
+  WSO instances:       6
+  Time:                0.3 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004233334, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 8E-06, 1*x_1 + 0.0868238526*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.00042563, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 2.64531E-05, 1*x_1 + 0*x_2 + 0.2375035114*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004673168, 1*x_1 + 0.0868238621*x_2 + 0.2375034833*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004696134, 0*x_1 + 1*x_2 + 2.7354636032*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.000533035, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0001851912, 1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0.0011547084*x_5 + 0*x_6 <= -0.0007308863, 1*x_1 + 0.0868238558*x_2 + 0*x_3 + 0*x_4 + -0.0011547083*x_5 + 0*x_6 <= -0.0007285896, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0.0132994337*x_5 + 0*x_6 <= -0.0132673525, 1*x_1 + 0*x_2 + 0.2375034644*x_3 + 0*x_4 + -0.0011547083*x_5 + 0*x_6 <= -0.0006869028, 1*x_1 + 0.0868238642*x_2 + 0.2375034929*x_3 + 0*x_4 + -0.0011547085*x_5 + 0*x_6 <= -0.0006846064, 0*x_1 + 1*x_2 + 2.7354629845*x_3 + 0*x_4 + -0.0132994339*x_5 + 0*x_6 <= -0.0127607708, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0.0048618591*x_5 + 0*x_6 <= -0.0046746104, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995766666, 1*x_1 + 0.08682388*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.00042563, 1*x_1 + 0.0868238454*x_2 + 0.2375034385*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004696134, 0*x_1 + 1*x_2 + 2.7354631892*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.000533035, 1*x_1 + 0.0868238886*x_2 + 0*x_3 + 0*x_4 + -0.0011547086*x_5 + 0*x_6 <= -0.0007285899, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0.0132994395*x_5 + 0*x_6 <= -0.0132673582, 1*x_1 + 0*x_2 + 0.2375035037*x_3 + 0*x_4 + -0.0011547085*x_5 + 0*x_6 <= -0.000686903, 1*x_1 + 0.0868238712*x_2 + 0.2375034914*x_3 + 0*x_4 + -0.0011547084*x_5 + 0*x_6 <= -0.0006846063, 0*x_1 + 1*x_2 + 2.735463171*x_3 + 0*x_4 + -0.0132994333*x_5 + 0*x_6 <= -0.0127607701, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0.0048618594*x_5 + 0*x_6 <= -0.0046746107, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 4.5E-09*x_6 <= -0.9995766599, 1*x_1 + 0*x_2 + 0.237503477*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004673168, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 1*x_6 <= 33.4731564508}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0005644599, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0002734023, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0002474202, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 3.88687E-05, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995457985, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 1*x_6 <= 33.4732356699}
+
+  + Pareto Curve Approximation
+    Time: 0.3 s
+
+

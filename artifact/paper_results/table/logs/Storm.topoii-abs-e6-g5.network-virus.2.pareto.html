@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e6-g5 - network-virus pareto 2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e6-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/network-virus/network-virus.2.jani">network-virus</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">pareto</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e6-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.2.jani --janiproperty pareto --multiobjective:precision 1e-6 abs --sound --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">0.185s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">0.185s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:25:03 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.2.jani --janiproperty pareto '--multiobjective:precision' 1e-6 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.016s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	80
+Transitions: 	569
+Choices: 	393
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "pareto": multi(R{"withvirus"}max=? [LRA], R{"clean"}max=? [LRA]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 80 states.
+Final preprocessed model has 393 actions.
+Found 2 end components that are relevant for LRA-analysis.
+66 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 4 refinement steps.
+Solving multi-objective query took 0.130s seconds (consisting of 0.000s seconds for preprocessing and 0.129s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         0,          1) * x <= 0.170732
+   (4.01967e-11,          1) * x <= 0.170732
+   (0.00156574,          1) * x <= 0.175696
+   (  0.205882,          1) * x <= 0.823529
+   (         1,          0) * x <= 4
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         1,          0) * x <= 4
+   (         0,          1) * x <= 0.170732
+   ( 0.0602352,   0.998184) * x <= 0.361412
+   (  0.201653,   0.979457) * x <= 0.806611
+
+4 Pareto optimal points found:
+   (3.999999956,           0 )
+   (3.170731505, 0.1707316619 )
+   (3.170730964, 0.1707316627 )
+   (1.170731663, 0.1707316628 )
+
+
+Time for model checking: 0.130s.
+
+Performance statistics:
+  * peak memory usage: 61MB
+  * CPU time: 0.162s
+  * wallclock time: 0.149s	</pre>
+</div>
+</body>
+</html>

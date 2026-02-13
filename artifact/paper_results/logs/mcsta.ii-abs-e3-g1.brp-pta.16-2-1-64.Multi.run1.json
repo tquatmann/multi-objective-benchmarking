@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "brp-pta.16-2-1-64.Multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g1",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.1",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.6655592918395996,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g1.brp-pta.16-2-1-64.Multi.run1.log"
+}

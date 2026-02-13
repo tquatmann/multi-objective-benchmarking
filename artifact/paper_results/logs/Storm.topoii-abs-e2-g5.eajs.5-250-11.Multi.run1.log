@@ -1,0 +1,63 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --janiproperty Multi --constants energy_capacity=250,B=11 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	143.9761402606964
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 22:09:28 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/eajs/eajs.5.jani --janiproperty Multi --constants 'energy_capacity=250,B=11' '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 28.679s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	3049471
+Transitions: 	6977654
+Choices: 	4256193
+Reward Models:  utilityLocal
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (battery_load = 0) -> 13476 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(R{"utilityLocal"}max=? [F (battery_load = 0)], Pmax=? [true Urew{"utilityLocal"}>=11 (battery_load = 0)]) ...
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+--------------------------------------------------
+Statistics:
+--------------------------------------------------
+           #checked weight vectors: 2.
+           #checked epochs overall: 24.
+# checked epochs per weight vector: 12.
+                      overall Time: 112.185s.
+         Epoch Model building time: 7.556s.
+         Epoch Model checking time: 27.508s.
+--------------------------------------------------
+Solving multi-objective query took 115.233s seconds (consisting of 3.044s seconds for preprocessing and 112.189s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 10.0321
+   (         0,          1) * x <= 0.0330118
+   (0.000313539,          1) * x <= 0.0359497
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 10.0338
+   (         0,          1) * x <= 0.0347796
+
+2 Pareto optimal points found:
+   (9.370117199, 0.03301183585 )
+   ( 10.0320568, 0.03280429208 )
+
+
+Time for model checking: 115.234s.
+
+Performance statistics:
+  * peak memory usage: 2276MB
+  * CPU time: 142.450s
+  * wallclock time: 143.928s
+

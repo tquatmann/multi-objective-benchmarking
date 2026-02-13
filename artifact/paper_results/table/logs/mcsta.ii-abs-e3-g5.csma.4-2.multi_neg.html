@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g5 - csma multi_neg 4-2</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/csma/csma.4-2.jani">csma</a> <span class="tt">v.2</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 4, <span class="tt">K</span> = 2</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi_neg</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">22.740s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">22.740s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-2.jani --props multi_neg --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+csma.4-2.jani:model: info: csma.4-2 is an MDP model.
+csma.4-2.jani: info: Need 32 bytes per state.
+csma.4-2.jani: info: Explored 1135071 states.
+
+Peak memory usage: 775 MB
+Analysis results for csma.4-2.jani
+
++ State space exploration
+  State size:         32 bytes
+  States:             1135071
+  Transitions:        1227341
+  Branches:           1962509
+  Rate:               641646 states/s
+  Peak memory:        231.56 MB
+  Final size:         8.80 MB
+  Time (exploration): 1.8 s
+  Time (merging):     0.1 s
+
++ multi_neg
+  WSO instances:       6
+  Time:                20.5 s
+  Under Approximation: ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0926518244, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2121690937, -1*x_1 + -0.0037915434*x_2 + 0*x_3 <= -0.0947705166, -1*x_1 + -0*x_2 + 354984.4696677623*x_3 <= 50838095.756934896, -0*x_1 + -1*x_2 + 1200.3827912219*x_3 <= 171909.0675887925, -1*x_1 + -430.2189882807*x_2 + 0*x_3 <= -153.0820774896, -0*x_1 + -1*x_2 + 0*x_3 <= -0.3555759388, -1*x_1 + -0*x_2 + 9.64729E-05*x_3 <= -0.0796405624, -1*x_1 + -0*x_2 + 0.0367960782*x_3 <= 5.1630893311}
+  Over Approximation:  ∩{-1*x_1 + -0*x_2 + 0*x_3 <= -0.0924505139, -0*x_1 + -1*x_2 + 0*x_3 <= -0.35546875, -0*x_1 + -0*x_2 + 1*x_3 <= 143.2123623815, -1*x_1 + -0*x_2 + 0.0055262415*x_3 <= 0.6962117867, -1*x_1 + -0*x_2 + 0.1269968907*x_3 <= 18.0811241438, -1*x_1 + -0*x_2 + 0.0367959356*x_3 <= 5.1632612355}
+
+  + Pareto Curve Approximation
+    Time: 20.2 s	</pre>
+</div>
+</body>
+</html>

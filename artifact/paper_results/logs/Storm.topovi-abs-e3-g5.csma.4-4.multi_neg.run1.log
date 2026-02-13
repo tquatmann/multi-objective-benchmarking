@@ -1,0 +1,32 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-4.jani --janiproperty multi_neg --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	693.977869272232
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:22:39 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.4-4.jani --janiproperty multi_neg '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.004s.
+
+Time for model construction: 660.840s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	133301572
+Transitions: 	258474290
+Choices: 	135347434
+Reward Models:  time
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * all_delivered -> 17 item(s)
+   * collision_max_backoff -> 259204 item(s)
+   * ((min((min(((s4 = 4) ? cd4 : 5), ((s2 = 4) ? cd2 : 5))), (min(((s3 = 4) ? cd3 : 5), ((s1 = 4) ? cd1 : 5))))) < 4) -> 5444464 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmin=? [(!"collision_max_backoff") U "all_delivered"], Pmin=? [F ((min((min(((s4 = 4) ? cd4 : 5), ((s2 = 4) ? cd2 : 5))), (min(((s3 = 4) ? cd3 : 5), ((s1 = 4) ? cd1 : 5))))) < 4)], R{"time"}max=? [F "all_delivered"]) ...
+

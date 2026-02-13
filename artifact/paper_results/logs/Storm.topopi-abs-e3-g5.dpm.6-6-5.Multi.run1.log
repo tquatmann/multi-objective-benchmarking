@@ -1,0 +1,57 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=6,C=6,TIME_BOUND=5 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	1357.850772857666
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:17:35 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=6,C=6,TIME_BOUND=5' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+WARN  (storm-cli.cpp:25): The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.
+Time for model construction: 1348.522s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	10537989
+Transitions: 	20802264
+Choices: 	12331536
+Markovian St.: 	2621892
+Max. Rate: 	6
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((6 < 1) | (items1 = 6)) & ((6 < 2) | (items2 = 6))) & ((6 < 3) | (items3 = 6))) & ((6 < 4) | (items4 = 6))) & ((6 < 5) | (items5 = 6))) & ((6 < 6) | (items6 = 6))) & ((6 < 7) | (items7 = 6))) & ((6 < 8) | (items8 = 6))) & ((6 < 9) | (items9 = 6))) & ((6 < 10) | (items10 = 6))) -> 105 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	10537989
+Transitions: 	20802264
+Choices: 	12331536
+Markovian St.: 	2621892
+Max. Rate: 	6
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((6 < 1) | (items1 = 6)) & ((6 < 2) | (items2 = 6))) & ((6 < 3) | (items3 = 6))) & ((6 < 4) | (items4 = 6))) & ((6 < 5) | (items5 = 6))) & ((6 < 6) | (items6 = 6))) & ((6 < 7) | (items7 = 6))) & ((6 < 8) | (items8 = 6))) & ((6 < 9) | (items9 = 6))) & ((6 < 10) | (items10 = 6))) -> 105 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [F (((((((((((6 < 1) | (items1 = 6)) & ((6 < 2) | (items2 = 6))) & ((6 < 3) | (items3 = 6))) & ((6 < 4) | (items4 = 6))) & ((6 < 5) | (items5 = 6))) & ((6 < 6) | (items6 = 6))) & ((6 < 7) | (items7 = 6))) & ((6 < 8) | (items8 = 6))) & ((6 < 9) | (items9 = 6))) & ((6 < 10) | (items10 = 6)))], Tmin=? [F (((((((((((6 < 1) | (items1 = 6)) & ((6 < 2) | (items2 = 6))) & ((6 < 3) | (items3 = 6))) & ((6 < 4) | (items4 = 6))) & ((6 < 5) | (items5 = 6))) & ((6 < 6) | (items6 = 6))) & ((6 < 7) | (items7 = 6))) & ((6 < 8) | (items8 = 6))) & ((6 < 9) | (items9 = 6))) & ((6 < 10) | (items10 = 6)))], Pmax=? [true U<=5 (((((((((((6 < 1) | (items1 = 6)) & ((6 < 2) | (items2 = 6))) & ((6 < 3) | (items3 = 6))) & ((6 < 4) | (items4 = 6))) & ((6 < 5) | (items5 = 6))) & ((6 < 6) | (items6 = 6))) & ((6 < 7) | (items7 = 6))) & ((6 < 8) | (items8 = 6))) & ((6 < 9) | (items9 = 6))) & ((6 < 10) | (items10 = 6)))], R{"((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)"}max=? [LRA[time]]) ...
+ERROR (model-handling.h:1064): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 7243MB
+  * CPU time: 1351.017s
+  * wallclock time: 1355.750s
+

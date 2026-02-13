@@ -1,0 +1,50 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.5.jani --janiproperty qual2 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics
+Repitition:	1
+Wallclock time:	0.17644119262695312
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:40:30 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.5.jani --janiproperty qual2 '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.01 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.039s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4864
+Transitions: 	21121
+Choices: 	16321
+Reward Models:  grants5, grants4, grants3, grants2, grants1
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "qual2": multi(R{"grants1"}max>=3/100 [LRA], R{"grants2"}max>=(7 / 25) [LRA], R{"grants3"}max>=(7 / 250) [LRA], R{"grants4"}max>=7/2500 [LRA], R{"grants5"}max>=7/25000 [LRA]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants1"}max>=3/100 [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants2"}max>=(7 / 25) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants3"}max>=(7 / 250) [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants4"}max>=7/2500 [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"grants5"}max>=7/25000 [LRA] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 4833 states.
+Final preprocessed model has 16241 actions.
+Found 782 end components that are relevant for LRA-analysis.
+4622 states lie on such an end component.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 0.094s seconds (consisting of 0.008s seconds for preprocessing and 0.085s seconds for analyzing the preprocessed model).
+Result (for initial states): false
+
+Time for model checking: 0.094s.
+
+Performance statistics:
+  * peak memory usage: 65MB
+  * CPU time: 0.143s
+  * wallclock time: 0.137s
+

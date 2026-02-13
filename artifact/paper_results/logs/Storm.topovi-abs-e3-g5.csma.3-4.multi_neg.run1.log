@@ -1,0 +1,65 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --janiproperty multi_neg --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	47.75344800949097
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:58:39 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/csma/csma.3-4.jani --janiproperty multi_neg '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 5.635s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1460287
+Transitions: 	2396727
+Choices: 	1471059
+Reward Models:  time
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * collision_max_backoff -> 1427 item(s)
+   * all_delivered -> 13 item(s)
+   * init -> 1 item(s)
+   * ((min((min(((s1 = 4) ? cd1 : 5), ((s2 = 4) ? cd2 : 5))), ((s3 = 4) ? cd3 : 5))) < 4) -> 51876 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmin=? [(!"collision_max_backoff") U "all_delivered"], Pmin=? [F ((min((min(((s1 = 4) ? cd1 : 5), ((s2 = 4) ? cd2 : 5))), ((s3 = 4) ? cd3 : 5))) < 4)], R{"time"}max=? [F "all_delivered"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 2355011 states.
+Final preprocessed model has 2370785 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 42.062s seconds (consisting of 3.214s seconds for preprocessing and 38.848s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         0,          0,          1) * x <= 116.818
+   (        -1,          0, 7.02632e-17) * x <= -0.904715
+   (         0,         -1,          0) * x <= -0.989547
+   (-0.00762682,         -1,          0) * x <= -0.996523
+   (        -1,          0,          0) * x <= -0.904715
+   (        -1, -1.2857e-12,          0) * x <= -0.904715
+   (         0,         -1, 2.27566e-05) * x <= -0.986964
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (        -1,          0,          0) * x <= -0.904475
+   (         0,         -1,          0) * x <= -0.989306
+   (         0,          0,          1) * x <= 116.818
+
+3 Pareto optimal points found:
+   (0.9146750996, 0.9895466544, 113.4802929 )
+   (0.9047154873, 0.9897089659, 115.2381389 )
+   (0.9047154873, 0.9896226146, 116.8182311 )
+
+
+Time for model checking: 42.063s.
+
+Performance statistics:
+  * peak memory usage: 1429MB
+  * CPU time: 47.109s
+  * wallclock time: 47.705s
+

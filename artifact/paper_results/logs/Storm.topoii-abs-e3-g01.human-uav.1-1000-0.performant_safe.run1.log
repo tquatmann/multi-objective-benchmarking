@@ -1,0 +1,78 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe --constants Unf=1,B=1000,COUNTER=0 --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.01 --timemem --statistics
+Repitition:	1
+Wallclock time:	6.536515474319458
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:17:16 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe --constants 'Unf=1,B=1000,COUNTER=0' '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.01 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.006s.
+
+Time for model construction: 2.159s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	389554
+Transitions: 	2100412
+Choices: 	696780
+Reward Models:  ROZ
+State Labels: 	4 labels
+   * init -> 1 item(s)
+   * timeExceeded -> 0 item(s)
+   * deadlock -> 10228 item(s)
+   * mission -> 232276 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "performant_safe": multi(Pmax=? [F ((!"timeExceeded") & "mission")], R{"ROZ"}min=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 191854 states.
+Final preprocessed model has 338211 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 10 refinement steps.
+Solving multi-objective query took 4.332s seconds (consisting of 0.500s seconds for preprocessing and 3.831s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (  0.985671,         -1) * x <= 0.426558
+   (         1,  -0.354791) * x <= 0.798908
+   (  0.790092,         -1) * x <= 0.232561
+   (  0.779558,         -1) * x <= 0.228651
+   (         1,  -0.037956) * x <= 0.975705
+   (         1, -0.00602936) * x <= 0.994425
+   (  0.708862,         -1) * x <= 0.205827
+   (         0,         -1) * x <= 0
+   (         1,          0) * x <= 0.99999
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0) * x <= 0.99999
+   (         0,         -1) * x <= 0
+   (  0.983259,  -0.182212) * x <= 0.87852
+   (  0.488441,  -0.872597) * x <= 0.141825
+   (  0.619802,  -0.784758) * x <= 0.182419
+   (  0.600586,   -0.79956) * x <= 0.175486
+   (  0.622207,  -0.782853) * x <= 0.185712
+   (  0.809975,  -0.586464) * x <= 0.481104
+   (         1, -0.000641734) * x <= 0.999397
+   (  0.999964, -0.00850468) * x <= 0.992937
+
+8 Pareto optimal points found:
+   (0.2903623582,           0 )
+   (0.999990063, 0.923070808 )
+   (0.9979596663, 0.5863190658 )
+   (0.3228475159, 0.02302749926 )
+   (0.3711941483, 0.06071650447 )
+   (0.9968852421, 0.5580119453 )
+   (0.9919072088, 0.551136704 )
+   (0.9958112346, 0.5549847902 )
+
+
+Time for model checking: 4.332s.
+
+Performance statistics:
+  * peak memory usage: 258MB
+  * CPU time: 6.442s
+  * wallclock time: 6.502s
+

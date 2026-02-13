@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "dpm.4-4-5.Multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g25",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.25",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --props Multi -E N=4,C=4,TIME_BOUND=5 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.25 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.28339076042175293,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g25.dpm.4-4-5.Multi.run1.log"
+}

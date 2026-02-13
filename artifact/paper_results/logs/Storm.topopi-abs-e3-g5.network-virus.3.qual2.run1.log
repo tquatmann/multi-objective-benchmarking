@@ -1,0 +1,41 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --janiproperty qual2 --multiobjective:precision 1e-3 abs --exact --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.1905562877655
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:25:58 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.3.jani --janiproperty qual2 '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 1.994s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	19682
+Transitions: 	282106
+Choices: 	170578
+Reward Models:  withvirus, clean
+State Labels: 	2 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "qual2": multi(R{"withvirus"}max>=41/5 [LRA], R{"clean"}max>=3/20 [LRA]) ...
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"withvirus"}max>=41/5 [LRA] ignored as the formula also specifies a threshold.
+WARN  (SparseMultiObjectivePreprocessor.cpp:305): Optimization direction of formula R{"clean"}max>=3/20 [LRA] ignored as the formula also specifies a threshold.
+Weight Vector Checker Statistics:
+Final preprocessed model has 19682 states.
+Final preprocessed model has 170578 actions.
+Found 2 end components that are relevant for LRA-analysis.
+19172 states lie on such an end component.
+
+ERROR (SparseNondeterministicInfiniteHorizonHelper.cpp:111): Scheduler generation not supported for the chosen LRA method. Try value-iteration.
+
+
+----------
+Computation aborted after 2700.1905562877655 seconds since the total time limit of 2700 seconds was exceeded.

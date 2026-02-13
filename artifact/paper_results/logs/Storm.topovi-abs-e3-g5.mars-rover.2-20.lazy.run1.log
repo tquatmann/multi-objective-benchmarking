@@ -1,0 +1,54 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants Unf=2,B=20 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	15.737158298492432
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 20:04:40 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty lazy --constants 'Unf=2,B=20' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 5.681s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	1376194
+Transitions: 	2580362
+Choices: 	1720242
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "lazy": multi(R{"time"}min=? [C], R{"energy"}min=? [C]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 1290181 states.
+Final preprocessed model has 1634229 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 9.998s seconds (consisting of 1.040s seconds for preprocessing and 8.958s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -4.41942e-05
+   (         0,         -1) * x <= -4.41942e-05
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= 0.000176777
+   (         0,         -1) * x <= 0.000176777
+
+1 Pareto optimal points found:
+   (4.419417382e-05, 4.419417382e-05 )
+
+
+Time for model checking: 9.999s.
+
+Performance statistics:
+  * peak memory usage: 791MB
+  * CPU time: 15.482s
+  * wallclock time: 15.688s
+

@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "wlan.6-0.multi_neg",
+	"tool": "mcsta",
+	"configuration-id": "vi-abs-e3-g5",
+	"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --props multi_neg -E COL=0 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2700.0232088565826,
+	"timeout": true,
+	"execution-error": false,
+	"return-codes": [
+		-9
+	],
+	"log": "mcsta.vi-abs-e3-g5.wlan.6-0.multi_neg.run1.log"
+}

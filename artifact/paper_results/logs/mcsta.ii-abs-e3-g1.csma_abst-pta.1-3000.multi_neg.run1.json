@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "csma_abst-pta.1-3000.multi_neg",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e3-g1",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.1",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/csma_abst-pta/csma_abst-pta.jani --props multi_neg -E K=1,T=3000 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.24934768676757812,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e3-g1.csma_abst-pta.1-3000.multi_neg.run1.log"
+}

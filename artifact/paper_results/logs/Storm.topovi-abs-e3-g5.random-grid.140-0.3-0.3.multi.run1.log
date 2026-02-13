@@ -1,0 +1,39 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants N=140,pover=0.3,pstay=0.3 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	2700.0521726608276
+Return code:	None
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:03:44 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/random-grid/random-grid.jani --janiproperty multi --constants 'N=140,pover=0.3,pstay=0.3' '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 15.027s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	2744000
+Transitions: 	49039200
+Choices: 	16464000
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * ((x != (140 - 1)) & (y != (140 - 2))) -> 2704940 item(s)
+   * init -> 1 item(s)
+   * (((x = 140) & (y = 140)) & (z = 140)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi": multi(Pmax=? [((x != (140 - 1)) & (y != (140 - 2))) U (((x = 140) & (y = 140)) & (z = 140))], Tmin=? [F (((x = 140) & (y = 140)) & (z = 140))]) ...
+WARN  (StandardPcaaWeightVectorChecker.cpp:48): There might be infinite reward for some scheduler. Multi-objective model checking restricts to schedulers that yield finite reward for all objectives. Be aware that solutions yielding infinite reward are discarded.
+Weight Vector Checker Statistics:
+Final preprocessed model has 5448939 states.
+Final preprocessed model has 32693629 actions.
+
+
+
+----------
+Computation aborted after 2700.0521726608276 seconds since the total time limit of 2700 seconds was exceeded.

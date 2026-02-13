@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "avoid-mdp.40-0.0.multi",
+	"tool": "mcsta",
+	"configuration-id": "ii-abs-e5-g5",
+	"invocation-note": "Interval iteration with mo-epsilon=10^-5, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --props multi -E N=40,slippery=0.0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 45.553669452667236,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "mcsta.ii-abs-e5-g5.avoid-mdp.40-0.0.multi.run1.log"
+}

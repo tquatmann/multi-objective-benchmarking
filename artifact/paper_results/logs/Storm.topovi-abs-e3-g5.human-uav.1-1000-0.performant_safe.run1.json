@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "human-uav.1-1000-0.performant_safe",
+	"tool": "Storm",
+	"configuration-id": "topovi-abs-e3-g5",
+	"invocation-note": "(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/human-uav/human-uav.jani --janiproperty performant_safe --constants Unf=1,B=1000,COUNTER=0 --multiobjective:precision 1e-3 abs --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 7.012570381164551,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topovi-abs-e3-g5.human-uav.1-1000-0.performant_safe.run1.log"
+}

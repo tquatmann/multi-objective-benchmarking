@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.2.jani --props tradeoff_finish1_teamsize --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.8166749477386475
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.2.jani --props tradeoff_finish1_teamsize --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+
+
+
+
+team-formation.2.jani:model: info: team-formation.2 is an MDP model.
+team-formation.2.jani: info: Need 24 bytes per state.
+team-formation.2.jani: warning: The probabilities for a transition labelled "τ" with 49 branches in state (controller.location = l, sensor1.location = l, sensor2.location = l, status = 1, t1_r1 = 0, t1_r2 = 0, t1_r3 = 0, t2_r1 = 0, t2_r2 = 0, t2_r3 = 0, m1_t1 = 0, m1_t2 = 0, m2_t1 = 0, m2_t2 = 0, controller.turn1 = 1, controller.turn2 = 2, sensor1.state1 = 0, sensor2.state2 = 0, reachability_reward_given_0 = False) do not sum up to the expected value of 1 (actual sum: 1.0000000000000007). Results will likely be affected by floating-point errors.
+team-formation.2.jani: info: Explored 1847 states.
+
+Peak memory usage: 90 MB
+Analysis results for team-formation.2.jani
+
++ State space exploration
+  State size:         24 bytes
+  States:             1847
+  Transitions:        2191
+  Branches:           2288
+  Rate:               52771 states/s
+  Peak memory:        36.95 MB
+  Final size:         0.01 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ tradeoff_finish1_teamsize
+  WSO instances:       4
+  Time:                0.2 s
+  Under Approximation: ∩{1x + 0y <= 0.4285714286, 0x + 1y <= 0.9795918367, 1x + 1y <= 1.3673469388}
+  Over Approximation:  ∩{1x + 0y <= 0.4285714286, 0x + 1y <= 0.9795918367, 1x + 0.1666666667y <= 0.5850340136, 1x + 1y <= 1.3673469388}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s
+
+

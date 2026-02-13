@@ -1,0 +1,40 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.778709888458252
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/brp-pta/brp-pta.jani --props Multi -E N=16,MAX=2,TD=1,TIME_BOUND=64 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-6 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+brp-pta.jani:model: info: brp-pta is a PTA model.
+brp-pta.jani: info: Need 40 bytes per state.
+brp-pta.jani: info: Explored 3959 states for N=16, MAX=2, TD=1, TIME_BOUND=64.
+
+Peak memory usage: 62 MB
+Analysis results for brp-pta.jani
+Experiment N=16, MAX=2, TD=1, TIME_BOUND=64
+
++ State space exploration
+  State size:         40 bytes
+  States:             3959
+  Transitions:        4244
+  Branches:           4593
+  Rate:               64902 states/s
+  Peak memory:        53.45 MB
+  Final size:         0.03 MB
+  Time (exploration): 0.1 s
+  Time (merging):     0.0 s
+
++ Multi
+  WSO instances:       6
+  Time:                0.3 s
+  Under Approximation: ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004233334, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 2.64531E-05, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0001851912, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 8E-06, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995766666}
+  Over Approximation:  ∩{1*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0004234451, 0*x_1 + 1*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 2.64601E-05, 0*x_1 + 0*x_2 + 1*x_3 + 0*x_4 + -0*x_5 + 0*x_6 <= 0.0001852405, 0*x_1 + 0*x_2 + 0*x_3 + 1*x_4 + -0*x_5 + 0*x_6 <= 8.0337E-06, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -1*x_5 + 0*x_6 <= -0.9995766329, 0*x_1 + 0*x_2 + 0*x_3 + 0*x_4 + -0*x_5 + 1*x_6 <= 33.473156499}
+
+  + Pareto Curve Approximation
+    Time: 0.2 s
+
+

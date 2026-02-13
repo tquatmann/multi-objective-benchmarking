@@ -1,0 +1,71 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=4 --multiobjective:precision 1e-3 abs --timemem --statistics
+Repitition:	1
+Wallclock time:	2.15556001663208
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:30:43 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.4.jani --janiproperty multi_neg --constants K=4 '--multiobjective:precision' 1e-3 abs --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.001s.
+
+Time for model construction: 0.157s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	43136
+Transitions: 	144352
+Choices: 	115840
+Reward Models:  steps
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * finished -> 64 item(s)
+   * agree -> 9170 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_neg": multi(Pmax=? [F ("finished" & (!"agree"))], R{"steps"}max=? [F "finished"]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 43073 states.
+Final preprocessed model has 115777 actions.
+
+WARN  (StandardPcaaWeightVectorChecker.cpp:201): The desired precision was not reached: resulting precision 0.00659097 exceeds specified value 0.000353553 by approx. 0.00623742. Weight vector isvector (2) [ 1, 0 ].
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 1.962s seconds (consisting of 0.066s seconds for preprocessing and 1.896s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   (         1, 0.000653413) * x <= 0.771378
+   (         1, 0.000332762) * x <= 0.466679
+   (         1, 0.00109201) * x <= 1.19003
+   (         1, 0.00106131) * x <= 1.16022
+   (         0,          1) * x <= 1082.99
+   (         1, 0.00115952) * x <= 1.25574
+   (         1,          0) * x <= 0.153018
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 0.146427
+   (         0,          1) * x <= 1082.99
+   (  0.999999, 0.00108996) * x <= 1.1883
+   (  0.999999, 0.00115783) * x <= 1.25437
+   (         1, 0.000819007) * x <= 0.928997
+   (  0.999999, 0.00100066) * x <= 1.10267
+
+6 Pareto optimal points found:
+   (0.1269348359, 973.5151624 )
+   (0.1299872952,  970.719908 )
+   (0.1530181196, 942.5994798 )
+   (0.148484111, 953.2915902 )
+   (          0, 1082.987501 )
+   (0.1504731365, 950.2475366 )
+
+
+Time for model checking: 1.962s.
+
+Performance statistics:
+  * peak memory usage: 93MB
+  * CPU time: 2.071s
+  * wallclock time: 2.122s
+

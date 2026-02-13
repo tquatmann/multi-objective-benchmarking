@@ -1,0 +1,55 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_pos --constants COL=0 --multiobjective:precision 1e-2 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	187.06900024414062
+Return code:	0
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:54:05 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.6.jani --janiproperty multi_pos --constants COL=0 '--multiobjective:precision' 1e-2 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.014s.
+
+Time for model construction: 19.512s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	5007548
+Transitions: 	11475748
+Choices: 	6350470
+Reward Models:  time, cost
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * ((s1 = 12) & (s2 = 12)) -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "multi_pos": multi(R{"cost"}min=? [F ((s1 = 12) & (s2 = 12))], R{"time"}min=? [F ((s1 = 12) & (s2 = 12))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 5007536 states.
+Final preprocessed model has 6350458 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 167.448s seconds (consisting of 7.202s seconds for preprocessing and 160.245s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -7625
+   (         0,         -1) * x <= -1325
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (        -1,          0) * x <= -7625
+   (         0,         -1) * x <= -1325
+
+1 Pareto optimal points found:
+   (       7625,        1325 )
+
+
+Time for model checking: 167.450s.
+
+Performance statistics:
+  * peak memory usage: 3516MB
+  * CPU time: 184.082s
+  * wallclock time: 186.995s
+

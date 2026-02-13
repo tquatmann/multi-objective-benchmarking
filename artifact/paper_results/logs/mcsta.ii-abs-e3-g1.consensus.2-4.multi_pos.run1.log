@@ -1,0 +1,42 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.2.jani --props multi_pos -E K=4 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.468595027923584
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/consensus/consensus.2.jani --props multi_pos -E K=4 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.1 --lp-solver HiGHS
+
+
+
+
+consensus.2.jani:model: info: consensus.2 is an MDP model.
+consensus.2.jani:variables[6]: info: Expanding variable "pc1" into 4 locations in automaton "process1".
+consensus.2.jani:variables[8]: info: Expanding variable "pc2" into 4 locations in automaton "process2".
+consensus.2.jani: info: Need 16 bytes per state.
+consensus.2.jani: info: Explored 536 states for K=4.
+
+Peak memory usage: 57 MB
+Analysis results for consensus.2.jani
+Experiment K=4
+
++ State space exploration
+  State size:         16 bytes
+  States:             536
+  Transitions:        792
+  Branches:           980
+  Rate:               22333 states/s
+  Peak memory:        28.70 MB
+  Final size:         0.00 MB
+  Time (exploration): 0.0 s
+  Time (merging):     0.0 s
+
++ multi_pos
+  WSO instances:       2
+  Time:                0.1 s
+  Under Approximation: ∩{1x + -0y <= 0.9999997594, 1x + -1175.1963849026y <= -226811.9590026196, 0x + -1y <= -193.0000482542}
+  Over Approximation:  ∩{1x + -0y <= 1.0000485927, 0x + -1y <= -192.9999997259}
+
+  + Pareto Curve Approximation
+    Time: 0.1 s
+
+

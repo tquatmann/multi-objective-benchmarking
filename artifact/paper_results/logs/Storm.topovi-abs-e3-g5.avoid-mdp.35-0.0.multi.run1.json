@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "avoid-mdp.35-0.0.multi",
+	"tool": "Storm",
+	"configuration-id": "topovi-abs-e3-g5",
+	"invocation-note": "(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/avoid-mdp/avoid-mdp.jani --janiproperty multi --constants N=35,slippery=0.0 --multiobjective:precision 1e-3 abs --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 2700.074528694153,
+	"timeout": true,
+	"execution-error": false,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topovi-abs-e3-g5.avoid-mdp.35-0.0.multi.run1.log"
+}

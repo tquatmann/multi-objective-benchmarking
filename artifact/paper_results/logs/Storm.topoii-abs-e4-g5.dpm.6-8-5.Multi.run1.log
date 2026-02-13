@@ -1,0 +1,49 @@
+Command:	$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants N=6,C=8,TIME_BOUND=5 --multiobjective:precision 1e-4 abs --sound --timemem --statistics
+Repitition:	1
+Wallclock time:	151.74282503128052
+Return code:	-9
+Output:
+Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 18:15:57 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/ma/dpm/dpm.jani --janiproperty Multi --constants 'N=6,C=8,TIME_BOUND=5' '--multiobjective:precision' 1e-4 abs --sound --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 109.370s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	47298249
+Transitions: 	92982492
+Choices: 	54718740
+Markovian St.: 	10628820
+Max. Rate: 	6
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((6 < 1) | (items1 = 8)) & ((6 < 2) | (items2 = 8))) & ((6 < 3) | (items3 = 8))) & ((6 < 4) | (items4 = 8))) & ((6 < 5) | (items5 = 8))) & ((6 < 6) | (items6 = 8))) & ((6 < 7) | (items7 = 8))) & ((6 < 8) | (items8 = 8))) & ((6 < 9) | (items9 = 8))) & ((6 < 10) | (items10 = 8))) -> 105 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	47298249
+Transitions: 	92982492
+Choices: 	54718740
+Markovian St.: 	10628820
+Max. Rate: 	6
+Reward Models:  ((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((((((((((6 < 1) | (items1 = 8)) & ((6 < 2) | (items2 = 8))) & ((6 < 3) | (items3 = 8))) & ((6 < 4) | (items4 = 8))) & ((6 < 5) | (items5 = 8))) & ((6 < 6) | (items6 = 8))) & ((6 < 7) | (items7 = 8))) & ((6 < 8) | (items8 = 8))) & ((6 < 9) | (items9 = 8))) & ((6 < 10) | (items10 = 8))) -> 105 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "Multi": multi(Pmax=? [F (((((((((((6 < 1) | (items1 = 8)) & ((6 < 2) | (items2 = 8))) & ((6 < 3) | (items3 = 8))) & ((6 < 4) | (items4 = 8))) & ((6 < 5) | (items5 = 8))) & ((6 < 6) | (items6 = 8))) & ((6 < 7) | (items7 = 8))) & ((6 < 8) | (items8 = 8))) & ((6 < 9) | (items9 = 8))) & ((6 < 10) | (items10 = 8)))], Tmin=? [F (((((((((((6 < 1) | (items1 = 8)) & ((6 < 2) | (items2 = 8))) & ((6 < 3) | (items3 = 8))) & ((6 < 4) | (items4 = 8))) & ((6 < 5) | (items5 = 8))) & ((6 < 6) | (items6 = 8))) & ((6 < 7) | (items7 = 8))) & ((6 < 8) | (items8 = 8))) & ((6 < 9) | (items9 = 8))) & ((6 < 10) | (items10 = 8)))], Pmax=? [true U<=5 (((((((((((6 < 1) | (items1 = 8)) & ((6 < 2) | (items2 = 8))) & ((6 < 3) | (items3 = 8))) & ((6 < 4) | (items4 = 8))) & ((6 < 5) | (items5 = 8))) & ((6 < 6) | (items6 = 8))) & ((6 < 7) | (items7 = 8))) & ((6 < 8) | (items8 = 8))) & ((6 < 9) | (items9 = 8))) & ((6 < 10) | (items10 = 8)))], R{"((((((((((((N < 1) | (items1 = C)) & ((N < 2) | (items2 = C))) & ((N < 3) | (items3 = C))) & ((N < 4) | (items4 = C))) & ((N < 5) | (items5 = C))) & ((N < 6) | (items6 = C))) & ((N < 7) | (items7 = C))) & ((N < 8) | (items8 = C))) & ((N < 9) | (items9 = C))) & ((N < 10) | (items10 = C))) ? 1 : 0)"}max=? [LRA[time]]) ...
+

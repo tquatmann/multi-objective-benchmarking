@@ -1,0 +1,42 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.4.jani --props multi_pos -E COL=0 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	4.985265493392944
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/wlan/wlan.4.jani --props multi_pos -E COL=0 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-5 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+wlan.4.jani:model: info: wlan.4 is an MDP model.
+wlan.4.jani:variables[6]: info: Expanding variable "s1" into 12 locations in automaton "station1".
+wlan.4.jani:variables[8]: info: Expanding variable "s2" into 12 locations in automaton "station2".
+wlan.4.jani: info: Need 24 bytes per state.
+wlan.4.jani: info: Explored 345000 states for COL=0.
+
+Peak memory usage: 326 MB
+Analysis results for wlan.4.jani
+Experiment COL=0
+
++ State space exploration
+  State size:         24 bytes
+  States:             345000
+  Transitions:        440206
+  Branches:           762252
+  Rate:               485915 states/s
+  Peak memory:        129.67 MB
+  Final size:         2.71 MB
+  Time (exploration): 0.7 s
+  Time (merging):     0.0 s
+
++ multi_pos
+  WSO instances:       2
+  Time:                3.8 s
+  Under Approximation: ∩{-1x + -0y <= -7624.9999999968, -0x + -1y <= -1325}
+  Over Approximation:  ∩{-1x + -0y <= -7625, -0x + -1y <= -1325}
+
+  + Pareto Curve Approximation
+    Time: 3.2 s
+
+

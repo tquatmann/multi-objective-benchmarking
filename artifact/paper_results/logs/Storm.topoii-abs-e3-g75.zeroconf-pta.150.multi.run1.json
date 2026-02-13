@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "zeroconf-pta.150.multi",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e3-g75",
+	"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75 Used moconv to convert the PTA to an MDP using digital-clocks semantics.",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/pta/zeroconf-pta/converted_zeroconf-pta.T=150.jani --janiproperty multi --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.035997867584228516,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		1
+	],
+	"log": "Storm.topoii-abs-e3-g75.zeroconf-pta.150.multi.run1.log"
+}

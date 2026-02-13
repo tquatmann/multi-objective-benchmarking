@@ -1,0 +1,15 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.5-2.jani --props multi --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	0.2970890998840332
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/ma/jobs/jobs.5-2.jani --props multi --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+jobs.5-2.jani:model: info: jobs.5-2 is an MA model.
+jobs.5-2.jani:properties[3]: warning: Multi-objective properties are only supported for MDPs and LTSs, skipping property "multi".
+jobs.5-2.jani: error: No properties to check.
+

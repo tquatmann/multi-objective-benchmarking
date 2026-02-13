@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topopi-abs-e3-g5 - mars-rover safe_collection_tradeoff 2-30</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topopi-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani">mars-rover</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">Unf</span> = 2, <span class="tt">B</span> = 30</td></tr>
+		<tr><td>Property:</td><td><span class="tt">safe_collection_tradeoff</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topopi-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants Unf=2,B=30 --multiobjective:precision 1e-3 abs --exact --timemem --statistics</pre>
+	exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">312.837s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">312.837s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 19:39:02 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/mars-rover/mars-rover.jani --janiproperty safe_collection_tradeoff --constants 'Unf=2,B=30' '--multiobjective:precision' 1e-3 abs --exact --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 30.834s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	4743010
+Transitions: 	8893142
+Choices: 	5928762
+Reward Models:  none
+State Labels: 	6 labels
+   * init -> 1 item(s)
+   * valueCollected -> 60370 item(s)
+   * exceedTime -> 78578 item(s)
+   * deadlock -> 0 item(s)
+   * exceedEnergy -> 40610 item(s)
+   * done -> 296439 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "safe_collection_tradeoff": multi(Pmax=? [F "valueCollected"], Pmax=? [F (((!"exceedTime") & (!"exceedEnergy")) & (done))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 4441496 states.
+Final preprocessed model has 5626852 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 6 refinement steps.
+Solving multi-objective query took 280.276s seconds (consisting of 19.592s seconds for preprocessing and 260.683s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1,          1) * x <= 3855726618684417493203545400296570201041/2097152000000000000000000000000000000000
+   (426413424309542393886814510946219310/522337212873414069928117157777573927,          1) * x <= 26346923813177186052374009677773020555112007720828627246474731584285904343/15648864723598658051112725052393638802227200000000000000000000000000000000
+   (4228215143221873156494839380555355775/6358856530671813522330741637516992107,          1) * x <= 207510749717831532793954860337840983542866403809324945236035027242320590113/133354886910114550719829594866020350311792640000000000000000000000000000000
+   (         0,          1) * x <= 1
+   (         1,          0) * x <= 1
+
+Overapproximation of achievable values: Polytope with 6 Halfspaces:
+   (         1,          0) * x <= 1
+   (         0,          1) * x <= 1
+   (       2/3,        2/3) * x <= 3855726618684417493203545400296570201041/3145728000000000000000000000000000000000
+   (2352999423998101840538611403520401800/393154400456712568447625038578200919299, 3538326232184817902971938303224824018282/3538389604110413116028625347203808273691) * x <= 9321936077513943816900462221334228760241738754090565198188765567161187658663/9275676043799201358882079630173951160984535040000000000000000000000000000000
+   (21176994815982916564847502631683616200/37261602483757014296066434508384923931, 30658798251421394788604138127843707698/37261602483757014296066434508384923931) * x <= 1014471465563566433542437509095775078057249669283100171669463230059283690853/781432441720159900450243152621284599917445120000000000000000000000000000000
+   (4173127005184017083435152497368316383800/4224369282302851929334418146840046525049, 218659255938394032342687232258391993906/1408123094100950643111472715613348841683) * x <= 4952633749038355502443541869684908468249713583453832762137174259738130900284219/4429572244559995264653766842740948625049780224000000000000000000000000000000000
+
+4 Pareto optimal points found:
+   (438458429241674563522916770637122538823/524288000000000000000000000000000000000,                    1 ) approx.    (0.8362930856,           1 )
+   (883275715014020940568164282911762069753/1048576000000000000000000000000000000000, 41773911394271125073740206424777785769/41943040000000000000000000000000000000 ) approx.    (0.8423573637, 0.9959676598 )
+   (                   1, 1758574618684417493203545400296570201041/2097152000000000000000000000000000000000 ) approx.    (          1, 0.8385537237 )
+   (1769163116092408951485969151612412009141/2097152000000000000000000000000000000000, 20865635025920085417175762486841581919/20971520000000000000000000000000000000 ) approx.    (0.8436027127, 0.994951011 )
+
+
+Time for model checking: 281.503s.
+
+Performance statistics:
+  * peak memory usage: 12837MB
+  * CPU time: 307.272s
+  * wallclock time: 312.454s	</pre>
+</div>
+</body>
+</html>

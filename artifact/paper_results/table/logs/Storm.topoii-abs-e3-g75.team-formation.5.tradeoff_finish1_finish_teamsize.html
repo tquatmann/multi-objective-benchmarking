@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.Storm.topoii-abs-e3-g75 - team-formation tradeoff_finish1_finish_teamsize 5</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.Storm.topoii-abs-e3-g75</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani">team-formation</a> <span class="tt">v.1</span> (MDP)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">N</span> = 5</td></tr>
+		<tr><td>Property:</td><td><span class="tt">tradeoff_finish1_finish_teamsize</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (topoii-abs-e3-g75)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --janiproperty tradeoff_finish1_finish_teamsize --multiobjective:precision 1e-3 abs --sound --multiobjective:approxtradeoff 0.75 --timemem --statistics</pre>
+	(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.75
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">19.427s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">19.427s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">Storm 1.11.1 (dev)
+
+Date: Mon Dec  1 17:04:21 2025
+Command line arguments: --jani $MDPMC_DIR/qcomp/benchmarks/mdp/team-formation/team-formation.5.jani --janiproperty tradeoff_finish1_finish_teamsize '--multiobjective:precision' 1e-3 abs --sound '--multiobjective:approxtradeoff' 0.75 --timemem --statistics
+Current working directory: $MDPMC_DIR/experiments
+
+Time for model input parsing: 0.034s.
+
+Time for model construction: 4.723s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (((!((t2_r3 = 1)) | (m3_t2 = 1)) & (!((t2_r1 = 1)) | ((m1_t2 = 1) | (m4_t2 = 1)))) & ((!((t2_r2 = 1)) | ((m2_t2 = 1) | (m5_t2 = 1))) & (status = 7))) -> 52200 item(s)
+   * (((!((t1_r3 = 1)) | (m3_t1 = 1)) & (!((t1_r1 = 1)) | ((m1_t1 = 1) | (m4_t1 = 1)))) & ((!((t1_r2 = 1)) | ((m2_t1 = 1) | (m5_t1 = 1))) & (status = 7))) -> 52200 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "tradeoff_finish1_finish_teamsize": multi(Pmax=? [F (((!((t1_r3 = 1)) | (m3_t1 = 1)) & (!((t1_r1 = 1)) | ((m1_t1 = 1) | (m4_t1 = 1)))) & ((!((t1_r2 = 1)) | ((m2_t1 = 1) | (m5_t1 = 1))) & (status = 7)))], R{"w_1_total"}max=? [C], Pmax=? [F (((!((t2_r3 = 1)) | (m3_t2 = 1)) & (!((t2_r1 = 1)) | ((m1_t2 = 1) | (m4_t2 = 1)))) & ((!((t2_r2 = 1)) | ((m2_t2 = 1) | (m5_t2 = 1))) & (status = 7)))]) ...
+Weight Vector Checker Statistics:
+Final preprocessed model has 521898 states.
+Final preprocessed model has 660458 actions.
+
+Multi-objective Pareto Curve Approximation algorithm terminated after 12 refinement steps.
+Solving multi-objective query took 14.566s seconds (consisting of 0.849s seconds for preprocessing and 13.717s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 12 Halfspaces:
+   (         1,          1,          0) * x <= 3.79592
+   (         1,          0,          1) * x <= 1.67347
+   (         1, 1.37362e-13,          1) * x <= 1.67347
+   (         1,          0,          0) * x <= 1
+   (         1,          0,          1) * x <= 1.67347
+   (         0,          1,          1) * x <= 3.79592
+   (         1, 1.37362e-13,          1) * x <= 1.67347
+   (         0,          1,          0) * x <= 2.89796
+   (         1,        0.5,          0) * x <= 2.38776
+   (         1,          0,          1) * x <= 1.67347
+   (         0,        0.5,          1) * x <= 2.38776
+   (         0,          0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 12 Halfspaces:
+   (         1,          0,          0) * x <= 1
+   (         0,          1,          0) * x <= 2.89796
+   (         0,          0,          1) * x <= 1
+   (  0.707107,          0,   0.707107) * x <= 1.18332
+   (         0,   0.854421,   0.519581) * x <= 2.94264
+   (         0,   0.640184,   0.768221) * x <= 2.55551
+   (         0,   0.447214,   0.894427) * x <= 2.13567
+   (  0.699294,   0.714834,          0) * x <= 2.6995
+   (  0.768221,   0.640184,          0) * x <= 2.55551
+   (  0.707107,   0.707107,          0) * x <= 2.68412
+   (         0,   0.707107,   0.707107) * x <= 2.68412
+   (  0.894427,   0.447214,          0) * x <= 2.13567
+
+6 Pareto optimal points found:
+   (0.693877551, 2.816326531, 0.9795918367 )
+   (0.6734693878, 2.775510204,           1 )
+   (0.7755102041, 2.897959184, 0.8979591837 )
+   (          1, 2.775510204, 0.6734693878 )
+   (0.9795918367, 2.816326531, 0.693877551 )
+   (0.8979591837, 2.897959184, 0.7755102041 )
+
+
+Time for model checking: 14.567s.
+
+Performance statistics:
+  * peak memory usage: 408MB
+  * CPU time: 19.058s
+  * wallclock time: 19.376s	</pre>
+</div>
+</body>
+</html>

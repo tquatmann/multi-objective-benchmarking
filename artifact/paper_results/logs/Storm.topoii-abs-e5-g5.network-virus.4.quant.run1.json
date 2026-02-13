@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "network-virus.4.quant",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e5-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-5  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/network-virus/network-virus.4.jani --janiproperty quant --multiobjective:precision 1e-5 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 386.1597044467926,
+	"timeout": false,
+	"execution-error": true,
+	"return-codes": [
+		-9
+	],
+	"log": "Storm.topoii-abs-e5-g5.network-virus.4.quant.run1.log"
+}

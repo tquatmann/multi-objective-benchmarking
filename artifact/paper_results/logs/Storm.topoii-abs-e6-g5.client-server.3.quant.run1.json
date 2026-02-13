@@ -1,0 +1,18 @@
+{
+	"benchmark-id": "client-server.3.quant",
+	"tool": "Storm",
+	"configuration-id": "topoii-abs-e6-g5",
+	"invocation-note": "(sound) topological II with epsilon=10^-6  absolute precision, and gamma=0.5",
+	"commands": [
+		"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/client-server/client-server.3.jani --janiproperty quant --multiobjective:precision 1e-6 abs --sound --timemem --statistics"
+	],
+	"time-limit": 2700,
+	"run-id": 1,
+	"wallclock-time": 0.08893322944641113,
+	"timeout": false,
+	"execution-error": false,
+	"return-codes": [
+		0
+	],
+	"log": "Storm.topoii-abs-e6-g5.client-server.3.quant.run1.log"
+}

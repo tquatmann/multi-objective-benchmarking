@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>logs.mcsta.ii-abs-e3-g5 - firewire-pta multi 30-7500</title>
+	<link rel="stylesheet" type="text/css" href=../style.css>
+</head>
+<body>
+<h1>logs.mcsta.ii-abs-e3-g5</h1>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Benchmark</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Model:</td><td><a href="https://github.com/moves-rwth/sound-mopmc/tree/main/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani">firewire-pta</a> <span class="tt">v.2</span> (PTA)</td></tr>
+		<tr><td>Parameter(s)</td><td><span class="tt">delay</span> = 30, <span class="tt">T</span> = 7500</td></tr>
+		<tr><td>Property:</td><td><span class="tt">multi</span> (multi-tradeoff)</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Invocation (ii-abs-e3-g5)</div></div>
+	<pre style="overflow: auto; padding-bottom: 1.5ex; padding-top: 1ex; font-size: 15px; margin-bottom: 0ex;  margin-top: 0ex;">$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=30,T=7500 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS</pre>
+	Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Execution</div></div>
+	<table style="margin-bottom: 0.75ex;">
+		<tr><td>Walltime:</td><td style="tt">12.403s</td></tr>
+		<tr><td>Considered runtime:</td><td style="tt">12.403s</td></tr>
+		<tr><td>Return code(s):</td><td style="tt">0</td></tr>
+	</table>
+</div>
+<div class="box">
+	<div class="boxlabelo"><div class="boxlabelc">Log</div></div>
+	<pre style="overflow:auto; padding-bottom: 1.5ex">The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/pta/firewire-pta/firewire-pta.jani --props multi -E delay=30,T=7500 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS
+
+
+
+
+firewire-pta.jani:model: info: firewire-pta is a PTA model.
+firewire-pta.jani:variables[3]: info: Expanding variable "w12" into 10 locations in automaton "wire12".
+firewire-pta.jani:variables[4]: info: Expanding variable "s1" into 9 locations in automaton "node1".
+firewire-pta.jani:variables[5]: info: Expanding variable "w21" into 10 locations in automaton "wire21".
+firewire-pta.jani:variables[6]: info: Expanding variable "s2" into 9 locations in automaton "node2".
+firewire-pta.jani: info: Need 24 bytes per state.
+firewire-pta.jani: info: Explored 386118 states for delay=30, T=7500.
+
+Peak memory usage: 306 MB
+Analysis results for firewire-pta.jani
+Experiment delay=30, T=7500
+
++ State space exploration
+  State size:         24 bytes
+  States:             386118
+  Transitions:        602140
+  Branches:           604312
+  Rate:               615818 states/s
+  Peak memory:        101.62 MB
+  Final size:         2.95 MB
+  Time (exploration): 0.6 s
+  Time (merging):     0.0 s
+
++ multi
+  WSO instances:       2
+  Time:                11.3 s
+  Under Approximation: ∩{-1x + -0y <= -1, -0x + -1y <= -1}
+  Over Approximation:  ∩{-1x + -0y <= -0.9997558594, -0x + -1y <= -0.9997558594}
+
+  + Pareto Curve Approximation
+    Time: 11.2 s	</pre>
+</div>
+</body>
+</html>

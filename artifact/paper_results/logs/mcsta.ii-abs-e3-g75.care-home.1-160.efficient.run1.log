@@ -1,0 +1,32 @@
+Command:	$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient -E Unf=1,B=160 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+Repitition:	1
+Wallclock time:	11.930463314056396
+Return code:	0
+Output:
+The Modest Toolset (www.modestchecker.net), version v3.1.420-gdeeaa8e34+deeaa8e349db7c966267a21eddf603aeb3d612f8.
+Command: modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/care-home/care-home.jani --props efficient -E Unf=1,B=160 --unsafe -D -S Memory --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.75 --lp-solver HiGHS
+
+
+
+
+care-home.jani:model: info: care-home is an MDP model.
+care-home.jani: info: Need 24 bytes per state.
+care-home.jani: info: Explored 3459296 states for Unf=1, B=160.
+care-home.jani: error: Modelling Error: Potentially infinite reward for 'efficient' in subproperty: 1
+
+Peak memory usage: 1717 MB
+Analysis results for care-home.jani
+Experiment Unf=1, B=160
+
++ State space exploration
+  State size:         24 bytes
+  States:             3459296
+  Transitions:        6675218
+  Branches:           7361206
+  Rate:               353314 states/s
+  Peak memory:        935.58 MB
+  Final size:         26.80 MB
+  Time (exploration): 9.8 s
+  Time (merging):     0.2 s
+
+
