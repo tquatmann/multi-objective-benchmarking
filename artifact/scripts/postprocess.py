@@ -8,7 +8,8 @@ import shutil
 
 def exportData(settings, benchmark_set_id, exec_data, groups_tools_configs_sorted):
 
-    groups_tools_configs_filtered = [(g,t,c) for g,t,c in groups_tools_configs_sorted if g in exec_data and t in exec_data[g] and c in exec_data[g][t] and len(exec_data[g][t][c]) > 0]
+    # groups_tools_configs_filtered = [(g,t,c) for g,t,c in groups_tools_configs_sorted if g in exec_data and t in exec_data[g] and c in exec_data[g][t] and len(exec_data[g][t][c]) > 0]
+    groups_tools_configs_filtered = groups_tools_configs_sorted
     benchmark_set = load_json(os.path.realpath(os.path.join(sys.path[0], "data/{}.json").format(benchmark_set_id)))
     ensure_directory(benchmark_set_id)
 

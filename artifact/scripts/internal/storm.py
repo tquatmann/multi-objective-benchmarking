@@ -256,6 +256,7 @@ def is_not_supported(logfile):
     # if one of the following error messages occurs, we are sure that the model is not supported.
     known_messages = []
     known_messages.append("Unable to compute finite upper bounds for visiting times")
+    known_messages.append("The equation system has no solution")
     known_messages.append("qcomp/benchmarks/pta/")
     known_messages.append("Scheduler extraction is not yet implemented for LP based LRA method.")
     known_messages.append("The model checking query does not seem to be supported for the selected engine. Storm will try to solve the query, but you will most likely get an error for at least one of the provided properties.")

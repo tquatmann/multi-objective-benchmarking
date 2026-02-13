@@ -45,7 +45,7 @@ class Invocation(object):
 
     def execute(self):
         execution = Execution(self)
-        execution.run(True) # with warm-up run!
+        execution.run(False) # with warm-up run!
         return execution
 
 
