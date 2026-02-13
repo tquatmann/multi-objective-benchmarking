@@ -1,0 +1,57 @@
+[
+	{
+		"benchmark-id": "firewire_abst.3.multi",
+		"tool": "Storm",
+		"configuration-id": "topovi-abs-e3-g5",
+		"invocation-note": "(unsound) topological VI with epsilon=10^-3, absolute precision, and gamma=0.5",
+		"commands": [
+			"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.jani --janiproperty multi --constants delay=3 --multiobjective:precision 1e-3 abs --timemem --statistics"
+		],
+		"time-limit": 30,
+		"run-id": 1
+	},
+	{
+		"benchmark-id": "firewire_abst.3.multi",
+		"tool": "Storm",
+		"configuration-id": "topoii-abs-e3-g5",
+		"invocation-note": "(sound) topological II with epsilon=10^-3, absolute precision, and gamma=0.5",
+		"commands": [
+			"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.jani --janiproperty multi --constants delay=3 --multiobjective:precision 1e-3 abs --sound --timemem --statistics"
+		],
+		"time-limit": 30,
+		"run-id": 1
+	},
+	{
+		"benchmark-id": "firewire_abst.3.multi",
+		"tool": "Storm",
+		"configuration-id": "topopi-abs-e3-g5",
+		"invocation-note": "exact topological PI with epsilon=10^-3, absolute precision, and gamma=0.5",
+		"commands": [
+			"$MDPMC_DIR/bin/storm --jani $MDPMC_DIR/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.jani --janiproperty multi --constants delay=3 --multiobjective:precision 1e-3 abs --exact --timemem --statistics"
+		],
+		"time-limit": 30,
+		"run-id": 1
+	},
+	{
+		"benchmark-id": "firewire_abst.3.multi",
+		"tool": "mcsta",
+		"configuration-id": "vi-abs-e3-g5",
+		"invocation-note": "(Unsound) value iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+		"commands": [
+			"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.jani --props multi -E delay=3 --unsafe -D -S Memory  --alg ValueIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+		],
+		"time-limit": 30,
+		"run-id": 1
+	},
+	{
+		"benchmark-id": "firewire_abst.3.multi",
+		"tool": "mcsta",
+		"configuration-id": "ii-abs-e3-g5",
+		"invocation-note": "Interval iteration with mo-epsilon=10^-3, absolute precision, and gamma=0.5",
+		"commands": [
+			"$MDPMC_DIR/bin/modest mcsta $MDPMC_DIR/qcomp/benchmarks/mdp/firewire_abst/firewire_abst.jani --props multi -E delay=3 --unsafe -D -S Memory  --alg IntervalIteration --mo-epsilon 1e-3 --mo-gamma 0.5 --lp-solver HiGHS"
+		],
+		"time-limit": 30,
+		"run-id": 1
+	}
+]
