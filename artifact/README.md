@@ -7,29 +7,29 @@ by Arnd Hartmanns, Tim Quatmann, Mark van Wijk
 
 The artifact contains the two multi-objective probabilistic model checking tools mcsta (part of The Modest Toolset) and Storm using a multi-platform Docker image for convenient installation.
 Benchmark models and benchmarking scripts are provided to reproduce all experiments from the paper.
-Representative subsets of experiments are included to assess reproducibility in reasonable time.
+Representative subsets of experiments are included to assess reproducibility within a reasonable time frame.
 
 > **The artifact is available at [Zenodo](https://doi.org/10.5281/zenodo.18604532).**
 
 # License
 
-The contents of `tools/mcsta/` are licensed under the license located in `tools/mcsta/LICENSE.txt`
-The contents of `tools/storm/` are licensed under the license located in `tools/storm/LICENSE.txt`.
+Mcsta is part of The Modest Toolset, which is licensed under the license located at `tools/mcsta/License.txt`.
+Storm is licensed under the license located at `tools/storm/LICENSE.txt`.
 All other contents  are licensed under the [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/) license.
 
 # Requirements
 
 - We assume a Linux or MacOS host system (both x86 and ARM are supported). Windows might be possible, but it has not been tested and likely requires some manual adaptations of our scripts.
-- Docker needs to be installed. The `Use containerd for pulling and storing images` option should be enabled in the docker settings to support the provided multi-platform image. Further information below.
+- Docker needs to be installed. The `Use containerd for pulling and storing images` option should be enabled in the Docker settings to support the provided multi-platform image. Further information below.
 
 # Installation and Smoke Test
 
-The artifact is based on a single Docker image containing pre-build binaries of the two tools `mcsta` and `Storm` in the same version as exercised in the paper.
+The artifact is based on a single Docker image containing pre-built binaries of the two tools `mcsta` and `Storm` in the same version as exercised in the paper.
 
 ## Prerequisites
 
 - Install [Docker](https://docs.docker.com/get-started/get-docker/). The artifact has been tested with Docker Desktop version `29.2.0`.
-- In the Docker settings, make sure that the `Use containerd for pulling and storing images` option is enabled. This is necessary to support the provided [multi-platform image](https://docs.docker.com/build/building/multi-platform/).
+- In the Docker settings, ensure that the `Use containerd for pulling and storing images` option is enabled. This is necessary to support the provided [multi-platform image](https://docs.docker.com/build/building/multi-platform/).
 - Download the file `artifact.zip` from [Zenodo](https://doi.org/10.5281/zenodo.18604532) and unzip it at a convenient location. Throughout this document, `$ARTIFACT_DIR` refers to the path leading to the unzipped directory, i.e., a copy of this Readme is located at `$ARTIFACT_DIR/README.md`.
 
 ## Install and Test Storm
@@ -59,8 +59,8 @@ cd quickcheck
 ./run.sh
 ```
 
-This invokes `mcsta` and `storm` on a single benchmark instance in all five configurations as in Fig. 6 of the paper. The produced log files can be found and inspected in `$ARTIFACT_DIR/quickcheck/logs/`.
-The log files (and the output of the `run.sh` script) should contain the expected model checking results for all five runs, which for `mcsta` is:
+This invokes `mcsta` and `storm` on a single benchmark instance in all five configurations from Fig. 6 of the paper. The produced log files can be found and inspected in `$ARTIFACT_DIR/quickcheck/logs/`.
+The log files (and the output of the `run.sh` script) should contain the expected model checking result for all five runs, which for `mcsta` is:
 
 ```
 + multi
@@ -80,26 +80,25 @@ Underapproximation of achievable values: Polytope with 2 Halfspaces:
 ```
 
 
-
 # Reproducing the Paper Experiments
 
 ## Subsets
-Running the experiments as in the paper (i.e. 261 instances on 25 different tool invocations with a 2700 second time limit) takes approximately 500-600 hours.
+Running the experiments as in the paper (i.e., 261 instances on 25 different tool invocations with a 2700 second time limit) takes approximately 500-600 hours.
 To evaluate reproducibility within a reasonable timespan, we provide 4 different subsets with different time limits:
 
-- `subset-small`: Only selects those benchmark instances where one of the tools was able to answer the query within 5 seconds. Imposes a time limit of 7 seconds for each run.
+- `subset-small`: Only selects those benchmark instances where (in our experiments) one of the tools was able to answer the query within x=5 seconds.
+  Imposes a time limit of y=7 seconds for each run.
+  Considers only 3 (instead of 6) different values for epsilon and gamma (cf. Figures 7 and 8).
   Running this set should take less than 1 hour.
-- `subset-medium`: Only selects those benchmark instances where one of the tools was able to answer the query within 30 seconds. Imposes a time limit of 40 seconds for each run.
-  Running this set takes approximately 4-6 hours.
-- `subset-large`: Only selects those benchmark instances where one of the tools was able to answer the query within 300 seconds. Imposes a time limit of 400 seconds for each run.
+- `subset-medium`: As above with x=30 seconds and y=40 seconds.
+  Running this set takes approximately 4 hours.
+- `subset-large`: As above with x=300 seconds and y=400 seconds.
   Running this set takes approximately 30 hours.
-- `all`: All benchmark instances. Imposes a time limit of 2700 seconds for each run.
-
-The `subset-*` options also only consider only 3 (instead of 6) different values for epsilon and gamma (cf. Figures 7 and 8).
+- `all`: All benchmark instances in all configurations as in the paper. Imposes a time limit of 2700 seconds for each run.
 
 ## Running the Experiments
 
-To run, e.g. the `subset-medium` set, start the Docker using `$ARTIFACT_DIR/run_docker.sh` as discribed above and execute
+To run, e.g., the `subset-medium` set, start the Docker using `$ARTIFACT_DIR/run_docker.sh` as described above and execute
 
 ```
 cd experiments
@@ -112,16 +111,16 @@ When finished, the produced log files can be postprocessed using
 python3 ../scripts/postprocess.py logs subset-medium
 ```
 
-This command produces a subfolder `subset-medium` which contains
+This command produces a subfolder `subset-medium`, which contains:
 
-- `table/table.html`: A browsable html table allowing to conveniently inspect the raw data (run times, log files)
+- `table/table.html`: A browsable HTML table allowing to conveniently inspect the raw data (run times, log files)
 - `table/plots.tex`: A LaTeX document that can be compiled with `pdflatex plots.tex` (not included in the Docker) to reproduce Figures 6 to 8 from the paper.
-
 
 
 # Reviewing the Experimental Results from the Paper
 
 The directory `$ARTIFACT_DIR/paper_results/` contains the logfiles and derived data as reported in the paper.
+
 
 # Custom Queries Multi-Objective PMC Queries
 
@@ -137,11 +136,11 @@ and a multi-objective query using PRISM-style syntax. Such a query may have the 
 ```
 
 - `name` is the name of the query.
-- `R{"rounds"}min=? [ F "done" ]` is the first objective which minimizes the expected total reward for reward model `"rounds"` until reaching state label`"done"`.
-- `R{"time"}min=? [ F "done" ]` is the second objective which minimizes the expected total reward for reward model `"time"` until reaching state label`"done"`.
-- `Pmax=? [ F "success"]` is the third objective which maximizes the probability to eventually reach state label`"success"`.
+- `R{"rounds"}min=? [ F "done" ]` is the first objective that minimizes the expected total reward for the reward model `"rounds"` until reaching the state label`"done"`.
+- `R{"time"}min=? [ F "done" ]` is the second objective that minimizes the expected total reward for the reward model `"time"` until reaching the state label`"done"`.
+- `Pmax=? [ F "success"]` is the third objective that maximizes the probability to eventually reach the state label`"success"`.
 
-Given a PRISM model file `model.prism` and a PRISM property file`mo_query.props`, a JANI model `model.jani` can be generated by running (inside the docker)
+Given a PRISM model file `model.prism` and a PRISM property file`mo_query.props`, a JANI model `model.jani` can be generated by running (inside the Docker):
 
 ```
 /opt/storm/build/bin/storm-conv --prism model.prism --prop mo_query.props --tojani model.jani
@@ -170,18 +169,18 @@ Run `./bin/modest mcsta --help` to get more info on available command line switc
 We list the most relevant options for this artifact:
 
 - Model and Property input:
-  `--props name` selects property from JANI file with name `name`.
-  `-E X=1,Y=2` specifies open constants in the model file.
-  `--unsafe`  generates faster code for state-space exploration by omitting some runtime checks.
-  `-S Memory` writes model into memory (instead of disk).
+  * `--props name` selects property from JANI file with name `name`.
+  * `-E X=1,Y=2` specifies open constants in the model file.
+  * `--unsafe`  generates faster code for state-space exploration by omitting some runtime checks.
+  * `-S Memory` writes the model into memory (instead of disk).
 - Model Checking
-  `--alg ValueIteration` use value iteration as single-objective solver
-  `--alg IntervalIteration` use interval iteration as single-objective solver
-  `--mo-epsilon 1e-3` sets the value for epsilon to 10^-3
-  `--mo-gamma 0.5` sets the value for gamma to 0.5
-  `--lp-solver HiGHS` uses HiGHS as LP solver, which is faster than the default.
+  * `--alg ValueIteration` use value iteration as the single-objective solver
+  * `--alg IntervalIteration` use interval iteration as the single-objective solver
+  * `--mo-epsilon 1e-3` sets the value for epsilon to 10^-3
+  * `--mo-gamma 0.5` sets the value for gamma to 0.5
+  * `--lp-solver HiGHS` uses HiGHS as LP solver, which is faster than the default.
 - Additional output
-  `-D` collects diagnostic information during model checking.
+  * `-D` collects diagnostic information during model checking.
 
 
 ### Storm
@@ -195,26 +194,26 @@ The following command invokes Storm on a JANI model, sets the model constant `de
 Run `./storm/build/bin/storm --help` or `./storm/build/bin/storm --help all` to get more info on available command line switches. We list the most relevant options for this artifact:
 
 - Model and Property input:
-  `--prism file.prism` reads the input model from `file.prism` in the PRISM modelling language.
-  `--prop file.props name` reads the property specification from `file.props` (using PRISM-like syntax) and selects the query with the name `name`. If `name` is omitted, all queries in the file are selected.
-  `--jani file.jani` reads the input model from `file.jani` in the JANI language.
-  `--janiproperty name` selects property from JANI file with name `name`.
-  `--constants X=1,Y=2` specifies open constants in the model file or property file.
+  * `--prism file.prism` reads the input model from `file.prism` in the PRISM modelling language.
+  * `--prop file.props name` reads the property specification from `file.props` (using PRISM-like syntax) and selects the query with the name `name`. If `name` is omitted, all queries in the file are selected.
+  * `--jani file.jani` reads the input model from `file.jani` in the JANI language.
+  * `--janiproperty name` selects property from JANI file with name `name`.
+  * `--constants X=1,Y=2` specifies open constants in the model file or property file.
 - Model checking:
-  `--multiobjective:precision 1e-3` sets the precision of the Pareto front approximation (epsilon).
-  `--multiobjective:approxtradeoff 0.75` sets the tradeoff for Pareto front approximation (gamma)
-  `--sound` use Interval Iteration (instead of Value Iteration) as single-objective solver.
-  `--exact` use Policy Iteration over rationals (instead of Value Iteration) as single-objective solver.
+  * `--multiobjective:precision 1e-3` sets the precision of the Pareto front approximation (epsilon).
+  * `--multiobjective:approxtradeoff 0.75` sets the tradeoff for Pareto front approximation (gamma)
+  * `--sound` use Interval Iteration (instead of Value Iteration) as the single-objective solver.
+  * `--exact` use Policy Iteration over rationals (instead of Value Iteration) as the single-objective solver.
 - Additional output:
-  `-tm` prints time and memory consumption of the computation.
-  `--statistics` prints more information regarding the input query and analysis statistics.
+  * `-tm` prints time and memory consumption of the computation.
+  * `--statistics` prints more information regarding the input query and analysis statistics.
 
 
 # Tool Details
 
+The directory `$ARTIFACT_DIR/tools/mcsta` contains pre-built binaries for `mcsta`, which is part of [The Modest Toolset](https://www.modestchecker.net)
+
 The directory `$ARTIFACT_DIR/tools/storm/` contains the source code of our implementation in [Storm](https://stormchecker.org).
 Most relevant C++ source code files are in `src/storm/modelchecker/multiobjective/`
-
-The directory `$ARTIFACT_DIR/tools/mcsta` contains pre-build binaries for `mcsta` which is part of [The Modest Toolset](https://www.modestchecker.net)
 
 Running the script `ARTIFACT_DIR/tools/build_docker.sh` (re-)builds the Docker image and saves it as `mopmctools_docker.tar.gz`.
